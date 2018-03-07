@@ -1,149 +1,78 @@
 package dlsu.coco.coco_api.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.Iterator;
+
+import javax.servlet.http.HttpServletResponse;
+
+import dlsu.coco.coco_api.model.UploadedFile;
+import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Properties;
-import java.util.stream.Collectors;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.util.FileCopyUtils;
 
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
+import javax.servlet.http.HttpServletResponse;
+
 @RestController
+@RequestMapping("/cont")
 public class FileController {
 
-    //FOLDER LOCATION
-    private static String UPLOADED_FOLDER = "C:\\Users\\asus\\Desktop\\asd";
+    UploadedFile ufile;
 
-    //MERGE FILE LOCATION
-    private static String MERGED_FILE = null;
-
-    private final Logger logger = LoggerFactory.getLogger(FileController.class);
-
-    @GetMapping("/")
-    public String index() {
-        return "upload";
-    }
-
-    //UPDATE FOLDER LOCATION
-    @PostMapping("/update_location")
-    public ResponseEntity<Object> update_folder(@RequestParam("String") String location) {
-        logger.debug("folder location upload");
-
-        Path file = new File(location).toPath();
-
-        //Check if file is empty
-        if (!Files.isDirectory(file)) {
-            return new ResponseEntity<Object>("Please Select location", HttpStatus.OK);
-        }
-
-        //Update location
-        UPLOADED_FOLDER = location;
-
-        return new ResponseEntity("Successfully updated - ", new HttpHeaders(), HttpStatus.OK);
-    }
-
-    //UPLOAD SINGLE FILE
-    @PostMapping("/upload")
-    public ResponseEntity<Object> uploadFile(@RequestParam("file") MultipartFile file) {
-        logger.debug("Single file upload");
-
-        //Check if file is empty
-        if (file.isEmpty()) {
-            return new ResponseEntity<Object>("Please Select File", HttpStatus.OK);
-        }
-
-        //Check if location is null
-        if (UPLOADED_FOLDER.equals(null)) {
-            return new ResponseEntity<Object>("Please Set Location", HttpStatus.OK);
-        }
-
-        //Save file
-        try {
-            fileReceiver(Arrays.asList(file));
-
-        } catch (IOException e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-
-        return new ResponseEntity("Successfully uploaded - " + file.getOriginalFilename(), new HttpHeaders(), HttpStatus.OK);
-    }
-
-    //UPLOAD MULTIPLE FILES
-    @PostMapping("/upload/multi")
-    public ResponseEntity<?> uploadFileMulti(@RequestParam("files") MultipartFile[] files) {
-
-        logger.debug("Multiple file upload!");
-
-        // Get file name
-        String uploadedFileName = Arrays.stream(files).map(x -> x.getOriginalFilename()).filter(x -> !StringUtils.isEmpty(x)).collect(Collectors.joining(" , "));
-
-        //Check if file is empty
-        if (StringUtils.isEmpty(uploadedFileName)) {
-            return new ResponseEntity("Please Select File", HttpStatus.OK);
-        }
-
-        //Check if location is null
-        if (UPLOADED_FOLDER.equals(null)) {
-            return new ResponseEntity<Object>("Please Set Location", HttpStatus.OK);
-        }
-
-        //Save file
-        try {
-            fileReceiver(Arrays.asList(files));
-
-        } catch (IOException e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-
-        return new ResponseEntity("Successfully uploaded - " + uploadedFileName, HttpStatus.OK);
-
-    }
-
-    //NLP Process
-    private Annotation NLPprocessor(String content)
+    public FileController()
     {
-        Properties props;
-        StanfordCoreNLP pipeline;
-
-        Annotation document;
-
-        props = new Properties();
-        props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
-        pipeline = new StanfordCoreNLP(props);
-
-        document = new Annotation(content);
-        pipeline.annotate(document);
-
-        return document;
+        System.out.println("init RestController");
+        ufile = new UploadedFile();
     }
 
-    //Save file
-    private void fileReceiver(List<MultipartFile> files) throws IOException {
+    @RequestMapping(value = "/get/{value}", method = RequestMethod.GET)
+    public void get(HttpServletResponse response, @PathVariable String value)
+    {
+        try {
 
-        for (MultipartFile file : files)
+            response.setContentType(ufile.type);
+            response.setContentLength(ufile.length);
+            FileCopyUtils.copy(ufile.bytes, response.getOutputStream());
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    public @ResponseBody void upload(MultipartHttpServletRequest request, HttpServletResponse response)
+    {
+        Iterator<String> itr =  request.getFileNames();
+
+        MultipartFile mpf = request.getFile(itr.next());
+        System.out.println(mpf.getOriginalFilename() +" uploaded!");
+
+        try {
+            //just temporary save file info into ufile
+            ufile.length = mpf.getBytes().length;
+            ufile.bytes= mpf.getBytes();
+            ufile.type = mpf.getContentType();
+            ufile.name = mpf.getOriginalFilename();
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        if(mpf.getContentType().equals(".xml"))
         {
-            if (file.isEmpty())
-            {
-                continue;
-            }
-
-            byte[] bytes = file.getBytes();
-            Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
-            Files.write(path, bytes);
+            System.out.println("XML!");
+        }
+        else if(mpf.getContentType().equals(".txt"))
+        {
+            System.out.println("TXT!");
         }
 
     }
