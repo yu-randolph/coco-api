@@ -1,4 +1,4 @@
-package model;
+package dlsu.coco.coco_api.model;
 
 import edu.smu.tspell.wordnet.*;
 import edu.smu.tspell.wordnet.impl.file.PropertyNames;

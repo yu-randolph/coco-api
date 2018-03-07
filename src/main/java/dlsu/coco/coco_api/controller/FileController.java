@@ -1,4 +1,4 @@
-package controller;
+package dlsu.coco.coco_api.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,8 +33,13 @@ public class FileController {
 
     private final Logger logger = LoggerFactory.getLogger(FileController.class);
 
+    @GetMapping("/")
+    public String index() {
+        return "upload";
+    }
+
     //UPDATE FOLDER LOCATION
-    @PostMapping
+    @PostMapping("/update_location")
     public ResponseEntity<Object> update_folder(@RequestParam("String") String location) {
         logger.debug("folder location upload");
 

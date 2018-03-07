@@ -1,4 +1,4 @@
-package model;
+package dlsu.coco.coco_api.model;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
