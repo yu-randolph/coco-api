@@ -18,7 +18,7 @@ public class ConceptNet {
     private static String IS_A = "IsA";
     private static String PART_OF = "PartOf";
     private static String CREATED_BY = "CreatedBy";
-    
+
     //LANGUAGE
     private static String ENGLISH = "en";
 
