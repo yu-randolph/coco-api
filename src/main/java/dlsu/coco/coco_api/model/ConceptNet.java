@@ -1,5 +1,6 @@
 package dlsu.coco.coco_api.model;
 
+import de.hu_berlin.german.korpling.tiger2.main.Tiger2Converter;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,7 +18,7 @@ public class ConceptNet {
     private static String IS_A = "IsA";
     private static String PART_OF = "PartOf";
     private static String CREATED_BY = "CreatedBy";
-
+    
     //LANGUAGE
     private static String ENGLISH = "en";
 
