@@ -96,7 +96,7 @@ public class FileManager {
                 for(de.hu_berlin.german.korpling.tiger2.Annotation itemAnnotation : itemTerminal.getAnnotations())
                 {
                     //itemAnnotation.getFeatureValueRef().getValue();
-                    Terminal.put(itemAnnotation.getName(), itemAnnotation.getFeatureValueRef().getValue());
+                    Terminal.put(itemAnnotation.getName(), itemAnnotation.getValue());
                 }
 
                 listTerminal.put(Terminal);
