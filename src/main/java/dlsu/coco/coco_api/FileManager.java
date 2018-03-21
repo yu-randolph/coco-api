@@ -18,20 +18,24 @@ import java.util.Properties;
 
 public class FileManager {
 
-    private String PATH;
+    private String PATH = null;
 
     private Properties props;
     private StanfordCoreNLP pipeline;
     private Tiger2Converter tiger2Converter;
 
-    public FileManager(String path)
+    public FileManager()
     {
-        PATH = path;
         props = new Properties();
         props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
         pipeline = new StanfordCoreNLP(props);
 
         tiger2Converter = new Tiger2Converter();
+    }
+
+    public void setPath(String path)
+    {
+        PATH = path;
     }
 
     //NLP Process
@@ -45,26 +49,8 @@ public class FileManager {
         return document;
     }
 
-    public boolean tigerXMLChecker(UploadedFile uploadedFile)
+    public boolean tigerXMLChecker(File file)
     {
-        File file = new File(PATH + uploadedFile.getName() + uploadedFile.getType());
-        FileWriter fileWriter = null;
-
-        try {
-            fileWriter = new FileWriter(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        for(byte item : uploadedFile.getBytes())
-        {
-            try {
-                fileWriter.write(item);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
         return tiger2Converter.isTiger2(file);
     }
 

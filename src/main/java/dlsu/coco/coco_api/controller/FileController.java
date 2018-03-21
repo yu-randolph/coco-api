@@ -1,5 +1,6 @@
 package dlsu.coco.coco_api.controller;
 
+import dlsu.coco.coco_api.FileManager;
 import dlsu.coco.coco_api.model.UploadedFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +34,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class FileController {
 
-    UploadedFile file;
+    FileManager fileManager = new FileManager();
 
     @GetMapping("/")
     public String index() {
@@ -76,11 +77,23 @@ public class FileController {
             try {
                 name = file.getOriginalFilename();
                 byte[] bytes = file.getBytes();
-                BufferedOutputStream stream =
-                        new BufferedOutputStream(new FileOutputStream(new File(name + "-uploaded")));
+                File receivedFile = new File(name + "-uploaded");
+                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(receivedFile));
                 stream.write(bytes);
                 stream.close();
                 String result = new String(bytes);
+
+                fileManager.setPath(name);
+
+                if(fileManager.tigerXMLChecker(receivedFile))
+                {
+                    System.out.println("File is XML");
+                }
+                else
+                {
+                    System.out.println("File is TXT");
+                }
+
                 System.out.println("You successfully uploaded " + name + " into " + name + "-uploaded !");
                 System.out.println("Content Type: " + file.getContentType());
                 System.out.println("Result: " + result);
@@ -96,19 +109,25 @@ public class FileController {
     }
 
 
-    @GetMapping("/get/{value}")
-    public void get(HttpServletResponse response, @PathVariable String value)
+//    @GetMapping("/get/{value}")
+//    public void get(HttpServletResponse response, @PathVariable String value)
+//    {
+//        try {
+//
+//            response.setContentType(file.type);
+//            response.setContentLength(file.length);
+//            FileCopyUtils.copy(file.bytes, response.getOutputStream());
+//
+//        } catch (IOException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//    }
+
+    @GetMapping("/getContent")
+    public String getContent()
     {
-        try {
-
-            response.setContentType(file.type);
-            response.setContentLength(file.length);
-            FileCopyUtils.copy(file.bytes, response.getOutputStream());
-
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        return fileManager.XMLtoJSONconverter().toString();
     }
 }
 
