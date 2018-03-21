@@ -67,15 +67,6 @@ public class FileController {
 
                 fileManager.setPath(name);
 
-                if(fileManager.tigerXMLChecker(receivedFile))
-                {
-                    System.out.println("File is XML");
-                }
-                else
-                {
-                    System.out.println("File is TXT");
-                }
-
                 System.out.println("You successfully uploaded " + name + " into " + name + "-uploaded !");
                 System.out.println("Content Type: " + file.getContentType());
                 System.out.println("Result: " + result);

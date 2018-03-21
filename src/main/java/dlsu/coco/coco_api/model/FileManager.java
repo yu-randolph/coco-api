@@ -50,9 +50,14 @@ public class FileManager {
         return document;
     }
 
-    public boolean tigerXMLChecker(File file)
+    public void tigerXMLChecker(File file)
     {
-        return tiger2Converter.isTiger2(file);
+        // CONVERT MODE = REMOVED
+        // INPUT FILE WILL BE ADDED
+        if(!PATH.isEmpty())
+        {
+           // tiger2Converter.convertFiles(PATH, );
+        }
     }
 
     public JSONObject XMLtoJSONconverter()
