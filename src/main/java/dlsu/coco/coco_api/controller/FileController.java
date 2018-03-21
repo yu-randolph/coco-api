@@ -1,40 +1,22 @@
 package dlsu.coco.coco_api.controller;
 
-import dlsu.coco.coco_api.FileManager;
-import dlsu.coco.coco_api.model.UploadedFile;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
-import org.springframework.util.StringUtils;
+import dlsu.coco.coco_api.model.FileManager;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Properties;
-import java.util.stream.Collectors;
-
-import edu.stanford.nlp.pipeline.Annotation;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-
-import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class FileController {
 
-    FileManager fileManager = new FileManager();
+    FileManager fileManager;
+
+    public FileController()
+    {
+        fileManager= new FileManager();
+    }
 
     @GetMapping("/")
     public String index() {
