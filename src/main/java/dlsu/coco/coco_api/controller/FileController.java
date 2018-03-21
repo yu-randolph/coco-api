@@ -100,6 +100,7 @@ public class FileController {
     @GetMapping("/getContent")
     public String getContent()
     {
+        fileManager.tigerProcess();
         return fileManager.XMLtoJSONconverter().toString();
     }
 }

@@ -56,8 +56,14 @@ public class FileManager {
         // INPUT FILE WILL BE ADDED
         if(!PATH.isEmpty())
         {
-            
+            tiger2Converter.readFile(file);
         }
+    }
+
+    public void tigerProcess()
+    {
+        tiger2Converter.convertFiles(new File(PATH), Tiger2Converter.PARAMETERS.i);
+        tiger2Converter.process();
     }
 
     public JSONObject XMLtoJSONconverter()
