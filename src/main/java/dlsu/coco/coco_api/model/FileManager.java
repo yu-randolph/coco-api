@@ -7,7 +7,8 @@ import de.hu_berlin.german.korpling.tiger2.main.Tiger2Converter;
 import dlsu.coco.coco_api.model.UploadedFile;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import org.eclipse.emf.common.util.EList;
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.tomcat.util.security.Escape;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -50,19 +51,19 @@ public class FileManager {
         return document;
     }
 
-    public void tigerXMLChecker(File file)
-    {
+    public void tigerXMLChecker(File file) {
         // CONVERT MODE = REMOVED
         // INPUT FILE WILL BE ADDED
-        if(!PATH.isEmpty())
-        {
-            tiger2Converter.readFile(file);
-        }
+        //add the file to the corpusList
+        tiger2Converter.readFile(file);
+
+
     }
 
     public void tigerProcess()
     {
-        tiger2Converter.convertFiles(new File(PATH), Tiger2Converter.PARAMETERS.i);
+        //pass here the output directory
+        tiger2Converter.convertFiles(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\"), Tiger2Converter.PARAMETERS.t2_t2);
         tiger2Converter.process();
     }
 

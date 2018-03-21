@@ -100,6 +100,9 @@ public class FileController {
     @GetMapping("/getContent")
     public String getContent()
     {
+        //pass here the file/s to be processed
+
+        fileManager.tigerXMLChecker(new File("C:\\\\Users\\\\Micoh F Alvarez\\\\Desktop\\\\test.xml.tiger2"));
         fileManager.tigerProcess();
         return fileManager.XMLtoJSONconverter().toString();
     }
