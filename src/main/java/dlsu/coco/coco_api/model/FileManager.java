@@ -56,58 +56,12 @@ public class FileManager {
         // INPUT FILE WILL BE ADDED
         if(!PATH.isEmpty())
         {
-           // tiger2Converter.convertFiles(PATH, );
+            
         }
     }
 
     public JSONObject XMLtoJSONconverter()
     {
-        Corpus corpus = tiger2Converter.getCorpus();
-        JSONObject jsonObject = new JSONObject();
-
-        if(corpus != null)
-        {
-
-            EList<Graph> content = corpus.getSegments().get(0).getGraphs();
-
-            JSONArray listGraph = new JSONArray();
-            //GET SENTENCE
-            for(Graph itemGraph : content)
-            {
-                JSONObject Graph = new JSONObject();
-                JSONArray listTerminal = new JSONArray();
-
-                Graph.put("Graph_ID", itemGraph.getId().toString());
-
-                //GET WORD
-                for(Terminal itemTerminal : itemGraph.getTerminals())
-                {
-                    JSONObject Terminal = new JSONObject();
-
-                    Terminal.put("Terminal_ID", itemTerminal.getId().toString());
-                    Terminal.put("Word", itemTerminal.getWord());
-
-                    //GET TAGS
-                    for(de.hu_berlin.german.korpling.tiger2.Annotation itemAnnotation : itemTerminal.getAnnotations())
-                    {
-                        //itemAnnotation.getFeatureValueRef().getValue();
-                        Terminal.put(itemAnnotation.getName(), itemAnnotation.getValue());
-                    }
-
-                    listTerminal.put(Terminal);
-                }
-
-                Graph.put("Terminal_Array", listTerminal);
-                listGraph.put(Graph);
-            }
-
-            jsonObject.put("Graph_Array", listGraph);
-
-            return jsonObject;
-        }
-        else
-        {
-            return null;
-        }
+        return tiger2Converter.XMLtoJSONconverter();
     }
 }
