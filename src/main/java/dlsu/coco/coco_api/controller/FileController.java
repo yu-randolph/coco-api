@@ -142,11 +142,20 @@ public class FileController {
     @GetMapping("/getContent")
     public String getContent()
     {
-        //pass here the file/s to be processed
+
 //       ConceptFinder fn = new ConceptFinder("Hello", "book");
 
 
         return fileManager.XMLtoJSONconverter().toString();
+    }
+
+    @GetMapping("/getTags")
+    public String getTags()
+    {
+       // fileManager.tigerXMLChecker(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
+       // fileManager.tigerProcess(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
+
+        return fileManager.AnnotationstoJSONconverter().toString();
     }
 }
 

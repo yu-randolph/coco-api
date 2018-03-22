@@ -63,7 +63,7 @@ public class FileManager {
     {
         //pass here the output directory
 
-        tiger2Converter.convertFiles(file.getParentFile(), Tiger2Converter.PARAMETERS.t2_t2);
+        tiger2Converter.convertFiles(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\"), Tiger2Converter.PARAMETERS.t2_t2);
         tiger2Converter.process();
     }
 
@@ -71,4 +71,6 @@ public class FileManager {
     {
         return tiger2Converter.XMLtoJSONconverter();
     }
+
+    public JSONObject AnnotationstoJSONconverter(){ return tiger2Converter.AnnotationstoJSON(); }
 }
