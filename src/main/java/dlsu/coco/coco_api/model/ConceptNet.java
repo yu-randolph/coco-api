@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 
 public class ConceptNet {
 
@@ -34,15 +35,18 @@ public class ConceptNet {
     private JSONArray jsonPartOf;
     private JSONArray jsonCreatedBy;
 
+    private ArrayList<String> formOfWords;
     public ConceptNet(String word)
     {
         //http://api.conceptnet.io/query?node=/c/en/book&rel=/r/RelatedTo
 
-        jsonRelatedTo = this.httpRequest(this.relationQueryBuilder(word, RELATED_TO, ENGLISH));
+//        jsonRelatedTo = this.httpRequest(this.relationQueryBuilder(word, RELATED_TO, ENGLISH));
+        this.formOfWords = new ArrayList<String>();
         jsonFormOf = this.httpRequest(this.relationQueryBuilder(word, FORM_OF, ENGLISH));
-        jsonIsA = this.httpRequest(this.relationQueryBuilder(word, IS_A, ENGLISH) );
-        jsonPartOf = this.httpRequest(this.relationQueryBuilder(word, PART_OF, ENGLISH));
-        jsonCreatedBy = this.httpRequest(this.relationQueryBuilder(word, CREATED_BY, ENGLISH));
+
+//        jsonIsA = this.httpRequest(this.relationQueryBuilder(word, IS_A, ENGLISH) );
+//        jsonPartOf = this.httpRequest(this.relationQueryBuilder(word, PART_OF, ENGLISH));
+//        jsonCreatedBy = this.httpRequest(this.relationQueryBuilder(word, CREATED_BY, ENGLISH));
     }
 
     public String relationQueryBuilder(String word, String relation, String language)
@@ -75,6 +79,7 @@ public class ConceptNet {
                 //System.out.println(edges.getJSONObject(i));
                 JSONObject start = edges.getJSONObject(i).getJSONObject("start");
                 System.out.print(start.getString("label") + " ");
+                this.formOfWords.add(start.getString("label"));
             }
             System.out.println();
 
@@ -85,5 +90,9 @@ public class ConceptNet {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public ArrayList<String> getForms(){
+        return this.formOfWords;
     }
 }

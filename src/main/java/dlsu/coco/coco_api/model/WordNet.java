@@ -4,7 +4,9 @@ import edu.smu.tspell.wordnet.*;
 import edu.smu.tspell.wordnet.impl.file.PropertyNames;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class WordNet {
 
@@ -31,15 +33,26 @@ public class WordNet {
         System.out.println(System.getProperty(PropertyNames.DATABASE_DIRECTORY));
 
         database = WordNetDatabase.getFileInstance();
-
         this.word = word;
+        List<Synset> synsetList = getSynsets();
 
-        this.getNoun();
-        this.getVerb();
-        this.getAdjective();
-        this.getAdverb();
+
+        for(Synset synset : synsetList){
+            for(String wordForm : synset.getWordForms()) {
+                    this.nounSynonym.add(wordForm);
+
+            }
+        }
+
+//        this.getNoun();
+//        this.getVerb();
+//        this.getAdjective();
+//        this.getAdverb();
     }
 
+    public List<Synset> getSynsets(){
+        return Arrays.asList(database.getSynsets(this.word));
+    }
     public void getNoun()
     {
         nounSynonym = new ArrayList<>();
@@ -68,25 +81,25 @@ public class WordNet {
         }
     }
 
-    public void getAdjective()
-    {
-        adjectiveSynonym = new ArrayList<>();
+//    public void getAdjective()
+//    {
+//        adjectiveSynonym = new ArrayList<>();
+//
+//        for(Synset synset : database.getSynsets(word, SynsetType.ADJECTIVE))
+//        {
+//            Collections.addAll(adjectiveSynonym, synset.getWordForms());
+//        }
+//    }
 
-        for(Synset synset : database.getSynsets(word, SynsetType.ADJECTIVE))
-        {
-            Collections.addAll(adjectiveSynonym, synset.getWordForms());
-        }
-    }
-
-    public void getAdverb()
-    {
-        adverbSynonym = new ArrayList<>();
-
-        for(Synset synset : database.getSynsets(word, SynsetType.ADVERB))
-        {
-            Collections.addAll(adverbSynonym, synset.getWordForms());
-        }
-    }
+//    public void getAdverb()
+//    {
+//        adverbSynonym = new ArrayList<>();
+//
+//        for(Synset synset : database.getSynsets(word, SynsetType.ADVERB))
+//        {
+//            Collections.addAll(adverbSynonym, synset.getWordForms());
+//        }
+//    }
 
     public ArrayList<String> getNounSynonym() {
         return nounSynonym;

@@ -1,5 +1,7 @@
 package dlsu.coco.coco_api.controller;
 
+import dlsu.coco.coco_api.model.ConceptFinder;
+import dlsu.coco.coco_api.model.Concordancer;
 import dlsu.coco.coco_api.model.FileManager;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -101,6 +103,7 @@ public class FileController {
     public String getContent()
     {
         //pass here the file/s to be processed
+//       ConceptFinder fn = new ConceptFinder("Hello", "book");
 
         fileManager.tigerXMLChecker(new File("C:\\\\Users\\\\Micoh F Alvarez\\\\Desktop\\\\test.xml.tiger2"));
         fileManager.tigerProcess();
