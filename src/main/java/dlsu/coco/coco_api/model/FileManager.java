@@ -57,7 +57,6 @@ public class FileManager {
         //add the file to the corpusList
         tiger2Converter.readFile(file);
 
-
     }
 
     public void tigerProcess(File file)
