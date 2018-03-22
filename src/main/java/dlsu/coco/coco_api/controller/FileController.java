@@ -54,20 +54,21 @@ public class FileController {
     @RequestMapping(value="/upload", method=RequestMethod.POST)
     public @ResponseBody String handleFileUpload(
             @RequestParam("file") MultipartFile file){
-        String name = "test11";
+        String name = "temp";
+        File receivedFile = null;
         if (!file.isEmpty()) {
             try {
                 name = file.getOriginalFilename();
                 byte[] bytes = file.getBytes();
-                File receivedFile = new File(name + "-uploaded");
+                receivedFile = new File( "src/" + name);
                 BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(receivedFile));
                 stream.write(bytes);
                 stream.close();
                 String result = new String(bytes);
-
                 fileManager.setPath(name);
+                System.out.println(receivedFile.getPath());
 
-                System.out.println("You successfully uploaded " + name + " into " + name + "-uploaded !");
+                System.out.println("You successfully uploaded " + name + " into " + name);
                 System.out.println("Content Type: " + file.getContentType());
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
@@ -75,6 +76,9 @@ public class FileController {
             } catch (Exception e) {
                 System.out.println("You failed to upload " + name + " => " + e.getMessage());
                 return "You failed to upload " + name + " => " + e.getMessage();
+            }finally{
+                fileManager.tigerXMLChecker(receivedFile);
+                fileManager.tigerProcess(receivedFile);
             }
         } else {
             System.out.println("You failed to upload " + name + " because the file was empty.");
@@ -128,8 +132,7 @@ public class FileController {
     {
         //pass here the file/s to be processed
 
-        fileManager.tigerXMLChecker(new File("/Users/randolphyu/Documents/test.xml.tiger2"));
-        fileManager.tigerProcess();
+
         return fileManager.XMLtoJSONconverter().toString();
     }
 }
