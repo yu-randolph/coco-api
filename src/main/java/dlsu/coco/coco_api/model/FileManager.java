@@ -62,7 +62,7 @@ public class FileManager {
     public void tigerProcess()
     {
         //pass here the output directory
-        tiger2Converter.convertFiles(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\"), Tiger2Converter.PARAMETERS.t2_t2);
+        tiger2Converter.convertFiles(new File("/Users/randolphyu/Documents/"), Tiger2Converter.PARAMETERS.t2_t2);
         tiger2Converter.process();
     }
 

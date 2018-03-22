@@ -72,7 +72,8 @@ public class FileController {
                 System.out.println("You successfully uploaded " + name + " into " + name + "-uploaded !");
                 System.out.println("Content Type: " + file.getContentType());
                 System.out.println("Result: " + result);
-                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
             } catch (Exception e) {
                 System.out.println("You failed to upload " + name + " => " + e.getMessage());
                 return "You failed to upload " + name + " => " + e.getMessage();
@@ -80,6 +81,31 @@ public class FileController {
         } else {
             System.out.println("You failed to upload " + name + " because the file was empty.");
             return "You failed to upload " + name + " because the file was empty.";
+        }
+    }
+
+    @RequestMapping(value="/multiple-upload", method=RequestMethod.POST )
+    public @ResponseBody String multipleUpload(@RequestParam("files") MultipartFile[] files){
+        String fileName = null;
+        String corpus = "";
+        if (files != null && files.length >0) {
+            for(int i =0 ;i< files.length; i++){
+                try {
+                    fileName = files[i].getOriginalFilename();
+                    byte[] bytes = files[i].getBytes();
+                    BufferedOutputStream buffStream =
+                            new BufferedOutputStream(new FileOutputStream(new File(fileName)));
+                    buffStream.write(bytes);
+                    buffStream.close();
+                    String result = new String(bytes);
+                    corpus += result + "\n";
+                } catch (Exception e) {
+                    return "You failed to upload " + fileName + ": " + e.getMessage() +"<br/>";
+                }
+            }
+            return corpus;
+        } else {
+            return "Unable to upload. File is empty.";
         }
     }
 
@@ -105,7 +131,7 @@ public class FileController {
         //pass here the file/s to be processed
 //       ConceptFinder fn = new ConceptFinder("Hello", "book");
 
-        fileManager.tigerXMLChecker(new File("C:\\\\Users\\\\Micoh F Alvarez\\\\Desktop\\\\test.xml.tiger2"));
+        fileManager.tigerXMLChecker(new File("/Users/randolphyu/Documents/test.xml.tiger2"));
         fileManager.tigerProcess();
         return fileManager.XMLtoJSONconverter().toString();
     }
