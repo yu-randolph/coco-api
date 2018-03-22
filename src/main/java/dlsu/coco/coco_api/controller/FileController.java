@@ -92,13 +92,16 @@ public class FileController {
     public @ResponseBody String multipleUpload(@RequestParam("files") MultipartFile[] files){
         String fileName = null;
         String corpus = "";
+        File output = null;
         if (files != null && files.length >0) {
             for(int i =0 ;i< files.length; i++){
+                File receivedFile = null;
                 try {
                     fileName = files[i].getOriginalFilename();
                     byte[] bytes = files[i].getBytes();
+                    receivedFile = new File( "src/" + fileName);
                     BufferedOutputStream buffStream =
-                            new BufferedOutputStream(new FileOutputStream(new File(fileName)));
+                            new BufferedOutputStream(new FileOutputStream(receivedFile));
                     buffStream.write(bytes);
                     buffStream.close();
                     String result = new String(bytes);
@@ -106,7 +109,14 @@ public class FileController {
                 } catch (Exception e) {
                     return "You failed to upload " + fileName + ": " + e.getMessage() +"<br/>";
                 }
+               finally {
+                    fileManager.tigerXMLChecker(receivedFile);
+                    output = receivedFile.getParentFile();
+                }
+
             }
+                    if(output != null)
+                    fileManager.tigerProcess(output);
             return corpus;
         } else {
             return "Unable to upload. File is empty.";
