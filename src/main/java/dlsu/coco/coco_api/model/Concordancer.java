@@ -5,6 +5,9 @@ import de.hu_berlin.german.korpling.tiger2.Graph;
 import de.hu_berlin.german.korpling.tiger2.Segment;
 import de.hu_berlin.german.korpling.tiger2.Terminal;
 import de.hu_berlin.german.korpling.tiger2.samples.CorpusWriter;
+import org.eclipse.emf.common.util.EList;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -34,5 +37,34 @@ public class Concordancer {
             }
         }
         return this.results;
+    }
+
+    public JSONObject getConcordancesJSON(){
+        Corpus corpus = this.corpus;
+        JSONObject jsonObject = new JSONObject();
+
+        if(corpus != null)
+        {
+
+            JSONArray listGraph = new JSONArray();
+            //GET SENTENCE
+            for(String itemGraph : this.results)
+            {
+                JSONObject sentence = new JSONObject();
+
+                sentence.put("Sentence", itemGraph);
+
+
+                listGraph.put(sentence);
+            }
+
+            jsonObject.put("Concordances", listGraph);
+
+            return jsonObject;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

@@ -140,7 +140,7 @@ public class FileController {
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
+                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
                 return "You failed to upload " + newTag + " => " + e.getMessage();
             }
         }
