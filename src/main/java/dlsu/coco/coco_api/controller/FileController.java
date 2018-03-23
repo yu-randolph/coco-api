@@ -140,6 +140,8 @@ public class FileController {
                 newTag = result;
                 System.out.println(result);
 
+                fileManager.editAnnotation(result);
+
                 System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
