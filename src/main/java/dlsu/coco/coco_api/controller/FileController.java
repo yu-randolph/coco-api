@@ -107,20 +107,24 @@ public class FileController {
                     buffStream.close();
                     String result = new String(bytes);
                     corpus += result + "\n";
+
                 } catch (Exception e) {
                     return "You failed to upload " + fileName + ": " + e.getMessage() + "<br/>";
                 } finally {
                     fileManager.tigerXMLChecker(receivedFile);
-                    output = receivedFile.getParentFile();
+                    output = receivedFile;
                 }
 
             }
-            if (output != null)
+            if (output != null) {
+                System.out.println("Result: " + corpus);
                 fileManager.tigerProcess(output);
-            return corpus;
+                return corpus;
+            }
         } else {
             return "Unable to upload. File is empty.";
         }
+        return "No upload";
     }
 
     @RequestMapping(value = "/editTag", method = RequestMethod.POST)
