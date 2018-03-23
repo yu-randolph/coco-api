@@ -26,6 +26,7 @@ public class FileManager {
     private Properties props;
     private StanfordCoreNLP pipeline;
     private Tiger2Converter tiger2Converter;
+    private CorpusEditer corpusEditer;
 
     public FileManager()
     {
@@ -80,5 +81,13 @@ public class FileManager {
         CorpusEditer editer = new CorpusEditer(tiger2Converter.getCorpus());
 
         return tiger2Converter.getRawText();
+    }
+
+    public void editAnnotation(String edition)
+    {
+        JSONObject jsonObject = new JSONObject(edition);
+        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
+
+        corpusEditer.editTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString(), jsonObject.get("feature_value").toString(), "");
     }
 }
