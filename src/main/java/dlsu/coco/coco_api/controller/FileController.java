@@ -15,9 +15,8 @@ public class FileController {
 
     FileManager fileManager;
 
-    public FileController()
-    {
-        fileManager= new FileManager();
+    public FileController() {
+        fileManager = new FileManager();
     }
 
     @GetMapping("/")
@@ -53,16 +52,17 @@ public class FileController {
 //        }
 //    }
 
-    @RequestMapping(value="/upload", method=RequestMethod.POST)
-    public @ResponseBody String handleFileUpload(
-            @RequestParam("file") MultipartFile file){
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    public @ResponseBody
+    String handleFileUpload(
+            @RequestParam("file") MultipartFile file) {
         String name = "temp";
         File receivedFile = null;
         if (!file.isEmpty()) {
             try {
                 name = file.getOriginalFilename();
                 byte[] bytes = file.getBytes();
-                receivedFile = new File( "src/" + name);
+                receivedFile = new File("src/" + name);
                 BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(receivedFile));
                 stream.write(bytes);
                 stream.close();
@@ -78,7 +78,7 @@ public class FileController {
             } catch (Exception e) {
                 System.out.println("You failed to upload " + name + " => " + e.getMessage());
                 return "You failed to upload " + name + " => " + e.getMessage();
-            }finally{
+            } finally {
                 fileManager.tigerXMLChecker(receivedFile);
                 fileManager.tigerProcess(receivedFile);
             }
@@ -88,18 +88,19 @@ public class FileController {
         }
     }
 
-    @RequestMapping(value="/multiple-upload", method=RequestMethod.POST )
-    public @ResponseBody String multipleUpload(@RequestParam("files") MultipartFile[] files){
+    @RequestMapping(value = "/multiple-upload", method = RequestMethod.POST)
+    public @ResponseBody
+    String multipleUpload(@RequestParam("files") MultipartFile[] files) {
         String fileName = null;
         String corpus = "";
         File output = null;
-        if (files != null && files.length >0) {
-            for(int i =0 ;i< files.length; i++){
+        if (files != null && files.length > 0) {
+            for (int i = 0; i < files.length; i++) {
                 File receivedFile = null;
                 try {
                     fileName = files[i].getOriginalFilename();
                     byte[] bytes = files[i].getBytes();
-                    receivedFile = new File( "src/" + fileName);
+                    receivedFile = new File("src/" + fileName);
                     BufferedOutputStream buffStream =
                             new BufferedOutputStream(new FileOutputStream(receivedFile));
                     buffStream.write(bytes);
@@ -107,20 +108,43 @@ public class FileController {
                     String result = new String(bytes);
                     corpus += result + "\n";
                 } catch (Exception e) {
-                    return "You failed to upload " + fileName + ": " + e.getMessage() +"<br/>";
-                }
-               finally {
+                    return "You failed to upload " + fileName + ": " + e.getMessage() + "<br/>";
+                } finally {
                     fileManager.tigerXMLChecker(receivedFile);
                     output = receivedFile.getParentFile();
                 }
 
             }
-                    if(output != null)
-                    fileManager.tigerProcess(output);
+            if (output != null)
+                fileManager.tigerProcess(output);
             return corpus;
         } else {
             return "Unable to upload. File is empty.";
         }
+    }
+
+    @RequestMapping(value = "/editTag", method = RequestMethod.POST)
+    public @ResponseBody
+    String editTag(@RequestParam("tags") String tags) {
+        String newTag = "";
+        if (!tags.isEmpty()) {
+            try {
+
+                byte[] bytes = tags.getBytes();
+                String result = new String(bytes);
+                newTag = result;
+                System.out.println(result);
+
+                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("Result: " + result);
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
+                return "You failed to upload " + newTag + " => " + e.getMessage();
+            }
+        }
+        return newTag;
     }
 
 
