@@ -74,13 +74,14 @@ public class FileController {
                 System.out.println("Content Type: " + file.getContentType());
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
-                return result;
+
             } catch (Exception e) {
                 System.out.println("You failed to upload " + name + " => " + e.getMessage());
                 return "You failed to upload " + name + " => " + e.getMessage();
             } finally {
                 fileManager.tigerXMLChecker(receivedFile);
                 fileManager.tigerProcess(receivedFile);
+                return fileManager.getRawCorpus();
             }
         } else {
             System.out.println("You failed to upload " + name + " because the file was empty.");
@@ -119,7 +120,7 @@ public class FileController {
             if (output != null) {
                 System.out.println("Result: " + corpus);
                 fileManager.tigerProcess(output);
-                return corpus;
+                return fileManager.getRawCorpus();
             }
         } else {
             return "Unable to upload. File is empty.";

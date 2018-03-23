@@ -4,6 +4,7 @@ import de.hu_berlin.german.korpling.tiger2.*;
 import de.hu_berlin.german.korpling.tiger2.Corpus;
 import de.hu_berlin.german.korpling.tiger2.Segment;
 import de.hu_berlin.german.korpling.tiger2.main.Tiger2Converter;
+import de.hu_berlin.german.korpling.tiger2.samples.CorpusEditer;
 import dlsu.coco.coco_api.model.UploadedFile;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
@@ -74,4 +75,10 @@ public class FileManager {
     }
 
     public JSONObject AnnotationstoJSONconverter(){ return tiger2Converter.AnnotationstoJSON(); }
+
+    public String getRawCorpus(){
+        CorpusEditer editer = new CorpusEditer(tiger2Converter.getCorpus());
+
+        return tiger2Converter.getRawText();
+    }
 }

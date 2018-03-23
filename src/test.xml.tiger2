@@ -44,8 +44,8 @@
 </annotation>
 </head>
 <body>
-<s xml:id="seg_2">
-<graph xml:id="seg_2_g2">
+<s xml:id="seg_1">
+<graph xml:id="seg_1_g1">
 <terminals>
 <t xml:id="s1_t1" tiger2:word="I" lemma="I" pos="PP"/>
 <t xml:id="s1_t2" tiger2:word="wanna" lemma="wanna" pos="VBP"/>
