@@ -185,7 +185,6 @@ public class FileController {
     {
        // fileManager.tigerXMLChecker(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
        // fileManager.tigerProcess(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
-
         return fileManager.AnnotationstoJSONconverter().toString();
     }
 }

@@ -133,6 +133,182 @@
 </nt>
 </nonterminals>
 </graph>
+<graph xml:id="seg_1_g4">
+<terminals>
+<t xml:id="s4_t0" tiger2:word="I" lemma="I" pos="PP"/>
+<t xml:id="s4_t1" tiger2:word="wanna" lemma="wanna" pos="VBP"/>
+<t xml:id="s4_t2" tiger2:word="go" function="SC">
+<edge xml:id="edge1" tiger2:type="coref" tiger2:target="#s4_t0" label="anaphoric"/>
+</t>
+<t xml:id="s4_t3" tiger2:word="put" lemma="put" pos="VB"/>
+<t xml:id="s4_t4" tiger2:word="up" lemma="up" pos="RP"/>
+<t xml:id="s4_t5" tiger2:word="new" lemma="new" pos="JJ"/>
+<t xml:id="s4_t6" tiger2:word="wallpaper" lemma="wallpaper" pos="NN"/>
+<t xml:id="s4_t7" tiger2:word="." lemma="." pos="."/>
+</terminals>
+<nonterminals>
+<nt xml:id="s4_nt0" cat="NP">
+<edge xml:id="edge2" tiger2:type="prim" tiger2:target="#s4_t0" label="HD"/>
+</nt>
+<nt xml:id="s4_nt1" cat="VP">
+<edge xml:id="edge3" tiger2:type="prim" tiger2:target="#s4_t1" label="HD"/>
+<edge xml:id="edge4" tiger2:type="prim" tiger2:target="#s4_nt4"/>
+</nt>
+<nt xml:id="s4_nt2" cat="VP">
+<edge xml:id="edge5" tiger2:type="prim" tiger2:target="#s4_t3" label="HD"/>
+<edge xml:id="edge6" tiger2:type="prim" tiger2:target="#s4_t4"/>
+<edge xml:id="edge7" tiger2:type="prim" tiger2:target="#s4_nt3" label="DO"/>
+</nt>
+<nt xml:id="s4_nt3" cat="NP">
+<edge xml:id="edge8" tiger2:type="prim" tiger2:target="#s4_t5" label="AT"/>
+<edge xml:id="edge9" tiger2:type="prim" tiger2:target="#s4_t6" label="HD"/>
+</nt>
+<nt xml:id="s4_nt4" cat="S">
+<edge xml:id="edge10" tiger2:type="prim" tiger2:target="#s4_t2" label="SB"/>
+<edge xml:id="edge11" tiger2:type="prim" tiger2:target="#s4_t0"/>
+</nt>
+<nt xml:id="s4_nt5" cat="S">
+<edge xml:id="edge12" tiger2:type="prim" tiger2:target="#s4_t0" label="SB"/>
+<edge xml:id="edge13" tiger2:type="prim" tiger2:target="#s4_nt1"/>
+</nt>
+<nt xml:id="s4_nt6" cat="ROOT">
+<edge xml:id="edge14" tiger2:type="prim" tiger2:target="#s4_nt0"/>
+<edge xml:id="edge15" tiger2:type="prim" tiger2:target="#s4_t7"/>
+</nt>
+</nonterminals>
+</graph>
+<graph xml:id="seg_1_g6">
+<terminals>
+<t xml:id="s6_t0" tiger2:word="I" lemma="I" pos="PP"/>
+<t xml:id="s6_t1" tiger2:word="wanna" lemma="wanna" pos="VBP"/>
+<t xml:id="s6_t2" tiger2:word="go" function="SC">
+<edge xml:id="edge1" tiger2:type="coref" tiger2:target="#s6_t0" label="anaphoric"/>
+</t>
+<t xml:id="s6_t3" tiger2:word="put" lemma="put" pos="VB"/>
+<t xml:id="s6_t4" tiger2:word="up" lemma="up" pos="RP"/>
+<t xml:id="s6_t5" tiger2:word="new" lemma="new" pos="JJ"/>
+<t xml:id="s6_t6" tiger2:word="wallpaper" lemma="wallpaper" pos="NN"/>
+<t xml:id="s6_t7" tiger2:word="." lemma="." pos="."/>
+</terminals>
+<nonterminals>
+<nt xml:id="s6_nt0" cat="NP">
+<edge xml:id="edge2" tiger2:type="prim" tiger2:target="#s6_t0" label="HD"/>
+</nt>
+<nt xml:id="s6_nt1" cat="VP">
+<edge xml:id="edge3" tiger2:type="prim" tiger2:target="#s6_t1" label="HD"/>
+<edge xml:id="edge4" tiger2:type="prim" tiger2:target="#s6_nt4"/>
+</nt>
+<nt xml:id="s6_nt2" cat="VP">
+<edge xml:id="edge5" tiger2:type="prim" tiger2:target="#s6_t3" label="HD"/>
+<edge xml:id="edge6" tiger2:type="prim" tiger2:target="#s6_t4"/>
+<edge xml:id="edge7" tiger2:type="prim" tiger2:target="#s6_nt3" label="DO"/>
+</nt>
+<nt xml:id="s6_nt3" cat="NP">
+<edge xml:id="edge8" tiger2:type="prim" tiger2:target="#s6_t5" label="AT"/>
+<edge xml:id="edge9" tiger2:type="prim" tiger2:target="#s6_t6" label="HD"/>
+</nt>
+<nt xml:id="s6_nt4" cat="S">
+<edge xml:id="edge10" tiger2:type="prim" tiger2:target="#s6_t2" label="SB"/>
+<edge xml:id="edge11" tiger2:type="prim" tiger2:target="#s6_t0"/>
+</nt>
+<nt xml:id="s6_nt5" cat="S">
+<edge xml:id="edge12" tiger2:type="prim" tiger2:target="#s6_t0" label="SB"/>
+<edge xml:id="edge13" tiger2:type="prim" tiger2:target="#s6_nt1"/>
+</nt>
+<nt xml:id="s6_nt6" cat="ROOT">
+<edge xml:id="edge14" tiger2:type="prim" tiger2:target="#s6_nt0"/>
+<edge xml:id="edge15" tiger2:type="prim" tiger2:target="#s6_t7"/>
+</nt>
+</nonterminals>
+</graph>
+<graph xml:id="seg_1_g8">
+<terminals>
+<t xml:id="s8_t0" tiger2:word="I" lemma="I" pos="PP"/>
+<t xml:id="s8_t1" tiger2:word="wanna" lemma="wanna" pos="VBP"/>
+<t xml:id="s8_t2" tiger2:word="go" function="SC">
+<edge xml:id="edge1" tiger2:type="coref" tiger2:target="#s8_t0" label="anaphoric"/>
+</t>
+<t xml:id="s8_t3" tiger2:word="put" lemma="put" pos="VB"/>
+<t xml:id="s8_t4" tiger2:word="up" lemma="up" pos="RP"/>
+<t xml:id="s8_t5" tiger2:word="new" lemma="new" pos="JJ"/>
+<t xml:id="s8_t6" tiger2:word="wallpaper" lemma="wallpaper" pos="NN"/>
+<t xml:id="s8_t7" tiger2:word="." lemma="." pos="."/>
+</terminals>
+<nonterminals>
+<nt xml:id="s8_nt0" cat="NP">
+<edge xml:id="edge2" tiger2:type="prim" tiger2:target="#s8_t0" label="HD"/>
+</nt>
+<nt xml:id="s8_nt1" cat="VP">
+<edge xml:id="edge3" tiger2:type="prim" tiger2:target="#s8_t1" label="HD"/>
+<edge xml:id="edge4" tiger2:type="prim" tiger2:target="#s8_nt4"/>
+</nt>
+<nt xml:id="s8_nt2" cat="VP">
+<edge xml:id="edge5" tiger2:type="prim" tiger2:target="#s8_t3" label="HD"/>
+<edge xml:id="edge6" tiger2:type="prim" tiger2:target="#s8_t4"/>
+<edge xml:id="edge7" tiger2:type="prim" tiger2:target="#s8_nt3" label="DO"/>
+</nt>
+<nt xml:id="s8_nt3" cat="NP">
+<edge xml:id="edge8" tiger2:type="prim" tiger2:target="#s8_t5" label="AT"/>
+<edge xml:id="edge9" tiger2:type="prim" tiger2:target="#s8_t6" label="HD"/>
+</nt>
+<nt xml:id="s8_nt4" cat="S">
+<edge xml:id="edge10" tiger2:type="prim" tiger2:target="#s8_t2" label="SB"/>
+<edge xml:id="edge11" tiger2:type="prim" tiger2:target="#s8_t0"/>
+</nt>
+<nt xml:id="s8_nt5" cat="S">
+<edge xml:id="edge12" tiger2:type="prim" tiger2:target="#s8_t0" label="SB"/>
+<edge xml:id="edge13" tiger2:type="prim" tiger2:target="#s8_nt1"/>
+</nt>
+<nt xml:id="s8_nt6" cat="ROOT">
+<edge xml:id="edge14" tiger2:type="prim" tiger2:target="#s8_nt0"/>
+<edge xml:id="edge15" tiger2:type="prim" tiger2:target="#s8_t7"/>
+</nt>
+</nonterminals>
+</graph>
+<graph xml:id="seg_1_g10">
+<terminals>
+<t xml:id="s10_t0" tiger2:word="I" lemma="I" pos="PP"/>
+<t xml:id="s10_t1" tiger2:word="wanna" lemma="wanna" pos="VBP"/>
+<t xml:id="s10_t2" tiger2:word="go" function="SC">
+<edge xml:id="edge1" tiger2:type="coref" tiger2:target="#s10_t0" label="anaphoric"/>
+</t>
+<t xml:id="s10_t3" tiger2:word="put" lemma="put" pos="VB"/>
+<t xml:id="s10_t4" tiger2:word="up" lemma="up" pos="RP"/>
+<t xml:id="s10_t5" tiger2:word="new" lemma="new" pos="JJ"/>
+<t xml:id="s10_t6" tiger2:word="wallpaper" lemma="wallpaper" pos="NN"/>
+<t xml:id="s10_t7" tiger2:word="." lemma="." pos="."/>
+</terminals>
+<nonterminals>
+<nt xml:id="s10_nt0" cat="NP">
+<edge xml:id="edge2" tiger2:type="prim" tiger2:target="#s10_t0" label="HD"/>
+</nt>
+<nt xml:id="s10_nt1" cat="VP">
+<edge xml:id="edge3" tiger2:type="prim" tiger2:target="#s10_t1" label="HD"/>
+<edge xml:id="edge4" tiger2:type="prim" tiger2:target="#s10_nt4"/>
+</nt>
+<nt xml:id="s10_nt2" cat="VP">
+<edge xml:id="edge5" tiger2:type="prim" tiger2:target="#s10_t3" label="HD"/>
+<edge xml:id="edge6" tiger2:type="prim" tiger2:target="#s10_t4"/>
+<edge xml:id="edge7" tiger2:type="prim" tiger2:target="#s10_nt3" label="DO"/>
+</nt>
+<nt xml:id="s10_nt3" cat="NP">
+<edge xml:id="edge8" tiger2:type="prim" tiger2:target="#s10_t5" label="AT"/>
+<edge xml:id="edge9" tiger2:type="prim" tiger2:target="#s10_t6" label="HD"/>
+</nt>
+<nt xml:id="s10_nt4" cat="S">
+<edge xml:id="edge10" tiger2:type="prim" tiger2:target="#s10_t2" label="SB"/>
+<edge xml:id="edge11" tiger2:type="prim" tiger2:target="#s10_t0"/>
+</nt>
+<nt xml:id="s10_nt5" cat="S">
+<edge xml:id="edge12" tiger2:type="prim" tiger2:target="#s10_t0" label="SB"/>
+<edge xml:id="edge13" tiger2:type="prim" tiger2:target="#s10_nt1"/>
+</nt>
+<nt xml:id="s10_nt6" cat="ROOT">
+<edge xml:id="edge14" tiger2:type="prim" tiger2:target="#s10_nt0"/>
+<edge xml:id="edge15" tiger2:type="prim" tiger2:target="#s10_t7"/>
+</nt>
+</nonterminals>
+</graph>
 </s>
 </body>
 </corpus>

@@ -64,7 +64,6 @@ public class FileManager {
     public void tigerProcess(File file)
     {
         //pass here the output directory
-
         tiger2Converter.convertFiles(file.getParentFile(), Tiger2Converter.PARAMETERS.t2_t2);
         tiger2Converter.process();
 
@@ -78,7 +77,6 @@ public class FileManager {
     public JSONObject AnnotationstoJSONconverter(){ return tiger2Converter.AnnotationstoJSON(); }
 
     public String getRawCorpus(){
-        CorpusEditer editer = new CorpusEditer(tiger2Converter.getCorpus());
 
         return tiger2Converter.getRawText();
     }
@@ -89,5 +87,7 @@ public class FileManager {
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
 
         corpusEditer.editTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString(), jsonObject.get("feature_value").toString(), "");
+        tiger2Converter.setCorpus(corpusEditer.getCorpus());
+
     }
 }
