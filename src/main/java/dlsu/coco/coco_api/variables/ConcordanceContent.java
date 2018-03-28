@@ -1,19 +1,23 @@
 package dlsu.coco.coco_api.variables;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class ConcordanceContent {
     private String keyword;
-    private String keyword_ID;
-    private ArrayList<String> sentence;
-    private ArrayList<ArrayList<TagContent>> tags;
+    private int keyword_Index;
+    private String completeSentence;
+    private ArrayList<WordContent> words;
 
-    public ConcordanceContent(String keyword, String keyword_ID, ArrayList<String> sentence, ArrayList<ArrayList<TagContent>> tags) {
+    public ConcordanceContent(String keyword, int keyword_Index, String completeSentence, ArrayList<WordContent> words) {
         this.keyword = keyword;
-        this.keyword_ID = keyword_ID;
-        this.sentence = sentence;
-        this.tags = tags;
+        this.keyword_Index = keyword_Index;
+        this.completeSentence = completeSentence;
+        this.words = words;
     }
+
+    public ConcordanceContent(){}
 
     public String getKeyword() {
         return keyword;
@@ -23,27 +27,32 @@ public class ConcordanceContent {
         this.keyword = keyword;
     }
 
-    public String getKeyword_ID() {
-        return keyword_ID;
+    public int getKeyword_Index() {
+        return keyword_Index;
     }
 
-    public void setKeyword_ID(String keyword_ID) {
-        this.keyword_ID = keyword_ID;
+    public void setKeyword_Index(int keyword_Index) {
+        this.keyword_Index = keyword_Index;
     }
 
-    public ArrayList<String> getSentence() {
-        return sentence;
+    public String getCompleteSentence() {
+        return completeSentence;
     }
 
-    public void setSentence(ArrayList<String> sentence) {
-        this.sentence = sentence;
+    public void setCompleteSentence(String completeSentence) {
+        this.completeSentence = completeSentence;
     }
 
-    public ArrayList<ArrayList<TagContent>> getTags() {
-        return tags;
+    public ArrayList<WordContent> getWords() {
+        return words;
     }
 
-    public void setTags(ArrayList<ArrayList<TagContent>> tags) {
-        this.tags = tags;
+    public void setWords(ArrayList<WordContent> words) {
+        this.words = words;
+    }
+
+    public JSONObject getJSON()
+    {
+        return null;
     }
 }
