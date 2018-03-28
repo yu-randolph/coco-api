@@ -75,7 +75,7 @@ public class Concordancer {
                     {
                         if(item.equals(word.getWord()))
                         {
-
+                            
                         }
                     }
                 }

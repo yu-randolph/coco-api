@@ -1,0 +1,894 @@
+{
+  "CREATED_BY": [
+    {
+      "endWord": "a writer",
+      "weight": 6.928203,
+      "startWord": "A book",
+      "surfaceText": "[[A book]] is created by [[a writer]].",
+      "relation": "CreatedBy"
+    },
+    {
+      "endWord": "an author",
+      "weight": 1,
+      "startWord": "a book",
+      "surfaceText": "[[a book]] is created by [[an author]].",
+      "relation": "CreatedBy"
+    }
+  ],
+  "RELATED_TO": [
+    {
+      "endWord": "book",
+      "weight": 10.564658,
+      "startWord": "page",
+      "surfaceText": "[[page]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 8.3806925,
+      "startWord": "reading",
+      "surfaceText": "[[reading]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 8.069944,
+      "startWord": "dictionary",
+      "surfaceText": "[[dictionary]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "pages",
+      "weight": 6.725474,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[pages]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "reading",
+      "weight": 6.2982535,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[reading]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 5.5892754,
+      "startWord": "story",
+      "surfaceText": "[[story]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 5,
+      "startWord": "library",
+      "surfaceText": "[[library]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 4.7564692,
+      "startWord": "cover",
+      "surfaceText": "[[cover]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 4.7184744,
+      "startWord": "paper",
+      "surfaceText": "[[paper]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 4.104144,
+      "startWord": "read",
+      "surfaceText": "[[read]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "library",
+      "weight": 3.5860841,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[library]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 3.4819534,
+      "startWord": "character",
+      "surfaceText": "[[character]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "material",
+      "weight": 3.4548516,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[material]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "reading material",
+      "weight": 3.3424542,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[reading material]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "novel",
+      "weight": 3.2930229,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[novel]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "read",
+      "weight": 3.2606747,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[read]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "bound",
+      "weight": 3.2594478,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[bound]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "paper",
+      "weight": 2.7018511,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[paper]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "chapters",
+      "weight": 2.4971983,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[chapters]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 2.4543839,
+      "startWord": "writing",
+      "surfaceText": "[[writing]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 2.2458851,
+      "startWord": "novel",
+      "surfaceText": "[[novel]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "story",
+      "weight": 2.1042814,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[story]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "tome",
+      "weight": 2.0746083,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[tome]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "bookbinding",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "many pages",
+      "weight": 1.866,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[many pages]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "libraries",
+      "weight": 1.724,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[libraries]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1.442,
+      "startWord": "literature",
+      "surfaceText": "[[literature]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "literature",
+      "weight": 1.417,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[literature]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "cover",
+      "weight": 1.395,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[cover]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "printed",
+      "weight": 1.353,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[printed]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "bound pages",
+      "weight": 1.349,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[bound pages]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1.281,
+      "startWord": "author",
+      "surfaceText": "[[author]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "reading thing",
+      "weight": 1.255,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[reading thing]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "has",
+      "weight": 1.253,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[has]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "volume",
+      "weight": 1.188,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[volume]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "text",
+      "weight": 1.143,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[text]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "magazine",
+      "weight": 1.069,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[magazine]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "spine",
+      "weight": 1.028,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[spine]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1.004,
+      "startWord": "edition",
+      "surfaceText": "[[edition]] is related to [[book]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "readable",
+      "weight": 1.003,
+      "startWord": "book",
+      "surfaceText": "[[book]] is related to [[readable]]",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "32mo",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "accidence",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "album",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "allegory",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "allonym",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "alluminor",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "almanac",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "annual",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "antibook",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "antidotary",
+      "surfaceText": "null",
+      "relation": "RelatedTo"
+    }
+  ],
+  "FORM_OF": [
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "booked",
+      "surfaceText": "null",
+      "relation": "FormOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "booked",
+      "surfaceText": "null",
+      "relation": "FormOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "booking",
+      "surfaceText": "null",
+      "relation": "FormOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "booking",
+      "surfaceText": "null",
+      "relation": "FormOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "books",
+      "surfaceText": "null",
+      "relation": "FormOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "books",
+      "surfaceText": "null",
+      "relation": "FormOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "books",
+      "surfaceText": "null",
+      "relation": "FormOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "books",
+      "surfaceText": "null",
+      "relation": "FormOf"
+    },
+    {
+      "endWord": "bake",
+      "weight": 1,
+      "startWord": "book",
+      "surfaceText": "null",
+      "relation": "FormOf"
+    }
+  ],
+  "PART_OF": [
+    {
+      "endWord": "library",
+      "weight": 7.2111025,
+      "startWord": "a book",
+      "surfaceText": "[[a book]] is part of [[library]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "a book",
+      "weight": 5.2915025,
+      "startWord": "A chapter",
+      "surfaceText": "[[A chapter]] is part of [[a book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 2.828427,
+      "startWord": "page",
+      "surfaceText": "[[page]] is part of [[book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 2.828427,
+      "startWord": "pages",
+      "surfaceText": "*[[book]] has [[pages]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "backbone",
+      "surfaceText": "[[backbone]] is a part of [[book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "binding",
+      "surfaceText": "[[binding]] is a part of [[book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "text",
+      "weight": 2,
+      "startWord": "book",
+      "surfaceText": "[[book]] is a part of [[text]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "fore edge",
+      "surfaceText": "[[fore edge]] is a part of [[book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "rule",
+      "surfaceText": "[[rule]] is a part of [[book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "running head",
+      "surfaceText": "[[running head]] is a part of [[book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "signature",
+      "surfaceText": "[[signature]] is a part of [[book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "a book",
+      "weight": 2,
+      "startWord": "A table of contents",
+      "surfaceText": "[[A table of contents]] is part of [[a book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "a book",
+      "weight": 1,
+      "startWord": "An epilog",
+      "surfaceText": "[[An epilog]] is part of [[a book]]",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "a book",
+      "weight": 1,
+      "startWord": "a paragraph",
+      "surfaceText": "[[a paragraph]] is part of [[a book]].",
+      "relation": "PartOf"
+    },
+    {
+      "endWord": "a book",
+      "weight": 1,
+      "startWord": "A spine",
+      "surfaceText": "[[A spine]] is part of [[a book]]",
+      "relation": "PartOf"
+    }
+  ],
+  "IS_A": [
+    {
+      "endWord": "a book",
+      "weight": 5.2915025,
+      "startWord": "the bible",
+      "surfaceText": "[[the bible]] is [[a book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "a book",
+      "weight": 4,
+      "startWord": "a ledger",
+      "surfaceText": "[[a ledger]] is [[a book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "a book",
+      "weight": 4,
+      "startWord": "a novel",
+      "surfaceText": "[[a novel]] is [[a book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "a book",
+      "weight": 4,
+      "startWord": "a text",
+      "surfaceText": "[[a text]] is [[a book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "album",
+      "surfaceText": "[[album]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "appointment book",
+      "surfaceText": "[[appointment book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "authority",
+      "surfaceText": "[[authority]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "bestiary",
+      "surfaceText": "[[bestiary]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "an excellent source of information",
+      "weight": 2,
+      "startWord": "a book",
+      "surfaceText": "[[a book]] is [[an excellent source of information]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "booklet",
+      "surfaceText": "[[booklet]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "collection",
+      "weight": 2,
+      "startWord": "book",
+      "surfaceText": "[[book]] is a type of [[collection]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "product",
+      "weight": 2,
+      "startWord": "book",
+      "surfaceText": "[[book]] is a type of [[product]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "publication",
+      "weight": 2,
+      "startWord": "book",
+      "surfaceText": "[[book]] is a type of [[publication]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "section",
+      "weight": 2,
+      "startWord": "book",
+      "surfaceText": "[[book]] is a type of [[section]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "catalog",
+      "surfaceText": "[[catalog]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "catechism",
+      "surfaceText": "[[catechism]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "coffee-table book",
+      "surfaceText": "[[coffee-table book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "copybook",
+      "surfaceText": "[[copybook]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "curiosa",
+      "surfaceText": "[[curiosa]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "Epistle",
+      "surfaceText": "[[Epistle]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "folio",
+      "surfaceText": "[[folio]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "formulary",
+      "surfaceText": "[[formulary]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "hardback",
+      "surfaceText": "[[hardback]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "journal",
+      "surfaceText": "[[journal]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "a magazine",
+      "surfaceText": "[[a magazine]] is a kind of [[book]].",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "notebook",
+      "surfaceText": "[[notebook]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "novel",
+      "surfaceText": "[[novel]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "order book",
+      "surfaceText": "[[order book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "paperback book",
+      "surfaceText": "[[paperback book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "phrase book",
+      "surfaceText": "[[phrase book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "picture book",
+      "surfaceText": "[[picture book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "playbook",
+      "surfaceText": "[[playbook]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "pop-up book",
+      "surfaceText": "[[pop-up book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "prayer book",
+      "surfaceText": "[[prayer book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "reference book",
+      "surfaceText": "[[reference book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "review copy",
+      "surfaceText": "[[review copy]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "sketchbook",
+      "surfaceText": "[[sketchbook]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "songbook",
+      "surfaceText": "[[songbook]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "storybook",
+      "surfaceText": "[[storybook]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "tome",
+      "surfaceText": "[[tome]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "trade book",
+      "surfaceText": "[[trade book]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "workbook",
+      "surfaceText": "[[workbook]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 2,
+      "startWord": "yearbook",
+      "surfaceText": "[[yearbook]] is a type of [[book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "address book",
+      "surfaceText": "null",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "army field manual",
+      "surfaceText": "null",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "book",
+      "weight": 1,
+      "startWord": "bible",
+      "surfaceText": "null",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "a book",
+      "weight": 1,
+      "startWord": "A biography",
+      "surfaceText": "[[A biography]] is [[a book]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "a device",
+      "weight": 1,
+      "startWord": "a book",
+      "surfaceText": "[[a book]] is [[a device]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "a document type",
+      "weight": 1,
+      "startWord": "book",
+      "surfaceText": "[[book]] is [[a document type]]",
+      "relation": "IsA"
+    },
+    {
+      "endWord": "many pages of information bound together",
+      "weight": 1,
+      "startWord": "A book",
+      "surfaceText": "[[A book]] is [[many pages of information bound together]]",
+      "relation": "IsA"
+    }
+  ]
+}
