@@ -11,11 +11,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 @RestController
-public class FileController {
+public class Controller {
 
     FileManager fileManager;
 
-    public FileController() {
+    public Controller() {
         fileManager = new FileManager();
     }
 

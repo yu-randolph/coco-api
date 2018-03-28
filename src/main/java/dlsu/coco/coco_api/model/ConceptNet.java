@@ -1,6 +1,6 @@
 package dlsu.coco.coco_api.model;
 
-import de.hu_berlin.german.korpling.tiger2.main.Tiger2Converter;
+import dlsu.coco.coco_api.variables.ConceptNetContent;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -29,24 +29,27 @@ public class ConceptNet {
     private HttpURLConnection httpURLConnection;
     private InputStream inputStream;
 
-    private JSONArray jsonRelatedTo;
-    private JSONArray jsonFormOf;
-    private JSONArray jsonIsA;
-    private JSONArray jsonPartOf;
-    private JSONArray jsonCreatedBy;
+    private ArrayList<ConceptNetContent> jsonRelatedTo;
+    private ArrayList<ConceptNetContent> jsonFormOf;
+    private ArrayList<ConceptNetContent> jsonIsA;
+    private ArrayList<ConceptNetContent> jsonPartOf;
+    private ArrayList<ConceptNetContent> jsonCreatedBy;
 
-    private ArrayList<String> formOfWords;
     public ConceptNet(String word)
     {
         //http://api.conceptnet.io/query?node=/c/en/book&rel=/r/RelatedTo
+        jsonRelatedTo = new ArrayList<>();
+        jsonFormOf = new ArrayList<>();
+        jsonIsA = new ArrayList<>();
+        jsonPartOf = new ArrayList<>();
+        jsonCreatedBy = new ArrayList<>();
 
-//        jsonRelatedTo = this.httpRequest(this.relationQueryBuilder(word, RELATED_TO, ENGLISH));
-        this.formOfWords = new ArrayList<String>();
+        jsonRelatedTo = this.httpRequest(this.relationQueryBuilder(word, RELATED_TO, ENGLISH));
         jsonFormOf = this.httpRequest(this.relationQueryBuilder(word, FORM_OF, ENGLISH));
+        jsonIsA = this.httpRequest(this.relationQueryBuilder(word, IS_A, ENGLISH) );
+        jsonPartOf = this.httpRequest(this.relationQueryBuilder(word, PART_OF, ENGLISH));
+        jsonCreatedBy = this.httpRequest(this.relationQueryBuilder(word, CREATED_BY, ENGLISH));
 
-//        jsonIsA = this.httpRequest(this.relationQueryBuilder(word, IS_A, ENGLISH) );
-//        jsonPartOf = this.httpRequest(this.relationQueryBuilder(word, PART_OF, ENGLISH));
-//        jsonCreatedBy = this.httpRequest(this.relationQueryBuilder(word, CREATED_BY, ENGLISH));
     }
 
     public String relationQueryBuilder(String word, String relation, String language)
@@ -61,9 +64,10 @@ public class ConceptNet {
         return conceptnetAPIQuery + queryWord + "&" + queryRelation + "&" + queryLanguage;
     }
 
-    public JSONArray httpRequest(String address)
+    public ArrayList<ConceptNetContent> httpRequest(String address)
     {
         try {
+            ArrayList<ConceptNetContent> content = new ArrayList<>();
             httpURLConnection = (HttpURLConnection) new URL(address).openConnection();
             httpURLConnection.setRequestMethod("GET");
             httpURLConnection.setRequestProperty("Accept", "application/json");
@@ -77,14 +81,20 @@ public class ConceptNet {
             for(int i = 0; i < edges.length(); i++)
             {
                 //System.out.println(edges.getJSONObject(i));
+                JSONObject rel = edges.getJSONObject(i).getJSONObject("rel");
                 JSONObject start = edges.getJSONObject(i).getJSONObject("start");
-                System.out.print(start.getString("label") + " ");
-                this.formOfWords.add(start.getString("label"));
+                Float weight = Float.parseFloat(edges.getJSONObject(i).get("weight").toString());
+                JSONObject end = edges.getJSONObject(i).getJSONObject("end");
+                String surfaceText = edges.getJSONObject(i).get("surfaceText").toString();
+
+                ConceptNetContent item = new ConceptNetContent(rel.getString("label"), start.getString("label"), end.getString("label"), surfaceText, weight);
+                System.out.println(item.toString());
+                content.add(item);
             }
             System.out.println();
 
             inputStream.close();
-            return edges;
+            return content;
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -92,7 +102,75 @@ public class ConceptNet {
         }
     }
 
-    public ArrayList<String> getForms(){
-        return this.formOfWords;
+    public ArrayList<ConceptNetContent> getJsonRelatedTo() {
+        return jsonRelatedTo;
+    }
+
+    public ArrayList<ConceptNetContent> getJsonFormOf() {
+        return jsonFormOf;
+    }
+
+    public ArrayList<ConceptNetContent> getJsonIsA() {
+        return jsonIsA;
+    }
+
+    public ArrayList<ConceptNetContent> getJsonPartOf() {
+        return jsonPartOf;
+    }
+
+    public ArrayList<ConceptNetContent> getJsonCreatedBy() {
+        return jsonCreatedBy;
+    }
+
+    public JSONArray getRelatedToJSONObject()
+    {
+        JSONArray jsonArray = new JSONArray();
+
+        for(ConceptNetContent item : jsonRelatedTo)
+        {
+            jsonArray.put(item.toJSON());
+        }
+
+        return jsonArray;
+    }
+
+    public JSONArray getFormOfJSONObject()
+    {
+        JSONArray jsonArray = new JSONArray();
+        for(ConceptNetContent item : jsonFormOf)
+        {
+            jsonArray.put(item.toJSON());
+        }
+        return jsonArray;
+    }
+
+    public JSONArray getIsAJSONObject()
+    {
+        JSONArray jsonArray = new JSONArray();
+        for(ConceptNetContent item : jsonIsA)
+        {
+            jsonArray.put(item.toJSON());
+        }
+        return jsonArray;
+    }
+
+    public JSONArray getPartOfJSONObject()
+    {
+        JSONArray jsonArray = new JSONArray();
+        for(ConceptNetContent item : jsonPartOf)
+        {
+            jsonArray.put(item.toJSON());
+        }
+        return jsonArray;
+    }
+
+    public JSONArray getCreatedByJSONObject()
+    {
+        JSONArray jsonArray = new JSONArray();
+        for(ConceptNetContent item : jsonCreatedBy)
+        {
+            jsonArray.put(item.toJSON());
+        }
+        return jsonArray;
     }
 }

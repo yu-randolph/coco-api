@@ -1,22 +1,12 @@
 package dlsu.coco.coco_api.model;
 
-import de.hu_berlin.german.korpling.tiger2.*;
-import de.hu_berlin.german.korpling.tiger2.Corpus;
-import de.hu_berlin.german.korpling.tiger2.Segment;
 import de.hu_berlin.german.korpling.tiger2.main.Tiger2Converter;
 import de.hu_berlin.german.korpling.tiger2.samples.CorpusEditer;
-import dlsu.coco.coco_api.model.UploadedFile;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import org.apache.commons.lang3.StringEscapeUtils;
-import org.apache.tomcat.util.security.Escape;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import javax.json.JsonBuilderFactory;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Properties;
 
 public class FileManager {
