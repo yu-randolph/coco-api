@@ -154,7 +154,83 @@ public class Controller {
         return newTag;
     }
 
+    @RequestMapping(value = "/addTag", method = RequestMethod.POST)
+    public @ResponseBody
+    String addTag(@RequestParam("tags") String tags) {
+        String newTag = "";
+        if (!tags.isEmpty()) {
+            try {
+                byte[] bytes = tags.getBytes();
+                String result = new String(bytes);
+                newTag = result;
+                System.out.println(result);
 
+                fileManager.addAnnotation(result);
+
+                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("Result: " + result);
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
+                return "You failed to upload " + newTag + " => " + e.getMessage();
+            }
+        }
+        return newTag;
+    }
+
+    @RequestMapping(value = "/addFeatValue", method = RequestMethod.POST)
+    public @ResponseBody
+    String addFeatValue(@RequestParam("tags") String tags) {
+        String newTag = "";
+        if (!tags.isEmpty()) {
+            try {
+
+                byte[] bytes = tags.getBytes();
+                String result = new String(bytes);
+                newTag = result;
+                System.out.println(result);
+
+                fileManager.addFeatureValue(result);
+
+                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("Result: " + result);
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
+                return "You failed to upload " + newTag + " => " + e.getMessage();
+            }
+        }
+        return newTag;
+    }
+
+
+    @RequestMapping(value = "/addFeature", method = RequestMethod.POST)
+    public @ResponseBody
+    String addFeature(@RequestParam("tags") String tags) {
+        String newTag = "";
+        if (!tags.isEmpty()) {
+            try {
+
+                byte[] bytes = tags.getBytes();
+                String result = new String(bytes);
+                newTag = result;
+                System.out.println(result);
+
+                fileManager.addFeature(result);
+
+                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("Result: " + result);
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
+                return "You failed to upload " + newTag + " => " + e.getMessage();
+            }
+        }
+        return newTag;
+    }
 //    @GetMapping("/get/{value}")
 //    public void get(HttpServletResponse response, @PathVariable String value)
 //    {

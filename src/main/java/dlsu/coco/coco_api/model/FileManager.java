@@ -80,4 +80,27 @@ public class FileManager {
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
 
     }
+
+    public void addAnnotation(String edition)
+    {
+        JSONObject jsonObject = new JSONObject(edition);
+        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
+
+        corpusEditer.addTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString(), jsonObject.get("feature_value").toString());
+        tiger2Converter.setCorpus(corpusEditer.getCorpus());
+
+    }
+
+    public void addFeature(String feature){
+
+    }
+
+    public void addFeatureValue(String fv){
+        JSONObject jsonObject = new JSONObject(fv);
+        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
+
+        corpusEditer.addnewFeaturevalue(jsonObject.get("feature").toString(), jsonObject.get("featureValue").toString(), jsonObject.get("feature_decscripion").toString());
+        tiger2Converter.setCorpus(corpusEditer.getCorpus());
+    }
 }
+

@@ -22,8 +22,8 @@ public class ConceptFinder {
 
     public void getConceptNet(){
         ConceptNet cp = new ConceptNet(this.concept);
-        for(String results : cp.getForms())
-             this.relatedWords.add(results);
+//        for(String results : cp.getForms())
+//             this.relatedWords.add(results);
 
     }
 
@@ -31,9 +31,9 @@ public class ConceptFinder {
     public void getWordNet(){
         WordNet wn = new WordNet("C:\\Users\\Micoh F Alvarez\\Desktop\\System needs\\WordNet-3.0\\WordNet-3.0\\dict",this.concept);
 
-            for(String results : wn.getNounSynonym()){
-                this.relatedWords.add(results);
-            }
+//            for(String results : wn.getNounSynonym()){
+//                this.relatedWords.add(results);
+//            }
     }
 
     public void findConcepts(){
