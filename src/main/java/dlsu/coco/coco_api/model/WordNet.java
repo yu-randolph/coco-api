@@ -4,6 +4,7 @@ import dlsu.coco.coco_api.variables.WordNetContent;
 import edu.smu.tspell.wordnet.*;
 import edu.smu.tspell.wordnet.impl.file.PropertyNames;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -274,7 +275,7 @@ public class WordNet {
         return adverbSynonym;
     }
 
-    public JSONArray getNounSynonymJSONObject() {
+    public JSONArray getNounSynonymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
 
@@ -286,7 +287,7 @@ public class WordNet {
         return jsonArray;
     }
 
-    public JSONArray getNounHyponymJSONObject() {
+    public JSONArray getNounHyponymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
 
@@ -298,7 +299,7 @@ public class WordNet {
         return jsonArray;
     }
 
-    public JSONArray getNounHypernymJSONObject() {
+    public JSONArray getNounHypernymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
 
@@ -310,7 +311,7 @@ public class WordNet {
         return jsonArray;
     }
 
-    public JSONArray getVerbSynonymJSONObject() {
+    public JSONArray getVerbSynonymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
 
@@ -322,7 +323,7 @@ public class WordNet {
         return jsonArray;
     }
 
-    public JSONArray getVerbHyponymJSONObject() {
+    public JSONArray getVerbHyponymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
 
@@ -334,7 +335,7 @@ public class WordNet {
         return jsonArray;
     }
 
-    public JSONArray getVerbTroponymJSONObject() {
+    public JSONArray getVerbTroponymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
 
@@ -346,7 +347,7 @@ public class WordNet {
         return jsonArray;
     }
 
-    public JSONArray getAdjectiveSynonymJSONObject() {
+    public JSONArray getAdjectiveSynonymJSONObject() throws JSONException {
         JSONArray jsonArray = new JSONArray();
 
         for(WordNetContent item : adjectiveSynonym)
@@ -356,7 +357,7 @@ public class WordNet {
 
         return jsonArray;}
 
-    public JSONArray getAdverbSynonymJSONObject() {
+    public JSONArray getAdverbSynonymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
 

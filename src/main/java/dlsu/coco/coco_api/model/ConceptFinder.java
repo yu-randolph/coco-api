@@ -1,6 +1,7 @@
 package dlsu.coco.coco_api.model;
 
 import de.hu_berlin.german.korpling.tiger2.Corpus;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -22,8 +23,7 @@ public class ConceptFinder {
     }
 
 
-    public JSONObject getWordNetResult()
-    {
+    public JSONObject getWordNetResult() throws JSONException {
         JSONObject jsonObject = new JSONObject();
         if(pos.contains("Noun")) {
             jsonObject.put("NOUN_SYNONYM", wordNet.getNounSynonymJSONObject());
@@ -44,8 +44,7 @@ public class ConceptFinder {
         return jsonObject;
     }
 
-    public JSONObject getConceptNetResult()
-    {
+    public JSONObject getConceptNetResult() throws JSONException {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("FORM_OF", conceptNet.getFormOfJSONObject());
 

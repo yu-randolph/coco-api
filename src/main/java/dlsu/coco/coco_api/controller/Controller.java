@@ -3,6 +3,7 @@ package dlsu.coco.coco_api.controller;
 import dlsu.coco.coco_api.model.ConceptFinder;
 import dlsu.coco.coco_api.model.Concordancer;
 import dlsu.coco.coco_api.model.FileManager;
+import org.json.JSONException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -247,8 +248,7 @@ public class Controller {
 //    }
 
     @GetMapping("/getContent")
-    public String getContent()
-    {
+    public String getContent() throws JSONException {
 
 //       ConceptFinder fn = new ConceptFinder("Hello", "book");
 
@@ -257,11 +257,17 @@ public class Controller {
     }
 
     @GetMapping("/getTags")
-    public String getTags()
-    {
+    public String getTags() throws JSONException {
        // fileManager.tigerXMLChecker(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
        // fileManager.tigerProcess(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
         return fileManager.AnnotationstoJSONconverter().toString();
+    }
+
+    @GetMapping("/getXML")
+    public String getXML() {
+        return fileManager.NLPprocessor("I happened to see a one day cricket match between Pakistan and Australia at Wankhade Stadium, Mumbai. " +
+                "I went for a fun. But I wit\u00ADnessed a horrible sight. Two thousand ticketless cricket fans gate crashed. " +
+                "There was a stampede. Three persons died and twenty were injured. Administration was responsible for it.");
     }
 }
 

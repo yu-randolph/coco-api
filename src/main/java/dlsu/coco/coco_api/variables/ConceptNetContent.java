@@ -1,5 +1,6 @@
 package dlsu.coco.coco_api.variables;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ConceptNetContent {
@@ -62,8 +63,7 @@ public class ConceptNetContent {
         return relation + " : " + startWord + " ~ " + endWord + " | " + surfaceText  + " = " + weight;
     }
 
-    public JSONObject toJSON()
-    {
+    public JSONObject toJSON() throws JSONException {
         JSONObject jsonObject = new JSONObject();
 
         jsonObject.put("relation", relation);
