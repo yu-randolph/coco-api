@@ -14,11 +14,11 @@ import java.util.ArrayList;
 public class ConceptNet {
 
     //RELATION
-    private static String RELATED_TO = "RelatedTo";
+//    private static String RELATED_TO = "RelatedTo";
     private static String FORM_OF = "FormOf";
-    private static String IS_A = "IsA";
-    private static String PART_OF = "PartOf";
-    private static String CREATED_BY = "CreatedBy";
+//    private static String IS_A = "IsA";
+//    private static String PART_OF = "PartOf";
+//    private static String CREATED_BY = "CreatedBy";
 
     //LANGUAGE
     private static String ENGLISH = "en";
@@ -38,17 +38,17 @@ public class ConceptNet {
     public ConceptNet(String word)
     {
         //http://api.conceptnet.io/query?node=/c/en/book&rel=/r/RelatedTo
-        jsonRelatedTo = new ArrayList<>();
+//        jsonRelatedTo = new ArrayList<>();
         jsonFormOf = new ArrayList<>();
-        jsonIsA = new ArrayList<>();
-        jsonPartOf = new ArrayList<>();
-        jsonCreatedBy = new ArrayList<>();
+//        jsonIsA = new ArrayList<>();
+//        jsonPartOf = new ArrayList<>();
+//        jsonCreatedBy = new ArrayList<>();
 
-        jsonRelatedTo = this.httpRequest(this.relationQueryBuilder(word, RELATED_TO, ENGLISH));
+//        jsonRelatedTo = this.httpRequest(this.relationQueryBuilder(word, RELATED_TO, ENGLISH));
         jsonFormOf = this.httpRequest(this.relationQueryBuilder(word, FORM_OF, ENGLISH));
-        jsonIsA = this.httpRequest(this.relationQueryBuilder(word, IS_A, ENGLISH) );
-        jsonPartOf = this.httpRequest(this.relationQueryBuilder(word, PART_OF, ENGLISH));
-        jsonCreatedBy = this.httpRequest(this.relationQueryBuilder(word, CREATED_BY, ENGLISH));
+//        jsonIsA = this.httpRequest(this.relationQueryBuilder(word, IS_A, ENGLISH) );
+//        jsonPartOf = this.httpRequest(this.relationQueryBuilder(word, PART_OF, ENGLISH));
+//        jsonCreatedBy = this.httpRequest(this.relationQueryBuilder(word, CREATED_BY, ENGLISH));
 
     }
 
@@ -102,37 +102,37 @@ public class ConceptNet {
         }
     }
 
-    public ArrayList<ConceptNetContent> getJsonRelatedTo() {
-        return jsonRelatedTo;
-    }
+//    public ArrayList<ConceptNetContent> getJsonRelatedTo() {
+//        return jsonRelatedTo;
+//    }
 
     public ArrayList<ConceptNetContent> getJsonFormOf() {
         return jsonFormOf;
     }
 
-    public ArrayList<ConceptNetContent> getJsonIsA() {
-        return jsonIsA;
-    }
+//    public ArrayList<ConceptNetContent> getJsonIsA() {
+//        return jsonIsA;
+//    }
+//
+//    public ArrayList<ConceptNetContent> getJsonPartOf() {
+//        return jsonPartOf;
+//    }
+//
+//    public ArrayList<ConceptNetContent> getJsonCreatedBy() {
+//        return jsonCreatedBy;
+//    }
 
-    public ArrayList<ConceptNetContent> getJsonPartOf() {
-        return jsonPartOf;
-    }
-
-    public ArrayList<ConceptNetContent> getJsonCreatedBy() {
-        return jsonCreatedBy;
-    }
-
-    public JSONArray getRelatedToJSONObject()
-    {
-        JSONArray jsonArray = new JSONArray();
-
-        for(ConceptNetContent item : jsonRelatedTo)
-        {
-            jsonArray.put(item.toJSON());
-        }
-
-        return jsonArray;
-    }
+//    public JSONArray getRelatedToJSONObject()
+//    {
+//        JSONArray jsonArray = new JSONArray();
+//
+//        for(ConceptNetContent item : jsonRelatedTo)
+//        {
+//            jsonArray.put(item.toJSON());
+//        }
+//
+//        return jsonArray;
+//    }
 
     public JSONArray getFormOfJSONObject()
     {
@@ -144,33 +144,42 @@ public class ConceptNet {
         return jsonArray;
     }
 
-    public JSONArray getIsAJSONObject()
-    {
-        JSONArray jsonArray = new JSONArray();
-        for(ConceptNetContent item : jsonIsA)
-        {
-            jsonArray.put(item.toJSON());
-        }
-        return jsonArray;
-    }
 
-    public JSONArray getPartOfJSONObject()
-    {
-        JSONArray jsonArray = new JSONArray();
-        for(ConceptNetContent item : jsonPartOf)
+    public ArrayList<String> getContents(){
+        ArrayList<String> content = new ArrayList<String>();
+        for(ConceptNetContent item : jsonFormOf)
         {
-            jsonArray.put(item.toJSON());
+            content.add(item.getEndWord());
         }
-        return jsonArray;
+        return content;
     }
-
-    public JSONArray getCreatedByJSONObject()
-    {
-        JSONArray jsonArray = new JSONArray();
-        for(ConceptNetContent item : jsonCreatedBy)
-        {
-            jsonArray.put(item.toJSON());
-        }
-        return jsonArray;
-    }
+//    public JSONArray getIsAJSONObject()
+//    {
+//        JSONArray jsonArray = new JSONArray();
+//        for(ConceptNetContent item : jsonIsA)
+//        {
+//            jsonArray.put(item.toJSON());
+//        }
+//        return jsonArray;
+//    }
+//
+//    public JSONArray getPartOfJSONObject()
+//    {
+//        JSONArray jsonArray = new JSONArray();
+//        for(ConceptNetContent item : jsonPartOf)
+//        {
+//            jsonArray.put(item.toJSON());
+//        }
+//        return jsonArray;
+//    }
+//
+//    public JSONArray getCreatedByJSONObject()
+//    {
+//        JSONArray jsonArray = new JSONArray();
+//        for(ConceptNetContent item : jsonCreatedBy)
+//        {
+//            jsonArray.put(item.toJSON());
+//        }
+//        return jsonArray;
+//    }
 }

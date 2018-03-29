@@ -45,6 +45,44 @@ public class WordNet {
         this.printResult();
     }
 
+    public ArrayList<String> relatedNouns(){
+        ArrayList<String> relatedNouns = new ArrayList<String>();
+        for(int i = 0; i < nounSynonym.size(); i++)
+        {
+            relatedNouns.add(nounSynonym.get(i).getString());
+        }
+        for(int i = 0; i < nounHyponym.size(); i++)
+        {
+            relatedNouns.add(nounHyponym.get(i).getString());
+        }
+        for(int i = 0; i < nounHypernym.size(); i++)
+        {
+            relatedNouns.add(nounHypernym.get(i).getString());
+        }
+
+
+        return relatedNouns;
+    }
+
+    public ArrayList<String> relatedVerbs(){
+
+        ArrayList<String> relatedVerbs = new ArrayList<String>();
+        for(int i = 0; i < verbSynonym.size(); i++)
+        {
+            relatedVerbs.add(verbSynonym.get(i).getString());
+        }
+        for(int i = 0; i < verbHyponym.size(); i++)
+        {
+            relatedVerbs.add(verbHyponym.get(i).getString());
+        }
+        for(int i = 0; i < verbTroponym.size(); i++)
+        {
+            relatedVerbs.add(verbTroponym.get(i).getString());
+        }
+        return relatedVerbs;
+    }
+
+
     public void printResult()
     {
         System.out.println("noun synonym");
@@ -88,20 +126,20 @@ public class WordNet {
             System.out.println(verbTroponym.get(i).getString());
         }
 
-        System.out.println();
-        System.out.println("adjective synonym");
-        for(int i = 0; i < adjectiveSynonym.size(); i++)
-        {
-            System.out.println(adjectiveSynonym.get(i).getString());
-        }
-
-        System.out.println();
-        System.out.println("adverb synonym");
-        for(int i = 0; i < adverbSynonym.size(); i++)
-        {
-            System.out.println(adverbSynonym.get(i).getString());
-        }
-        System.out.println();
+//        System.out.println();
+//        System.out.println("adjective synonym");
+//        for(int i = 0; i < adjectiveSynonym.size(); i++)
+//        {
+//            System.out.println(adjectiveSynonym.get(i).getString());
+//        }
+//
+//        System.out.println();
+//        System.out.println("adverb synonym");
+//        for(int i = 0; i < adverbSynonym.size(); i++)
+//        {
+//            System.out.println(adverbSynonym.get(i).getString());
+//        }
+//        System.out.println();
     }
 
     public ArrayList<WordNetContent> extractValues_NounSynset(ArrayList<NounSynset> synset)

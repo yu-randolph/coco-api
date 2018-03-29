@@ -15,47 +15,46 @@ public class Concordancer {
 
     private Corpus corpus;
     private ArrayList<ConcordanceContent> concordanceContents;
-    private ConceptNet conceptNet;
-    private WordNet wordNet;
-    private String keyword;
 
-    public Concordancer(String keyword, String dictLocation, Corpus corpus)
+    private String concept;
+    private ArrayList<String> concepts = new ArrayList<String>();
+
+    public Concordancer(ArrayList<String> concepts, Corpus corpus, String concept)
     {
-        this.keyword = keyword;
+        this.concept = concept;
         this.corpus = corpus;
+        this.concepts = concepts;
 
-        conceptNet = new ConceptNet(keyword);
-        wordNet = new WordNet(dictLocation, keyword);
     }
 
-    public JSONObject getWordNetResult()
-    {
-        JSONObject jsonObject = new JSONObject();
-
-        jsonObject.put("NOUN_SYNONYM", wordNet.getNounSynonymJSONObject());
-        jsonObject.put("NOUN_HYPONYM", wordNet.getNounHyponymJSONObject());
-        jsonObject.put("NOUN_HYPERNYM", wordNet.getNounHypernymJSONObject());
-        jsonObject.put("VERB_SYNONYM", wordNet.getVerbSynonymJSONObject());
-        jsonObject.put("VERB_HYPONYM", wordNet.getVerbHyponymJSONObject());
-        jsonObject.put("VERB_TROPONYM", wordNet.getVerbTroponymJSONObject());
-        jsonObject.put("ADJECTIVE_SYNONYM", wordNet.getAdjectiveSynonymJSONObject());
-        jsonObject.put("ADVERB_SYNONYM", wordNet.getAdverbSynonymJSONObject());
-
-        return jsonObject;
-    }
-
-    public JSONObject getConceptNetResult()
-    {
-        JSONObject jsonObject = new JSONObject();
-
-        jsonObject.put("RELATED_TO", conceptNet.getRelatedToJSONObject());
-        jsonObject.put("FORM_OF", conceptNet.getFormOfJSONObject());
-        jsonObject.put("IS_A", conceptNet.getIsAJSONObject());
-        jsonObject.put("PART_OF", conceptNet.getPartOfJSONObject());
-        jsonObject.put("CREATED_BY", conceptNet.getCreatedByJSONObject());
-
-        return jsonObject;
-    }
+//    public JSONObject getWordNetResult()
+//    {
+//        JSONObject jsonObject = new JSONObject();
+//
+//        jsonObject.put("NOUN_SYNONYM", wordNet.getNounSynonymJSONObject());
+//        jsonObject.put("NOUN_HYPONYM", wordNet.getNounHyponymJSONObject());
+//        jsonObject.put("NOUN_HYPERNYM", wordNet.getNounHypernymJSONObject());
+//        jsonObject.put("VERB_SYNONYM", wordNet.getVerbSynonymJSONObject());
+//        jsonObject.put("VERB_HYPONYM", wordNet.getVerbHyponymJSONObject());
+//        jsonObject.put("VERB_TROPONYM", wordNet.getVerbTroponymJSONObject());
+//        jsonObject.put("ADJECTIVE_SYNONYM", wordNet.getAdjectiveSynonymJSONObject());
+//        jsonObject.put("ADVERB_SYNONYM", wordNet.getAdverbSynonymJSONObject());
+//
+//        return jsonObject;
+//    }
+//
+//    public JSONObject getConceptNetResult()
+//    {
+//        JSONObject jsonObject = new JSONObject();
+//
+////        jsonObject.put("RELATED_TO", conceptNet.getRelatedToJSONObject());
+//        jsonObject.put("FORM_OF", conceptNet.getFormOfJSONObject());
+////        jsonObject.put("IS_A", conceptNet.getIsAJSONObject());
+////        jsonObject.put("PART_OF", conceptNet.getPartOfJSONObject());
+////        jsonObject.put("CREATED_BY", conceptNet.getCreatedByJSONObject());
+//
+//        return jsonObject;
+//    }
 
     public JSONObject getConcordanceResult(String[] keywords)
     {

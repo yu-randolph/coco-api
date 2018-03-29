@@ -7,12 +7,12 @@ import org.json.JSONObject;
 public class WordNetContent {
     private SynsetType POStype;
     private String[] wordForm;
-    private String definition;
+//    private String definition;
 
-    public WordNetContent(SynsetType POStype, String[] wordForm, String definition) {
+    public WordNetContent(SynsetType POStype, String[] wordForm, String definition  ) {
         this.POStype = POStype;
         this.wordForm = wordForm;
-        this.definition = definition;
+//        this.definition = definition;
     }
 
     public SynsetType getPOStype() {
@@ -31,13 +31,13 @@ public class WordNetContent {
         this.wordForm = wordForm;
     }
 
-    public String getDefinition() {
-        return definition;
-    }
-
-    public void setDefinition(String definition) {
-        this.definition = definition;
-    }
+//    public String getDefinition() {
+//        return definition;
+//    }
+//
+//    public void setDefinition(String definition) {
+//        this.definition = definition;
+//    }
 
     private String wordFormToString()
     {
@@ -51,7 +51,7 @@ public class WordNetContent {
 
     public String getString()
     {
-        return POStype.toString() + " : " + this.wordFormToString() + " || " + definition;
+        return POStype.toString() + " : " + this.wordFormToString() + " || ";
     }
 
     public JSONObject toJSON()
@@ -66,7 +66,6 @@ public class WordNetContent {
         }
         jsonObject_concept.put("wordForm", jsonArray_wordForm);
 
-        jsonObject_concept.put("definition", definition);
 
         return jsonObject_concept;
     }

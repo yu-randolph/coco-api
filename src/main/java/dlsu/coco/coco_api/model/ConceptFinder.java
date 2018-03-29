@@ -1,51 +1,95 @@
 package dlsu.coco.coco_api.model;
 
 import de.hu_berlin.german.korpling.tiger2.Corpus;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 public class ConceptFinder {
 
-    private String corpusWords,concept;
+    private String pos,concept;
     private ArrayList<String> relatedWords,conceptResults;
+    private ConceptNet conceptNet;
+    private WordNet wordNet;
 
-    public ConceptFinder(String corpusWords, String concept){
+    public ConceptFinder(String concept, String pos, String dictLocation){
 
-        this.corpusWords = corpusWords;
+        this.pos = pos;
         this.concept = concept;
-        this.relatedWords = new ArrayList<String>();
         this.conceptResults = new ArrayList<String>();
-//        this.getConceptNet();
-        this.getWordNet();
+        conceptNet = new ConceptNet(concept);
+        wordNet = new WordNet(dictLocation, concept);
     }
 
 
-    public void getConceptNet(){
-        ConceptNet cp = new ConceptNet(this.concept);
+    public JSONObject getWordNetResult()
+    {
+        JSONObject jsonObject = new JSONObject();
+        if(pos.contains("Noun")) {
+            jsonObject.put("NOUN_SYNONYM", wordNet.getNounSynonymJSONObject());
+            jsonObject.put("NOUN_HYPONYM", wordNet.getNounHyponymJSONObject());
+            jsonObject.put("NOUN_HYPERNYM", wordNet.getNounHypernymJSONObject());
+            this.conceptResults.addAll(wordNet.relatedNouns());
+        }
+        else if(pos.contains("Verb")) {
+            jsonObject.put("VERB_SYNONYM", wordNet.getVerbSynonymJSONObject());
+            jsonObject.put("VERB_HYPONYM", wordNet.getVerbHyponymJSONObject());
+            jsonObject.put("VERB_TROPONYM", wordNet.getVerbTroponymJSONObject());
+            this.conceptResults.addAll(wordNet.relatedVerbs());
+        }
+
+//        jsonObject.put("ADJECTIVE_SYNONYM", wordNet.getAdjectiveSynonymJSONObject());
+//        jsonObject.put("ADVERB_SYNONYM", wordNet.getAdverbSynonymJSONObject());
+
+        return jsonObject;
+    }
+
+    public JSONObject getConceptNetResult()
+    {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("FORM_OF", conceptNet.getFormOfJSONObject());
+
+//        jsonObject.put("RELATED_TO", conceptNet.getRelatedToJSONObject());
+
+//        jsonObject.put("IS_A", conceptNet.getIsAJSONObject());
+//        jsonObject.put("PART_OF", conceptNet.getPartOfJSONObject());
+//        jsonObject.put("CREATED_BY", conceptNet.getCreatedByJSONObject());
+        this.conceptResults.addAll(conceptNet.getContents());
+        return jsonObject;
+    }
+    public ArrayList<String> getConceptResults() {
+        return this.conceptResults;
+    }
+
+}
+
+
+
+
+//    public void getConceptNet(){
+//        ConceptNet cp = new ConceptNet(this.concept);
+//
 //        for(String results : cp.getForms())
 //             this.relatedWords.add(results);
-
-    }
-
-
-    public void getWordNet(){
-        WordNet wn = new WordNet("C:\\Users\\Micoh F Alvarez\\Desktop\\System needs\\WordNet-3.0\\WordNet-3.0\\dict",this.concept);
+//
+//    }
+//
+//
+//    public void getWordNet(){
+//        WordNet wn = new WordNet("C:\\Users\\Micoh F Alvarez\\Desktop\\System needs\\WordNet-3.0\\WordNet-3.0\\dict",this.concept);
 
 //            for(String results : wn.getNounSynonym()){
 //                this.relatedWords.add(results);
 //            }
-    }
+//    }
+//
+//    public void findConcepts(){
+//
+//            for(String relatedWord : relatedWords){
+//                if(corpusWords.contains(relatedWord))
+//                    this.conceptResults.add(relatedWord);
+//
+//            }
+//    }
+//
 
-    public void findConcepts(){
-
-            for(String relatedWord : relatedWords){
-                if(corpusWords.contains(relatedWord))
-                    this.conceptResults.add(relatedWord);
-
-            }
-    }
-
-    public ArrayList<String> getConceptResults() {
-        return this.conceptResults;
-    }
-}
