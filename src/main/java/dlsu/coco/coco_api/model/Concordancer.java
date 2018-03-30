@@ -7,6 +7,7 @@ import dlsu.coco.coco_api.variables.TagContent;
 import dlsu.coco.coco_api.variables.WordContent;
 import org.eclipse.emf.common.util.EList;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -56,8 +57,7 @@ public class Concordancer {
 //        return jsonObject;
 //    }
 
-    public JSONObject getConcordanceResult(String[] keywords)
-    {
+    public JSONObject getConcordanceResult(String[] keywords) throws JSONException {
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         concordanceContents = new ArrayList<>();

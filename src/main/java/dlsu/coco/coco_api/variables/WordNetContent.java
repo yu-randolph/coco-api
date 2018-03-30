@@ -2,6 +2,7 @@ package dlsu.coco.coco_api.variables;
 
 import edu.smu.tspell.wordnet.SynsetType;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class WordNetContent {
@@ -54,8 +55,7 @@ public class WordNetContent {
         return POStype.toString() + " : " + this.wordFormToString() + " || ";
     }
 
-    public JSONObject toJSON()
-    {
+    public JSONObject toJSON() throws JSONException {
         JSONObject jsonObject_concept = new JSONObject();
         jsonObject_concept.put("POStype", POStype.toString());
 

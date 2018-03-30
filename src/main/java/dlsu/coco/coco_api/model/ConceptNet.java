@@ -3,6 +3,7 @@ package dlsu.coco.coco_api.model;
 import dlsu.coco.coco_api.variables.ConceptNetContent;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
@@ -134,8 +135,7 @@ public class ConceptNet {
 //        return jsonArray;
 //    }
 
-    public JSONArray getFormOfJSONObject()
-    {
+    public JSONArray getFormOfJSONObject() throws JSONException {
         JSONArray jsonArray = new JSONArray();
         for(ConceptNetContent item : jsonFormOf)
         {
