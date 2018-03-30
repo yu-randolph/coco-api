@@ -73,11 +73,12 @@
 <terminals>
 <t xml:id="s2_t1" tiger2:word="But" lemma="but" ner="O" pos="CC"/>
 <t xml:id="s2_t2" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
-<t xml:id="s2_t3" tiger2:word="witnessed" lemma="witness" ner="O" pos="VBD"/>
-<t xml:id="s2_t4" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
-<t xml:id="s2_t5" tiger2:word="horrible" lemma="horrible" ner="O" pos="JJ"/>
-<t xml:id="s2_t6" tiger2:word="sight" lemma="sight" ner="O" pos="NN"/>
-<t xml:id="s2_t7" tiger2:word="." lemma="." ner="O" pos="."/>
+<t xml:id="s2_t3" tiger2:word="wit" lemma="wit" ner="O" pos="NN"/>
+<t xml:id="s2_t4" tiger2:word="nessed" lemma="ness" ner="O" pos="VBD"/>
+<t xml:id="s2_t5" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s2_t6" tiger2:word="horrible" lemma="horrible" ner="O" pos="JJ"/>
+<t xml:id="s2_t7" tiger2:word="sight" lemma="sight" ner="O" pos="NN"/>
+<t xml:id="s2_t8" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
 <graph xml:id="s1_g5">

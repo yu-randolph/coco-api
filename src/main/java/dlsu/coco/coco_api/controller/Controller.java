@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.charset.StandardCharsets;
 
 @RestController
 public class Controller {
@@ -60,14 +61,15 @@ public class Controller {
         String name = "temp";
         File receivedFile = null;
         String result="";
-        System.out.println(file.getContentType());
+
         if (!file.isEmpty()) {
             try {
                 System.out.println(file.getContentType());
                 if(file.getContentType().equals("text/plain"))
                 {
                     name = file.getOriginalFilename();
-                    result = new String(file.getBytes().toString());
+                    //result = new String(file.getBytes().toString());
+                    result = new String(file.getBytes(), "UTF-8");
                     System.out.println("You successfully uploaded " + name + " into " + name);
                     System.out.println("Content Type: " + file.getContentType());
                     System.out.println("Result: " + result);
@@ -112,34 +114,66 @@ public class Controller {
         String fileName = null;
         String corpus = "";
         File output = null;
-        if (files != null && files.length > 0) {
-            for (int i = 0; i < files.length; i++) {
+        if (files != null && files.length > 0)
+        {
+
+
+            for (int i = 0; i < files.length; i++)
+            {
+                String name = "temp";
+                String result = "";
                 File receivedFile = null;
                 try {
-                    fileName = files[i].getOriginalFilename();
-                    byte[] bytes = files[i].getBytes();
-                    receivedFile = new File("src/" + fileName);
-                    BufferedOutputStream buffStream =
-                            new BufferedOutputStream(new FileOutputStream(receivedFile));
-                    buffStream.write(bytes);
-                    buffStream.close();
-                    String result = new String(bytes);
-                    corpus += result + "\n";
+
+                    System.out.println(files[i].getContentType());
+                    if(files[i].getContentType().equals("text/plain"))
+                    {
+                        name = files[i].getOriginalFilename();
+                        //result = new String(file.getBytes().toString());
+                        result = new String(files[i].getBytes(), "UTF-8");
+                        System.out.println("You successfully uploaded " + name + " into " + name);
+                        System.out.println("Content Type: " + files[i].getContentType());
+                        System.out.println("Result: " + result);
+                        corpus += result + "\n";
+                    }
+                    else if(files[i].getContentType().equals("application/octet-stream"))
+                    {
+                        name = files[i].getOriginalFilename();
+                        byte[] bytes = files[i].getBytes();
+                        receivedFile = new File("src/" + name);
+                        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(receivedFile));
+                        stream.write(bytes);
+                        stream.close();
+                        result = new String(bytes);
+                        fileManager.setPath(name);
+                        System.out.println(receivedFile.getPath());
+                        System.out.println("You successfully uploaded " + name + " into " + name);
+                        System.out.println("Content Type: " + files[i].getContentType());
+                        System.out.println("Result: " + result);
+                        corpus += result + "\n";
+                    }
 
                 } catch (Exception e) {
                     return "You failed to upload " + fileName + ": " + e.getMessage() + "<br/>";
                 } finally {
+                    if(files[i].getContentType().equals("text/plain"))
+                        receivedFile = fileManager.NLPprocessor(result);
                     fileManager.tigerXMLChecker(receivedFile);
                     output = receivedFile;
                 }
-
             }
-            if (output != null) {
+
+            if (output != null)
+            {
                 System.out.println("Result: " + corpus);
                 fileManager.tigerProcess(output);
                 return fileManager.getRawCorpus();
             }
-        } else {
+
+
+        }
+        else
+        {
             return "Unable to upload. File is empty.";
         }
         return "No upload";
