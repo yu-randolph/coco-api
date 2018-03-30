@@ -59,10 +59,11 @@ public class Controller {
             @RequestParam("file") MultipartFile file) {
         String name = "temp";
         File receivedFile = null;
+        System.out.println(file.getContentType());
         if (!file.isEmpty()) {
             try {
-
-                if(file.getContentType().equals(".txt"))
+                System.out.println(file.getContentType());
+                if(file.getContentType().equals("text/plain"))
                 {
                     name = file.getOriginalFilename();
                     String result = new String(file.getBytes().toString());
@@ -72,7 +73,7 @@ public class Controller {
                     System.out.println("Content Type: " + file.getContentType());
                     System.out.println("Result: " + result);
                 }
-                else if(file.getContentType().equals(".tiger2"))
+                else if(file.getContentType().equals("application/octet-stream"))
                 {
                     name = file.getOriginalFilename();
                     byte[] bytes = file.getBytes();
