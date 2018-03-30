@@ -253,6 +253,14 @@ public class FileManager {
 
     }
 
+    public void deleteTag(String edition) throws JSONException {
+        JSONObject jsonObject = new JSONObject(edition);
+        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
+
+        corpusEditer.deleteTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString());
+        tiger2Converter.setCorpus(corpusEditer.getCorpus());
+
+    }
     public void addAnnotation(String edition) throws JSONException {
         JSONObject jsonObject = new JSONObject(edition);
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
