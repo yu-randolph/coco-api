@@ -208,12 +208,12 @@ public class Controller {
 
     @RequestMapping(value = "/addFeature", method = RequestMethod.POST)
     public @ResponseBody
-    String addFeature(@RequestParam("tags") String tags) {
+    String addFeature(@RequestParam("feature") String feature) {
         String newTag = "";
-        if (!tags.isEmpty()) {
+        if (!feature.isEmpty()) {
             try {
 
-                byte[] bytes = tags.getBytes();
+                byte[] bytes = feature.getBytes();
                 String result = new String(bytes);
                 newTag = result;
                 System.out.println(result);
