@@ -139,7 +139,7 @@ public class ConceptNet {
         JSONArray jsonArray = new JSONArray();
         for(ConceptNetContent item : jsonFormOf)
         {
-            jsonArray.put(item.toJSON());
+            jsonArray.put(item.getStartWord());
         }
         return jsonArray;
     }
@@ -149,7 +149,8 @@ public class ConceptNet {
         ArrayList<String> content = new ArrayList<String>();
         for(ConceptNetContent item : jsonFormOf)
         {
-            content.add(item.getEndWord());
+            content.add(item.getStartWord());
+
         }
         return content;
     }

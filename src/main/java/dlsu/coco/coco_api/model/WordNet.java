@@ -50,15 +50,15 @@ public class WordNet {
         ArrayList<String> relatedNouns = new ArrayList<String>();
         for(int i = 0; i < nounSynonym.size(); i++)
         {
-            relatedNouns.add(nounSynonym.get(i).getString());
+            relatedNouns.add(nounSynonym.get(i).getWordForm()[0]);
         }
         for(int i = 0; i < nounHyponym.size(); i++)
         {
-            relatedNouns.add(nounHyponym.get(i).getString());
+            relatedNouns.add(nounHyponym.get(i).getWordForm()[0]);
         }
         for(int i = 0; i < nounHypernym.size(); i++)
         {
-            relatedNouns.add(nounHypernym.get(i).getString());
+            relatedNouns.add(nounHypernym.get(i).getWordForm()[0]);
         }
 
 
@@ -281,7 +281,7 @@ public class WordNet {
 
         for(WordNetContent item : nounSynonym)
         {
-            jsonArray.put(item.toJSON());
+            jsonArray.put(item.getWordForm()[0]);
         }
 
         return jsonArray;
@@ -293,7 +293,7 @@ public class WordNet {
 
         for(WordNetContent item : nounHyponym)
         {
-            jsonArray.put(item.toJSON());
+            jsonArray.put(item.getWordForm()[0]);
         }
 
         return jsonArray;
@@ -305,7 +305,7 @@ public class WordNet {
 
         for(WordNetContent item : nounHypernym)
         {
-            jsonArray.put(item.toJSON());
+            jsonArray.put(item.getWordForm()[0]);
         }
 
         return jsonArray;
