@@ -51,7 +51,7 @@ public class FileManager {
         PATH = path;
     }
 
-    public File NLPprocessor(String content)
+    public File NLPprocessor(String content, String filename)
     {
         props = new Properties();
         props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
@@ -60,10 +60,10 @@ public class FileManager {
         Annotation document = new Annotation(content);
         pipeline.annotate(document);
 
-        return this.Text_to_TigerXML(document);
+        return this.Text_to_TigerXML(document, filename);
     }
 
-    public File Text_to_TigerXML(Annotation document)
+    public File Text_to_TigerXML(Annotation document, String filename)
     {
         try
         {
@@ -200,7 +200,8 @@ public class FileManager {
 
         try
         {
-            File file = new File("src/");
+            System.out.println("CREATING FILE");
+            File file = new File("src/" + filename + ".tiger2");
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);

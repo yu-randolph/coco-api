@@ -3,6 +3,7 @@ package dlsu.coco.coco_api.controller;
 import dlsu.coco.coco_api.model.ConceptFinder;
 import dlsu.coco.coco_api.model.Concordancer;
 import dlsu.coco.coco_api.model.FileManager;
+import org.apache.commons.io.FilenameUtils;
 import org.json.JSONException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -70,12 +71,13 @@ public class Controller {
                     name = file.getOriginalFilename();
                     //result = new String(file.getBytes().toString());
                     result = new String(file.getBytes(), "UTF-8");
-                    System.out.println("You successfully uploaded " + name + " into " + name);
+                    System.out.println("You successfully uploaded " + name + " into " + FilenameUtils.removeExtension(name) + ".tiger2");
                     System.out.println("Content Type: " + file.getContentType());
                     System.out.println("Result: " + result);
                 }
                 else if(file.getContentType().equals("application/octet-stream"))
                 {
+                    System.out.println("entered XML area");
                     name = file.getOriginalFilename();
                     byte[] bytes = file.getBytes();
                     receivedFile = new File("src/" + name);
@@ -97,7 +99,7 @@ public class Controller {
                 return "You failed to upload " + name + " => " + e.getMessage();
             } finally {
                 if(file.getContentType().equals("text/plain"))
-                    receivedFile = fileManager.NLPprocessor(result);
+                    receivedFile = fileManager.NLPprocessor(result, FilenameUtils.removeExtension(name));
                 fileManager.tigerXMLChecker(receivedFile);
                 fileManager.tigerProcess(receivedFile);
                 return fileManager.getRawCorpus();
@@ -131,13 +133,14 @@ public class Controller {
                         name = files[i].getOriginalFilename();
                         //result = new String(file.getBytes().toString());
                         result = new String(files[i].getBytes(), "UTF-8");
-                        System.out.println("You successfully uploaded " + name + " into " + name);
+                        System.out.println("You successfully uploaded " + name + " into " + FilenameUtils.removeExtension(name) + ".tiger2");
                         System.out.println("Content Type: " + files[i].getContentType());
                         System.out.println("Result: " + result);
                         corpus += result + "\n";
                     }
                     else if(files[i].getContentType().equals("application/octet-stream"))
                     {
+                        System.out.println("entered XML file area");
                         name = files[i].getOriginalFilename();
                         byte[] bytes = files[i].getBytes();
                         receivedFile = new File("src/" + name);
@@ -157,7 +160,7 @@ public class Controller {
                     return "You failed to upload " + fileName + ": " + e.getMessage() + "<br/>";
                 } finally {
                     if(files[i].getContentType().equals("text/plain"))
-                        receivedFile = fileManager.NLPprocessor(result);
+                        receivedFile = fileManager.NLPprocessor(result, FilenameUtils.removeExtension(name));
                     fileManager.tigerXMLChecker(receivedFile);
                     output = receivedFile;
                 }
