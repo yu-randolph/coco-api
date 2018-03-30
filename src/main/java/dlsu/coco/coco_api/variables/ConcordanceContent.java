@@ -1,7 +1,10 @@
 package dlsu.coco.coco_api.variables;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.swing.text.html.HTML;
 import java.util.ArrayList;
 
 public class ConcordanceContent {
@@ -51,8 +54,31 @@ public class ConcordanceContent {
         this.words = words;
     }
 
-    public JSONObject getJSON()
-    {
-        return null;
+    public JSONObject getJSON() throws JSONException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("keyword", this.keyword);
+        jsonObject.put("keyword_index", this.keyword_Index);
+        jsonObject.put("completeSentence", this.completeSentence);
+
+        JSONArray listGraph = new JSONArray();
+
+            for(WordContent word: this.words) {
+                    JSONObject wordContent = new JSONObject();
+                      JSONObject tagContent = new JSONObject();
+                    wordContent.put("word",word.getWord());
+                    for(TagContent tag : word.getTags()) {
+
+                        tagContent.put("name",tag.getTagName());
+                        tagContent.put("value",tag.getTagValue());
+                    }
+                    wordContent.put("tags",tagContent);
+                    listGraph.put(wordContent);
+            }
+        jsonObject.put("WordContent", listGraph);
+        System.out.println(jsonObject);
+        return jsonObject;
+
+
+
     }
 }

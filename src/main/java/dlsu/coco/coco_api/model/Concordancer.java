@@ -55,13 +55,13 @@ public class Concordancer {
 //        return jsonObject;
 //    }
 
-    public JSONObject getConcordanceResult(String[] keywords) throws JSONException {
+    public JSONObject getConcordanceResult() throws JSONException {
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         concordanceContents = new ArrayList<>();
 
         //CHECK ALL KEYWORDS
-        for(String keyword : keywords)
+        for(String keyword : this.concepts)
         {
             //SEGMENT || CONTENT
             for(Segment content : corpus.getSegments())
@@ -116,13 +116,13 @@ public class Concordancer {
         return jsonObject;
     }
 
-    public JSONObject getAdvancedResults(String[] keywords, ArrayList<String> tags) throws JSONException {
+    public JSONObject getAdvancedResults(ArrayList<String> tags) throws JSONException {
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         concordanceContents = new ArrayList<>();
 
         //CHECK ALL KEYWORDS
-        for(String keyword : keywords)
+        for(String keyword : this.concepts)
         {
             //SEGMENT || CONTENT
             for(Segment content : corpus.getSegments())

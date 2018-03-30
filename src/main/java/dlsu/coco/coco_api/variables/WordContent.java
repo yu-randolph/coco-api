@@ -26,4 +26,6 @@ public class WordContent {
     public void setTags(ArrayList<TagContent> tags) {
         this.tags = tags;
     }
+
+
 }

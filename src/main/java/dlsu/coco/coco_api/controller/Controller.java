@@ -271,6 +271,57 @@ public class Controller {
         }
         return newTag;
     }
+
+    @RequestMapping(value = "/getConcepts", method = RequestMethod.POST)
+    public @ResponseBody
+    String getConcepts(@RequestParam("feature") String feature) {
+        String newTag = "";
+        if (!feature.isEmpty()) {
+            try {
+
+                byte[] bytes = feature.getBytes();
+                String result = new String(bytes);
+                newTag = result;
+                System.out.println(result);
+
+                fileManager.getJSONConcepts(result);
+
+                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("Result: " + result);
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
+                return "You failed to upload " + newTag + " => " + e.getMessage();
+            }
+        }
+        return newTag;
+    }
+    @RequestMapping(value = "/getConcordances", method = RequestMethod.POST)
+    public @ResponseBody
+    String getConcordances(@RequestParam("feature") String feature) {
+        String newTag = "";
+        if (!feature.isEmpty()) {
+            try {
+
+                byte[] bytes = feature.getBytes();
+                String result = new String(bytes);
+                newTag = result;
+                System.out.println(result);
+
+                fileManager.getJSONConcordances(result);
+
+                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("Result: " + result);
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
+                return "You failed to upload " + newTag + " => " + e.getMessage();
+            }
+        }
+        return newTag;
+    }
 //    @GetMapping("/get/{value}")
 //    public void get(HttpServletResponse response, @PathVariable String value)
 //    {
