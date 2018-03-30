@@ -61,19 +61,33 @@ public class Controller {
         File receivedFile = null;
         if (!file.isEmpty()) {
             try {
-                name = file.getOriginalFilename();
-                byte[] bytes = file.getBytes();
-                receivedFile = new File("src/" + name);
-                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(receivedFile));
-                stream.write(bytes);
-                stream.close();
-                String result = new String(bytes);
-                fileManager.setPath(name);
-                System.out.println(receivedFile.getPath());
 
-                System.out.println("You successfully uploaded " + name + " into " + name);
-                System.out.println("Content Type: " + file.getContentType());
-                System.out.println("Result: " + result);
+                if(file.getContentType().equals(".txt"))
+                {
+                    name = file.getOriginalFilename();
+                    String result = new String(file.getBytes().toString());
+                    receivedFile = fileManager.NLPprocessor(file.getBytes().toString());
+
+                    System.out.println("You successfully uploaded " + name + " into " + name);
+                    System.out.println("Content Type: " + file.getContentType());
+                    System.out.println("Result: " + result);
+                }
+                else if(file.getContentType().equals(".tiger2"))
+                {
+                    name = file.getOriginalFilename();
+                    byte[] bytes = file.getBytes();
+                    receivedFile = new File("src/" + name);
+                    BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(receivedFile));
+                    stream.write(bytes);
+                    stream.close();
+                    String result = new String(bytes);
+                    fileManager.setPath(name);
+                    System.out.println(receivedFile.getPath());
+                    System.out.println("You successfully uploaded " + name + " into " + name);
+                    System.out.println("Content Type: " + file.getContentType());
+                    System.out.println("Result: " + result);
+                }
+
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
 
             } catch (Exception e) {
@@ -284,11 +298,11 @@ public class Controller {
         return fileManager.AnnotationstoJSONconverter().toString();
     }
 
-    @GetMapping("/getXML")
-    public String getXML() {
-        return fileManager.NLPprocessor("I happened to see a one day cricket match between Pakistan and Australia at Wankhade Stadium, Mumbai. " +
-                "I went for a fun. But I wit\u00ADnessed a horrible sight. Two thousand ticketless cricket fans gate crashed. " +
-                "There was a stampede. Three persons died and twenty were injured. Administration was responsible for it.");
-    }
+//    @GetMapping("/getXML")
+//    public String getXML() {
+//        return fileManager.NLPprocessor("I happened to see a one day cricket match between Pakistan and Australia at Wankhade Stadium, Mumbai. " +
+//                "I went for a fun. But I wit\u00ADnessed a horrible sight. Two thousand ticketless cricket fans gate crashed. " +
+//                "There was a stampede. Three persons died and twenty were injured. Administration was responsible for it.");
+//    }
 }
 
