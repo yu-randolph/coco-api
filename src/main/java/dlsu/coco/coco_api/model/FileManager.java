@@ -51,7 +51,7 @@ public class FileManager {
         PATH = path;
     }
 
-    public File NLPprocessor(String content)
+    public String NLPprocessor(String content)
     {
         props = new Properties();
         props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
@@ -63,7 +63,7 @@ public class FileManager {
         return this.Text_to_TigerXML(document);
     }
 
-    private File Text_to_TigerXML(Annotation document)
+    public String Text_to_TigerXML(Annotation document)
     {
         try
         {
@@ -200,13 +200,11 @@ public class FileManager {
 
         try
         {
-            File file = new File("src/file.tiger2");
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(file);
+            StreamResult result = new StreamResult(new File("C:\\Users\\asus\\Desktop\\xx\\file.xml"));
             transformer.transform(source, result);
-            return file;
         }
         catch (TransformerConfigurationException e)
         {
@@ -343,6 +341,16 @@ public class FileManager {
             case "WRB" : return "Wh­adverb";
             default: return "";
         }
+    }
+
+    public JSONObject getJSONConcepts(String concept) throws JSONException {
+        JSONObject jsonObject = new JSONObject(concept);
+        JSONObject concepts;
+
+        ConceptFinder cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
+        concepts = cf.getAllResults();
+
+        return concepts;
     }
 }
 

@@ -12,14 +12,16 @@ public class ConceptFinder {
     private ArrayList<String> relatedWords,conceptResults;
     private ConceptNet conceptNet;
     private WordNet wordNet;
-
-    public ConceptFinder(String concept, String pos, String dictLocation){
+    private JSONObject wordnet;
+    public ConceptFinder(String concept, String pos, String dictLocation) throws JSONException {
 
         this.pos = pos;
         this.concept = concept;
         this.conceptResults = new ArrayList<String>();
         conceptNet = new ConceptNet(concept);
         wordNet = new WordNet(dictLocation, concept);
+        this.getWordNetResult();
+
     }
 
 
@@ -41,10 +43,11 @@ public class ConceptFinder {
 //        jsonObject.put("ADJECTIVE_SYNONYM", wordNet.getAdjectiveSynonymJSONObject());
 //        jsonObject.put("ADVERB_SYNONYM", wordNet.getAdverbSynonymJSONObject());
 
+        wordnet = jsonObject;
         return jsonObject;
     }
 
-    public JSONObject getConceptNetResult() throws JSONException {
+    public JSONObject getAllResults() throws JSONException {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("FORM_OF", conceptNet.getFormOfJSONObject());
 
@@ -54,6 +57,8 @@ public class ConceptFinder {
 //        jsonObject.put("PART_OF", conceptNet.getPartOfJSONObject());
 //        jsonObject.put("CREATED_BY", conceptNet.getCreatedByJSONObject());
         this.conceptResults.addAll(conceptNet.getContents());
+        jsonObject.put("WORDNET", wordnet);
+
         return jsonObject;
     }
     public ArrayList<String> getConceptResults() {
@@ -76,7 +81,7 @@ public class ConceptFinder {
 //
 //    public void getWordNet(){
 //        WordNet wn = new WordNet("C:\\Users\\Micoh F Alvarez\\Desktop\\System needs\\WordNet-3.0\\WordNet-3.0\\dict",this.concept);
-
+// C:\\Users\\Micoh\\Downloads\\WordNet-3.0\\WordNet-3.0\\dict"
 //            for(String results : wn.getNounSynonym()){
 //                this.relatedWords.add(results);
 //            }
