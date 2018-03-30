@@ -202,7 +202,7 @@ public class FileManager {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("C:\\Users\\asus\\Desktop\\xx\\file.xml"));
+            StreamResult result = new StreamResult(new File("C:\\Users\\asus\\Desktop\\file.xml"));
             transformer.transform(source, result);
         }
         catch (TransformerConfigurationException e)
