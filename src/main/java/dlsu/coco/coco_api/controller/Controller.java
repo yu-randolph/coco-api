@@ -251,8 +251,6 @@ public class Controller {
     public String getContent() throws JSONException {
 
 //       ConceptFinder fn = new ConceptFinder("Hello", "book");
-
-
         return fileManager.XMLtoJSONconverter().toString();
     }
 

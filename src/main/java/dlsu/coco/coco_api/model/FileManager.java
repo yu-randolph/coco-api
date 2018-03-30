@@ -10,6 +10,7 @@ import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.POSTaggerAnnotator;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
@@ -224,6 +225,7 @@ public class FileManager {
     }
 
     public JSONObject XMLtoJSONconverter() throws JSONException {
+        System.out.println(tiger2Converter.XMLtoJSONconverter().toString());
         return tiger2Converter.XMLtoJSONconverter();
     }
 
@@ -252,7 +254,24 @@ public class FileManager {
 
     }
 
-    public void addFeature(String feature){
+    public void addFeature(String feature) throws JSONException {
+
+        JSONObject jsonObject = new JSONObject(feature);
+        JSONArray arr = new JSONArray(jsonObject.get("values").toString());
+
+        ArrayList<String> val = new ArrayList<String>();
+        ArrayList<String> desc = new ArrayList<String>();
+
+        for(int i = 0; i < arr.length(); i++){
+            val.add(arr.getJSONObject(i).getString("value"));
+            desc.add(arr.getJSONObject(i).getString("description"));
+        }
+
+        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
+
+        corpusEditer.addnewFeature(jsonObject.get("featureName").toString(), val,desc);
+        tiger2Converter.setCorpus(corpusEditer.getCorpus());
+
 
     }
 
