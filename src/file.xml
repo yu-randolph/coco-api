@@ -1,0 +1,183 @@
+Three Australian cricketers found guilty of ball-tampering in a scandal that's rocked the sport are returning home from South Africa to angry supporters who feel betrayed by their actions.
+
+Rookie fielder Cameron Bancroft arrived in Perth Thursday afternoon and addressed the media, taking responsibility for his actions and acknowledging that he had tried to cover up the misdeed, which was caught on camera during a Test match.
+
+"Yes, I lied. I lied about the sandpaper and I just panicked, I panicked in that situation and I'm very sorry," he said.
+"It's my actions that I'm accountable for here. They don't reflect on my values and who I've grown up to be and it's something that I'm really ashamed of and I'm so sorry for."
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<s xml:id="s1">
+	<graph root="s1_g01">
+		<terminals>
+			<t lemma="three" ner="NUMBER" pos="CD" tiger2:word="Three" xml:id="s0_t1"/>
+			<t lemma="australian" ner="NATIONALITY" pos="JJ" tiger2:word="Australian" xml:id="s0_t2"/>
+			<t lemma="cricketer" ner="O" pos="NNS" tiger2:word="cricketers" xml:id="s0_t3"/>
+			<t lemma="find" ner="O" pos="VBD" tiger2:word="found" xml:id="s0_t4"/>
+			<t lemma="guilty" ner="O" pos="JJ" tiger2:word="guilty" xml:id="s0_t5"/>
+			<t lemma="of" ner="O" pos="IN" tiger2:word="of" xml:id="s0_t6"/>
+			<t lemma="ball-tampering" ner="O" pos="NN" tiger2:word="ball-tampering" xml:id="s0_t7"/>
+			<t lemma="in" ner="O" pos="IN" tiger2:word="in" xml:id="s0_t8"/>
+			<t lemma="a" ner="O" pos="DT" tiger2:word="a" xml:id="s0_t9"/>
+			<t lemma="scandal" ner="O" pos="NN" tiger2:word="scandal" xml:id="s0_t10"/>
+			<t lemma="that" ner="O" pos="WDT" tiger2:word="that" xml:id="s0_t11"/>
+			<t lemma="be" ner="O" pos="VBZ" tiger2:word="'s" xml:id="s0_t12"/>
+			<t lemma="rock" ner="O" pos="VBN" tiger2:word="rocked" xml:id="s0_t13"/>
+			<t lemma="the" ner="O" pos="DT" tiger2:word="the" xml:id="s0_t14"/>
+			<t lemma="sport" ner="O" pos="NN" tiger2:word="sport" xml:id="s0_t15"/>
+			<t lemma="be" ner="O" pos="VBP" tiger2:word="are" xml:id="s0_t16"/>
+			<t lemma="return" ner="O" pos="VBG" tiger2:word="returning" xml:id="s0_t17"/>
+			<t lemma="home" ner="O" pos="NN" tiger2:word="home" xml:id="s0_t18"/>
+			<t lemma="from" ner="O" pos="IN" tiger2:word="from" xml:id="s0_t19"/>
+			<t lemma="South" ner="COUNTRY" pos="NNP" tiger2:word="South" xml:id="s0_t20"/>
+			<t lemma="Africa" ner="COUNTRY" pos="NNP" tiger2:word="Africa" xml:id="s0_t21"/>
+			<t lemma="to" ner="O" pos="TO" tiger2:word="to" xml:id="s0_t22"/>
+			<t lemma="angry" ner="O" pos="JJ" tiger2:word="angry" xml:id="s0_t23"/>
+			<t lemma="supporter" ner="O" pos="NNS" tiger2:word="supporters" xml:id="s0_t24"/>
+			<t lemma="who" ner="O" pos="WP" tiger2:word="who" xml:id="s0_t25"/>
+			<t lemma="feel" ner="O" pos="VBP" tiger2:word="feel" xml:id="s0_t26"/>
+			<t lemma="betray" ner="O" pos="VBN" tiger2:word="betrayed" xml:id="s0_t27"/>
+			<t lemma="by" ner="O" pos="IN" tiger2:word="by" xml:id="s0_t28"/>
+			<t lemma="they" ner="O" pos="PRP$" tiger2:word="their" xml:id="s0_t29"/>
+			<t lemma="action" ner="O" pos="NNS" tiger2:word="actions" xml:id="s0_t30"/>
+			<t lemma="." ner="O" pos="." tiger2:word="." xml:id="s0_t31"/>
+		</terminals>
+	</graph>
+	<graph root="s1_g11">
+		<terminals>
+			<t lemma="rookie" ner="O" pos="NN" tiger2:word="Rookie" xml:id="s1_t1"/>
+			<t lemma="fielder" ner="O" pos="NN" tiger2:word="fielder" xml:id="s1_t2"/>
+			<t lemma="Cameron" ner="PERSON" pos="NNP" tiger2:word="Cameron" xml:id="s1_t3"/>
+			<t lemma="Bancroft" ner="PERSON" pos="NNP" tiger2:word="Bancroft" xml:id="s1_t4"/>
+			<t lemma="arrive" ner="O" pos="VBD" tiger2:word="arrived" xml:id="s1_t5"/>
+			<t lemma="in" ner="O" pos="IN" tiger2:word="in" xml:id="s1_t6"/>
+			<t lemma="Perth" ner="CITY" pos="NNP" tiger2:word="Perth" xml:id="s1_t7"/>
+			<t lemma="Thursday" ner="DATE" pos="NNP" tiger2:word="Thursday" xml:id="s1_t8"/>
+			<t lemma="afternoon" ner="TIME" pos="NN" tiger2:word="afternoon" xml:id="s1_t9"/>
+			<t lemma="and" ner="O" pos="CC" tiger2:word="and" xml:id="s1_t10"/>
+			<t lemma="address" ner="O" pos="VBD" tiger2:word="addressed" xml:id="s1_t11"/>
+			<t lemma="the" ner="O" pos="DT" tiger2:word="the" xml:id="s1_t12"/>
+			<t lemma="media" ner="O" pos="NNS" tiger2:word="media" xml:id="s1_t13"/>
+			<t lemma="," ner="O" pos="," tiger2:word="," xml:id="s1_t14"/>
+			<t lemma="take" ner="O" pos="VBG" tiger2:word="taking" xml:id="s1_t15"/>
+			<t lemma="responsibility" ner="O" pos="NN" tiger2:word="responsibility" xml:id="s1_t16"/>
+			<t lemma="for" ner="O" pos="IN" tiger2:word="for" xml:id="s1_t17"/>
+			<t lemma="he" ner="O" pos="PRP$" tiger2:word="his" xml:id="s1_t18"/>
+			<t lemma="action" ner="O" pos="NNS" tiger2:word="actions" xml:id="s1_t19"/>
+			<t lemma="and" ner="O" pos="CC" tiger2:word="and" xml:id="s1_t20"/>
+			<t lemma="acknowledge" ner="O" pos="VBG" tiger2:word="acknowledging" xml:id="s1_t21"/>
+			<t lemma="that" ner="O" pos="IN" tiger2:word="that" xml:id="s1_t22"/>
+			<t lemma="he" ner="O" pos="PRP" tiger2:word="he" xml:id="s1_t23"/>
+			<t lemma="have" ner="O" pos="VBD" tiger2:word="had" xml:id="s1_t24"/>
+			<t lemma="try" ner="O" pos="VBN" tiger2:word="tried" xml:id="s1_t25"/>
+			<t lemma="to" ner="O" pos="TO" tiger2:word="to" xml:id="s1_t26"/>
+			<t lemma="cover" ner="O" pos="VB" tiger2:word="cover" xml:id="s1_t27"/>
+			<t lemma="up" ner="O" pos="RP" tiger2:word="up" xml:id="s1_t28"/>
+			<t lemma="the" ner="O" pos="DT" tiger2:word="the" xml:id="s1_t29"/>
+			<t lemma="misdeed" ner="O" pos="NN" tiger2:word="misdeed" xml:id="s1_t30"/>
+			<t lemma="," ner="O" pos="," tiger2:word="," xml:id="s1_t31"/>
+			<t lemma="which" ner="O" pos="WDT" tiger2:word="which" xml:id="s1_t32"/>
+			<t lemma="be" ner="O" pos="VBD" tiger2:word="was" xml:id="s1_t33"/>
+			<t lemma="catch" ner="O" pos="VBN" tiger2:word="caught" xml:id="s1_t34"/>
+			<t lemma="on" ner="O" pos="IN" tiger2:word="on" xml:id="s1_t35"/>
+			<t lemma="camera" ner="O" pos="NN" tiger2:word="camera" xml:id="s1_t36"/>
+			<t lemma="during" ner="O" pos="IN" tiger2:word="during" xml:id="s1_t37"/>
+			<t lemma="a" ner="O" pos="DT" tiger2:word="a" xml:id="s1_t38"/>
+			<t lemma="test" ner="O" pos="NN" tiger2:word="Test" xml:id="s1_t39"/>
+			<t lemma="match" ner="O" pos="NN" tiger2:word="match" xml:id="s1_t40"/>
+			<t lemma="." ner="O" pos="." tiger2:word="." xml:id="s1_t41"/>
+		</terminals>
+	</graph>
+	<graph root="s1_g21">
+		<terminals>
+			<t lemma="``" ner="O" pos="``" tiger2:word="``" xml:id="s2_t1"/>
+			<t lemma="yes" ner="O" pos="UH" tiger2:word="Yes" xml:id="s2_t2"/>
+			<t lemma="," ner="O" pos="," tiger2:word="," xml:id="s2_t3"/>
+			<t lemma="I" ner="O" pos="PRP" tiger2:word="I" xml:id="s2_t4"/>
+			<t lemma="lie" ner="O" pos="VBD" tiger2:word="lied" xml:id="s2_t5"/>
+			<t lemma="." ner="O" pos="." tiger2:word="." xml:id="s2_t6"/>
+		</terminals>
+	</graph>
+	<graph root="s1_g31">
+		<terminals>
+			<t lemma="I" ner="O" pos="PRP" tiger2:word="I" xml:id="s3_t1"/>
+			<t lemma="lie" ner="O" pos="VBD" tiger2:word="lied" xml:id="s3_t2"/>
+			<t lemma="about" ner="O" pos="IN" tiger2:word="about" xml:id="s3_t3"/>
+			<t lemma="the" ner="O" pos="DT" tiger2:word="the" xml:id="s3_t4"/>
+			<t lemma="sandpaper" ner="O" pos="NN" tiger2:word="sandpaper" xml:id="s3_t5"/>
+			<t lemma="and" ner="O" pos="CC" tiger2:word="and" xml:id="s3_t6"/>
+			<t lemma="I" ner="O" pos="PRP" tiger2:word="I" xml:id="s3_t7"/>
+			<t lemma="just" ner="O" pos="RB" tiger2:word="just" xml:id="s3_t8"/>
+			<t lemma="panic" ner="O" pos="VBD" tiger2:word="panicked" xml:id="s3_t9"/>
+			<t lemma="," ner="O" pos="," tiger2:word="," xml:id="s3_t10"/>
+			<t lemma="I" ner="O" pos="PRP" tiger2:word="I" xml:id="s3_t11"/>
+			<t lemma="panic" ner="O" pos="VBD" tiger2:word="panicked" xml:id="s3_t12"/>
+			<t lemma="in" ner="O" pos="IN" tiger2:word="in" xml:id="s3_t13"/>
+			<t lemma="that" ner="O" pos="DT" tiger2:word="that" xml:id="s3_t14"/>
+			<t lemma="situation" ner="O" pos="NN" tiger2:word="situation" xml:id="s3_t15"/>
+			<t lemma="and" ner="O" pos="CC" tiger2:word="and" xml:id="s3_t16"/>
+			<t lemma="I" ner="O" pos="PRP" tiger2:word="I" xml:id="s3_t17"/>
+			<t lemma="be" ner="O" pos="VBP" tiger2:word="'m" xml:id="s3_t18"/>
+			<t lemma="very" ner="O" pos="RB" tiger2:word="very" xml:id="s3_t19"/>
+			<t lemma="sorry" ner="O" pos="JJ" tiger2:word="sorry" xml:id="s3_t20"/>
+			<t lemma="," ner="O" pos="," tiger2:word="," xml:id="s3_t21"/>
+			<t lemma="''" ner="O" pos="''" tiger2:word="''" xml:id="s3_t22"/>
+			<t lemma="he" ner="O" pos="PRP" tiger2:word="he" xml:id="s3_t23"/>
+			<t lemma="say" ner="O" pos="VBD" tiger2:word="said" xml:id="s3_t24"/>
+			<t lemma="." ner="O" pos="." tiger2:word="." xml:id="s3_t25"/>
+		</terminals>
+	</graph>
+	<graph root="s1_g41">
+		<terminals>
+			<t lemma="``" ner="O" pos="``" tiger2:word="``" xml:id="s4_t1"/>
+			<t lemma="it" ner="O" pos="PRP" tiger2:word="It" xml:id="s4_t2"/>
+			<t lemma="be" ner="O" pos="VBZ" tiger2:word="'s" xml:id="s4_t3"/>
+			<t lemma="my" ner="O" pos="PRP$" tiger2:word="my" xml:id="s4_t4"/>
+			<t lemma="action" ner="O" pos="NNS" tiger2:word="actions" xml:id="s4_t5"/>
+			<t lemma="that" ner="O" pos="IN" tiger2:word="that" xml:id="s4_t6"/>
+			<t lemma="I" ner="O" pos="PRP" tiger2:word="I" xml:id="s4_t7"/>
+			<t lemma="be" ner="O" pos="VBP" tiger2:word="'m" xml:id="s4_t8"/>
+			<t lemma="accountable" ner="O" pos="JJ" tiger2:word="accountable" xml:id="s4_t9"/>
+			<t lemma="for" ner="O" pos="IN" tiger2:word="for" xml:id="s4_t10"/>
+			<t lemma="here" ner="O" pos="RB" tiger2:word="here" xml:id="s4_t11"/>
+			<t lemma="." ner="O" pos="." tiger2:word="." xml:id="s4_t12"/>
+		</terminals>
+	</graph>
+	<graph root="s1_g51">
+			<terminals>
+			<t lemma="they" ner="O" pos="PRP" tiger2:word="They" xml:id="s5_t1"/>
+			<t lemma="do" ner="O" pos="VBP" tiger2:word="do" xml:id="s5_t2"/>
+			<t lemma="not" ner="O" pos="RB" tiger2:word="n't" xml:id="s5_t3"/>
+			<t lemma="reflect" ner="O" pos="VB" tiger2:word="reflect" xml:id="s5_t4"/>
+			<t lemma="on" ner="O" pos="IN" tiger2:word="on" xml:id="s5_t5"/>
+			<t lemma="my" ner="O" pos="PRP$" tiger2:word="my" xml:id="s5_t6"/>
+			<t lemma="value" ner="O" pos="NNS" tiger2:word="values" xml:id="s5_t7"/>
+			<t lemma="and" ner="O" pos="CC" tiger2:word="and" xml:id="s5_t8"/>
+			<t lemma="who" ner="O" pos="WP" tiger2:word="who" xml:id="s5_t9"/>
+			<t lemma="I" ner="O" pos="PRP" tiger2:word="I" xml:id="s5_t10"/>
+			<t lemma="have" ner="O" pos="VBP" tiger2:word="'ve" xml:id="s5_t11"/>
+			<t lemma="grow" ner="O" pos="VBN" tiger2:word="grown" xml:id="s5_t12"/>
+			<t lemma="up" ner="O" pos="RP" tiger2:word="up" xml:id="s5_t13"/>
+			<t lemma="to" ner="O" pos="TO" tiger2:word="to" xml:id="s5_t14"/>
+			<t lemma="be" ner="O" pos="VB" tiger2:word="be" xml:id="s5_t15"/>
+			<t lemma="and" ner="O" pos="CC" tiger2:word="and" xml:id="s5_t16"/>
+			<t lemma="it" ner="O" pos="PRP" tiger2:word="it" xml:id="s5_t17"/>
+			<t lemma="be" ner="O" pos="VBZ" tiger2:word="'s" xml:id="s5_t18"/>
+			<t lemma="something" ner="O" pos="NN" tiger2:word="something" xml:id="s5_t19"/>
+			<t lemma="that" ner="O" pos="IN" tiger2:word="that" xml:id="s5_t20"/>
+			<t lemma="I" ner="O" pos="PRP" tiger2:word="I" xml:id="s5_t21"/>
+			<t lemma="be" ner="O" pos="VBP" tiger2:word="'m" xml:id="s5_t22"/>
+			<t lemma="really" ner="O" pos="RB" tiger2:word="really" xml:id="s5_t23"/>
+			<t lemma="ashamed" ner="O" pos="JJ" tiger2:word="ashamed" xml:id="s5_t24"/>
+			<t lemma="of" ner="O" pos="IN" tiger2:word="of" xml:id="s5_t25"/>
+			<t lemma="and" ner="O" pos="CC" tiger2:word="and" xml:id="s5_t26"/>
+			<t lemma="I" ner="O" pos="PRP" tiger2:word="I" xml:id="s5_t27"/>
+			<t lemma="be" ner="O" pos="VBP" tiger2:word="'m" xml:id="s5_t28"/>
+			<t lemma="so" ner="O" pos="RB" tiger2:word="so" xml:id="s5_t29"/>
+			<t lemma="sorry" ner="O" pos="JJ" tiger2:word="sorry" xml:id="s5_t30"/>
+			<t lemma="for" ner="O" pos="IN" tiger2:word="for" xml:id="s5_t31"/>
+			<t lemma="." ner="O" pos="." tiger2:word="." xml:id="s5_t32"/>
+			<t lemma="''" ner="O" pos="''" tiger2:word="''" xml:id="s5_t33"/>
+		</terminals>
+	</graph>
+</s>
