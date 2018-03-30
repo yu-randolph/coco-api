@@ -98,12 +98,14 @@ public class FileManager {
         //ANNOTATION
         Element annotationElement = doc.createElement("annotation");
 
+        //POS FEATURE
         Element pos_featureElement = doc.createElement("feature");
         pos_featureElement.setAttribute("name", "pos");
         pos_featureElement.setAttribute("domain", "t");
         annotationElement.appendChild(pos_featureElement);
         ArrayList<String> all_pos = new ArrayList<>();
 
+        //NER FEATURE
         Element ner_featureElement = doc.createElement("feature");
         ner_featureElement.setAttribute("name", "ner");
         ner_featureElement.setAttribute("domain", "t");
@@ -112,6 +114,12 @@ public class FileManager {
 
         Element segmentElement = doc.createElement("s");
         segmentElement.setAttribute("xml:id","s1");
+
+        //LEMMA FEATURE
+        Element lemmaElement = doc.createElement("feature");
+        lemmaElement.setAttribute("name", "lemma");
+        lemmaElement.setAttribute("domain", "t");
+        annotationElement.appendChild(lemmaElement);
 
         //CONTENT
         for(int graph_id = 0; graph_id < sentences.size(); graph_id++)
