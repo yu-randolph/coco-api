@@ -51,7 +51,7 @@ public class FileManager {
         PATH = path;
     }
 
-    public String NLPprocessor(String content)
+    public File NLPprocessor(String content)
     {
         props = new Properties();
         props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
@@ -63,7 +63,7 @@ public class FileManager {
         return this.Text_to_TigerXML(document);
     }
 
-    public String Text_to_TigerXML(Annotation document)
+    public File Text_to_TigerXML(Annotation document)
     {
         try
         {
@@ -200,11 +200,13 @@ public class FileManager {
 
         try
         {
+            File file = new File("src/");
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("C:\\Users\\asus\\Desktop\\xx\\file.xml"));
+            StreamResult result = new StreamResult(file);
             transformer.transform(source, result);
+            return file;
         }
         catch (TransformerConfigurationException e)
         {
@@ -363,10 +365,10 @@ public class FileManager {
         ArrayList<String> desc = new ArrayList<String>();
 
         for(int i = 0; i < arr.length(); i++){
-                for(int j = 0; j < arr.getJSONArray(i).length(); j++) {
-                    conceptList.add(arr.getJSONArray(i).getJSONObject(j).toString());
+            for(int j = 0; j < arr.getJSONArray(i).length(); j++) {
+                conceptList.add(arr.getJSONArray(i).getJSONObject(j).toString());
 
-                }
+            }
         }
         for(int x = 0 ; x < conceptNet.length(); x++){
             conceptList.add(conceptNet.getJSONObject(x).getString("startWord"));
