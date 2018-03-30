@@ -59,15 +59,15 @@ public class Controller {
             @RequestParam("file") MultipartFile file) {
         String name = "temp";
         File receivedFile = null;
+        String result="";
+        System.out.println(file.getContentType());
         if (!file.isEmpty()) {
             try {
-
+                System.out.println(file.getContentType());
                 if(file.getContentType().equals("text/plain"))
                 {
                     name = file.getOriginalFilename();
-                    String result = new String(file.getBytes().toString());
-                    receivedFile = fileManager.NLPprocessor(file.getBytes().toString());
-
+                    result = new String(file.getBytes().toString());
                     System.out.println("You successfully uploaded " + name + " into " + name);
                     System.out.println("Content Type: " + file.getContentType());
                     System.out.println("Result: " + result);
@@ -80,7 +80,7 @@ public class Controller {
                     BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(receivedFile));
                     stream.write(bytes);
                     stream.close();
-                    String result = new String(bytes);
+                    result = new String(bytes);
                     fileManager.setPath(name);
                     System.out.println(receivedFile.getPath());
                     System.out.println("You successfully uploaded " + name + " into " + name);
@@ -94,6 +94,8 @@ public class Controller {
                 System.out.println("You failed to upload " + name + " => " + e.getMessage());
                 return "You failed to upload " + name + " => " + e.getMessage();
             } finally {
+                if(file.getContentType().equals("text/plain"))
+                    receivedFile = fileManager.NLPprocessor(result);
                 fileManager.tigerXMLChecker(receivedFile);
                 fileManager.tigerProcess(receivedFile);
                 return fileManager.getRawCorpus();
