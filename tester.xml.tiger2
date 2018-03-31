@@ -2,14 +2,6 @@
 <corpus 
  xmlns="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:tiger2="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/ http://korpling.german.hu-berlin.de/tiger2/V2.0.5/Tiger2.xsd">
 <head>
-<meta>
-<name>Test Corpus</name>
-<author>Micoh Alvarez</author>
-<date>January 31 2-18</date>
-<description>some Description</description>
-<format>format 01</format>
-<history>any history</history>
-</meta>
 <annotation>
 <feature name="pos" domain="t">
 <value name="PRP">Personal pronoun</value>
@@ -44,7 +36,7 @@
 </head>
 <body>
 <s xml:id="s1">
-<graph xml:id="s1_g0">
+<graph xml:id="s1_g2">
 <terminals>
 <t xml:id="s0_t1" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
 <t xml:id="s0_t2" tiger2:word="happened" lemma="happen" ner="O" pos="VBD"/>
@@ -67,7 +59,7 @@
 <t xml:id="s0_t19" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
-<graph xml:id="s1_g1">
+<graph xml:id="s1_g3">
 <terminals>
 <t xml:id="s1_t1" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
 <t xml:id="s1_t2" tiger2:word="went" lemma="go" ner="O" pos="VBD"/>
@@ -77,7 +69,7 @@
 <t xml:id="s1_t6" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
-<graph xml:id="s1_g2">
+<graph xml:id="s1_g4">
 <terminals>
 <t xml:id="s2_t1" tiger2:word="But" lemma="but" ner="O" pos="CC"/>
 <t xml:id="s2_t2" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
@@ -88,7 +80,7 @@
 <t xml:id="s2_t7" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
-<graph xml:id="s1_g3">
+<graph xml:id="s1_g5">
 <terminals>
 <t xml:id="s3_t1" tiger2:word="Two" lemma="two" ner="DATE" pos="CD"/>
 <t xml:id="s3_t2" tiger2:word="thousand" lemma="thousand" ner="DATE" pos="CD"/>
@@ -100,7 +92,7 @@
 <t xml:id="s3_t8" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
-<graph xml:id="s1_g4">
+<graph xml:id="s1_g6">
 <terminals>
 <t xml:id="s4_t1" tiger2:word="There" lemma="there" ner="O" pos="EX"/>
 <t xml:id="s4_t2" tiger2:word="was" lemma="be" ner="O" pos="VBD"/>
@@ -109,7 +101,7 @@
 <t xml:id="s4_t5" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
-<graph xml:id="s1_g5">
+<graph xml:id="s1_g7">
 <terminals>
 <t xml:id="s5_t1" tiger2:word="Three" lemma="three" ner="NUMBER" pos="CD"/>
 <t xml:id="s5_t2" tiger2:word="persons" lemma="person" ner="O" pos="NNS"/>
@@ -121,7 +113,7 @@
 <t xml:id="s5_t8" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
-<graph xml:id="s1_g6">
+<graph xml:id="s1_g8">
 <terminals>
 <t xml:id="s6_t1" tiger2:word="Administration" lemma="administration" ner="O" pos="NN"/>
 <t xml:id="s6_t2" tiger2:word="was" lemma="be" ner="O" pos="VBD"/>

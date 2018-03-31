@@ -364,6 +364,7 @@ public class FileManager {
 
             JSONObject jsonObject = new JSONObject(concepts);
             JSONObject arr = new JSONObject(jsonObject.get("WORDNET").toString());
+            JSONObject result;
             Iterator<?> keys = arr.keys();
             ArrayList<String> conceptList = new ArrayList<>();
 
@@ -374,7 +375,7 @@ public class FileManager {
                         conceptList.add(contents.get(j).toString());
                      }
             }
-            
+
             JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
 
                 for (int x = 0; x < conceptNet.length(); x++) {
@@ -382,9 +383,12 @@ public class FileManager {
                 }
 
 
-            Concordancer cn = new Concordancer(conceptList, tiger2Converter.getCorpus());
+            Concordancer cn;
+            cn = new Concordancer(conceptList, tiger2Converter.getCorpus());
 
-            return cn.getConcordanceResult();
+            
+            result = cn.getConcordanceResult();
+            return result;
         }
 
 

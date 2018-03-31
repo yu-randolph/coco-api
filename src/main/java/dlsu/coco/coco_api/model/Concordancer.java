@@ -17,13 +17,14 @@ public class Concordancer {
     private Corpus corpus;
     private ArrayList<ConcordanceContent> concordanceContents;
 
-    private String concept;
+    private ArrayList<String> concept;
     private ArrayList<String> concepts = new ArrayList<String>();
 
     public Concordancer(ArrayList<String> concepts, Corpus corpus)
     {
-        this.concept = concept;
+        this.concepts = concepts;
         this.corpus = corpus;
+
     }
 
 //    public JSONObject getWordNetResult()
