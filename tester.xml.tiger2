@@ -40,10 +40,6 @@
 </feature>
 <feature name="lemma" domain="t">
 </feature>
-<feature name="Alphabet" domain="t">
-<value name="T">Test</value>
-<value name="A">Apple</value>
-</feature>
 </annotation>
 </head>
 <body>
