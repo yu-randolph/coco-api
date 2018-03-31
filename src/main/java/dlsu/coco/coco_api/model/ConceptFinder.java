@@ -19,7 +19,7 @@ public class ConceptFinder {
         this.concept = concept;
         this.conceptResults = new ArrayList<String>();
         conceptNet = new ConceptNet(concept);
-        wordNet = new WordNet(dictLocation, concept);
+        wordNet = new WordNet(System.getProperty("user.dir") + "\\WordNet-3.0\\\\WordNet-3.0\\dict", concept);
         this.getWordNetResult();
 
     }
@@ -58,7 +58,7 @@ public class ConceptFinder {
 //        jsonObject.put("CREATED_BY", conceptNet.getCreatedByJSONObject());
         this.conceptResults.addAll(conceptNet.getContents());
         jsonObject.put("WORDNET", wordnet);
-
+        System.out.println(jsonObject);
         return jsonObject;
     }
     public ArrayList<String> getConceptResults() {
