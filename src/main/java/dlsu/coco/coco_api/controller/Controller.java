@@ -101,6 +101,7 @@ public class Controller {
                 if(file.getContentType().equals("text/plain"))
                     receivedFile = fileManager.NLPprocessor(result, FilenameUtils.removeExtension(name));
                 fileManager.tigerXMLChecker(receivedFile);
+                System.out.println("RECEIVED FILE NAME: "+receivedFile.getName());
                 fileManager.tigerProcess(receivedFile);
                 return fileManager.getRawCorpus();
             }
@@ -162,6 +163,7 @@ public class Controller {
                     if(files[i].getContentType().equals("text/plain"))
                         receivedFile = fileManager.NLPprocessor(result, FilenameUtils.removeExtension(name));
                     fileManager.tigerXMLChecker(receivedFile);
+                    System.out.println("RECEIVED FILE NAME: "+receivedFile.getName());
                     output = receivedFile;
                 }
             }

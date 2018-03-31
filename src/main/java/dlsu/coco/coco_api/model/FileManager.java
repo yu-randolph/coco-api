@@ -125,8 +125,10 @@ public class FileManager {
         //CONTENT
         for(int graph_id = 0; graph_id < sentences.size(); graph_id++)
         {
+            System.out.println("xml:id" + "_" + "g" + graph_id);
             Element graphElement = doc.createElement("graph");
-            graphElement.setAttribute("root", segmentElement.getAttribute("xml:id") + "_" + "g" + graph_id);
+            //graphElement.setAttribute("root", segmentElement.getAttribute("xml:id") + "_" + "g" + graph_id);
+            graphElement.setAttribute("xml:id", segmentElement.getAttribute("xml:id") + "_g" +graph_id);
 
             Element terminalElement = doc.createElement("terminals");
 
