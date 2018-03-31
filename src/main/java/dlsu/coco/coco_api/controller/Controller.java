@@ -323,14 +323,14 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                fileManager.getJSONConcepts(result);
+                result = fileManager.getJSONConcepts(result).toString();
 
-                System.out.println("You successfully uploaded " + newTag + " into " + result);
+//                System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
+                System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
                 return "You failed to upload " + newTag + " => " + e.getMessage();
             }
         }
@@ -348,14 +348,13 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                fileManager.getJSONConcordances(result);
+                result = fileManager.getJSONConcordances(result).toString();
 
-                System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
+                System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
                 return "You failed to upload " + newTag + " => " + e.getMessage();
             }
         }
