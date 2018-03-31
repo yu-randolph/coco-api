@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<corpus 
+ xmlns="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:tiger2="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/ http://korpling.german.hu-berlin.de/tiger2/V2.0.5/Tiger2.xsd">
+<head>
+<meta>
+<name>Test Corpus</name>
+<author>Micoh Alvarez</author>
+<date>January 31 2-18</date>
+<description>some Description</description>
+<format>format 01</format>
+<history>any history</history>
+</meta>
+<annotation>
+<feature name="lemma" domain="t">
+</feature>
+<feature name="pos" domain="t">
+<value name=".">Punctuation</value>
+<value name="JJ">Adjective</value>
+<value name="NN" datcat="http://www.isocat.org/datcat/DC-1230">Noun, singular or mass</value>
+<value name="PP">Personal pronoun</value>
+<value name="RP">Particle</value>
+<value name="VB">Verb, base form</value>
+<value name="VBP">Verb, non-3rd person singular present</value>
+</feature>
+<feature name="function" domain="t">
+<value name="SC">Verb, base form</value>
+</feature>
+<feature name="label" domain="edge">
+<value name="anaphoric">Anaphoric Link</value>
+</feature>
+<feature type="prim" name="label" domain="edge">
+<value name="AT">Attribute</value>
+<value name="DO">Direct Object</value>
+<value name="HD">Head</value>
+<value name="IO">Infinitive</value>
+<value name="SB">Subject</value>
+</feature>
+<feature name="cat" domain="nt">
+<value name="NP">Nominal Phrase</value>
+<value name="S">Sentence or Clause</value>
+<value name="VP">Verbal Phrase</value>
+<value name="ROOT">Graph Root</value>
+</feature>
+</annotation>
+</head>
+<body>
+<s xml:id="seg_1">
+<graph xml:id="seg_1_g1">
+<terminals>
+<t xml:id="s1_t1" tiger2:word="I" lemma="I" pos="PP"/>
+<t xml:id="s1_t2" tiger2:word="wanna" lemma="wanna" pos="VBP"/>
+<t xml:id="s1_t3" tiger2:word="go" function="SC">
+<edge xml:id="edge1" tiger2:type="coref" tiger2:target="#s1_t1" label="anaphoric"/>
+</t>
+<t xml:id="s1_t4" tiger2:word="put" lemma="put" pos="VB"/>
+<t xml:id="s1_t5" tiger2:word="up" lemma="up" pos="RP"/>
+<t xml:id="s1_t6" tiger2:word="new" lemma="new" pos="JJ"/>
+<t xml:id="s1_t7" tiger2:word="wallpaper" lemma="wallpaper" pos="NN"/>
+<t xml:id="s1_t8" tiger2:word="." lemma="." pos="."/>
+</terminals>
+<nonterminals>
+<nt xml:id="s1_nt1" cat="NP">
+<edge xml:id="edge2" tiger2:type="prim" tiger2:target="#s1_t1" label="HD"/>
+</nt>
+<nt xml:id="s1_nt2" cat="VP">
+<edge xml:id="edge3" tiger2:type="prim" tiger2:target="#s1_t2" label="HD"/>
+<edge xml:id="edge4" tiger2:type="prim" tiger2:target="#s1_nt5"/>
+</nt>
+<nt xml:id="s1_nt3" cat="VP">
+<edge xml:id="edge5" tiger2:type="prim" tiger2:target="#s1_t4" label="HD"/>
+<edge xml:id="edge6" tiger2:type="prim" tiger2:target="#s1_t5"/>
+<edge xml:id="edge7" tiger2:type="prim" tiger2:target="#s1_nt4" label="DO"/>
+</nt>
+<nt xml:id="s1_nt4" cat="NP">
+<edge xml:id="edge8" tiger2:type="prim" tiger2:target="#s1_t6" label="AT"/>
+<edge xml:id="edge9" tiger2:type="prim" tiger2:target="#s1_t7" label="HD"/>
+</nt>
+<nt xml:id="s1_nt5" cat="S">
+<edge xml:id="edge10" tiger2:type="prim" tiger2:target="#s1_t3" label="SB"/>
+<edge xml:id="edge11" tiger2:type="prim" tiger2:target="#s1_t1"/>
+</nt>
+<nt xml:id="s1_nt6" cat="S">
+<edge xml:id="edge12" tiger2:type="prim" tiger2:target="#s1_t1" label="SB"/>
+<edge xml:id="edge13" tiger2:type="prim" tiger2:target="#s1_nt2"/>
+</nt>
+<nt xml:id="s1_ROOT" cat="ROOT">
+<edge xml:id="edge14" tiger2:type="prim" tiger2:target="#s1_nt1"/>
+<edge xml:id="edge15" tiger2:type="prim" tiger2:target="#s1_t8"/>
+</nt>
+</nonterminals>
+</graph>
+</s>
+</body>
+</corpus>

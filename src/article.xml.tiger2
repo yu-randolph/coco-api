@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<corpus 
+ xmlns="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:tiger2="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/ http://korpling.german.hu-berlin.de/tiger2/V2.0.5/Tiger2.xsd">
+<head>
+<meta>
+<name>Test Corpus</name>
+<author>Micoh Alvarez</author>
+<date>January 31 2-18</date>
+<description>some Description</description>
+<format>format 01</format>
+<history>any history</history>
+</meta>
+<annotation>
+<feature name="pos" domain="t">
+<value name="PRP">Personal pronoun</value>
+<value name="DT">Determiner</value>
+<value name="NNP">Proper noun, singular</value>
+<value name="NNS">Noun, plural</value>
+<value name="VBD">Verb, past tense</value>
+<value name="VBN">Verb, past participle</value>
+<value name="IN">Preposition or subordinating conjunction</value>
+<value name="VB">Verb, base form</value>
+<value name=","/>
+<value name="."/>
+<value name="EX">Existential there</value>
+<value name="NN">Noun, singular or mass</value>
+<value name="JJ">Adjective</value>
+<value name="CC">Coordinating conjunction</value>
+<value name="CD">Cardinal number</value>
+<value name="TO">to</value>
+</feature>
+<feature name="ner" domain="t">
+<value name="COUNTRY">COUNTRY</value>
+<value name="NUMBER">NUMBER</value>
+<value name="DATE">DATE</value>
+<value name="LOCATION">LOCATION</value>
+<value name="O">O</value>
+<value name="CITY">CITY</value>
+<value name="DURATION">DURATION</value>
+</feature>
+<feature name="lemma" domain="t">
+</feature>
+</annotation>
+</head>
+<body>
+<s xml:id="s1">
+<graph xml:id="s1_g0">
+<terminals>
+<t xml:id="s0_t1" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
+<t xml:id="s0_t2" tiger2:word="happened" lemma="happen" ner="O" pos="VBD"/>
+<t xml:id="s0_t3" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s0_t4" tiger2:word="see" lemma="see" ner="O" pos="VB"/>
+<t xml:id="s0_t5" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s0_t6" tiger2:word="one" lemma="one" ner="DURATION" pos="CD"/>
+<t xml:id="s0_t7" tiger2:word="day" lemma="day" ner="DURATION" pos="NN"/>
+<t xml:id="s0_t8" tiger2:word="cricket" lemma="cricket" ner="O" pos="NN"/>
+<t xml:id="s0_t9" tiger2:word="match" lemma="match" ner="O" pos="NN"/>
+<t xml:id="s0_t10" tiger2:word="between" lemma="between" ner="O" pos="IN"/>
+<t xml:id="s0_t11" tiger2:word="Pakistan" lemma="Pakistan" ner="COUNTRY" pos="NNP"/>
+<t xml:id="s0_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s0_t13" tiger2:word="Australia" lemma="Australia" ner="COUNTRY" pos="NNP"/>
+<t xml:id="s0_t14" tiger2:word="at" lemma="at" ner="O" pos="IN"/>
+<t xml:id="s0_t15" tiger2:word="Wankhade" lemma="Wankhade" ner="LOCATION" pos="NNP"/>
+<t xml:id="s0_t16" tiger2:word="Stadium" lemma="Stadium" ner="LOCATION" pos="NNP"/>
+<t xml:id="s0_t17" tiger2:word="," lemma="," ner="O" pos=","/>
+<t xml:id="s0_t18" tiger2:word="Mumbai" lemma="Mumbai" ner="CITY" pos="NNP"/>
+<t xml:id="s0_t19" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g1">
+<terminals>
+<t xml:id="s1_t1" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
+<t xml:id="s1_t2" tiger2:word="went" lemma="go" ner="O" pos="VBD"/>
+<t xml:id="s1_t3" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s1_t4" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s1_t5" tiger2:word="fun" lemma="fun" ner="O" pos="NN"/>
+<t xml:id="s1_t6" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g2">
+<terminals>
+<t xml:id="s2_t1" tiger2:word="But" lemma="but" ner="O" pos="CC"/>
+<t xml:id="s2_t2" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
+<t xml:id="s2_t3" tiger2:word="witnessed" lemma="witness" ner="O" pos="VBD"/>
+<t xml:id="s2_t4" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s2_t5" tiger2:word="horrible" lemma="horrible" ner="O" pos="JJ"/>
+<t xml:id="s2_t6" tiger2:word="sight" lemma="sight" ner="O" pos="NN"/>
+<t xml:id="s2_t7" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g3">
+<terminals>
+<t xml:id="s3_t1" tiger2:word="Two" lemma="two" ner="DATE" pos="CD"/>
+<t xml:id="s3_t2" tiger2:word="thousand" lemma="thousand" ner="DATE" pos="CD"/>
+<t xml:id="s3_t3" tiger2:word="ticketless" lemma="ticketless" ner="O" pos="JJ"/>
+<t xml:id="s3_t4" tiger2:word="cricket" lemma="cricket" ner="O" pos="NN"/>
+<t xml:id="s3_t5" tiger2:word="fans" lemma="fan" ner="O" pos="NNS"/>
+<t xml:id="s3_t6" tiger2:word="gate" lemma="gate" ner="O" pos="NN"/>
+<t xml:id="s3_t7" tiger2:word="crashed" lemma="crash" ner="O" pos="VBD"/>
+<t xml:id="s3_t8" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g4">
+<terminals>
+<t xml:id="s4_t1" tiger2:word="There" lemma="there" ner="O" pos="EX"/>
+<t xml:id="s4_t2" tiger2:word="was" lemma="be" ner="O" pos="VBD"/>
+<t xml:id="s4_t3" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s4_t4" tiger2:word="stampede" lemma="stampede" ner="O" pos="NN"/>
+<t xml:id="s4_t5" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g5">
+<terminals>
+<t xml:id="s5_t1" tiger2:word="Three" lemma="three" ner="NUMBER" pos="CD"/>
+<t xml:id="s5_t2" tiger2:word="persons" lemma="person" ner="O" pos="NNS"/>
+<t xml:id="s5_t3" tiger2:word="died" lemma="die" ner="O" pos="VBD"/>
+<t xml:id="s5_t4" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s5_t5" tiger2:word="twenty" lemma="twenty" ner="NUMBER" pos="CD"/>
+<t xml:id="s5_t6" tiger2:word="were" lemma="be" ner="O" pos="VBD"/>
+<t xml:id="s5_t7" tiger2:word="injured" lemma="injure" ner="O" pos="VBN"/>
+<t xml:id="s5_t8" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g6">
+<terminals>
+<t xml:id="s6_t1" tiger2:word="Administration" lemma="administration" ner="O" pos="NN"/>
+<t xml:id="s6_t2" tiger2:word="was" lemma="be" ner="O" pos="VBD"/>
+<t xml:id="s6_t3" tiger2:word="responsible" lemma="responsible" ner="O" pos="JJ"/>
+<t xml:id="s6_t4" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s6_t5" tiger2:word="it" lemma="it" ner="O" pos="PRP"/>
+<t xml:id="s6_t6" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+</s>
+</body>
+</corpus>
