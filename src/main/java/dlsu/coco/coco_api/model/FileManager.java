@@ -361,27 +361,33 @@ public class FileManager {
 
     public JSONObject getJSONConcordances(String concepts) throws JSONException {
 
-        JSONObject jsonObject = new JSONObject(concepts);
-        JSONArray arr = new JSONArray(jsonObject.get("WORDNET").toString());
-        JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
 
-        ArrayList<String> conceptList = new ArrayList<String>();
-        ArrayList<String> desc = new ArrayList<String>();
+            JSONObject jsonObject = new JSONObject(concepts);
+            JSONObject arr = new JSONObject(jsonObject.get("WORDNET").toString());
+            Iterator<?> keys = arr.keys();
+            ArrayList<String> conceptList = new ArrayList<>();
 
-        for(int i = 0; i < arr.length(); i++){
-            for(int j = 0; j < arr.getJSONArray(i).length(); j++) {
-                conceptList.add(arr.getJSONArray(i).getJSONObject(j).toString());
-
+           while( keys.hasNext() ) {
+                String key = (String)keys.next();
+                JSONArray contents = new JSONArray(arr.get(key).toString());
+                    for (int j = 0; j < contents.length(); j++) {
+                        conceptList.add(contents.get(j).toString());
+                     }
             }
-        }
-        for(int x = 0 ; x < conceptNet.length(); x++){
-            conceptList.add(conceptNet.getJSONObject(x).getString("startWord"));
+            
+            JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
+
+                for (int x = 0; x < conceptNet.length(); x++) {
+                conceptList.add(conceptNet.get(x).toString());
+                }
+
+
+            Concordancer cn = new Concordancer(conceptList, tiger2Converter.getCorpus());
+
+            return cn.getConcordanceResult();
         }
 
-        Concordancer cn = new Concordancer(conceptList,tiger2Converter.getCorpus());
 
-        return cn.getConcordanceResult();
-    }
 
     public JSONObject getAdvancedJSONConcordances(String concepts) throws JSONException {
         JSONObject jsonObject = new JSONObject(concepts);
