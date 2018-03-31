@@ -11,274 +11,128 @@
 <history>any history</history>
 </meta>
 <annotation>
-<feature name="lemma" domain="t">
-</feature>
 <feature name="pos" domain="t">
-<<<<<<< HEAD
-<value name=".">Punctuation</value>
-<value name="JJ">Adjective</value>
-<value name="NN" datcat="http://www.isocat.org/datcat/DC-1230">Noun, singular or mass</value>
-<value name="PP">Personal pronoun</value>
-<value name="RP">Particle</value>
+<value name="PRP">Personal pronoun</value>
+<value name="DT">Determiner</value>
+<value name="NNP">Proper noun, singular</value>
+<value name="NNS">Noun, plural</value>
+<value name="VBD">Verb, past tense</value>
+<value name="VBN">Verb, past participle</value>
+<value name="IN">Preposition or subordinating conjunction</value>
 <value name="VB">Verb, base form</value>
-<value name="VBP">Verb, non-3rd person singular present</value>
-</feature>
-<feature name="function" domain="t">
-<value name="SC">Verb, base form</value>
-</feature>
-<feature name="label" domain="edge">
-<value name="anaphoric">Anaphoric Link</value>
-</feature>
-<feature type="prim" name="label" domain="edge">
-<value name="AT">Attribute</value>
-<value name="DO">Direct Object</value>
-<value name="HD">Head</value>
-<value name="IO">Infinitive</value>
-<value name="SB">Subject</value>
-</feature>
-<feature name="cat" domain="nt">
-<value name="NP">Nominal Phrase</value>
-<value name="S">Sentence or Clause</value>
-<value name="VP">Verbal Phrase</value>
-<value name="ROOT">Graph Root</value>
+<value name=","/>
+<value name="."/>
+<value name="EX">Existential there</value>
+<value name="NN">Noun, singular or mass</value>
+<value name="JJ">Adjective</value>
+<value name="CC">Coordinating conjunction</value>
+<value name="CD">Cardinal number</value>
+<value name="TO">to</value>
 </feature>
 <feature name="ner" domain="t">
 <value name="COUNTRY">COUNTRY</value>
 <value name="NUMBER">NUMBER</value>
 <value name="DATE">DATE</value>
 <value name="LOCATION">LOCATION</value>
-=======
-<value name="DT">Determiner</value>
-<value name="NNP">Proper noun, singular</value>
-<value name="NNS">Noun, plural</value>
-<value name="MD">Modal</value>
-<value name="VBN">Verb, past participle</value>
-<value name="IN">Preposition or subordinating conjunction</value>
-<value name="VB">Verb, base form</value>
-<value name="."/>
-<value name="VBZ">Verb, 3rd person singular present</value>
-<value name="RB">Adverb</value>
-<value name="EX">Existential there</value>
-<value name="RP">Particle</value>
-<value name="JJ">Adjective</value>
-<value name="NN">Noun, singular or mass</value>
-<value name="CC">Coordinating conjunction</value>
-<value name="CD">Cardinal number</value>
-<value name="PRP$">Possessive pronoun</value>
-<value name="TO">to</value>
-</feature>
-<feature name="ner" domain="t">
-<value name="COUNTRY">COUNTRY</value>
-<value name="IDEOLOGY">IDEOLOGY</value>
-<value name="NUMBER">NUMBER</value>
-<value name="DATE">DATE</value>
->>>>>>> 8acf6b83f98027f53cbead3446dac47de7b5c587
 <value name="O">O</value>
 <value name="CITY">CITY</value>
 <value name="DURATION">DURATION</value>
 </feature>
+<feature name="lemma" domain="t">
+</feature>
+<feature name="Alphabet" domain="t">
+<value name="T">Test</value>
+<value name="A">Apple</value>
+</feature>
 </annotation>
 </head>
 <body>
-<<<<<<< HEAD
-<s xml:id="seg_1">
-<graph xml:id="seg_1_g1">
-<terminals>
-<t xml:id="s1_t1" tiger2:word="I" lemma="I" pos="PP"/>
-<t xml:id="s1_t2" tiger2:word="wanna" lemma="wanna" pos="VBP"/>
-<t xml:id="s1_t3" tiger2:word="go" function="SC">
-<edge xml:id="edge1" tiger2:type="coref" tiger2:target="#s1_t1" label="anaphoric"/>
-</t>
-<t xml:id="s1_t4" tiger2:word="put" lemma="put" pos="VB"/>
-<t xml:id="s1_t5" tiger2:word="up" lemma="up" pos="RP"/>
-<t xml:id="s1_t6" tiger2:word="new" lemma="new" pos="JJ"/>
-<t xml:id="s1_t7" tiger2:word="wallpaper" lemma="wallpaper" pos="NN"/>
-<t xml:id="s1_t8" tiger2:word="." lemma="." pos="."/>
-</terminals>
-<nonterminals>
-<nt xml:id="s1_nt1" cat="NP">
-<edge xml:id="edge2" tiger2:type="prim" tiger2:target="#s1_t1" label="HD"/>
-</nt>
-<nt xml:id="s1_nt2" cat="VP">
-<edge xml:id="edge3" tiger2:type="prim" tiger2:target="#s1_t2" label="HD"/>
-<edge xml:id="edge4" tiger2:type="prim" tiger2:target="#s1_nt5"/>
-</nt>
-<nt xml:id="s1_nt3" cat="VP">
-<edge xml:id="edge5" tiger2:type="prim" tiger2:target="#s1_t4" label="HD"/>
-<edge xml:id="edge6" tiger2:type="prim" tiger2:target="#s1_t5"/>
-<edge xml:id="edge7" tiger2:type="prim" tiger2:target="#s1_nt4" label="DO"/>
-</nt>
-<nt xml:id="s1_nt4" cat="NP">
-<edge xml:id="edge8" tiger2:type="prim" tiger2:target="#s1_t6" label="AT"/>
-<edge xml:id="edge9" tiger2:type="prim" tiger2:target="#s1_t7" label="HD"/>
-</nt>
-<nt xml:id="s1_nt5" cat="S">
-<edge xml:id="edge10" tiger2:type="prim" tiger2:target="#s1_t3" label="SB"/>
-<edge xml:id="edge11" tiger2:type="prim" tiger2:target="#s1_t1"/>
-</nt>
-<nt xml:id="s1_nt6" cat="S">
-<edge xml:id="edge12" tiger2:type="prim" tiger2:target="#s1_t1" label="SB"/>
-<edge xml:id="edge13" tiger2:type="prim" tiger2:target="#s1_nt2"/>
-</nt>
-<nt xml:id="s1_ROOT" cat="ROOT">
-<edge xml:id="edge14" tiger2:type="prim" tiger2:target="#s1_nt1"/>
-<edge xml:id="edge15" tiger2:type="prim" tiger2:target="#s1_t8"/>
-</nt>
-</nonterminals>
-</graph>
-<graph xml:id="s1_g2">
-<terminals>
-<t xml:id="s2_t0" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
-<t xml:id="s2_t1" tiger2:word="happened" lemma="happen" ner="O" pos="VBD"/>
-<t xml:id="s2_t2" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
-<t xml:id="s2_t3" tiger2:word="see" lemma="see" ner="O" pos="VB"/>
-<t xml:id="s2_t4" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
-<t xml:id="s2_t5" tiger2:word="one" lemma="one" ner="DURATION" pos="CD"/>
-<t xml:id="s2_t6" tiger2:word="day" lemma="day" ner="DURATION" pos="NN"/>
-<t xml:id="s2_t7" tiger2:word="cricket" lemma="cricket" ner="O" pos="NN"/>
-<t xml:id="s2_t8" tiger2:word="match" lemma="match" ner="O" pos="NN"/>
-<t xml:id="s2_t9" tiger2:word="between" lemma="between" ner="O" pos="IN"/>
-<t xml:id="s2_t10" tiger2:word="Pakistan" lemma="Pakistan" ner="COUNTRY" pos="NNP"/>
-<t xml:id="s2_t11" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
-<t xml:id="s2_t12" tiger2:word="Australia" lemma="Australia" ner="COUNTRY" pos="NNP"/>
-<t xml:id="s2_t13" tiger2:word="at" lemma="at" ner="O" pos="IN"/>
-<t xml:id="s2_t14" tiger2:word="Wankhade" lemma="Wankhade" ner="LOCATION" pos="NNP"/>
-<t xml:id="s2_t15" tiger2:word="Stadium" lemma="Stadium" ner="LOCATION" pos="NNP"/>
-<t xml:id="s2_t16" tiger2:word="," lemma="," ner="O" pos=","/>
-<t xml:id="s2_t17" tiger2:word="Mumbai" lemma="Mumbai" ner="CITY" pos="NNP"/>
-<t xml:id="s2_t18" tiger2:word="." lemma="." ner="O" pos="."/>
-=======
 <s xml:id="s1">
 <graph xml:id="s1_g0">
 <terminals>
-<t xml:id="s0_t1" tiger2:word="Adult" lemma="adult" ner="O" pos="JJ"/>
-<t xml:id="s0_t2" tiger2:word="education" lemma="education" ner="O" pos="NN"/>
-<t xml:id="s0_t3" tiger2:word="is" lemma="be" ner="O" pos="VBZ"/>
-<t xml:id="s0_t4" tiger2:word="essential" lemma="essential" ner="O" pos="JJ"/>
-<t xml:id="s0_t5" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
-<t xml:id="s0_t6" tiger2:word="Democracy" lemma="democracy" ner="IDEOLOGY" pos="NN"/>
-<t xml:id="s0_t7" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
-<t xml:id="s0_t8" tiger2:word="India" lemma="India" ner="COUNTRY" pos="NNP"/>
-<t xml:id="s0_t9" tiger2:word="." lemma="." ner="O" pos="."/>
->>>>>>> 8acf6b83f98027f53cbead3446dac47de7b5c587
+<t xml:id="s0_t1" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
+<t xml:id="s0_t2" tiger2:word="happened" lemma="happen" ner="O" pos="VBD"/>
+<t xml:id="s0_t3" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s0_t4" tiger2:word="see" lemma="see" ner="O" pos="VB"/>
+<t xml:id="s0_t5" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s0_t6" tiger2:word="one" lemma="one" ner="DURATION" pos="CD"/>
+<t xml:id="s0_t7" tiger2:word="day" lemma="day" ner="DURATION" pos="NN"/>
+<t xml:id="s0_t8" tiger2:word="cricket" lemma="cricket" ner="O" pos="NN"/>
+<t xml:id="s0_t9" tiger2:word="match" lemma="match" ner="O" pos="NN"/>
+<t xml:id="s0_t10" tiger2:word="between" lemma="between" ner="O" pos="IN"/>
+<t xml:id="s0_t11" tiger2:word="Pakistan" lemma="Pakistan" ner="COUNTRY" pos="NNP"/>
+<t xml:id="s0_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s0_t13" tiger2:word="Australia" lemma="Australia" ner="COUNTRY" pos="NNP"/>
+<t xml:id="s0_t14" tiger2:word="at" lemma="at" ner="O" pos="IN"/>
+<t xml:id="s0_t15" tiger2:word="Wankhade" lemma="Wankhade" ner="LOCATION" pos="NNP"/>
+<t xml:id="s0_t16" tiger2:word="Stadium" lemma="Stadium" ner="LOCATION" pos="NNP"/>
+<t xml:id="s0_t17" tiger2:word="," lemma="," ner="O" pos=","/>
+<t xml:id="s0_t18" tiger2:word="Mumbai" lemma="Mumbai" ner="CITY" pos="NNP"/>
+<t xml:id="s0_t19" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
 <graph xml:id="s1_g1">
 <terminals>
-<<<<<<< HEAD
-<t xml:id="s3_t0" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
-<t xml:id="s3_t1" tiger2:word="went" lemma="go" ner="O" pos="VBD"/>
-<t xml:id="s3_t2" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
-<t xml:id="s3_t3" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
-<t xml:id="s3_t4" tiger2:word="fun" lemma="fun" ner="O" pos="NN"/>
-<t xml:id="s3_t5" tiger2:word="." lemma="." ner="O" pos="."/>
-=======
-<t xml:id="s1_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
-<t xml:id="s1_t2" tiger2:word="number" lemma="number" ner="O" pos="NN"/>
-<t xml:id="s1_t3" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
-<t xml:id="s1_t4" tiger2:word="grown" lemma="grow" ner="O" pos="VBN"/>
-<t xml:id="s1_t5" tiger2:word="up" lemma="up" ner="O" pos="RP"/>
-<t xml:id="s1_t6" tiger2:word="illiterates" lemma="illiterate" ner="O" pos="NNS"/>
-<t xml:id="s1_t7" tiger2:word="is" lemma="be" ner="O" pos="VBZ"/>
-<t xml:id="s1_t8" tiger2:word="great" lemma="great" ner="O" pos="JJ"/>
-<t xml:id="s1_t9" tiger2:word="." lemma="." ner="O" pos="."/>
->>>>>>> 8acf6b83f98027f53cbead3446dac47de7b5c587
+<t xml:id="s1_t1" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
+<t xml:id="s1_t2" tiger2:word="went" lemma="go" ner="O" pos="VBD"/>
+<t xml:id="s1_t3" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s1_t4" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s1_t5" tiger2:word="fun" lemma="fun" ner="O" pos="NN"/>
+<t xml:id="s1_t6" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
 <graph xml:id="s1_g2">
 <terminals>
-<<<<<<< HEAD
-<t xml:id="s4_t0" tiger2:word="But" lemma="but" ner="O" pos="CC"/>
-<t xml:id="s4_t1" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
-<t xml:id="s4_t2" tiger2:word="witnessed" lemma="witness" ner="O" pos="VBD"/>
-<t xml:id="s4_t3" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
-<t xml:id="s4_t4" tiger2:word="horrible" lemma="horrible" ner="O" pos="JJ"/>
-<t xml:id="s4_t5" tiger2:word="sight" lemma="sight" ner="O" pos="NN"/>
-<t xml:id="s4_t6" tiger2:word="." lemma="." ner="O" pos="."/>
-=======
-<t xml:id="s2_t1" tiger2:word="All" lemma="all" ner="O" pos="DT"/>
-<t xml:id="s2_t2" tiger2:word="college" lemma="college" ner="O" pos="NN"/>
-<t xml:id="s2_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
-<t xml:id="s2_t4" tiger2:word="senior" lemma="senior" ner="O" pos="JJ"/>
-<t xml:id="s2_t5" tiger2:word="School" lemma="School" ner="O" pos="NNP"/>
-<t xml:id="s2_t6" tiger2:word="students" lemma="student" ner="O" pos="NNS"/>
-<t xml:id="s2_t7" tiger2:word="should" lemma="should" ner="O" pos="MD"/>
-<t xml:id="s2_t8" tiger2:word="come" lemma="come" ner="O" pos="VB"/>
-<t xml:id="s2_t9" tiger2:word="forward" lemma="forward" ner="O" pos="RB"/>
-<t xml:id="s2_t10" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
-<t xml:id="s2_t11" tiger2:word="visit" lemma="visit" ner="O" pos="VB"/>
-<t xml:id="s2_t12" tiger2:word="villages" lemma="village" ner="O" pos="NNS"/>
-<t xml:id="s2_t13" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
-<t xml:id="s2_t14" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
-<t xml:id="s2_t15" tiger2:word="summer" lemma="summer" ner="DATE" pos="NN"/>
-<t xml:id="s2_t16" tiger2:word="vacation" lemma="vacation" ner="O" pos="NN"/>
-<t xml:id="s2_t17" tiger2:word="." lemma="." ner="O" pos="."/>
->>>>>>> 8acf6b83f98027f53cbead3446dac47de7b5c587
+<t xml:id="s2_t1" tiger2:word="But" lemma="but" ner="O" pos="CC"/>
+<t xml:id="s2_t2" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
+<t xml:id="s2_t3" tiger2:word="witnessed" lemma="witness" ner="O" pos="VBD"/>
+<t xml:id="s2_t4" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s2_t5" tiger2:word="horrible" lemma="horrible" ner="O" pos="JJ"/>
+<t xml:id="s2_t6" tiger2:word="sight" lemma="sight" ner="O" pos="NN"/>
+<t xml:id="s2_t7" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
 <graph xml:id="s1_g3">
 <terminals>
-<<<<<<< HEAD
-<t xml:id="s5_t0" tiger2:word="Two" lemma="two" ner="DATE" pos="CD"/>
-<t xml:id="s5_t1" tiger2:word="thousand" lemma="thousand" ner="DATE" pos="CD"/>
-<t xml:id="s5_t2" tiger2:word="ticketless" lemma="ticketless" ner="O" pos="JJ"/>
-<t xml:id="s5_t3" tiger2:word="cricket" lemma="cricket" ner="O" pos="NN"/>
-<t xml:id="s5_t4" tiger2:word="fans" lemma="fan" ner="O" pos="NNS"/>
-<t xml:id="s5_t5" tiger2:word="gate" lemma="gate" ner="O" pos="NN"/>
-<t xml:id="s5_t6" tiger2:word="crashed" lemma="crash" ner="O" pos="VBD"/>
-<t xml:id="s5_t7" tiger2:word="." lemma="." ner="O" pos="."/>
-=======
-<t xml:id="s3_t1" tiger2:word="Each" lemma="each" ner="O" pos="DT"/>
-<t xml:id="s3_t2" tiger2:word="one" lemma="one" ner="NUMBER" pos="CD"/>
-<t xml:id="s3_t3" tiger2:word="will" lemma="will" ner="O" pos="MD"/>
-<t xml:id="s3_t4" tiger2:word="teach" lemma="teach" ner="O" pos="VB"/>
-<t xml:id="s3_t5" tiger2:word="one" lemma="one" ner="NUMBER" pos="CD"/>
-<t xml:id="s3_t6" tiger2:word="there" lemma="there" ner="O" pos="EX"/>
-<t xml:id="s3_t7" tiger2:word="." lemma="." ner="O" pos="."/>
->>>>>>> 8acf6b83f98027f53cbead3446dac47de7b5c587
+<t xml:id="s3_t1" tiger2:word="Two" lemma="two" ner="DATE" pos="CD"/>
+<t xml:id="s3_t2" tiger2:word="thousand" lemma="thousand" ner="DATE" pos="CD"/>
+<t xml:id="s3_t3" tiger2:word="ticketless" lemma="ticketless" ner="O" pos="JJ"/>
+<t xml:id="s3_t4" tiger2:word="cricket" lemma="cricket" ner="O" pos="NN"/>
+<t xml:id="s3_t5" tiger2:word="fans" lemma="fan" ner="O" pos="NNS"/>
+<t xml:id="s3_t6" tiger2:word="gate" lemma="gate" ner="O" pos="NN"/>
+<t xml:id="s3_t7" tiger2:word="crashed" lemma="crash" ner="O" pos="VBD"/>
+<t xml:id="s3_t8" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
 <graph xml:id="s1_g4">
 <terminals>
-<<<<<<< HEAD
-<t xml:id="s6_t0" tiger2:word="There" lemma="there" ner="O" pos="EX"/>
-<t xml:id="s6_t1" tiger2:word="was" lemma="be" ner="O" pos="VBD"/>
-<t xml:id="s6_t2" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
-<t xml:id="s6_t3" tiger2:word="stampede" lemma="stampede" ner="O" pos="NN"/>
-<t xml:id="s6_t4" tiger2:word="." lemma="." ner="O" pos="."/>
+<t xml:id="s4_t1" tiger2:word="There" lemma="there" ner="O" pos="EX"/>
+<t xml:id="s4_t2" tiger2:word="was" lemma="be" ner="O" pos="VBD"/>
+<t xml:id="s4_t3" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s4_t4" tiger2:word="stampede" lemma="stampede" ner="O" pos="NN"/>
+<t xml:id="s4_t5" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
-<graph xml:id="s1_g7">
+<graph xml:id="s1_g5">
 <terminals>
-<t xml:id="s7_t0" tiger2:word="Three" lemma="three" ner="NUMBER" pos="CD"/>
-<t xml:id="s7_t1" tiger2:word="persons" lemma="person" ner="O" pos="NNS"/>
-<t xml:id="s7_t2" tiger2:word="died" lemma="die" ner="O" pos="VBD"/>
-<t xml:id="s7_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
-<t xml:id="s7_t4" tiger2:word="twenty" lemma="twenty" ner="NUMBER" pos="CD"/>
-<t xml:id="s7_t5" tiger2:word="were" lemma="be" ner="O" pos="VBD"/>
-<t xml:id="s7_t6" tiger2:word="injured" lemma="injure" ner="O" pos="VBN"/>
-<t xml:id="s7_t7" tiger2:word="." lemma="." ner="O" pos="."/>
+<t xml:id="s5_t1" tiger2:word="Three" lemma="three" ner="NUMBER" pos="CD"/>
+<t xml:id="s5_t2" tiger2:word="persons" lemma="person" ner="O" pos="NNS"/>
+<t xml:id="s5_t3" tiger2:word="died" lemma="die" ner="O" pos="VBD"/>
+<t xml:id="s5_t4" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s5_t5" tiger2:word="twenty" lemma="twenty" ner="NUMBER" pos="CD"/>
+<t xml:id="s5_t6" tiger2:word="were" lemma="be" ner="O" pos="VBD"/>
+<t xml:id="s5_t7" tiger2:word="injured" lemma="injure" ner="O" pos="VBN"/>
+<t xml:id="s5_t8" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
-<graph xml:id="s1_g8">
+<graph xml:id="s1_g6">
 <terminals>
-<t xml:id="s8_t0" tiger2:word="Administration" lemma="administration" ner="O" pos="NN"/>
-<t xml:id="s8_t1" tiger2:word="was" lemma="be" ner="O" pos="VBD"/>
-<t xml:id="s8_t2" tiger2:word="responsible" lemma="responsible" ner="O" pos="JJ"/>
-<t xml:id="s8_t3" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
-<t xml:id="s8_t4" tiger2:word="it" lemma="it" ner="O" pos="PRP"/>
-<t xml:id="s8_t5" tiger2:word="." lemma="." ner="O" pos="."/>
-=======
-<t xml:id="s4_t1" tiger2:word="This" lemma="this" ner="O" pos="DT"/>
-<t xml:id="s4_t2" tiger2:word="will" lemma="will" ner="O" pos="MD"/>
-<t xml:id="s4_t3" tiger2:word="remove" lemma="remove" ner="O" pos="VB"/>
-<t xml:id="s4_t4" tiger2:word="illiteracy" lemma="illiteracy" ner="O" pos="NN"/>
-<t xml:id="s4_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
-<t xml:id="s4_t6" tiger2:word="strengthen" lemma="strengthen" ner="O" pos="VB"/>
-<t xml:id="s4_t7" tiger2:word="our" lemma="we" ner="O" pos="PRP$"/>
-<t xml:id="s4_t8" tiger2:word="democracy" lemma="democracy" ner="IDEOLOGY" pos="NN"/>
-<t xml:id="s4_t9" tiger2:word="." lemma="." ner="O" pos="."/>
->>>>>>> 8acf6b83f98027f53cbead3446dac47de7b5c587
+<t xml:id="s6_t1" tiger2:word="Administration" lemma="administration" ner="O" pos="NN"/>
+<t xml:id="s6_t2" tiger2:word="was" lemma="be" ner="O" pos="VBD"/>
+<t xml:id="s6_t3" tiger2:word="responsible" lemma="responsible" ner="O" pos="JJ"/>
+<t xml:id="s6_t4" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s6_t5" tiger2:word="it" lemma="it" ner="O" pos="PRP"/>
+<t xml:id="s6_t6" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
 </s>

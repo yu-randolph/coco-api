@@ -292,6 +292,7 @@ public class FileManager {
 
         corpusEditer.addnewFeature(jsonObject.get("featureName").toString(), val,desc);
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
+        tiger2Converter.saveChanges();
 
 
     }
@@ -352,7 +353,7 @@ public class FileManager {
         JSONObject jsonObject = new JSONObject(concept);
         JSONObject concepts;
 
-        ConceptFinder cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
+            ConceptFinder cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
         concepts = cf.getAllResults();
 
         return concepts;
