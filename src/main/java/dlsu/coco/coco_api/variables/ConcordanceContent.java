@@ -12,11 +12,14 @@ public class ConcordanceContent {
     private int keyword_Index;
     private String completeSentence;
     private ArrayList<WordContent> words;
+    private String sentenceId;
 
-    public ConcordanceContent(String keyword, int keyword_Index, String completeSentence, ArrayList<WordContent> words) {
+
+    public ConcordanceContent(String keyword, int keyword_Index, String completeSentence, ArrayList<WordContent> words,String sentenceId) {
         this.keyword = keyword;
         this.keyword_Index = keyword_Index;
         this.completeSentence = completeSentence;
+        this.sentenceId = sentenceId;
         this.words = words;
     }
 
@@ -54,12 +57,20 @@ public class ConcordanceContent {
         this.words = words;
     }
 
+    public String getSentenceId() {
+        return sentenceId;
+    }
+
+    public void setSentenceId(String sentenceId) {
+        this.sentenceId = sentenceId;
+    }
+
     public JSONObject getJSON() throws JSONException {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("keyword", this.keyword);
         jsonObject.put("keyword_index", this.keyword_Index);
         jsonObject.put("completeSentence", this.completeSentence);
-
+        jsonObject.put("sentenceId", this.sentenceId);
         JSONArray listGraph = new JSONArray();
 
             for(WordContent word: this.words) {
@@ -72,6 +83,7 @@ public class ConcordanceContent {
                         tagContent.put("value",tag.getTagValue());
                     }
                     wordContent.put("tags",tagContent);
+                    wordContent.put("wordId",word.getWordId());
                     listGraph.put(wordContent);
             }
         jsonObject.put("WordContent", listGraph);

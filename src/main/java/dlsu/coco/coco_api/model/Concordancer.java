@@ -77,6 +77,7 @@ public class Concordancer {
                 {
                     ConcordanceContent item = new ConcordanceContent();
                     item.setKeyword(keyword);
+                    item.setSentenceId(sentence.getId());
                     wordContent = new ArrayList<WordContent>();
                     boolean keywordExist = false;
                     String completeSentence = "";
@@ -91,14 +92,13 @@ public class Concordancer {
                         for(Annotation tag : sentence.getTerminals().get(ctr).getAnnotations()) {
                             tagContents.add(new TagContent(tag.getName(), tag.getValue()));
                         }
-                        wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents));
+                        wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents, sentence.getTerminals().get(ctr).getId()));
 
                         item.setKeyword_Index(ctr);
                         if(sentence.getTerminals().get(ctr).getWord().equals(keyword))
                         {
                             keywordExist = true;
                             item.setKeyword_Index(ctr);
-
                         }
                     }
 
@@ -157,7 +157,7 @@ public class Concordancer {
 
 
                         ArrayList<WordContent> wordContent = new ArrayList<WordContent>();
-                        wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents));
+                        wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents,sentence.getTerminals().get(ctr).getId()));
 
                         if(sentence.getTerminals().get(ctr).getWord().equals(keyword))
                         {
