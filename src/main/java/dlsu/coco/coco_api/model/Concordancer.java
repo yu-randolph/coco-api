@@ -11,6 +11,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Concordancer {
 
@@ -57,10 +60,12 @@ public class Concordancer {
 //    }
 
     public JSONObject getConcordanceResult() throws JSONException {
+        this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
+
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         concordanceContents = new ArrayList<>();
-
+        ArrayList<WordContent> wordContent = new ArrayList<WordContent>();
         //CHECK ALL KEYWORDS
         for(String keyword : this.concepts)
         {
@@ -72,7 +77,7 @@ public class Concordancer {
                 {
                     ConcordanceContent item = new ConcordanceContent();
                     item.setKeyword(keyword);
-
+                    wordContent = new ArrayList<WordContent>();
                     boolean keywordExist = false;
                     String completeSentence = "";
 
@@ -83,30 +88,31 @@ public class Concordancer {
                         ArrayList<TagContent> tagContents = new ArrayList<>();
 
                         //TAGS
-                        for(Annotation tag : sentence.getTerminals().get(ctr).getAnnotations())
-                        {
+                        for(Annotation tag : sentence.getTerminals().get(ctr).getAnnotations()) {
                             tagContents.add(new TagContent(tag.getName(), tag.getValue()));
                         }
-
-                        ArrayList<WordContent> wordContent = new ArrayList<WordContent>();
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents));
 
+                        item.setKeyword_Index(ctr);
                         if(sentence.getTerminals().get(ctr).getWord().equals(keyword))
                         {
                             keywordExist = true;
-                            item.setCompleteSentence(completeSentence);
                             item.setKeyword_Index(ctr);
-                            item.setWords(wordContent);
+
                         }
                     }
 
                     if(keywordExist)
                     {
+                        item.setWords(wordContent);
+                        item.setCompleteSentence(completeSentence);
                         concordanceContents.add(item);
                     }
                 }
             }
         }
+
+        System.out.println(concordanceContents.size());
 
         for(ConcordanceContent concordanceContent : concordanceContents)
         {
