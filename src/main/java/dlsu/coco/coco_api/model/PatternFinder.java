@@ -56,7 +56,8 @@ public class PatternFinder {
 
             for(int leftCtr = keywordIndex - 1; leftCtr >= 0; leftCtr--)
             {
-                if(left.get(leftIndex) == null)
+                //if(left.get(leftIndex) == null)
+                if(left.size() < leftIndex)
                 {
                     left.add(new PatternNode());
                 }
@@ -67,7 +68,8 @@ public class PatternFinder {
 
             for(int rightCtr = keywordIndex + 1; rightCtr < wordContents.size(); rightCtr++)
             {
-                if(left.get(rightIndex) == null)
+                //if(right.get(rightIndex) == null)
+                if(right.size() < rightIndex)
                 {
                     right.add(new PatternNode());
                 }
