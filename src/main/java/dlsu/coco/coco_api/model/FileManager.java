@@ -40,7 +40,7 @@ public class FileManager {
 
     private DocumentBuilderFactory docFactory;
     private DocumentBuilder docBuilder;
-
+    private  ConceptFinder cf;
     public FileManager()
     {
         tiger2Converter = new Tiger2Converter();
@@ -358,8 +358,9 @@ public class FileManager {
         JSONObject jsonObject = new JSONObject(concept);
         JSONObject concepts;
 
-            ConceptFinder cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
-        concepts = cf.getAllResults();
+          this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
+            concepts = cf.getAllResults();
+
 
         return concepts;
     }
@@ -403,7 +404,6 @@ public class FileManager {
         JSONArray ann = new JSONArray(jsonObject.get("AnnotationsList").toString());
         JSONArray rel = new JSONArray(jsonObject.get("RelationList").toString());
 
-
         ArrayList<String> tags = new ArrayList<>();
         ArrayList<String> rels = new ArrayList<>();
         ArrayList<String> conceptList = new ArrayList<>();
@@ -423,10 +423,64 @@ public class FileManager {
 
         while( keys.hasNext() ) {
             String key = (String)keys.next();
-            JSONArray contents = new JSONArray(arr.get(key).toString());
-            for (int j = 0; j < contents.length(); j++) {
-                conceptList.add(contents.get(j).toString());
+            switch (key) {
+                case "NOUN_SYNONYM":
+                    if(rels.contains("Synonym")) {
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case"NOUN_HYPERNYM":
+                    if(rels.contains("Hypernym")){
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case "NOUN_HYPONYM":
+                    if(rels.contains("Hyponym")){
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case "VERB_SYNONYM":
+                    if(rels.contains("Synonym")){
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case "VERB_TROPONYM":
+                    if(rels.contains("Troponym")){
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case "VERB_HYPONYM":
+                    if(rels.contains("Hyponym")){
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+
             }
+
         }
 
         JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
