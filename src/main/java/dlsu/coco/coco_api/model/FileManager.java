@@ -494,7 +494,7 @@ public class FileManager {
         cn = new Concordancer(conceptList, tiger2Converter.getCorpus());
 
 
-        result = cn.getAdvancedResults(tags,rels);
+        result = cn.getAdvancedResults(tags);
         return result;
     }
 
