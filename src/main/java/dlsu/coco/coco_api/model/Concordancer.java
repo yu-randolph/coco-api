@@ -93,8 +93,7 @@ public class Concordancer {
                             tagContents.add(new TagContent(tag.getName(), tag.getValue()));
                         }
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents, sentence.getTerminals().get(ctr).getId()));
-
-                        item.setKeyword_Index(ctr);
+        
                         if(sentence.getTerminals().get(ctr).getWord().equals(keyword))
                         {
                             keywordExist = true;
