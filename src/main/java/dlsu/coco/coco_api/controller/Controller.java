@@ -360,6 +360,31 @@ public class Controller {
         }
         return newTag;
     }
+
+    @RequestMapping(value = "/getConcordances", method = RequestMethod.POST)
+    public @ResponseBody
+    String getAdvancedConcordances(@RequestParam("feature") String feature) {
+        String newTag = "";
+        if (!feature.isEmpty()) {
+            try {
+
+                byte[] bytes = feature.getBytes();
+                String result = new String(bytes);
+                newTag = result;
+                System.out.println(result);
+
+                result = fileManager.getAdvancedJSONConcordances(result).toString();
+
+                System.out.println("Result: " + result);
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
+                return "You failed to upload " + newTag + " => " + e.getMessage();
+            }
+        }
+        return newTag;
+    }
 //    @GetMapping("/get/{value}")
 //    public void get(HttpServletResponse response, @PathVariable String value)
 //    {
