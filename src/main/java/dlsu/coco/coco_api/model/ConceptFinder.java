@@ -19,7 +19,7 @@ public class ConceptFinder {
         this.concept = concept;
         this.conceptResults = new ArrayList<String>();
         conceptNet = new ConceptNet(concept);
-        wordNet = new WordNet(System.getProperty("user.dir") + "\\WordNet-3.0\\WordNet-3.0\\dict", concept);
+        wordNet = new WordNet(System.getProperty("user.dir") + "/WordNet-3.0/WordNet-3.0/dict", concept);
         this.getWordNetResult();
 
     }
