@@ -25,6 +25,10 @@ public class PatternNode {
         return patternItems;
     }
 
+    public ArrayList<String> getWordItems() {
+        return wordItems;
+    }
+
     public JSONArray getJSONPatternItems() throws JSONException {
         JSONArray jsonArray = new JSONArray();
         for(int ctr = 0; ctr < patternItems.size(); ctr++)
@@ -35,27 +39,45 @@ public class PatternNode {
             jsonArray.put(jsonObject);
         }
 
-        return jsonArray;
+        if(patternItems.size() > 0)
+        {
+            return jsonArray;
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public void sort()
     {
-        for(int wordCtr = 0; wordCtr < wordItems.size(); wordCtr++)
+        if(!wordItems.isEmpty())
         {
-            boolean bUnique = true;
-            for(int ctr = 0; ctr < patternItems.size(); ctr++)
+            patternItems.add(new PatternItem(wordItems.get(0)));
+
+            for(int wordCtr = 1; wordCtr < wordItems.size(); wordCtr++)
             {
-                if(patternItems.get(ctr).equals(wordItems.get(wordCtr)))
+                boolean isUnique = true;
+                for(int patCtr = 0; patCtr < patternItems.size(); patCtr++)
                 {
-                    patternItems.get(ctr).increaseFreq();
-                    bUnique = false;
+                    if(wordItems.get(wordCtr).equals(patternItems.get(patCtr).getsWord()))
+                    {
+                        patternItems.get(patCtr).increaseFreq();
+                        isUnique = false;
+                    }
+                }
+
+                if(isUnique)
+                {
+                    patternItems.add(new PatternItem(wordItems.get(wordCtr)));
                 }
             }
 
-            if(bUnique)
+            for(int i = 0; i < patternItems.size(); i++)
             {
-                patternItems.add(new PatternItem(wordItems.get(wordCtr)));
+                System.out.println("WORD: " + patternItems.get(i).getsWord() + " || FREQ: " + patternItems.get(i).getnFreq());
             }
+            System.out.println();
         }
     }
 }

@@ -46,8 +46,12 @@ public class PatternFinder {
         ArrayList<PatternNode> left = new ArrayList<>();
         ArrayList<PatternNode> right = new ArrayList<>();
 
+        left.add(new PatternNode());
+        right.add(new PatternNode());
+
         for(ConcordanceContent item : listSentence)
         {
+            System.out.println("DISTANCE LEFT " + (item.getKeyword_Index()-1) + " || RIGHT " + (item.getWords().size() - item.getKeyword_Index()));
             ArrayList<WordContent> wordContents = item.getWords();
             Integer keywordIndex = item.getKeyword_Index();
 
@@ -57,11 +61,13 @@ public class PatternFinder {
             for(int leftCtr = keywordIndex - 1; leftCtr >= 0; leftCtr--)
             {
                 //if(left.get(leftIndex) == null)
-                if(left.size() < leftIndex)
+                if(left.size() <= leftIndex)
                 {
+                    System.out.println("ADDED LEFT " + left.size() + " : " + leftIndex);
                     left.add(new PatternNode());
                 }
 
+                System.out.println(wordContents.get(leftCtr).getLemma());
                 left.get(leftIndex).addItem(wordContents.get(leftCtr).getLemma());
                 leftIndex++;
             }
@@ -69,17 +75,22 @@ public class PatternFinder {
             for(int rightCtr = keywordIndex + 1; rightCtr < wordContents.size(); rightCtr++)
             {
                 //if(right.get(rightIndex) == null)
-                if(right.size() < rightIndex)
+                if(right.size() <= rightIndex)
                 {
+                    System.out.println("ADDED RIGhT " + right.size() + " : " + rightIndex);
                     right.add(new PatternNode());
                 }
 
+                System.out.println(wordContents.get(rightCtr).getLemma());
                 right.get(rightIndex).addItem(wordContents.get(rightCtr).getLemma());
                 rightIndex++;
             }
 
+            System.out.println("KEYWORD: " + item.getKeyword());
             keyword.addItem(item.getKeyword());
         }
+
+        System.out.println("SIZE : " + keyword.getPatternItems().size() + " || " + keyword.getWordItems().size());
 
         keyword.sort();
 
@@ -88,7 +99,7 @@ public class PatternFinder {
             left.get(leftCtr).sort();
         }
 
-        for(int rightCtr = 0; rightCtr < left.size(); rightCtr++)
+        for(int rightCtr = 0; rightCtr < right.size(); rightCtr++)
         {
             right.get(rightCtr).sort();
         }
@@ -104,20 +115,30 @@ public class PatternFinder {
         JSONArray jsonRight = new JSONArray();
         JSONObject jsonKey = new JSONObject();
 
+        jsonKey .put("keyword", keyword.getJSONPatternItems());
+
         for(int leftCtr = 0; leftCtr < left.size(); leftCtr++)
         {
-            JSONObject jsonLeftObject = new JSONObject();
-            jsonLeftObject.put("degree", leftCtr+1);
-            jsonLeftObject.put("items", left.get(leftCtr).getJSONPatternItems());
-            jsonLeft.put(jsonLeftObject);
+            if(left.get(leftCtr).getJSONPatternItems() != null)
+            {
+                JSONObject jsonLeftObject = new JSONObject();
+                jsonLeftObject.put("degree", leftCtr+1);
+                jsonLeftObject.put("items", left.get(leftCtr).getJSONPatternItems());
+                jsonLeft.put(jsonLeftObject);
+                System.out.println("LEFT : " + leftCtr + " = " + jsonLeftObject.toString());
+            }
         }
 
         for(int rightCtr = 0; rightCtr < right.size(); rightCtr++)
         {
-            JSONObject jsonRightObject = new JSONObject();
-            jsonRightObject.put("degree", rightCtr+1);
-            jsonRightObject.put("items", right.get(rightCtr).getJSONPatternItems());
-            jsonRight.put(jsonRightObject);
+            if(right.get(rightCtr).getJSONPatternItems() != null)
+            {
+                JSONObject jsonRightObject = new JSONObject();
+                jsonRightObject.put("degree", rightCtr+1);
+                jsonRightObject.put("items", right.get(rightCtr).getJSONPatternItems());
+                jsonRight.put(jsonRightObject);
+                System.out.println("RIGHT : " + rightCtr + " = " + jsonRightObject.toString());
+            }
         }
 
         jsonPattern.put("key",jsonKey);
