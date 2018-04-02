@@ -395,11 +395,53 @@ public class FileManager {
 
     public JSONObject getAdvancedJSONConcordances(String concepts) throws JSONException {
         JSONObject jsonObject = new JSONObject(concepts);
-        JSONObject concept;
+        JSONArray ann = new JSONArray(jsonObject.get("AnnotationsList").toString());
+        JSONArray rel = new JSONArray(jsonObject.get("RelationList").toString());
 
 
+        ArrayList<String> tags = new ArrayList<>();
+        ArrayList<String> rels = new ArrayList<>();
+        ArrayList<String> conceptList = new ArrayList<>();
 
-        return jsonObject;
+        for(int i = 0; i < ann.length(); i++){
+            tags.add(ann.getJSONObject(i).getString("annotation"));
+        }
+        for(int i = 0; i < rel.length(); i++){
+            rels.add(rel.getJSONObject(i).getString("relation"));
+        }
+
+
+        JSONObject arr = new JSONObject(jsonObject.get("WORDNET").toString());
+        JSONObject result;
+        Iterator<?> keys = arr.keys();
+
+
+        while( keys.hasNext() ) {
+            String key = (String)keys.next();
+            JSONArray contents = new JSONArray(arr.get(key).toString());
+            for (int j = 0; j < contents.length(); j++) {
+                conceptList.add(contents.get(j).toString());
+            }
+        }
+
+        JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
+
+        for (int x = 0; x < conceptNet.length(); x++) {
+            conceptList.add(conceptNet.get(x).toString());
+        }
+
+
+        Concordancer cn;
+        cn = new Concordancer(conceptList, tiger2Converter.getCorpus());
+
+
+        result = cn.getAdvancedResults(tags,rels);
+        return result;
     }
+
+
 }
+
+// {"AnnotationsList":[{"annotation":"Adverb"},{"annotation":"Subject"}],"RelationList":[{"relation":"synonym"}"concept":"book","pos":"Noun"}
+
 
