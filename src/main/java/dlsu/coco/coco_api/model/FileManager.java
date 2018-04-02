@@ -255,6 +255,7 @@ public class FileManager {
 
         corpusEditer.editTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString(), jsonObject.get("feature_value").toString(), "");
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
+        tiger2Converter.saveChanges();
 
     }
 
@@ -264,6 +265,7 @@ public class FileManager {
 
         corpusEditer.deleteTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString());
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
+        tiger2Converter.saveChanges();
 
     }
     public void addAnnotation(String edition) throws JSONException {
@@ -271,7 +273,9 @@ public class FileManager {
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
 
         corpusEditer.addTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString(), jsonObject.get("feature_value").toString());
+
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
+        tiger2Converter.saveChanges();
 
     }
 
@@ -303,6 +307,7 @@ public class FileManager {
 
         corpusEditer.addnewFeaturevalue(jsonObject.get("feature").toString(), jsonObject.get("featureValue").toString(), jsonObject.get("feature_decscripion").toString());
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
+
     }
 
     private String pos_tag_definition(String tag)

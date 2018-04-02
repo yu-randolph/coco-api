@@ -361,7 +361,7 @@ public class Controller {
         return newTag;
     }
 
-    @RequestMapping(value = "/getConcordances", method = RequestMethod.POST)
+    @RequestMapping(value = "/getAdvancedConcordances", method = RequestMethod.POST)
     public @ResponseBody
     String getAdvancedConcordances(@RequestParam("feature") String feature) {
         String newTag = "";
