@@ -32,13 +32,16 @@
 </feature>
 <feature name="lemma" domain="t">
 </feature>
+<feature name="English" domain="t">
+<value name="A">Apple</value>
+</feature>
 </annotation>
 </head>
 <body>
 <s xml:id="s1">
 <graph xml:id="s1_g2">
 <terminals>
-<t xml:id="s0_t1" tiger2:word="I" lemma="I" ner="O" pos="PRP"/>
+<t xml:id="s0_t1" tiger2:word="I" lemma="I" ner="O" pos="PRP" English="A"/>
 <t xml:id="s0_t2" tiger2:word="happened" lemma="happen" ner="O" pos="VBD"/>
 <t xml:id="s0_t3" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
 <t xml:id="s0_t4" tiger2:word="see" lemma="see" ner="O" pos="VB"/>
