@@ -122,7 +122,7 @@ public class Concordancer {
         return jsonObject;
     }
 
-    public JSONObject getAdvancedResults(ArrayList<String> tags, ArrayList<String> relations) throws JSONException {
+    public JSONObject getAdvancedResults(ArrayList<String> tags) throws JSONException {
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         concordanceContents = new ArrayList<>();
@@ -161,22 +161,16 @@ public class Concordancer {
                         if(sentence.getTerminals().get(ctr).getWord().equals(keyword))
                         {
                             int cnfrm = 0;
-                            int cnfrmRel = 0;
+
                             loop1:   for(Annotation a : sentence.getTerminals().get(ctr).getAnnotations()) {
                                 for (String annotation : tags)
-                                    if (a.getName().equals(annotation)) {
+                                    if (a.getValue().equals(annotation)) {
                                         cnfrm++;
                                         tags.remove(annotation);
                                         continue loop1;
                                 }
-                                for (String relation : relations)
-                                    if (a.getName().equals(relation)) {
-                                        cnfrmRel++;
-                                        tags.remove(relation);
-                                        continue loop1;
-                                    }
 
-                                if(cnfrm == tags.size() && cnfrmRel == relations.size()) {
+                                if(cnfrm == tags.size()) {
                                     keywordExist = true;
                                     item.setKeyword_Index(ctr);
                                 }
