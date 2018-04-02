@@ -75,14 +75,16 @@ public class ConcordanceContent {
 
             for(WordContent word: this.words) {
                     JSONObject wordContent = new JSONObject();
-                      JSONObject tagContent = new JSONObject();
+                    JSONArray allTags = new JSONArray();
+
                     wordContent.put("word",word.getWord());
                     for(TagContent tag : word.getTags()) {
-
+                        JSONObject tagContent = new JSONObject();
                         tagContent.put("name",tag.getTagName());
                         tagContent.put("value",tag.getTagValue());
+                        allTags.put(tagContent);
                     }
-                    wordContent.put("tags",tagContent);
+                    wordContent.put("tags",allTags);
                     wordContent.put("wordId",word.getWordId());
                     listGraph.put(wordContent);
             }
