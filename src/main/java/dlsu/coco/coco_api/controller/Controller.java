@@ -61,22 +61,19 @@ public class Controller {
             @RequestParam("file") MultipartFile file) {
         String name = "temp";
         File receivedFile = null;
-        String result="";
+        String result = "";
 
         if (!file.isEmpty()) {
             try {
                 System.out.println(file.getContentType());
-                if(file.getContentType().equals("text/plain"))
-                {
+                if (file.getContentType().equals("text/plain")) {
                     name = file.getOriginalFilename();
                     //result = new String(file.getBytes().toString());
                     result = new String(file.getBytes(), "UTF-8");
                     System.out.println("You successfully uploaded " + name + " into " + FilenameUtils.removeExtension(name) + ".tiger2");
                     System.out.println("Content Type: " + file.getContentType());
                     System.out.println("Result: " + result);
-                }
-                else if(file.getContentType().equals("application/octet-stream"))
-                {
+                } else if (file.getContentType().equals("application/octet-stream")) {
                     System.out.println("entered XML area");
                     name = file.getOriginalFilename();
                     byte[] bytes = file.getBytes();
@@ -98,10 +95,10 @@ public class Controller {
                 System.out.println("You failed to upload " + name + " => " + e.getMessage());
                 return "You failed to upload " + name + " => " + e.getMessage();
             } finally {
-                if(file.getContentType().equals("text/plain"))
+                if (file.getContentType().equals("text/plain"))
                     receivedFile = fileManager.NLPprocessor(result, FilenameUtils.removeExtension(name));
                 fileManager.tigerXMLChecker(receivedFile);
-                System.out.println("RECEIVED FILE NAME: "+receivedFile.getName());
+                System.out.println("RECEIVED FILE NAME: " + receivedFile.getName());
                 fileManager.tigerProcess(receivedFile);
                 return fileManager.getRawCorpus();
             }
@@ -117,20 +114,17 @@ public class Controller {
         String fileName = null;
         String corpus = "";
         File output = null;
-        if (files != null && files.length > 0)
-        {
+        if (files != null && files.length > 0) {
 
 
-            for (int i = 0; i < files.length; i++)
-            {
+            for (int i = 0; i < files.length; i++) {
                 String name = "temp";
                 String result = "";
                 File receivedFile = null;
                 try {
 
                     System.out.println(files[i].getContentType());
-                    if(files[i].getContentType().equals("text/plain"))
-                    {
+                    if (files[i].getContentType().equals("text/plain")) {
                         name = files[i].getOriginalFilename();
                         //result = new String(file.getBytes().toString());
                         result = new String(files[i].getBytes(), "UTF-8");
@@ -138,9 +132,7 @@ public class Controller {
                         System.out.println("Content Type: " + files[i].getContentType());
                         System.out.println("Result: " + result);
                         corpus += result + "\n";
-                    }
-                    else if(files[i].getContentType().equals("application/octet-stream"))
-                    {
+                    } else if (files[i].getContentType().equals("application/octet-stream")) {
                         System.out.println("entered XML file area");
                         name = files[i].getOriginalFilename();
                         byte[] bytes = files[i].getBytes();
@@ -160,25 +152,22 @@ public class Controller {
                 } catch (Exception e) {
                     return "You failed to upload " + fileName + ": " + e.getMessage() + "<br/>";
                 } finally {
-                    if(files[i].getContentType().equals("text/plain"))
+                    if (files[i].getContentType().equals("text/plain"))
                         receivedFile = fileManager.NLPprocessor(result, FilenameUtils.removeExtension(name));
                     fileManager.tigerXMLChecker(receivedFile);
-                    System.out.println("RECEIVED FILE NAME: "+receivedFile.getName());
+                    System.out.println("RECEIVED FILE NAME: " + receivedFile.getName());
                     output = receivedFile;
                 }
             }
 
-            if (output != null)
-            {
+            if (output != null) {
                 System.out.println("Result: " + corpus);
                 fileManager.tigerProcess(output);
                 return fileManager.getRawCorpus();
             }
 
 
-        }
-        else
-        {
+        } else {
             return "Unable to upload. File is empty.";
         }
         return "No upload";
@@ -234,6 +223,7 @@ public class Controller {
         }
         return newTag;
     }
+
     @RequestMapping(value = "/deleteTag", method = RequestMethod.POST)
     public @ResponseBody
     String deleteTag(@RequestParam("tags") String tags) {
@@ -258,6 +248,7 @@ public class Controller {
         }
         return newTag;
     }
+
     @RequestMapping(value = "/addFeatValue", method = RequestMethod.POST)
     public @ResponseBody
     String addFeatValue(@RequestParam("tags") String tags) {
@@ -336,6 +327,7 @@ public class Controller {
         }
         return newTag;
     }
+
     @RequestMapping(value = "/getConcordances", method = RequestMethod.POST)
     public @ResponseBody
     String getConcordances(@RequestParam("feature") String feature) {
@@ -384,9 +376,15 @@ public class Controller {
 
     @GetMapping("/getTags")
     public String getTags() throws JSONException {
-       // fileManager.tigerXMLChecker(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
-       // fileManager.tigerProcess(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
+        // fileManager.tigerXMLChecker(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
+        // fileManager.tigerProcess(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
         return fileManager.AnnotationstoJSONconverter().toString();
+    }
+
+    @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
+    public @ResponseBody
+    String getPattern(@RequestParam("concordance") String concordance) throws JSONException {
+        return fileManager.getPattern(concordance);
     }
 
 //    @GetMapping("/getXML")

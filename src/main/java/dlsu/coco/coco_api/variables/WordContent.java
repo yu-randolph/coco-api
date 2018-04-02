@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class WordContent {
     private String word;
+    private String lemma;
     private String wordId;
     private ArrayList<TagContent> tags;
 
@@ -11,6 +12,24 @@ public class WordContent {
         this.word = word;
         this.tags = tags;
         this.wordId = wordId;
+        this.lemma = null;
+    }
+
+    public WordContent(String word, ArrayList<TagContent> tags, String wordId, String lemma) {
+        this.word = word;
+        this.tags = tags;
+        this.wordId = wordId;
+        this.lemma = lemma;
+    }
+
+    public void setLemma(String lemma)
+    {
+        this.lemma = lemma;
+    }
+
+    public String getLemma()
+    {
+        return lemma;
     }
 
     public String getWord() {

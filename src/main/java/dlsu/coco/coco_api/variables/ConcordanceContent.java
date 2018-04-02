@@ -91,8 +91,35 @@ public class ConcordanceContent {
         jsonObject.put("WordContent", listGraph);
         System.out.println(jsonObject);
         return jsonObject;
+    }
 
+    public void readJSON(JSONObject concordance) throws JSONException {
+        this.keyword = concordance.getString("keyword");
+        this.keyword_Index = concordance.getInt("keyword_index");
+        this.completeSentence = concordance.getString("completeSentence");
+        this.sentenceId = concordance.getString("sentenceId");
+        this.words = new ArrayList<>();
 
+        JSONArray jsonWords = concordance.getJSONArray("WordContent");
 
+        for(int wordCtr = 0; wordCtr < jsonWords.length(); wordCtr++)
+        {
+            JSONObject jsonWordContent = jsonWords.getJSONObject(wordCtr);
+            JSONArray  jsonTagContents = jsonWordContent.getJSONArray("tags");
+            ArrayList<TagContent> tagList = new ArrayList();
+
+            String lemma = null;
+            for(int tagCtr = 0; tagCtr < jsonTagContents.length(); tagCtr++)
+            {
+                JSONObject jsonTagContent = jsonTagContents.getJSONObject(tagCtr);
+                if(jsonTagContent.getString("name").equals("lemma"))
+                {
+                    lemma = jsonTagContent.getString("value");
+                }
+                tagList.add(new TagContent(jsonTagContent.getString("name"), jsonTagContent.getString("value")));
+            }
+
+            words.add(new WordContent(jsonWordContent.getString("word"), tagList, jsonWordContent.getString("wordId"), lemma));
+        }
     }
 }

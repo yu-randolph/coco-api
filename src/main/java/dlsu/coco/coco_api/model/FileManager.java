@@ -401,5 +401,10 @@ public class FileManager {
 
         return jsonObject;
     }
+
+    public String getPattern(String concordance) throws JSONException {
+        PatternFinder patternFinder = new PatternFinder(new JSONObject(concordance));
+        return patternFinder.getJSONpattern().toString();
+    }
 }
 
