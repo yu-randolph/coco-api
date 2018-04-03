@@ -155,7 +155,7 @@ public class Concordancer {
                         }
 
 
-                        wordContent = new ArrayList<WordContent>();
+
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents,sentence.getTerminals().get(ctr).getId()));
 
                         if(sentence.getTerminals().get(ctr).getWord().equals(keyword))
@@ -169,12 +169,13 @@ public class Concordancer {
                                         tags.remove(annotation);
                                         continue loop1;
                                 }
-
+                            }
                                 if(cnfrm == tags.size()) {
+                                System.out.println(wordContent.size());
                                     keywordExist = true;
                                     item.setKeyword_Index(ctr);
                                 }
-                            }
+
                         }
                     }
 
@@ -185,8 +186,10 @@ public class Concordancer {
                         concordanceContents.add(item);
                     }
                     wordContent = new ArrayList<>();
+
                 }
             }
+
         }
 
         for(ConcordanceContent concordanceContent : concordanceContents)
