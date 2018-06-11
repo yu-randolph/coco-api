@@ -13,6 +13,7 @@ public class ConcordanceContent {
     private String completeSentence;
     private ArrayList<WordContent> words;
     private String sentenceId;
+    private int patternFrequency;
 
 
     public ConcordanceContent(String keyword, int keyword_Index, String completeSentence, ArrayList<WordContent> words,String sentenceId) {
@@ -21,6 +22,7 @@ public class ConcordanceContent {
         this.completeSentence = completeSentence;
         this.sentenceId = sentenceId;
         this.words = words;
+        this.patternFrequency = 0;
     }
 
     public ConcordanceContent(){}
@@ -64,6 +66,12 @@ public class ConcordanceContent {
     public void setSentenceId(String sentenceId) {
         this.sentenceId = sentenceId;
     }
+
+    public void increaseFreq() { this.patternFrequency++; }
+
+    public void resetFreq() { patternFrequency = 0; }
+
+    public int getFreq() {return patternFrequency;}
 
     public JSONObject getJSON() throws JSONException {
         JSONObject jsonObject = new JSONObject();
@@ -121,5 +129,99 @@ public class ConcordanceContent {
 
             words.add(new WordContent(jsonWordContent.getString("word"), tagList, jsonWordContent.getString("wordId"), lemma));
         }
+    }
+
+    public void compareConcorrdanceContent(ConcordanceContent originalSentence)
+    {
+        ArrayList<WordContent> sentence = originalSentence.getWords();
+
+        int nLeftCtr = keyword_Index - 1;
+        int nRightCtr = keyword_Index + 1;
+
+        int nLeftSentenceCtr = originalSentence.keyword_Index - 1;
+        int nRightSentenceCtr = originalSentence.keyword_Index + 1;
+
+        boolean bLeftMatch = true;
+        boolean bRightMatch = true;
+
+        //CHECK LEFT SIDE
+        while(nLeftCtr >= 0 && nLeftSentenceCtr >= 0)
+        {
+            ArrayList<TagContent> patternTags = this.removeLemmaAndOthers(words.get(nLeftCtr).getTags());
+            ArrayList<TagContent>  sentenceTags = this.removeLemmaAndOthers(sentence.get(nLeftSentenceCtr).getTags());
+            boolean bEquals = false;
+
+            System.out.println(words.get(nLeftCtr).getWord() + " || " + sentence.get(nLeftSentenceCtr).getWord());
+
+            for(TagContent patternTag : patternTags)
+            {
+                for(TagContent sentenceTag : sentenceTags)
+                {
+                    if(patternTag.getTagName().equals(sentenceTag.getTagName()) && patternTag.getTagValue().equals(sentenceTag.getTagValue()))
+                        bEquals = true;
+                }
+            }
+
+            if(!bEquals)
+            {
+                System.out.println("LEFT DOES NOT MATCH");
+                bLeftMatch = false;
+                break;
+            }
+
+            nLeftCtr--;
+            nLeftSentenceCtr--;
+        }
+
+        //CHECK RIGHT SIDE
+        while(nRightCtr < words.size() && nRightSentenceCtr < sentence.size())
+        {
+            ArrayList<TagContent> patternTags = this.removeLemmaAndOthers(words.get(nRightCtr).getTags());
+            ArrayList<TagContent>  sentenceTags = this.removeLemmaAndOthers(sentence.get(nRightSentenceCtr).getTags());
+            boolean bEquals = false;
+
+            System.out.println(words.get(nRightCtr).getWord() + " || " + sentence.get(nRightSentenceCtr).getWord());
+
+            for(TagContent patternTag : patternTags)
+            {
+                for(TagContent sentenceTag : sentenceTags)
+                {
+                    if(patternTag.getTagName().equals(sentenceTag.getTagName()) && patternTag.getTagValue().equals(sentenceTag.getTagValue()))
+                        bEquals = true;
+                }
+            }
+
+            if(!bEquals)
+            {
+                System.out.println("RIGHT DOES NOT MATCH");
+                bRightMatch = false;
+                break;
+            }
+
+            nRightCtr++;
+            nRightSentenceCtr++;
+        }
+
+        if(bLeftMatch && bRightMatch)
+        {
+            increaseFreq();
+        }
+    }
+
+    private ArrayList<TagContent> removeLemmaAndOthers(ArrayList<TagContent> originalTags)
+    {
+        ArrayList<TagContent> tags = new ArrayList<>();
+        tags.addAll(originalTags);
+
+        for(int tagCtr = 0; tagCtr < tags.size(); tagCtr++)
+        {
+            if(tags.get(tagCtr).getTagName().equals("lemma"))
+                tags.remove(tagCtr);
+
+            if(tags.get(tagCtr).getTagName().equals("ner") &&  tags.get(tagCtr).getTagValue().equals("O"))
+                tags.remove(tagCtr);
+        }
+
+        return tags;
     }
 }

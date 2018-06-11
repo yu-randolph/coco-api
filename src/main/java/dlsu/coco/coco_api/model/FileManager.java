@@ -500,7 +500,9 @@ public class FileManager {
 
     public String getPattern(String concordance) throws JSONException {
         PatternFinder patternFinder = new PatternFinder(new JSONObject(concordance));
-        return patternFinder.getJSONpattern().toString();
+        patternFinder.printPattern();
+        //return patternFinder.getJSONpattern().toString();
+        return "";
     }
 }
 

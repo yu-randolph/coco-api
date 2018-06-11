@@ -55,6 +55,4 @@ public class WordContent {
     public void setWordId(String wordId) {
         this.wordId = wordId;
     }
-
-
 }

@@ -118,6 +118,7 @@ public class Concordancer {
             jsonArray.put(concordanceContent.getJSON());
         }
         jsonObject.put("CONCORDANCE", jsonArray);
+        System.out.println(jsonObject.toString());
 
         return jsonObject;
     }
@@ -198,6 +199,7 @@ public class Concordancer {
         }
         jsonObject.put("CONCORDANCE", jsonArray);
 
-                return jsonObject;
+        System.out.println(jsonObject.toString());
+        return jsonObject;
     }
 }
