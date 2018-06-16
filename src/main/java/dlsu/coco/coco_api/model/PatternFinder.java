@@ -40,7 +40,7 @@ public class PatternFinder {
     {
         //SETTING PATTERN CANDIDATE FROM EACH SENTENCE && COMPARING THE CANDIDATE WITH TABULAR CONCORDANCE RESULT
         for(ConcordanceContent candidateOrigin : listSentence) {
-
+            System.out.println(candidateOrigin.getCompleteSentence());
             ArrayList<WordContent> candidate = new ArrayList<>();
 
             boolean ignoreLeft = false;
@@ -209,7 +209,7 @@ public class PatternFinder {
             {
                 System.out.println("COMPARED PATTERN " + listPattern.get(ctr).getCompleteSentence());
 
-                if(listPattern.get(ctr).getCompleteSentence().equals(pattern.getCompleteSentence()))
+                if(listPattern.get(ctr).getCompleteSentence().equalsIgnoreCase(pattern.getCompleteSentence()))
                     isUnique = false;
             }
 

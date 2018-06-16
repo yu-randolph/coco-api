@@ -145,13 +145,13 @@ public class ConcordanceContent {
         boolean bRightMatch = true;
 
         //CHECK LEFT SIDE
-        while(nLeftCtr >= 0 && nLeftSentenceCtr >= 0)
+        while(nLeftCtr >= 0 && nLeftSentenceCtr >= 0 && bLeftMatch)
         {
             ArrayList<TagContent> patternTags = this.removeLemmaAndOthers(words.get(nLeftCtr).getTags());
             ArrayList<TagContent>  sentenceTags = this.removeLemmaAndOthers(sentence.get(nLeftSentenceCtr).getTags());
             boolean bEquals = false;
 
-            System.out.println(words.get(nLeftCtr).getWord() + " || " + sentence.get(nLeftSentenceCtr).getWord());
+            System.out.println(words.get(nLeftCtr).getWord() + ":" + nLeftCtr + " || " + sentence.get(nLeftSentenceCtr).getWord() + ":" + nLeftSentenceCtr);
 
             for(TagContent patternTag : patternTags)
             {
@@ -166,7 +166,6 @@ public class ConcordanceContent {
             {
                 System.out.println("LEFT DOES NOT MATCH");
                 bLeftMatch = false;
-                break;
             }
 
             nLeftCtr--;
@@ -174,13 +173,13 @@ public class ConcordanceContent {
         }
 
         //CHECK RIGHT SIDE
-        while(nRightCtr < words.size() && nRightSentenceCtr < sentence.size())
+        while(nRightCtr < words.size() && nRightSentenceCtr < sentence.size() && bRightMatch)
         {
             ArrayList<TagContent> patternTags = this.removeLemmaAndOthers(words.get(nRightCtr).getTags());
             ArrayList<TagContent>  sentenceTags = this.removeLemmaAndOthers(sentence.get(nRightSentenceCtr).getTags());
             boolean bEquals = false;
 
-            System.out.println(words.get(nRightCtr).getWord() + " || " + sentence.get(nRightSentenceCtr).getWord());
+            System.out.println(words.get(nRightCtr).getWord() + ":" + nRightCtr + " || " + sentence.get(nRightSentenceCtr).getWord() + ":" + nRightSentenceCtr);
 
             for(TagContent patternTag : patternTags)
             {
@@ -195,15 +194,16 @@ public class ConcordanceContent {
             {
                 System.out.println("RIGHT DOES NOT MATCH");
                 bRightMatch = false;
-                break;
             }
 
             nRightCtr++;
             nRightSentenceCtr++;
         }
 
-        if(bLeftMatch && bRightMatch)
+        if(bLeftMatch && bRightMatch && nLeftCtr < 0 && nRightCtr == words.size())
         {
+            System.out.println(completeSentence + " && " + originalSentence.getCompleteSentence());
+
             increaseFreq();
         }
     }

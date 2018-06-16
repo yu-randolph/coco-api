@@ -66,6 +66,7 @@ public class Concordancer {
         JSONObject jsonObject = new JSONObject();
         concordanceContents = new ArrayList<>();
         ArrayList<WordContent> wordContent = new ArrayList<>();
+
         //CHECK ALL KEYWORDS
         for(String keyword : this.concepts)
         {
