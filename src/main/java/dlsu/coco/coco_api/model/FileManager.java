@@ -501,6 +501,7 @@ public class FileManager {
     public String getPattern(String concordance) throws JSONException {
         PatternFinder patternFinder = new PatternFinder(new JSONObject(concordance));
         patternFinder.printPattern();
+        System.out.println(patternFinder.getJSONpattern().toString());
         //return patternFinder.getJSONpattern().toString();
         return "";
     }

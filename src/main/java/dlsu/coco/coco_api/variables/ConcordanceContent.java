@@ -13,7 +13,9 @@ public class ConcordanceContent {
     private String completeSentence;
     private ArrayList<WordContent> words;
     private String sentenceId;
+
     private int patternFrequency;
+    private ArrayList<String> patternOrigin;
 
 
     public ConcordanceContent(String keyword, int keyword_Index, String completeSentence, ArrayList<WordContent> words,String sentenceId) {
@@ -22,7 +24,6 @@ public class ConcordanceContent {
         this.completeSentence = completeSentence;
         this.sentenceId = sentenceId;
         this.words = words;
-        this.patternFrequency = 0;
     }
 
     public ConcordanceContent(){}
@@ -72,6 +73,14 @@ public class ConcordanceContent {
     public void resetFreq() { patternFrequency = 0; }
 
     public int getFreq() {return patternFrequency;}
+
+    public ArrayList<String> getPatternOrigin() {
+        return patternOrigin;
+    }
+
+    public void initPatternOrigin() {
+        this.patternOrigin = new ArrayList<>();
+    }
 
     public JSONObject getJSON() throws JSONException {
         JSONObject jsonObject = new JSONObject();
@@ -205,6 +214,7 @@ public class ConcordanceContent {
             System.out.println(completeSentence + " && " + originalSentence.getCompleteSentence());
 
             increaseFreq();
+            patternOrigin.add(originalSentence.getSentenceId());
         }
     }
 
@@ -223,5 +233,32 @@ public class ConcordanceContent {
         }
 
         return tags;
+    }
+
+    public JSONObject getSummaryJSON() throws JSONException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("keyword_index", this.keyword_Index);
+        JSONArray listWords = new JSONArray();
+
+        for(WordContent wordItem : this.words) {
+            JSONObject word = new JSONObject();
+            word.put("word",wordItem.getWord());
+
+            JSONArray allTags = new JSONArray();
+            for(int tagCtr = 0; tagCtr < wordItem.getTags().size(); tagCtr++)
+            {
+                JSONObject tag = new JSONObject();
+                tag.put("name",wordItem.getTags().get(tagCtr).getTagName());
+                tag.put("value",wordItem.getTags().get(tagCtr).getTagValue());
+                allTags.put(tag);
+            }
+
+            word.put("tags",allTags);
+            word.put("wordId",wordItem.getWordId());
+            listWords.put(word);
+        }
+
+        jsonObject.put("WordContent", listWords);
+        return jsonObject;
     }
 }
