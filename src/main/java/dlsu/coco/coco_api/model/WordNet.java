@@ -317,7 +317,7 @@ public class WordNet {
 
         for(WordNetContent item : verbSynonym)
         {
-            jsonArray.put(item.toJSON());
+            jsonArray.put(item.getWordForm()[0]);
         }
 
         return jsonArray;
@@ -329,7 +329,7 @@ public class WordNet {
 
         for(WordNetContent item : verbHyponym)
         {
-            jsonArray.put(item.toJSON());
+            jsonArray.put(item.getWordForm()[0]);
         }
 
         return jsonArray;
@@ -341,7 +341,7 @@ public class WordNet {
 
         for(WordNetContent item : verbTroponym)
         {
-            jsonArray.put(item.toJSON());
+            jsonArray.put(item.getWordForm()[0]);
         }
 
         return jsonArray;
