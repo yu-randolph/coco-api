@@ -61,7 +61,7 @@ public class Concordancer {
 
     public JSONObject getConcordanceResult() throws JSONException {
         this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
-
+      
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         concordanceContents = new ArrayList<>();
@@ -70,6 +70,7 @@ public class Concordancer {
         //CHECK ALL KEYWORDS
         for(String keyword : this.concepts)
         {
+
             //SEGMENT || CONTENT
             for(Segment content : corpus.getSegments())
             {
@@ -93,9 +94,11 @@ public class Concordancer {
                             tagContents.add(new TagContent(tag.getName(), tag.getValue()));
                         }
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents, sentence.getTerminals().get(ctr).getId()));
-        
-                        if(sentence.getTerminals().get(ctr).getWord().equals(keyword))
+
+                        keyword = keyword.replaceAll("\\s","");
+                        if(sentence.getTerminals().get(ctr).getWord().equalsIgnoreCase(keyword))
                         {
+
                             keywordExist = true;
                             item.setKeyword_Index(ctr);
                         }
@@ -119,7 +122,6 @@ public class Concordancer {
             jsonArray.put(concordanceContent.getJSON());
         }
         jsonObject.put("CONCORDANCE", jsonArray);
-        System.out.println(jsonObject.toString());
 
         return jsonObject;
     }
@@ -132,6 +134,7 @@ public class Concordancer {
         //CHECK ALL KEYWORDS
         for(String keyword : this.concepts)
         {
+
             //SEGMENT || CONTENT
             for(Segment content : corpus.getSegments())
             {

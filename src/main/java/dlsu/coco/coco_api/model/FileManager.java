@@ -310,6 +310,14 @@ public class FileManager {
 
     }
 
+    public void applyToAll(String feature){
+
+        JSONObject jsonObject = new JSONObject(feature);
+        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
+        corpusEditer.applyToAll(jsonObject.get("word").toString(),jsonObject.get("feature").toString(),jsonObject.get("feature_value").toString());
+        tiger2Converter.saveChanges();
+
+    }
     private String pos_tag_definition(String tag)
     {
         switch(tag.toUpperCase())
