@@ -261,4 +261,12 @@ public class ConcordanceContent {
         jsonObject.put("WordContent", listWords);
         return jsonObject;
     }
+
+    public void printWordContents()
+    {
+        for(int i = 0; i < words.size(); i++)
+        {
+            System.out.print(words.get(i).getWord() + " ");
+        }
+    }
 }

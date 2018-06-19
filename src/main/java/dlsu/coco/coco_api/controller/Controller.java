@@ -434,7 +434,19 @@ public class Controller {
     @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
     public @ResponseBody
     String getPattern(@RequestParam("concordance") String concordance) throws JSONException {
-        return fileManager.getPattern(concordance);
+        if (!concordance.isEmpty()) {
+            try
+            {
+                byte[] bytes = concordance.getBytes();
+                String result = new String(bytes);
+                System.out.println(result);
+                return fileManager.getPattern(result);
+            } catch (Exception e) {
+                System.out.println("You failed to upload " + concordance + " => " + e.getMessage());
+                return "You failed to upload " + concordance + " => " + e.getMessage();
+            }
+        }
+        return concordance;
     }
 
 //    @GetMapping("/getXML")

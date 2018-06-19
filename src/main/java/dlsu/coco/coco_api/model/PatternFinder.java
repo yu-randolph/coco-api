@@ -69,8 +69,12 @@ public class PatternFinder {
                     ConcordanceContent pattern = new ConcordanceContent();
 
                     candidate.add(0, candidateOrigin.getWords().get(nLeftIndex));
+
                     nKeywordIndexChaser++;
-                    pattern.setWords(candidate);
+
+                    ArrayList<WordContent> insert = new ArrayList<>();
+                    insert.addAll(candidate);
+                    pattern.setWords(insert);
 
                     String completeSentence = "";
                     for(int ctr = 0; ctr < candidate.size(); ctr++)
@@ -85,6 +89,9 @@ public class PatternFinder {
                     pattern.setSentenceId("pattern");
                     pattern.resetFreq();
                     pattern.initPatternOrigin();
+
+                    pattern.printWordContents();
+                    System.out.println();
 
                     for(ConcordanceContent comparedSentence : listSentence)
                     {
@@ -128,7 +135,10 @@ public class PatternFinder {
                     ConcordanceContent pattern = new ConcordanceContent();
 
                     candidate.add(candidateOrigin.getWords().get(nRightIndex));
-                    pattern.setWords(candidate);
+
+                    ArrayList<WordContent> insert = new ArrayList<>();
+                    insert.addAll(candidate);
+                    pattern.setWords(insert);
 
                     String completeSentence = "";
                     for(int ctr = 0; ctr < candidate.size(); ctr++)
@@ -142,6 +152,9 @@ public class PatternFinder {
                     pattern.setSentenceId("pattern");
                     pattern.resetFreq();
                     pattern.initPatternOrigin();
+
+                    pattern.printWordContents();
+                    System.out.println();
 
                     for(ConcordanceContent comparedSentence : listSentence)
                     {
@@ -179,6 +192,7 @@ public class PatternFinder {
                 if(matchingLeft)
                 {
                     candidate.add(0, candidateOrigin.getWords().get(nLeftIndex));
+
                     nKeywordIndexChaser++;
                     nLeftIndex -= 1;
                     matchingLeft = false;
@@ -187,9 +201,15 @@ public class PatternFinder {
                 if(matchingRight)
                 {
                     candidate.add(candidateOrigin.getWords().get(nRightIndex));
+
                     nRightIndex += 1;
                     matchingRight = false;
                 }
+
+                ArrayList<WordContent> temp = new ArrayList<>();
+                temp.addAll(candidate);
+                candidate = new ArrayList<>();
+                candidate.addAll(temp);
 
                 System.out.println("=======================================");
             }
@@ -201,12 +221,19 @@ public class PatternFinder {
         if(listPattern.size() == 0)
         {
             System.out.println("PATTERN CANDIDATE : " + pattern.getCompleteSentence());
+            System.out.println("PATTERN CANDIDATE'S WORDCONTENTS PRINT : ");
+            pattern.printWordContents();
+            System.out.println();
             return true;
         }
         else
         {
             boolean isUnique = true;
             System.out.println("PATTERN CANDIDATE : " + pattern.getCompleteSentence());
+            System.out.println("PATTERN CANDIDATE'S WORDCONTENTS PRINT : ");
+            pattern.printWordContents();
+            System.out.println();
+
             for(int ctr = 0; ctr < listPattern.size(); ctr++)
             {
                 System.out.println("COMPARED PATTERN " + listPattern.get(ctr).getCompleteSentence());
@@ -232,7 +259,11 @@ public class PatternFinder {
                 System.out.print(listPattern.get(ctr).getPatternOrigin().get(i) + " ");
             }
             System.out.println();
+            System.out.println("COMP SENTENCE");
             System.out.println(listPattern.get(ctr).getCompleteSentence());
+            System.out.println("PRINT WORDCONTENTS");
+            listPattern.get(ctr).printWordContents();
+            System.out.println();
 
             System.out.println();
         }

@@ -70,7 +70,7 @@ public class Concordancer {
         //CHECK ALL KEYWORDS
         for(String keyword : this.concepts)
         {
-
+            System.out.println("CONC KEY : " + keyword);
             //SEGMENT || CONTENT
             for(Segment content : corpus.getSegments())
             {

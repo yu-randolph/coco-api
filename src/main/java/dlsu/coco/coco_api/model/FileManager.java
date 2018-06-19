@@ -310,7 +310,7 @@ public class FileManager {
 
     }
 
-    public void applyToAll(String feature){
+    public void applyToAll(String feature) throws JSONException {
 
         JSONObject jsonObject = new JSONObject(feature);
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
@@ -396,6 +396,12 @@ public class FileManager {
                 conceptList.add(conceptNet.get(x).toString());
                 }
 
+            System.out.println("CONCEPTS");
+            for(int a = 0; a < conceptList.size(); a++)
+            {
+                System.out.print(conceptList.get(a) + " ");
+            }
+        System.out.println();
 
             Concordancer cn;
             cn = new Concordancer(conceptList, tiger2Converter.getCorpus());
@@ -498,6 +504,13 @@ public class FileManager {
         }
 
 
+        System.out.println("ADVANCED CONCEPTS");
+        for(int a = 0; a < conceptList.size(); a++)
+        {
+            System.out.print(conceptList.get(a) + " ");
+        }
+        System.out.println();
+
         Concordancer cn;
         cn = new Concordancer(conceptList, tiger2Converter.getCorpus());
 
@@ -507,11 +520,11 @@ public class FileManager {
     }
 
     public String getPattern(String concordance) throws JSONException {
+        System.out.println("CONCORDANCE IN GET PATTERN : " + concordance);
         PatternFinder patternFinder = new PatternFinder(new JSONObject(concordance));
         patternFinder.printPattern();
-        System.out.println(patternFinder.getJSONpattern().toString());
-        //return patternFinder.getJSONpattern().toString();
-        return "";
+        System.out.println("PATTERN : " + patternFinder.getJSONpattern().toString());
+        return patternFinder.getJSONpattern().toString();
     }
 }
 
