@@ -110,6 +110,8 @@ public class Controller {
                 fileManager.tigerXMLChecker(receivedFile);
                 System.out.println("RECEIVED FILE NAME: " + receivedFile.getName());
                 fileManager.tigerProcess(receivedFile);
+                tiger2Converter = fileManager.getTiger2Converter();
+                this.annotationsManager = new AnnotationsManager(tiger2Converter);
                 return fileManager.getRawCorpus();
             }
         } else {
@@ -440,7 +442,7 @@ public class Controller {
     public String getContent() throws JSONException {
 
 //       ConceptFinder fn = new ConceptFinder("Hello", "book");
-        return fileManager.XMLtoJSONconverter().toString();
+            return fileManager.XMLtoJSONconverter().toString();
     }
 
     @GetMapping("/getTags")

@@ -237,6 +237,9 @@ public class FileManager {
         tiger2Converter.process();
 
     }
+    public Tiger2Converter getTiger2Converter() {
+        return tiger2Converter;
+    }
 
     public JSONObject XMLtoJSONconverter() throws JSONException {
         System.out.println(tiger2Converter.XMLtoJSONconverter().toString());
