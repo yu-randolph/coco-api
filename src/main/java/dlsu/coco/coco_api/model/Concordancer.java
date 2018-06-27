@@ -10,10 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Concordancer {
 
@@ -22,10 +19,11 @@ public class Concordancer {
 
     private ArrayList<String> concept;
     private ArrayList<String> concepts = new ArrayList<String>();
+    private ArrayList<String> tags;
 
-    public Concordancer(ArrayList<String> concepts, Corpus corpus)
+    public Concordancer(Corpus corpus)
     {
-        this.concepts = concepts;
+
         this.corpus = corpus;
 
     }
@@ -58,6 +56,116 @@ public class Concordancer {
 //
 //        return jsonObject;
 //    }
+
+    public void JSONtoArrayConceptLIst(String concepts) throws JSONException {
+
+
+        JSONObject jsonObject = new JSONObject(concepts);
+        JSONObject arr = new JSONObject(jsonObject.get("WORDNET").toString());
+        JSONObject result;
+        Iterator<?> keys = arr.keys();
+        ArrayList<String> conceptList = new ArrayList<>();
+
+        while (keys.hasNext()) {
+            String key = (String) keys.next();
+            JSONArray contents = new JSONArray(arr.get(key).toString());
+            for (int j = 0; j < contents.length(); j++) {
+                conceptList.add(contents.get(j).toString());
+            }
+        }
+
+        JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
+
+        for (int x = 0; x < conceptNet.length(); x++) {
+            conceptList.add(conceptNet.get(x).toString());
+        }
+        this.concepts = conceptList;
+    }
+
+    public void JSONToArrayAdvancedConceptList(String concepts) throws JSONException {
+        JSONObject jsonObject = new JSONObject(concepts);
+        JSONArray ann = new JSONArray(jsonObject.get("AnnotationsList").toString());
+        JSONArray rel = new JSONArray(jsonObject.get("RelationList").toString());
+
+        this.tags = new ArrayList<>();
+        ArrayList<String> rels = new ArrayList<>();
+        ArrayList<String> conceptList = new ArrayList<>();
+
+        for (int i = 0; i < ann.length(); i++) {
+            tags.add(ann.getJSONObject(i).getString("annotation"));
+        }
+        for (int i = 0; i < rel.length(); i++) {
+            rels.add(rel.getJSONObject(i).getString("relation"));
+        }
+
+
+        JSONObject arr = new JSONObject(jsonObject.get("WORDNET").toString());
+        JSONObject result;
+        Iterator<?> keys = arr.keys();
+
+
+        while (keys.hasNext()) {
+            String key = (String) keys.next();
+            switch (key) {
+                case "NOUN_SYNONYM":
+                    if (rels.contains("Synonym")) {
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case "NOUN_HYPERNYM":
+                    if (rels.contains("Hypernym")) {
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case "NOUN_HYPONYM":
+                    if (rels.contains("Hyponym")) {
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case "VERB_SYNONYM":
+                    if (rels.contains("Synonym")) {
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case "VERB_TROPONYM":
+                    if (rels.contains("Troponym")) {
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+                case "VERB_HYPONYM":
+                    if (rels.contains("Hyponym")) {
+                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        for (int j = 0; j < contents.length(); j++) {
+                            conceptList.add(contents.get(j).toString());
+                        }
+
+                    }
+                    break;
+
+            }
+
+        }
+    }
 
     public JSONObject getConcordanceResult() throws JSONException {
         this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));

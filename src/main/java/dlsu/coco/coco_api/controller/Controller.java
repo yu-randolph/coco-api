@@ -1,10 +1,14 @@
 package dlsu.coco.coco_api.controller;
 
+import de.hu_berlin.german.korpling.tiger2.main.Tiger2Converter;
+import de.hu_berlin.german.korpling.tiger2.samples.CorpusEditer;
+import dlsu.coco.coco_api.model.AnnotationsManager;
 import dlsu.coco.coco_api.model.ConceptFinder;
 import dlsu.coco.coco_api.model.Concordancer;
 import dlsu.coco.coco_api.model.FileManager;
 import org.apache.commons.io.FilenameUtils;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,10 +20,16 @@ import java.nio.charset.StandardCharsets;
 @RestController
 public class Controller {
 
-    FileManager fileManager;
 
+    private FileManager fileManager;
+    private Tiger2Converter tiger2Converter;
+    private CorpusEditer corpusEditer;
+    private AnnotationsManager annotationsManager;
+    private ConceptFinder cf;
+    private Concordancer concordancer;
     public Controller() {
         fileManager = new FileManager();
+        this.tiger2Converter = new Tiger2Converter();
     }
 
     @GetMapping("/")
@@ -185,7 +195,8 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                fileManager.editAnnotation(result);
+                this.tiger2Converter = this.annotationsManager.editAnnotation(result);
+
 
                 System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
@@ -210,7 +221,7 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                fileManager.addAnnotation(result);
+                this.tiger2Converter = this.annotationsManager.addAnnotation(result);
 
                 System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
@@ -235,7 +246,7 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                fileManager.deleteTag(result);
+                this.tiger2Converter = this.annotationsManager.deleteTag(result);
 
                 System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
@@ -261,7 +272,7 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                fileManager.addFeatureValue(result);
+                this.tiger2Converter = this.annotationsManager.addFeatureValue(result);
 
                 System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
@@ -287,7 +298,8 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                fileManager.applyToAll(result);
+                this.tiger2Converter = this.annotationsManager.applyToAll(result);
+
 
                 System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
@@ -301,6 +313,8 @@ public class Controller {
         return newTag;
     }
 
+
+
     @RequestMapping(value = "/addFeature", method = RequestMethod.POST)
     public @ResponseBody
     String addFeature(@RequestParam("feature") String feature) {
@@ -313,7 +327,7 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                fileManager.addFeature(result);
+                this.tiger2Converter = this.annotationsManager.addFeature(result);
 
                 System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
@@ -339,7 +353,9 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                result = fileManager.getJSONConcepts(result).toString();
+                JSONObject jsonObject = new JSONObject(result);
+                this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
+                result = cf.getAllResults().toString();
 
 //                System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
@@ -365,8 +381,9 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                result = fileManager.getJSONConcordances(result).toString();
-
+                concordancer = new Concordancer(tiger2Converter.getCorpus());
+                concordancer.JSONtoArrayConceptLIst(result);
+                result = concordancer.getConcordanceResult().toString();
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;
@@ -390,7 +407,9 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                result = fileManager.getAdvancedJSONConcordances(result).toString();
+                System.out.println(result);
+                concordancer = new Concordancer(tiger2Converter.getCorpus());
+                concordancer.JSONToArrayAdvancedConceptList(result);
 
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
@@ -428,7 +447,7 @@ public class Controller {
     public String getTags() throws JSONException {
         // fileManager.tigerXMLChecker(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
         // fileManager.tigerProcess(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
-        return fileManager.AnnotationstoJSONconverter().toString();
+        return annotationsManager.AnnotationstoJSONconverter().toString();
     }
 
     @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
