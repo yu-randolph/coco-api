@@ -468,6 +468,23 @@ public class Controller {
         return concordance;
     }
 
+    @RequestMapping(value = "/getPatternFilteredByID", method = RequestMethod.POST)
+    public @ResponseBody
+    String getFilteredPatternByID(@RequestParam("sID") String sID) throws JSONException {
+        if (!sID.isEmpty()) {
+            try
+            {
+                byte[] bytes = sID.getBytes();
+                String result = new String(bytes);
+                return fileManager.getPattern(result);
+            } catch (Exception e) {
+                System.out.println("You failed to upload " + sID + " => " + e.getMessage());
+                return "You failed to upload " + sID + " => " + e.getMessage();
+            }
+        }
+        return sID;
+    }
+
 //    @GetMapping("/getXML")
 //    public String getXML() {
 //        return fileManager.NLPprocessor("I happened to see a one day cricket match between Pakistan and Australia at Wankhade Stadium, Mumbai. " +

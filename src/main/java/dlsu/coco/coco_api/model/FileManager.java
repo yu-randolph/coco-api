@@ -36,6 +36,7 @@ public class FileManager {
     private Properties props;
     private StanfordCoreNLP pipeline;
     private Tiger2Converter tiger2Converter;
+    private PatternFinder patternFinder;
     private CorpusEditer corpusEditer;
 
     private DocumentBuilderFactory docFactory;
@@ -295,10 +296,21 @@ public class FileManager {
 
     public String getPattern(String concordance) throws JSONException {
         System.out.println("CONCORDANCE IN GET PATTERN : " + concordance);
-        PatternFinder patternFinder = new PatternFinder(new JSONObject(concordance));
+        patternFinder = new PatternFinder(new JSONObject(concordance));
         patternFinder.printPattern();
         System.out.println("PATTERN : " + patternFinder.getJSONpattern().toString());
         return patternFinder.getJSONpattern().toString();
+    }
+
+    public String getFilteredPattternByID(String sID) throws JSONException {
+        if(patternFinder != null)
+        {
+            return patternFinder.getFilteredByID(new JSONObject(sID)).toString();
+        }
+        else
+        {
+            return null;
+        }
     }
 }
 
