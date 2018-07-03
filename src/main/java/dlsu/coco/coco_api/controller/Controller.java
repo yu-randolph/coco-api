@@ -357,8 +357,8 @@ public class Controller {
 
                 JSONObject jsonObject = new JSONObject(result);
                 System.out.println(result);
-//                this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
-//                result = cf.getAllResults().toString();
+                this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
+                result = cf.getAllResults().toString();
 
 //                System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
