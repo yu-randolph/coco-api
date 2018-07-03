@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Concordancer {
 
@@ -20,6 +21,7 @@ public class Concordancer {
     private ArrayList<String> concept;
     private ArrayList<String> concepts = new ArrayList<String>();
     private ArrayList<String> tags;
+    private String pos;
 
     public Concordancer(Corpus corpus)
     {
@@ -65,6 +67,14 @@ public class Concordancer {
         JSONObject result;
         Iterator<?> keys = arr.keys();
         ArrayList<String> conceptList = new ArrayList<>();
+
+
+        if(arr.toString().contains("NOUN")){
+            pos = "NN";
+        }
+        else
+            pos = "VB";
+
 
         while (keys.hasNext()) {
             String key = (String) keys.next();
@@ -169,16 +179,22 @@ public class Concordancer {
 
     public JSONObject getConcordanceResult() throws JSONException {
         this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
-      
+
+//        Set<String> cns = new LinkedHashSet<String>(this.concepts);
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         concordanceContents = new ArrayList<>();
         ArrayList<WordContent> wordContent = new ArrayList<>();
+        ArrayList<String> duplicates = new ArrayList<>();
+
+        System.out.println(" this.concepts Size " + this.concepts.size());
+        int i = 0;
 
         //CHECK ALL KEYWORDS
         for(String keyword : this.concepts)
         {
-            System.out.println("CONC KEY : " + keyword);
+        i++;
+            System.out.println("CONC KEY " + keyword + " " + i);
             //SEGMENT || CONTENT
             for(Segment content : corpus.getSegments())
             {
@@ -188,7 +204,7 @@ public class Concordancer {
                     ConcordanceContent item = new ConcordanceContent();
                     item.setKeyword(keyword);
                     item.setSentenceId(sentence.getId());
-                    boolean keywordExist = false;
+                    boolean keywordExist = false, posVal = false;
                     String completeSentence = "";
 
                     //TERMINAL || WORD
@@ -206,21 +222,31 @@ public class Concordancer {
                         keyword = keyword.replaceAll("\\s","");
                         if(sentence.getTerminals().get(ctr).getWord().equalsIgnoreCase(keyword))
                         {
+                            for(TagContent tag : tagContents){
+                                if(tag.getTagName().contains("pos") && tag.getTagValue().contains(pos))
+                                    posVal = true;
+                            }
+                            if(posVal && !duplicates.contains(keyword)) {
 
-                            keywordExist = true;
-                            item.setKeyword_Index(ctr);
-                        }
+                                keywordExist = true;
+                                item.setKeyword_Index(ctr);
+                            }
+                            }
                     }
+
 
                     if(keywordExist)
                     {
                         item.setWords(wordContent);
                         item.setCompleteSentence(completeSentence);
-                        concordanceContents.add(item);
+                        if(!concordanceContents.contains(item))
+                            concordanceContents.add(item);
                     }
+
                     wordContent = new ArrayList<>();
                 }
             }
+            duplicates.add(keyword);
         }
 
         System.out.println(concordanceContents.size());
@@ -284,7 +310,7 @@ public class Concordancer {
                                 }
                             }
                                 if(cnfrm == tags.size()) {
-                                System.out.println(wordContent.size());
+
                                     keywordExist = true;
                                     item.setKeyword_Index(ctr);
                                 }

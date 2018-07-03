@@ -356,8 +356,9 @@ public class Controller {
                 System.out.println(result);
 
                 JSONObject jsonObject = new JSONObject(result);
-                this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
-                result = cf.getAllResults().toString();
+                System.out.println(result);
+//                this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
+//                result = cf.getAllResults().toString();
 
 //                System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
@@ -381,7 +382,7 @@ public class Controller {
                 byte[] bytes = feature.getBytes();
                 String result = new String(bytes);
                 newTag = result;
-                System.out.println(result);
+                System.out.println("pos" + result);
 
                 concordancer = new Concordancer(tiger2Converter.getCorpus());
                 concordancer.JSONtoArrayConceptLIst(result);

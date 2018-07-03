@@ -15,6 +15,7 @@ public class WordContent {
         this.lemma = null;
     }
 
+
     public WordContent(String word, ArrayList<TagContent> tags, String wordId, String lemma) {
         this.word = word;
         this.tags = tags;
