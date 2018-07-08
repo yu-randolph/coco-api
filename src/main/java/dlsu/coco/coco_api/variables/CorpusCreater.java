@@ -19,68 +19,107 @@ public class CorpusCreater {
     JSONArray annotationContents, sentenceContents;
     ArrayList<String> featValues, featDesc, words;
 
-    public CorpusCreater(JSONObject corpusConcents) throws JSONException {
-        this.annotationContents = new JSONArray(corpusConcents.get("Feature_Array").toString());
-        this.sentenceContents = new JSONArray(corpusConcents.get("Graph_Array").toString());
+    public Corpus getCorpus(){
+        return this.corpus;
+    }
+    public CorpusCreater(String corpusContents) throws JSONException {
+        JSONObject jsonObject2 = new JSONObject(corpusContents);
+        corpusContents = corpusContents.substring(jsonObject2.get("Feature_Array").toString().length() + 2 + "Feature_Array".length() + 4);
+        annotationContents =  new JSONArray(jsonObject2.get("Feature_Array").toString());
+
+        JSONObject jsonObject3 = new JSONObject(corpusContents);
+        sentenceContents=  new JSONArray(jsonObject3.get("Graph_Array").toString());
+
         featValues = new ArrayList<>();
-        featValues = new ArrayList<>();
+        featDesc = new ArrayList<>();
         words = new ArrayList<>();
         cw = new CorpusWriter(this.corpus);
+        cw.initCorpus();
+
     }
 
     public void annotationsToArrayList() throws JSONException {
-        String featName;
+        String featName = null;
+
         for (int i = 0; i < annotationContents.length(); i++) {
             JSONObject jObj = annotationContents.getJSONObject(i);
-             featName = jObj.getString("Annotation");
+
+             featName =  jObj.getString("Annotation:");
             JSONArray jArr = new JSONArray(jObj.get("FeatureValues").toString());
 
             for(int j = 0; j < jArr.length(); j++){
                 JSONObject jArr2 = jArr.getJSONObject(j);
+                if(!jArr2.isNull("featDesc"))
+                    featDesc.add(jArr2.getString("featDesc"));
+                else
+                    featDesc.add(" ");
                 featValues.add(jArr2.getString("featValue"));
-                featDesc.add(jArr2.getString("featDesc"));
+
             }
-
+            cw.writeFeature(featName,featValues,featDesc);
+            featValues.clear();
+            featDesc.clear();
         }
-
-        // cw.writeFeature(featName,featValues,featDesc);
+        ce = new CorpusEditer(cw.getCorpus());
     }
 
     public void sentencesToArrayList() throws JSONException {
 
        ArrayList<WordContent> words = new ArrayList<>();
-       ArrayList<TagContent> tags = new ArrayList<>();
+       ArrayList<TagContent> tags;
         WordContent wc = null;
         TagContent tc = null;
+        String graphId = null;
 
         for(int i = 0; i < sentenceContents.length(); i++) {
             JSONObject jObj = sentenceContents.getJSONObject(i);
+            graphId = jObj.getString("Graph_ID");
             JSONArray jArr = new JSONArray(jObj.get("Terminal_Array").toString());
-            JSONObject obj = jArr.getJSONObject(i);
-            Iterator<?> keys = obj.keys();
+            for (int j = 0; j < jArr.length(); j++) {
+                tags = new ArrayList<>();
+                JSONObject obj = jArr.getJSONObject(j);
 
-            String graphId = jObj.getString("Graph_ID");
+                System.out.println("obJ" + obj.toString());
 
-            while (keys.hasNext()) {
-                String key = (String) keys.next();
-                JSONArray contents = new JSONArray(obj.get(key).toString());
-                for (int j = 0; j < contents.length(); j++) {
-                    tc = new TagContent(obj.get(key).toString(),contents.get(j).toString());
-                }
-                tags.add(tc);
-            }
-            wc = new WordContent(obj.get("Word").toString(), tags, obj.get("Terminal_Id").toString());
+                Iterator<?> keys = obj.keys();
+                String word = (String) keys.next();
+                word = obj.getString(word);
+
+                String id = (String) keys.next();
+                id = obj.getString(id);
+
+                do{
+                    String key = (String) keys.next();
+                    System.out.println("KEYS " + key);
+                    tc = new TagContent(key, obj.getString(key));
+                    tags.add(tc);
+                }while (keys.hasNext());
+
+            wc = new WordContent(word, tags, id);
+
             words.add(wc);
-        }
-            for(WordContent word: words){
-//                    cw.addTerminal(word.getWord(),word.getWordId());
-            }
-            for(WordContent word: words){
-                    for(TagContent tag: word.getTags())
-                    ce.addTerminalAnnotation(word.getWordId(),tag.getTagName(),tag.getTagValue());
-            }
 
+        }
+
+            cw.addGraph(graphId);
+
+            for(WordContent word: words){
+                cw.addTerminal(word.getWord(),word.getWordId());
+            }
+            for(WordContent word: words){
+
+                for(TagContent tag: word.getTags()) {
+                    System.out.println("HELLO: " + tag.getTagName());
+                    ce.createTerminalAnnotation(word.getWordId(), tag.getTagName(), tag.getTagValue());
+                }
+            }
+            words.clear();
+
+        }
+
+        this.corpus = ce.getCorpus();
     }
+
 
     public void createCorpus(){
 

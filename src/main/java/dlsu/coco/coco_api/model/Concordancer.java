@@ -3,6 +3,7 @@ package dlsu.coco.coco_api.model;
 import de.hu_berlin.german.korpling.tiger2.*;
 import de.hu_berlin.german.korpling.tiger2.samples.CorpusWriter;
 import dlsu.coco.coco_api.variables.ConcordanceContent;
+import dlsu.coco.coco_api.variables.CorpusCreater;
 import dlsu.coco.coco_api.variables.TagContent;
 import dlsu.coco.coco_api.variables.WordContent;
 import org.eclipse.emf.common.util.EList;
@@ -26,7 +27,7 @@ public class Concordancer {
     public Concordancer(Corpus corpus)
     {
 
-        this.corpus = corpus;
+//        this.corpus = corpus;
 
     }
 
@@ -64,10 +65,30 @@ public class Concordancer {
 
         JSONObject jsonObject = new JSONObject(concepts);
         JSONObject arr = new JSONObject(jsonObject.get("WORDNET").toString());
+        concepts = concepts.substring(jsonObject.get("WORDNET").toString().length() + jsonObject.get("FORM_OF").toString().length() + 3 + "WORDNET".length() + 4 + "FORM_OF".length() + 3);
         JSONObject result;
         Iterator<?> keys = arr.keys();
         ArrayList<String> conceptList = new ArrayList<>();
 
+        CorpusCreater cc = new CorpusCreater(concepts);
+        cc.annotationsToArrayList();
+        cc.sentencesToArrayList();
+        this.corpus = cc.getCorpus();
+
+//        System.out.println("HELLO1 " + jsonObject.get("WORDNET").toString());
+//        System.out.println("HELLO2 " + jsonObject.get("FORM_OF").toString());
+//        System.out.println("HELLO3 " + concepts);
+
+//        JSONObject jsonObject2 = new JSONObject(concepts);
+//        concepts = concepts.substring(jsonObject2.get("Feature_Array").toString().length() + 2 + "Feature_Array".length() + 4);
+//        JSONArray arr2 =  new JSONArray(jsonObject2.get("Feature_Array").toString());
+//        System.out.println("HELLO4 " + concepts);
+//        System.out.println("ARR2" + arr2);
+//
+//        JSONObject jsonObject3 = new JSONObject(concepts);
+//        JSONArray arr3 =  new JSONArray(jsonObject3.get("Graph_Array").toString());
+//
+//        System.out.println("ARR3" + arr3);
 
         if(arr.toString().contains("NOUN")){
             pos = "NN";
@@ -210,11 +231,13 @@ public class Concordancer {
                     //TERMINAL || WORD
                     for(int ctr = 0; ctr < sentence.getTerminals().size(); ctr++)
                     {
+
                         completeSentence += sentence.getTerminals().get(ctr).getWord() + " ";
                         ArrayList<TagContent> tagContents = new ArrayList<>();
 
                         //TAGS
                         for(Annotation tag : sentence.getTerminals().get(ctr).getAnnotations()) {
+
                             tagContents.add(new TagContent(tag.getName(), tag.getValue()));
                         }
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents, sentence.getTerminals().get(ctr).getId()));
