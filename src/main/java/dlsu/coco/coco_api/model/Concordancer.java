@@ -27,7 +27,7 @@ public class Concordancer {
     public Concordancer(Corpus corpus)
     {
 
-//        this.corpus = corpus;
+//        this.corpus           = corpus;
 
     }
 
@@ -64,13 +64,15 @@ public class Concordancer {
 
 
         JSONObject jsonObject = new JSONObject(concepts);
-        JSONObject arr = new JSONObject(jsonObject.get("WORDNET").toString());
-        concepts = concepts.substring(jsonObject.get("WORDNET").toString().length() + jsonObject.get("FORM_OF").toString().length() + 3 + "WORDNET".length() + 4 + "FORM_OF".length() + 3);
-        JSONObject result;
-        Iterator<?> keys = arr.keys();
+        JSONObject arr = new JSONObject(jsonObject.get("conceptlist").toString());
+        JSONObject wn = new JSONObject(arr.get("WORDNET").toString());
+        JSONObject tags = new JSONObject(jsonObject.get("tags").toString());
+        JSONObject anno = new JSONObject(jsonObject.get("annotations").toString());
+
+        Iterator<?> keys = wn.keys();
         ArrayList<String> conceptList = new ArrayList<>();
 
-        CorpusCreater cc = new CorpusCreater(concepts);
+        CorpusCreater cc = new CorpusCreater(tags,anno);
         cc.annotationsToArrayList();
         cc.sentencesToArrayList();
         this.corpus = cc.getCorpus();
@@ -90,7 +92,7 @@ public class Concordancer {
 //
 //        System.out.println("ARR3" + arr3);
 
-        if(arr.toString().contains("NOUN")){
+        if(wn.toString().contains("NOUN")){
             pos = "NN";
         }
         else
@@ -99,13 +101,13 @@ public class Concordancer {
 
         while (keys.hasNext()) {
             String key = (String) keys.next();
-            JSONArray contents = new JSONArray(arr.get(key).toString());
+            JSONArray contents = new JSONArray(wn.get(key).toString());
             for (int j = 0; j < contents.length(); j++) {
                 conceptList.add(contents.get(j).toString());
             }
         }
 
-        JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
+        JSONArray conceptNet = new JSONArray(arr.get("FORM_OF").toString());
 
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());

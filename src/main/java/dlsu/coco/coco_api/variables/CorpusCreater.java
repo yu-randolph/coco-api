@@ -22,13 +22,11 @@ public class CorpusCreater {
     public Corpus getCorpus(){
         return this.corpus;
     }
-    public CorpusCreater(String corpusContents) throws JSONException {
-        JSONObject jsonObject2 = new JSONObject(corpusContents);
-        corpusContents = corpusContents.substring(jsonObject2.get("Feature_Array").toString().length() + 2 + "Feature_Array".length() + 4);
-        annotationContents =  new JSONArray(jsonObject2.get("Feature_Array").toString());
+    public CorpusCreater(JSONObject tags, JSONObject annotations) throws JSONException {
 
-        JSONObject jsonObject3 = new JSONObject(corpusContents);
-        sentenceContents=  new JSONArray(jsonObject3.get("Graph_Array").toString());
+       annotationContents =  new JSONArray(tags.get("Feature_Array").toString());
+
+        sentenceContents=  new JSONArray(annotations.get("Graph_Array").toString());
 
         featValues = new ArrayList<>();
         featDesc = new ArrayList<>();
