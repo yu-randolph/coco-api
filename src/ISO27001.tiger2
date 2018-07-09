@@ -1,0 +1,2557 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<corpus 
+ xmlns="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:tiger2="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/ http://korpling.german.hu-berlin.de/tiger2/V2.0.5/Tiger2.xsd">
+<head>
+<annotation>
+<feature name="pos" domain="t">
+<value name="."/>
+<value name="WRB">Wh­adverb</value>
+<value name="POS">Possessive ending</value>
+<value name="PRP">Personal pronoun</value>
+<value name="-RRB-"/>
+<value name="CC">Coordinating conjunction</value>
+<value name="DT">Determiner</value>
+<value name="EX">Existential there</value>
+<value name="FW">Foreign word</value>
+<value name="IN">Preposition or subordinating conjunction</value>
+<value name="JJ">Adjective</value>
+<value name="MD">Modal</value>
+<value name="NN">Noun, singular or mass</value>
+<value name="RB">Adverb</value>
+<value name="RP">Particle</value>
+<value name="TO">to</value>
+<value name="VB">Verb, base form</value>
+<value name="WP">Wh­pronoun</value>
+<value name="VBD">Verb, past tense</value>
+<value name="VBG">Verb, gerund or present participle</value>
+<value name="VBN">Verb, past participle</value>
+<value name="VBP">Verb, non­3rd person singular present</value>
+<value name="VBZ">Verb, 3rd person singular present</value>
+<value name="PRP$">Possessive pronoun</value>
+<value name="NNP">Proper noun, singular</value>
+<value name="NNS">Noun, plural</value>
+<value name="WDT">Wh­determiner</value>
+</feature>
+<feature name="ner" domain="t">
+<value name="O">O</value>
+<value name="DATE">DATE</value>
+<value name="CAUSE_OF_DEATH">CAUSE_OF_DEATH</value>
+<value name="IDEOLOGY">IDEOLOGY</value>
+<value name="TITLE">TITLE</value>
+</feature>
+<feature name="lemma" domain="t">
+</feature>
+</annotation>
+</head>
+<body>
+<s xml:id="s1">
+<graph xml:id="s1_g0">
+<terminals>
+<t xml:id="s0_t1" tiger2:word="A" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s0_t2" tiger2:word="set" lemma="set" ner="O" pos="NN"/>
+<t xml:id="s0_t3" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s0_t4" tiger2:word="policies" lemma="policy" ner="O" pos="NNS"/>
+<t xml:id="s0_t5" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s0_t6" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s0_t7" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s0_t8" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s0_t9" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s0_t10" tiger2:word="defined" lemma="define" ner="O" pos="VBN"/>
+<t xml:id="s0_t11" tiger2:word="approved" lemma="approve" ner="O" pos="VBN"/>
+<t xml:id="s0_t12" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s0_t13" tiger2:word="management" lemma="management" ner="O" pos="NN"/>
+<t xml:id="s0_t14" tiger2:word="published" lemma="publish" ner="O" pos="VBN"/>
+<t xml:id="s0_t15" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s0_t16" tiger2:word="communicated" lemma="communicate" ner="O" pos="VBN"/>
+<t xml:id="s0_t17" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s0_t18" tiger2:word="employees" lemma="employee" ner="O" pos="NNS"/>
+<t xml:id="s0_t19" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s0_t20" tiger2:word="relevant" lemma="relevant" ner="O" pos="JJ"/>
+<t xml:id="s0_t21" tiger2:word="external" lemma="external" ner="O" pos="JJ"/>
+<t xml:id="s0_t22" tiger2:word="parties" lemma="party" ner="O" pos="NNS"/>
+<t xml:id="s0_t23" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g1">
+<terminals>
+<t xml:id="s1_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s1_t2" tiger2:word="policies" lemma="policy" ner="O" pos="NNS"/>
+<t xml:id="s1_t3" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s1_t4" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s1_t5" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s1_t6" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s1_t7" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s1_t8" tiger2:word="reviewed" lemma="review" ner="O" pos="VBN"/>
+<t xml:id="s1_t9" tiger2:word="at" lemma="at" ner="O" pos="IN"/>
+<t xml:id="s1_t10" tiger2:word="planned" lemma="plan" ner="O" pos="VBN"/>
+<t xml:id="s1_t11" tiger2:word="intervals" lemma="interval" ner="O" pos="NNS"/>
+<t xml:id="s1_t12" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s1_t13" tiger2:word="if" lemma="if" ner="O" pos="IN"/>
+<t xml:id="s1_t14" tiger2:word="significant" lemma="significant" ner="O" pos="JJ"/>
+<t xml:id="s1_t15" tiger2:word="changes" lemma="change" ner="O" pos="NNS"/>
+<t xml:id="s1_t16" tiger2:word="occur" lemma="occur" ner="O" pos="VBP"/>
+<t xml:id="s1_t17" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s1_t18" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s1_t19" tiger2:word="their" lemma="they" ner="O" pos="PRP$"/>
+<t xml:id="s1_t20" tiger2:word="continuing" lemma="continue" ner="O" pos="VBG"/>
+<t xml:id="s1_t21" tiger2:word="suitability" lemma="suitability" ner="O" pos="NN"/>
+<t xml:id="s1_t22" tiger2:word="adequacy" lemma="adequacy" ner="O" pos="NN"/>
+<t xml:id="s1_t23" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s1_t24" tiger2:word="effectiveness" lemma="effectiveness" ner="O" pos="NN"/>
+<t xml:id="s1_t25" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g2">
+<terminals>
+<t xml:id="s2_t1" tiger2:word="All" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s2_t2" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s2_t3" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s2_t4" tiger2:word="responsibilities" lemma="responsibility" ner="O" pos="NNS"/>
+<t xml:id="s2_t5" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s2_t6" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s2_t7" tiger2:word="defined" lemma="define" ner="O" pos="VBN"/>
+<t xml:id="s2_t8" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s2_t9" tiger2:word="allocated" lemma="allocate" ner="O" pos="VBN"/>
+<t xml:id="s2_t10" tiger2:word="Conflicting" lemma="conflicting" ner="O" pos="JJ"/>
+<t xml:id="s2_t11" tiger2:word="duties" lemma="duty" ner="O" pos="NNS"/>
+<t xml:id="s2_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s2_t13" tiger2:word="areas" lemma="area" ner="O" pos="NNS"/>
+<t xml:id="s2_t14" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s2_t15" tiger2:word="responsibility" lemma="responsibility" ner="O" pos="NN"/>
+<t xml:id="s2_t16" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s2_t17" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s2_t18" tiger2:word="segregated" lemma="segregate" ner="O" pos="VBN"/>
+<t xml:id="s2_t19" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s2_t20" tiger2:word="reduce" lemma="reduce" ner="O" pos="VB"/>
+<t xml:id="s2_t21" tiger2:word="opportunities" lemma="opportunity" ner="O" pos="NNS"/>
+<t xml:id="s2_t22" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s2_t23" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s2_t24" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s2_t25" tiger2:word="unintentional" lemma="unintentional" ner="O" pos="JJ"/>
+<t xml:id="s2_t26" tiger2:word="modification" lemma="modification" ner="O" pos="NN"/>
+<t xml:id="s2_t27" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s2_t28" tiger2:word="misuse" lemma="misuse" ner="O" pos="NN"/>
+<t xml:id="s2_t29" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s2_t30" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s2_t31" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s2_t32" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
+<t xml:id="s2_t33" tiger2:word="assets" lemma="asset" ner="O" pos="NNS"/>
+<t xml:id="s2_t34" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g3">
+<terminals>
+<t xml:id="s3_t1" tiger2:word="Appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s3_t2" tiger2:word="contacts" lemma="contact" ner="O" pos="NNS"/>
+<t xml:id="s3_t3" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s3_t4" tiger2:word="relevant" lemma="relevant" ner="O" pos="JJ"/>
+<t xml:id="s3_t5" tiger2:word="authorities" lemma="authority" ner="O" pos="NNS"/>
+<t xml:id="s3_t6" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s3_t7" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s3_t8" tiger2:word="maintained" lemma="maintain" ner="O" pos="VBN"/>
+<t xml:id="s3_t9" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g4">
+<terminals>
+<t xml:id="s4_t1" tiger2:word="Appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s4_t2" tiger2:word="contacts" lemma="contact" ner="O" pos="NNS"/>
+<t xml:id="s4_t3" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s4_t4" tiger2:word="special" lemma="special" ner="IDEOLOGY" pos="JJ"/>
+<t xml:id="s4_t5" tiger2:word="interest" lemma="interest" ner="IDEOLOGY" pos="NN"/>
+<t xml:id="s4_t6" tiger2:word="groups" lemma="group" ner="O" pos="NNS"/>
+<t xml:id="s4_t7" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s4_t8" tiger2:word="other" lemma="other" ner="O" pos="JJ"/>
+<t xml:id="s4_t9" tiger2:word="specialist" lemma="specialist" ner="TITLE" pos="NN"/>
+<t xml:id="s4_t10" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s4_t11" tiger2:word="forums" lemma="forum" ner="O" pos="NNS"/>
+<t xml:id="s4_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s4_t13" tiger2:word="professional" lemma="professional" ner="O" pos="JJ"/>
+<t xml:id="s4_t14" tiger2:word="associations" lemma="association" ner="O" pos="NNS"/>
+<t xml:id="s4_t15" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s4_t16" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s4_t17" tiger2:word="maintained" lemma="maintain" ner="O" pos="VBN"/>
+<t xml:id="s4_t18" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g5">
+<terminals>
+<t xml:id="s5_t1" tiger2:word="Information" lemma="Information" ner="O" pos="NNP"/>
+<t xml:id="s5_t2" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s5_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s5_t4" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s5_t5" tiger2:word="addressed" lemma="address" ner="O" pos="VBN"/>
+<t xml:id="s5_t6" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s5_t7" tiger2:word="project" lemma="project" ner="O" pos="NN"/>
+<t xml:id="s5_t8" tiger2:word="management" lemma="management" ner="O" pos="NN"/>
+<t xml:id="s5_t9" tiger2:word="regardless" lemma="regardless" ner="O" pos="RB"/>
+<t xml:id="s5_t10" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s5_t11" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s5_t12" tiger2:word="type" lemma="type" ner="O" pos="NN"/>
+<t xml:id="s5_t13" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s5_t14" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s5_t15" tiger2:word="project" lemma="project" ner="O" pos="NN"/>
+<t xml:id="s5_t16" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g6">
+<terminals>
+<t xml:id="s6_t1" tiger2:word="A" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s6_t2" tiger2:word="policy" lemma="policy" ner="O" pos="NN"/>
+<t xml:id="s6_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s6_t4" tiger2:word="supporting" lemma="support" ner="O" pos="VBG"/>
+<t xml:id="s6_t5" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s6_t6" tiger2:word="measures" lemma="measure" ner="O" pos="NNS"/>
+<t xml:id="s6_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s6_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s6_t9" tiger2:word="adopted" lemma="adopt" ner="O" pos="VBN"/>
+<t xml:id="s6_t10" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s6_t11" tiger2:word="manage" lemma="manage" ner="O" pos="VB"/>
+<t xml:id="s6_t12" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s6_t13" tiger2:word="risks" lemma="risk" ner="O" pos="NNS"/>
+<t xml:id="s6_t14" tiger2:word="introduced" lemma="introduce" ner="O" pos="VBN"/>
+<t xml:id="s6_t15" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s6_t16" tiger2:word="using" lemma="use" ner="O" pos="VBG"/>
+<t xml:id="s6_t17" tiger2:word="mobile" lemma="mobile" ner="TITLE" pos="JJ"/>
+<t xml:id="s6_t18" tiger2:word="devices" lemma="device" ner="O" pos="NNS"/>
+<t xml:id="s6_t19" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g7">
+<terminals>
+<t xml:id="s7_t1" tiger2:word="A" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s7_t2" tiger2:word="policy" lemma="policy" ner="O" pos="NN"/>
+<t xml:id="s7_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s7_t4" tiger2:word="supporting" lemma="support" ner="O" pos="VBG"/>
+<t xml:id="s7_t5" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s7_t6" tiger2:word="measures" lemma="measure" ner="O" pos="NNS"/>
+<t xml:id="s7_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s7_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s7_t9" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s7_t10" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s7_t11" tiger2:word="protect" lemma="protect" ner="O" pos="VB"/>
+<t xml:id="s7_t12" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s7_t13" tiger2:word="accessed" lemma="access" ner="O" pos="VBN"/>
+<t xml:id="s7_t14" tiger2:word="processed" lemma="process" ner="O" pos="VBN"/>
+<t xml:id="s7_t15" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s7_t16" tiger2:word="stored" lemma="store" ner="O" pos="VBN"/>
+<t xml:id="s7_t17" tiger2:word="at" lemma="at" ner="O" pos="IN"/>
+<t xml:id="s7_t18" tiger2:word="teleworking" lemma="telework" ner="O" pos="VBG"/>
+<t xml:id="s7_t19" tiger2:word="sites" lemma="site" ner="O" pos="NNS"/>
+<t xml:id="s7_t20" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g8">
+<terminals>
+<t xml:id="s8_t1" tiger2:word="Background" lemma="background" ner="O" pos="NN"/>
+<t xml:id="s8_t2" tiger2:word="verification" lemma="verification" ner="O" pos="NN"/>
+<t xml:id="s8_t3" tiger2:word="checks" lemma="check" ner="O" pos="NNS"/>
+<t xml:id="s8_t4" tiger2:word="on" lemma="on" ner="O" pos="IN"/>
+<t xml:id="s8_t5" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s8_t6" tiger2:word="candidates" lemma="candidate" ner="O" pos="NNS"/>
+<t xml:id="s8_t7" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s8_t8" tiger2:word="employment" lemma="employment" ner="O" pos="NN"/>
+<t xml:id="s8_t9" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s8_t10" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s8_t11" tiger2:word="carried" lemma="carry" ner="O" pos="VBN"/>
+<t xml:id="s8_t12" tiger2:word="out" lemma="out" ner="O" pos="RP"/>
+<t xml:id="s8_t13" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s8_t14" tiger2:word="accordance" lemma="accordance" ner="O" pos="NN"/>
+<t xml:id="s8_t15" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s8_t16" tiger2:word="relevant" lemma="relevant" ner="O" pos="JJ"/>
+<t xml:id="s8_t17" tiger2:word="laws" lemma="law" ner="O" pos="NNS"/>
+<t xml:id="s8_t18" tiger2:word="regulations" lemma="regulation" ner="O" pos="NNS"/>
+<t xml:id="s8_t19" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s8_t20" tiger2:word="ethics" lemma="ethic" ner="O" pos="NNS"/>
+<t xml:id="s8_t21" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s8_t22" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s8_t23" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s8_t24" tiger2:word="proportional" lemma="proportional" ner="O" pos="JJ"/>
+<t xml:id="s8_t25" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s8_t26" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s8_t27" tiger2:word="business" lemma="business" ner="O" pos="NN"/>
+<t xml:id="s8_t28" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s8_t29" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s8_t30" tiger2:word="classification" lemma="classification" ner="O" pos="NN"/>
+<t xml:id="s8_t31" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s8_t32" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s8_t33" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s8_t34" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s8_t35" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s8_t36" tiger2:word="accessed" lemma="access" ner="O" pos="VBN"/>
+<t xml:id="s8_t37" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s8_t38" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s8_t39" tiger2:word="perceived" lemma="perceive" ner="O" pos="VBN"/>
+<t xml:id="s8_t40" tiger2:word="risks" lemma="risk" ner="O" pos="NNS"/>
+<t xml:id="s8_t41" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g9">
+<terminals>
+<t xml:id="s9_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s9_t2" tiger2:word="contractual" lemma="contractual" ner="O" pos="JJ"/>
+<t xml:id="s9_t3" tiger2:word="agreements" lemma="agreement" ner="O" pos="NNS"/>
+<t xml:id="s9_t4" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s9_t5" tiger2:word="employees" lemma="employee" ner="O" pos="NNS"/>
+<t xml:id="s9_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s9_t7" tiger2:word="contractors" lemma="contractor" ner="O" pos="NNS"/>
+<t xml:id="s9_t8" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s9_t9" tiger2:word="state" lemma="state" ner="O" pos="VB"/>
+<t xml:id="s9_t10" tiger2:word="their" lemma="they" ner="O" pos="PRP$"/>
+<t xml:id="s9_t11" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s9_t12" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s9_t13" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s9_t14" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
+<t xml:id="s9_t15" tiger2:word="responsibilities" lemma="responsibility" ner="O" pos="NNS"/>
+<t xml:id="s9_t16" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s9_t17" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s9_t18" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s9_t19" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g10">
+<terminals>
+<t xml:id="s10_t1" tiger2:word="Management" lemma="management" ner="O" pos="NN"/>
+<t xml:id="s10_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s10_t3" tiger2:word="require" lemma="require" ner="O" pos="VB"/>
+<t xml:id="s10_t4" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s10_t5" tiger2:word="employees" lemma="employee" ner="O" pos="NNS"/>
+<t xml:id="s10_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s10_t7" tiger2:word="contractors" lemma="contractor" ner="O" pos="NNS"/>
+<t xml:id="s10_t8" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s10_t9" tiger2:word="apply" lemma="apply" ner="O" pos="VB"/>
+<t xml:id="s10_t10" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s10_t11" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s10_t12" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s10_t13" tiger2:word="accordance" lemma="accordance" ner="O" pos="NN"/>
+<t xml:id="s10_t14" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s10_t15" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s10_t16" tiger2:word="established" lemma="established" ner="O" pos="JJ"/>
+<t xml:id="s10_t17" tiger2:word="policies" lemma="policy" ner="O" pos="NNS"/>
+<t xml:id="s10_t18" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s10_t19" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s10_t20" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s10_t21" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s10_t22" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s10_t23" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g11">
+<terminals>
+<t xml:id="s11_t1" tiger2:word="All" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s11_t2" tiger2:word="employees" lemma="employee" ner="O" pos="NNS"/>
+<t xml:id="s11_t3" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s11_t4" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s11_t5" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s11_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s11_t7" tiger2:word="where" lemma="where" ner="O" pos="WRB"/>
+<t xml:id="s11_t8" tiger2:word="relevant" lemma="relevant" ner="O" pos="JJ"/>
+<t xml:id="s11_t9" tiger2:word="contractors" lemma="contractor" ner="O" pos="NNS"/>
+<t xml:id="s11_t10" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s11_t11" tiger2:word="receive" lemma="receive" ner="O" pos="VB"/>
+<t xml:id="s11_t12" tiger2:word="appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s11_t13" tiger2:word="awareness" lemma="awareness" ner="O" pos="NN"/>
+<t xml:id="s11_t14" tiger2:word="education" lemma="education" ner="O" pos="NN"/>
+<t xml:id="s11_t15" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s11_t16" tiger2:word="training" lemma="training" ner="O" pos="NN"/>
+<t xml:id="s11_t17" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s11_t18" tiger2:word="regular" lemma="regular" ner="O" pos="JJ"/>
+<t xml:id="s11_t19" tiger2:word="updates" lemma="update" ner="O" pos="NNS"/>
+<t xml:id="s11_t20" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s11_t21" tiger2:word="organizational" lemma="organizational" ner="O" pos="JJ"/>
+<t xml:id="s11_t22" tiger2:word="policies" lemma="policy" ner="O" pos="NNS"/>
+<t xml:id="s11_t23" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s11_t24" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s11_t25" tiger2:word="as" lemma="as" ner="O" pos="RB"/>
+<t xml:id="s11_t26" tiger2:word="relevant" lemma="relevant" ner="O" pos="JJ"/>
+<t xml:id="s11_t27" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s11_t28" tiger2:word="their" lemma="they" ner="O" pos="PRP$"/>
+<t xml:id="s11_t29" tiger2:word="job" lemma="job" ner="O" pos="NN"/>
+<t xml:id="s11_t30" tiger2:word="function" lemma="function" ner="O" pos="NN"/>
+<t xml:id="s11_t31" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g12">
+<terminals>
+<t xml:id="s12_t1" tiger2:word="There" lemma="there" ner="O" pos="EX"/>
+<t xml:id="s12_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s12_t3" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s12_t4" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s12_t5" tiger2:word="formal" lemma="formal" ner="O" pos="JJ"/>
+<t xml:id="s12_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s12_t7" tiger2:word="communicated" lemma="communicate" ner="O" pos="VBN"/>
+<t xml:id="s12_t8" tiger2:word="disciplinary" lemma="disciplinary" ner="O" pos="JJ"/>
+<t xml:id="s12_t9" tiger2:word="process" lemma="process" ner="O" pos="NN"/>
+<t xml:id="s12_t10" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s12_t11" tiger2:word="place" lemma="place" ner="O" pos="NN"/>
+<t xml:id="s12_t12" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s12_t13" tiger2:word="take" lemma="take" ner="O" pos="VB"/>
+<t xml:id="s12_t14" tiger2:word="action" lemma="action" ner="O" pos="NN"/>
+<t xml:id="s12_t15" tiger2:word="against" lemma="against" ner="O" pos="IN"/>
+<t xml:id="s12_t16" tiger2:word="employees" lemma="employee" ner="O" pos="NNS"/>
+<t xml:id="s12_t17" tiger2:word="who" lemma="who" ner="O" pos="WP"/>
+<t xml:id="s12_t18" tiger2:word="have" lemma="have" ner="O" pos="VBP"/>
+<t xml:id="s12_t19" tiger2:word="committed" lemma="commit" ner="O" pos="VBN"/>
+<t xml:id="s12_t20" tiger2:word="an" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s12_t21" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s12_t22" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s12_t23" tiger2:word="breach" lemma="breach" ner="O" pos="NN"/>
+<t xml:id="s12_t24" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g13">
+<terminals>
+<t xml:id="s13_t1" tiger2:word="Information" lemma="Information" ner="O" pos="NNP"/>
+<t xml:id="s13_t2" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s13_t3" tiger2:word="responsibilities" lemma="responsibility" ner="O" pos="NNS"/>
+<t xml:id="s13_t4" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s13_t5" tiger2:word="duties" lemma="duty" ner="O" pos="NNS"/>
+<t xml:id="s13_t6" tiger2:word="that" lemma="that" ner="O" pos="WDT"/>
+<t xml:id="s13_t7" tiger2:word="remain" lemma="remain" ner="O" pos="VBP"/>
+<t xml:id="s13_t8" tiger2:word="valid" lemma="valid" ner="O" pos="JJ"/>
+<t xml:id="s13_t9" tiger2:word="after" lemma="after" ner="O" pos="IN"/>
+<t xml:id="s13_t10" tiger2:word="termination" lemma="termination" ner="O" pos="NN"/>
+<t xml:id="s13_t11" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s13_t12" tiger2:word="change" lemma="change" ner="O" pos="NN"/>
+<t xml:id="s13_t13" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s13_t14" tiger2:word="employment" lemma="employment" ner="O" pos="NN"/>
+<t xml:id="s13_t15" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s13_t16" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s13_t17" tiger2:word="defined" lemma="define" ner="O" pos="VBN"/>
+<t xml:id="s13_t18" tiger2:word="communicated" lemma="communicate" ner="O" pos="VBN"/>
+<t xml:id="s13_t19" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s13_t20" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s13_t21" tiger2:word="employee" lemma="employee" ner="O" pos="NN"/>
+<t xml:id="s13_t22" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s13_t23" tiger2:word="contractor" lemma="contractor" ner="TITLE" pos="NN"/>
+<t xml:id="s13_t24" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s13_t25" tiger2:word="enforced" lemma="enforce" ner="O" pos="VBN"/>
+<t xml:id="s13_t26" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g14">
+<terminals>
+<t xml:id="s14_t1" tiger2:word="Assets" lemma="asset" ner="O" pos="NNS"/>
+<t xml:id="s14_t2" tiger2:word="associated" lemma="associate" ner="O" pos="VBN"/>
+<t xml:id="s14_t3" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s14_t4" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s14_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s14_t6" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s14_t7" tiger2:word="processing" lemma="processing" ner="O" pos="NN"/>
+<t xml:id="s14_t8" tiger2:word="facilities" lemma="facility" ner="O" pos="NNS"/>
+<t xml:id="s14_t9" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s14_t10" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s14_t11" tiger2:word="identified" lemma="identify" ner="O" pos="VBN"/>
+<t xml:id="s14_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s14_t13" tiger2:word="an" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s14_t14" tiger2:word="inventory" lemma="inventory" ner="O" pos="NN"/>
+<t xml:id="s14_t15" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s14_t16" tiger2:word="these" lemma="these" ner="O" pos="DT"/>
+<t xml:id="s14_t17" tiger2:word="assets" lemma="asset" ner="O" pos="NNS"/>
+<t xml:id="s14_t18" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s14_t19" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s14_t20" tiger2:word="drawn" lemma="draw" ner="O" pos="VBN"/>
+<t xml:id="s14_t21" tiger2:word="up" lemma="up" ner="O" pos="RP"/>
+<t xml:id="s14_t22" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s14_t23" tiger2:word="maintained" lemma="maintain" ner="O" pos="VBD"/>
+<t xml:id="s14_t24" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g15">
+<terminals>
+<t xml:id="s15_t1" tiger2:word="Assets" lemma="asset" ner="O" pos="NNS"/>
+<t xml:id="s15_t2" tiger2:word="maintained" lemma="maintain" ner="O" pos="VBD"/>
+<t xml:id="s15_t3" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s15_t4" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s15_t5" tiger2:word="inventory" lemma="inventory" ner="O" pos="NN"/>
+<t xml:id="s15_t6" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s15_t7" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s15_t8" tiger2:word="owned" lemma="own" ner="O" pos="VBN"/>
+<t xml:id="s15_t9" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g16">
+<terminals>
+<t xml:id="s16_t1" tiger2:word="Rules" lemma="rule" ner="O" pos="NNS"/>
+<t xml:id="s16_t2" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s16_t3" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s16_t4" tiger2:word="acceptable" lemma="acceptable" ner="O" pos="JJ"/>
+<t xml:id="s16_t5" tiger2:word="use" lemma="use" ner="O" pos="NN"/>
+<t xml:id="s16_t6" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s16_t7" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s16_t8" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s16_t9" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s16_t10" tiger2:word="assets" lemma="asset" ner="O" pos="NNS"/>
+<t xml:id="s16_t11" tiger2:word="associated" lemma="associate" ner="O" pos="VBN"/>
+<t xml:id="s16_t12" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s16_t13" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s16_t14" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s16_t15" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s16_t16" tiger2:word="processing" lemma="processing" ner="O" pos="NN"/>
+<t xml:id="s16_t17" tiger2:word="facilities" lemma="facility" ner="O" pos="NNS"/>
+<t xml:id="s16_t18" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s16_t19" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s16_t20" tiger2:word="identified" lemma="identify" ner="O" pos="VBN"/>
+<t xml:id="s16_t21" tiger2:word="documented" lemma="document" ner="O" pos="VBN"/>
+<t xml:id="s16_t22" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s16_t23" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s16_t24" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g17">
+<terminals>
+<t xml:id="s17_t1" tiger2:word="All" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s17_t2" tiger2:word="employees" lemma="employee" ner="O" pos="NNS"/>
+<t xml:id="s17_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s17_t4" tiger2:word="external" lemma="external" ner="O" pos="JJ"/>
+<t xml:id="s17_t5" tiger2:word="party" lemma="party" ner="O" pos="NN"/>
+<t xml:id="s17_t6" tiger2:word="users" lemma="user" ner="O" pos="NNS"/>
+<t xml:id="s17_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s17_t8" tiger2:word="return" lemma="return" ner="O" pos="VB"/>
+<t xml:id="s17_t9" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s17_t10" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s17_t11" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s17_t12" tiger2:word="organizational" lemma="organizational" ner="O" pos="JJ"/>
+<t xml:id="s17_t13" tiger2:word="assets" lemma="asset" ner="O" pos="NNS"/>
+<t xml:id="s17_t14" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s17_t15" tiger2:word="their" lemma="they" ner="O" pos="PRP$"/>
+<t xml:id="s17_t16" tiger2:word="possession" lemma="possession" ner="O" pos="NN"/>
+<t xml:id="s17_t17" tiger2:word="upon" lemma="upon" ner="O" pos="IN"/>
+<t xml:id="s17_t18" tiger2:word="termination" lemma="termination" ner="O" pos="NN"/>
+<t xml:id="s17_t19" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s17_t20" tiger2:word="their" lemma="they" ner="O" pos="PRP$"/>
+<t xml:id="s17_t21" tiger2:word="employment" lemma="employment" ner="O" pos="NN"/>
+<t xml:id="s17_t22" tiger2:word="contract" lemma="contract" ner="O" pos="NN"/>
+<t xml:id="s17_t23" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s17_t24" tiger2:word="agreement" lemma="agreement" ner="O" pos="NN"/>
+<t xml:id="s17_t25" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g18">
+<terminals>
+<t xml:id="s18_t1" tiger2:word="Information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s18_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s18_t3" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s18_t4" tiger2:word="classified" lemma="classify" ner="O" pos="VBN"/>
+<t xml:id="s18_t5" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s18_t6" tiger2:word="terms" lemma="term" ner="O" pos="NNS"/>
+<t xml:id="s18_t7" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s18_t8" tiger2:word="legal" lemma="legal" ner="O" pos="JJ"/>
+<t xml:id="s18_t9" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s18_t10" tiger2:word="value" lemma="value" ner="O" pos="NN"/>
+<t xml:id="s18_t11" tiger2:word="critical" lemma="critical" ner="O" pos="JJ"/>
+<t xml:id="s18_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s18_t13" tiger2:word="sensitivity" lemma="sensitivity" ner="O" pos="NN"/>
+<t xml:id="s18_t14" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s18_t15" tiger2:word="unauthorised" lemma="unauthorised" ner="O" pos="JJ"/>
+<t xml:id="s18_t16" tiger2:word="disclosure" lemma="disclosure" ner="O" pos="NN"/>
+<t xml:id="s18_t17" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s18_t18" tiger2:word="modifcation" lemma="modifcation" ner="O" pos="NN"/>
+<t xml:id="s18_t19" tiger2:word="An" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s18_t20" tiger2:word="appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s18_t21" tiger2:word="set" lemma="set" ner="O" pos="NN"/>
+<t xml:id="s18_t22" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s18_t23" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s18_t24" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s18_t25" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s18_t26" tiger2:word="labelling" lemma="labelling" ner="O" pos="NN"/>
+<t xml:id="s18_t27" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s18_t28" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s18_t29" tiger2:word="developed" lemma="develop" ner="O" pos="VBN"/>
+<t xml:id="s18_t30" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s18_t31" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s18_t32" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s18_t33" tiger2:word="accordance" lemma="accordance" ner="O" pos="NN"/>
+<t xml:id="s18_t34" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s18_t35" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s18_t36" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s18_t37" tiger2:word="classification" lemma="classification" ner="O" pos="NN"/>
+<t xml:id="s18_t38" tiger2:word="scheme" lemma="scheme" ner="O" pos="NN"/>
+<t xml:id="s18_t39" tiger2:word="adopted" lemma="adopt" ner="O" pos="VBN"/>
+<t xml:id="s18_t40" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s18_t41" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s18_t42" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s18_t43" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g19">
+<terminals>
+<t xml:id="s19_t1" tiger2:word="Procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s19_t2" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s19_t3" tiger2:word="handling" lemma="handle" ner="O" pos="VBG"/>
+<t xml:id="s19_t4" tiger2:word="assets" lemma="asset" ner="O" pos="NNS"/>
+<t xml:id="s19_t5" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s19_t6" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s19_t7" tiger2:word="developed" lemma="develop" ner="O" pos="VBN"/>
+<t xml:id="s19_t8" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s19_t9" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s19_t10" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s19_t11" tiger2:word="accordance" lemma="accordance" ner="O" pos="NN"/>
+<t xml:id="s19_t12" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s19_t13" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s19_t14" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s19_t15" tiger2:word="classification" lemma="classification" ner="O" pos="NN"/>
+<t xml:id="s19_t16" tiger2:word="scheme" lemma="scheme" ner="O" pos="NN"/>
+<t xml:id="s19_t17" tiger2:word="adopted" lemma="adopt" ner="O" pos="VBN"/>
+<t xml:id="s19_t18" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s19_t19" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s19_t20" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s19_t21" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g20">
+<terminals>
+<t xml:id="s20_t1" tiger2:word="Procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s20_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s20_t3" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s20_t4" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s20_t5" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s20_t6" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s20_t7" tiger2:word="management" lemma="management" ner="O" pos="NN"/>
+<t xml:id="s20_t8" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s20_t9" tiger2:word="removable" lemma="removable" ner="O" pos="JJ"/>
+<t xml:id="s20_t10" tiger2:word="media" lemma="media" ner="O" pos="NNS"/>
+<t xml:id="s20_t11" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s20_t12" tiger2:word="accordance" lemma="accordance" ner="O" pos="NN"/>
+<t xml:id="s20_t13" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s20_t14" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s20_t15" tiger2:word="classification" lemma="classification" ner="O" pos="NN"/>
+<t xml:id="s20_t16" tiger2:word="scheme" lemma="scheme" ner="O" pos="NN"/>
+<t xml:id="s20_t17" tiger2:word="adopted" lemma="adopt" ner="O" pos="VBN"/>
+<t xml:id="s20_t18" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s20_t19" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s20_t20" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s20_t21" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g21">
+<terminals>
+<t xml:id="s21_t1" tiger2:word="Media" lemma="Media" ner="O" pos="NNP"/>
+<t xml:id="s21_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s21_t3" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s21_t4" tiger2:word="disposed" lemma="dispose" ner="O" pos="VBN"/>
+<t xml:id="s21_t5" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s21_t6" tiger2:word="securely" lemma="securely" ner="O" pos="RB"/>
+<t xml:id="s21_t7" tiger2:word="when" lemma="when" ner="O" pos="WRB"/>
+<t xml:id="s21_t8" tiger2:word="no" lemma="no" ner="O" pos="RB"/>
+<t xml:id="s21_t9" tiger2:word="longer" lemma="longer" ner="O" pos="RB"/>
+<t xml:id="s21_t10" tiger2:word="required" lemma="require" ner="O" pos="VBN"/>
+<t xml:id="s21_t11" tiger2:word="using" lemma="use" ner="O" pos="VBG"/>
+<t xml:id="s21_t12" tiger2:word="formal" lemma="formal" ner="O" pos="JJ"/>
+<t xml:id="s21_t13" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s21_t14" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g22">
+<terminals>
+<t xml:id="s22_t1" tiger2:word="Media" lemma="Media" ner="O" pos="NNP"/>
+<t xml:id="s22_t2" tiger2:word="containing" lemma="contain" ner="O" pos="VBG"/>
+<t xml:id="s22_t3" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s22_t4" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s22_t5" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s22_t6" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s22_t7" tiger2:word="against" lemma="against" ner="O" pos="IN"/>
+<t xml:id="s22_t8" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s22_t9" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s22_t10" tiger2:word="misuse" lemma="misuse" ner="O" pos="NN"/>
+<t xml:id="s22_t11" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s22_t12" tiger2:word="corruption" lemma="corruption" ner="O" pos="NN"/>
+<t xml:id="s22_t13" tiger2:word="during" lemma="during" ner="O" pos="IN"/>
+<t xml:id="s22_t14" tiger2:word="transportation" lemma="transportation" ner="O" pos="NN"/>
+<t xml:id="s22_t15" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g23">
+<terminals>
+<t xml:id="s23_t1" tiger2:word="An" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s23_t2" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s23_t3" tiger2:word="control" lemma="control" ner="O" pos="NN"/>
+<t xml:id="s23_t4" tiger2:word="policy" lemma="policy" ner="O" pos="NN"/>
+<t xml:id="s23_t5" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s23_t6" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s23_t7" tiger2:word="established" lemma="establish" ner="O" pos="VBN"/>
+<t xml:id="s23_t8" tiger2:word="documented" lemma="document" ner="O" pos="VBN"/>
+<t xml:id="s23_t9" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s23_t10" tiger2:word="reviewed" lemma="review" ner="O" pos="VBN"/>
+<t xml:id="s23_t11" tiger2:word="based" lemma="base" ner="O" pos="VBN"/>
+<t xml:id="s23_t12" tiger2:word="on" lemma="on" ner="O" pos="IN"/>
+<t xml:id="s23_t13" tiger2:word="business" lemma="business" ner="O" pos="NN"/>
+<t xml:id="s23_t14" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s23_t15" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s23_t16" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s23_t17" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s23_t18" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g24">
+<terminals>
+<t xml:id="s24_t1" tiger2:word="Users" lemma="user" ner="O" pos="NNS"/>
+<t xml:id="s24_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s24_t3" tiger2:word="only" lemma="only" ner="O" pos="RB"/>
+<t xml:id="s24_t4" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s24_t5" tiger2:word="provided" lemma="provide" ner="O" pos="VBN"/>
+<t xml:id="s24_t6" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s24_t7" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s24_t8" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s24_t9" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s24_t10" tiger2:word="network" lemma="network" ner="O" pos="NN"/>
+<t xml:id="s24_t11" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s24_t12" tiger2:word="network" lemma="network" ner="O" pos="NN"/>
+<t xml:id="s24_t13" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s24_t14" tiger2:word="that" lemma="that" ner="O" pos="IN"/>
+<t xml:id="s24_t15" tiger2:word="they" lemma="they" ner="O" pos="PRP"/>
+<t xml:id="s24_t16" tiger2:word="have" lemma="have" ner="O" pos="VBP"/>
+<t xml:id="s24_t17" tiger2:word="been" lemma="be" ner="O" pos="VBN"/>
+<t xml:id="s24_t18" tiger2:word="specifically" lemma="specifically" ner="O" pos="RB"/>
+<t xml:id="s24_t19" tiger2:word="authorized" lemma="authorize" ner="O" pos="VBN"/>
+<t xml:id="s24_t20" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s24_t21" tiger2:word="use" lemma="use" ner="O" pos="VB"/>
+<t xml:id="s24_t22" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g25">
+<terminals>
+<t xml:id="s25_t1" tiger2:word="A" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s25_t2" tiger2:word="formal" lemma="formal" ner="O" pos="JJ"/>
+<t xml:id="s25_t3" tiger2:word="user" lemma="user" ner="O" pos="NN"/>
+<t xml:id="s25_t4" tiger2:word="registration" lemma="registration" ner="O" pos="NN"/>
+<t xml:id="s25_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s25_t6" tiger2:word="de-registration" lemma="de-registration" ner="O" pos="NN"/>
+<t xml:id="s25_t7" tiger2:word="process" lemma="process" ner="O" pos="NN"/>
+<t xml:id="s25_t8" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s25_t9" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s25_t10" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s25_t11" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s25_t12" tiger2:word="enable" lemma="enable" ner="O" pos="VB"/>
+<t xml:id="s25_t13" tiger2:word="assignment" lemma="assignment" ner="O" pos="NN"/>
+<t xml:id="s25_t14" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s25_t15" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s25_t16" tiger2:word="rights" lemma="rights" ner="O" pos="NNS"/>
+<t xml:id="s25_t17" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g26">
+<terminals>
+<t xml:id="s26_t1" tiger2:word="A" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s26_t2" tiger2:word="formal" lemma="formal" ner="O" pos="JJ"/>
+<t xml:id="s26_t3" tiger2:word="user" lemma="user" ner="O" pos="NN"/>
+<t xml:id="s26_t4" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s26_t5" tiger2:word="provisioning" lemma="provision" ner="O" pos="VBG"/>
+<t xml:id="s26_t6" tiger2:word="process" lemma="process" ner="O" pos="NN"/>
+<t xml:id="s26_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s26_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s26_t9" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s26_t10" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s26_t11" tiger2:word="assign" lemma="assign" ner="O" pos="VB"/>
+<t xml:id="s26_t12" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s26_t13" tiger2:word="revoke" lemma="revoke" ner="O" pos="VB"/>
+<t xml:id="s26_t14" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s26_t15" tiger2:word="rights" lemma="rights" ner="O" pos="NNS"/>
+<t xml:id="s26_t16" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s26_t17" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s26_t18" tiger2:word="user" lemma="user" ner="O" pos="NN"/>
+<t xml:id="s26_t19" tiger2:word="types" lemma="type" ner="O" pos="NNS"/>
+<t xml:id="s26_t20" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s26_t21" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s26_t22" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s26_t23" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s26_t24" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s26_t25" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s26_t26" tiger2:word="allocation" lemma="allocation" ner="O" pos="NN"/>
+<t xml:id="s26_t27" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s26_t28" tiger2:word="use" lemma="use" ner="O" pos="NN"/>
+<t xml:id="s26_t29" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s26_t30" tiger2:word="privileged" lemma="privileged" ner="O" pos="JJ"/>
+<t xml:id="s26_t31" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s26_t32" tiger2:word="rights" lemma="rights" ner="O" pos="NNS"/>
+<t xml:id="s26_t33" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s26_t34" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s26_t35" tiger2:word="restricted" lemma="restricted" ner="O" pos="JJ"/>
+<t xml:id="s26_t36" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s26_t37" tiger2:word="controlled" lemma="controlled" ner="O" pos="JJ"/>
+<t xml:id="s26_t38" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g27">
+<terminals>
+<t xml:id="s27_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s27_t2" tiger2:word="allocation" lemma="allocation" ner="O" pos="NN"/>
+<t xml:id="s27_t3" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s27_t4" tiger2:word="secret" lemma="secret" ner="O" pos="JJ"/>
+<t xml:id="s27_t5" tiger2:word="authentication" lemma="authentication" ner="O" pos="NN"/>
+<t xml:id="s27_t6" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s27_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s27_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s27_t9" tiger2:word="controlled" lemma="control" ner="O" pos="VBN"/>
+<t xml:id="s27_t10" tiger2:word="through" lemma="through" ner="O" pos="IN"/>
+<t xml:id="s27_t11" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s27_t12" tiger2:word="formal" lemma="formal" ner="O" pos="JJ"/>
+<t xml:id="s27_t13" tiger2:word="management" lemma="management" ner="O" pos="NN"/>
+<t xml:id="s27_t14" tiger2:word="process" lemma="process" ner="O" pos="NN"/>
+<t xml:id="s27_t15" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g28">
+<terminals>
+<t xml:id="s28_t1" tiger2:word="Asset" lemma="Asset" ner="O" pos="NNP"/>
+<t xml:id="s28_t2" tiger2:word="owners" lemma="owner" ner="O" pos="NNS"/>
+<t xml:id="s28_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s28_t4" tiger2:word="review" lemma="review" ner="O" pos="VB"/>
+<t xml:id="s28_t5" tiger2:word="users" lemma="user" ner="O" pos="NNS"/>
+<t xml:id="s28_t6" tiger2:word="'" lemma="'" ner="O" pos="POS"/>
+<t xml:id="s28_t7" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s28_t8" tiger2:word="rights" lemma="rights" ner="O" pos="NNS"/>
+<t xml:id="s28_t9" tiger2:word="at" lemma="at" ner="O" pos="IN"/>
+<t xml:id="s28_t10" tiger2:word="regular" lemma="regular" ner="O" pos="JJ"/>
+<t xml:id="s28_t11" tiger2:word="intervals" lemma="interval" ner="O" pos="NNS"/>
+<t xml:id="s28_t12" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s28_t13" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s28_t14" tiger2:word="rights" lemma="rights" ner="O" pos="NNS"/>
+<t xml:id="s28_t15" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s28_t16" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s28_t17" tiger2:word="employees" lemma="employee" ner="O" pos="NNS"/>
+<t xml:id="s28_t18" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s28_t19" tiger2:word="external" lemma="external" ner="O" pos="JJ"/>
+<t xml:id="s28_t20" tiger2:word="party" lemma="party" ner="O" pos="NN"/>
+<t xml:id="s28_t21" tiger2:word="users" lemma="user" ner="O" pos="NNS"/>
+<t xml:id="s28_t22" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s28_t23" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s28_t24" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s28_t25" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s28_t26" tiger2:word="processing" lemma="processing" ner="O" pos="NN"/>
+<t xml:id="s28_t27" tiger2:word="facilities" lemma="facility" ner="O" pos="NNS"/>
+<t xml:id="s28_t28" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s28_t29" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s28_t30" tiger2:word="removed" lemma="remove" ner="O" pos="VBN"/>
+<t xml:id="s28_t31" tiger2:word="upon" lemma="upon" ner="O" pos="IN"/>
+<t xml:id="s28_t32" tiger2:word="termination" lemma="termination" ner="O" pos="NN"/>
+<t xml:id="s28_t33" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s28_t34" tiger2:word="their" lemma="they" ner="O" pos="PRP$"/>
+<t xml:id="s28_t35" tiger2:word="employment" lemma="employment" ner="O" pos="NN"/>
+<t xml:id="s28_t36" tiger2:word="contract" lemma="contract" ner="O" pos="NN"/>
+<t xml:id="s28_t37" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s28_t38" tiger2:word="agreement" lemma="agreement" ner="O" pos="NN"/>
+<t xml:id="s28_t39" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s28_t40" tiger2:word="adjusted" lemma="adjust" ner="O" pos="VBN"/>
+<t xml:id="s28_t41" tiger2:word="upon" lemma="upon" ner="O" pos="IN"/>
+<t xml:id="s28_t42" tiger2:word="change" lemma="change" ner="O" pos="NN"/>
+<t xml:id="s28_t43" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g29">
+<terminals>
+<t xml:id="s29_t1" tiger2:word="Access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s29_t2" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s29_t3" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s29_t4" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s29_t5" tiger2:word="application" lemma="application" ner="O" pos="NN"/>
+<t xml:id="s29_t6" tiger2:word="system" lemma="system" ner="O" pos="NN"/>
+<t xml:id="s29_t7" tiger2:word="functions" lemma="function" ner="O" pos="VBZ"/>
+<t xml:id="s29_t8" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s29_t9" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s29_t10" tiger2:word="restricted" lemma="restrict" ner="O" pos="VBN"/>
+<t xml:id="s29_t11" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s29_t12" tiger2:word="accordance" lemma="accordance" ner="O" pos="NN"/>
+<t xml:id="s29_t13" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s29_t14" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s29_t15" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s29_t16" tiger2:word="control" lemma="control" ner="O" pos="NN"/>
+<t xml:id="s29_t17" tiger2:word="policy" lemma="policy" ner="O" pos="NN"/>
+<t xml:id="s29_t18" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g30">
+<terminals>
+<t xml:id="s30_t1" tiger2:word="Where" lemma="where" ner="O" pos="WRB"/>
+<t xml:id="s30_t2" tiger2:word="required" lemma="require" ner="O" pos="VBN"/>
+<t xml:id="s30_t3" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s30_t4" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s30_t5" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s30_t6" tiger2:word="control" lemma="control" ner="O" pos="NN"/>
+<t xml:id="s30_t7" tiger2:word="policy" lemma="policy" ner="O" pos="NN"/>
+<t xml:id="s30_t8" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s30_t9" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s30_t10" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s30_t11" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s30_t12" tiger2:word="Password" lemma="password" ner="O" pos="NN"/>
+<t xml:id="s30_t13" tiger2:word="management" lemma="management" ner="O" pos="NN"/>
+<t xml:id="s30_t14" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s30_t15" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s30_t16" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s30_t17" tiger2:word="interactive" lemma="interactive" ner="O" pos="JJ"/>
+<t xml:id="s30_t18" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s30_t19" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s30_t20" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s30_t21" tiger2:word="quality" lemma="quality" ner="O" pos="NN"/>
+<t xml:id="s30_t22" tiger2:word="passwords" lemma="password" ner="O" pos="NNS"/>
+<t xml:id="s30_t23" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g31">
+<terminals>
+<t xml:id="s31_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s31_t2" tiger2:word="use" lemma="use" ner="O" pos="NN"/>
+<t xml:id="s31_t3" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s31_t4" tiger2:word="utility" lemma="utility" ner="O" pos="NN"/>
+<t xml:id="s31_t5" tiger2:word="programs" lemma="program" ner="O" pos="NNS"/>
+<t xml:id="s31_t6" tiger2:word="that" lemma="that" ner="O" pos="WDT"/>
+<t xml:id="s31_t7" tiger2:word="might" lemma="might" ner="O" pos="MD"/>
+<t xml:id="s31_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s31_t9" tiger2:word="capable" lemma="capable" ner="O" pos="JJ"/>
+<t xml:id="s31_t10" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s31_t11" tiger2:word="overriding" lemma="override" ner="O" pos="VBG"/>
+<t xml:id="s31_t12" tiger2:word="system" lemma="system" ner="O" pos="NN"/>
+<t xml:id="s31_t13" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s31_t14" tiger2:word="applicati" lemma="applicati" ner="O" pos="NN"/>
+<t xml:id="s31_t15" tiger2:word="controls" lemma="control" ner="O" pos="NNS"/>
+<t xml:id="s31_t16" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s31_t17" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s31_t18" tiger2:word="restricted" lemma="restricted" ner="O" pos="JJ"/>
+<t xml:id="s31_t19" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s31_t20" tiger2:word="tightly" lemma="tightly" ner="O" pos="RB"/>
+<t xml:id="s31_t21" tiger2:word="controlled" lemma="control" ner="O" pos="VBN"/>
+<t xml:id="s31_t22" tiger2:word="Access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s31_t23" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s31_t24" tiger2:word="program" lemma="program" ner="O" pos="NN"/>
+<t xml:id="s31_t25" tiger2:word="source" lemma="source" ner="O" pos="NN"/>
+<t xml:id="s31_t26" tiger2:word="code" lemma="code" ner="O" pos="NN"/>
+<t xml:id="s31_t27" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s31_t28" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s31_t29" tiger2:word="restricted" lemma="restricted" ner="O" pos="JJ"/>
+<t xml:id="s31_t30" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g32">
+<terminals>
+<t xml:id="s32_t1" tiger2:word="Information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s32_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s32_t3" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s32_t4" tiger2:word="developed" lemma="develop" ner="O" pos="VBN"/>
+<t xml:id="s32_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s32_t6" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s32_t7" tiger2:word="A" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s32_t8" tiger2:word="policy" lemma="policy" ner="O" pos="NN"/>
+<t xml:id="s32_t9" tiger2:word="on" lemma="on" ner="O" pos="IN"/>
+<t xml:id="s32_t10" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s32_t11" tiger2:word="use" lemma="use" ner="O" pos="NN"/>
+<t xml:id="s32_t12" tiger2:word="protection" lemma="protection" ner="O" pos="NN"/>
+<t xml:id="s32_t13" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s32_t14" tiger2:word="lifetime" lemma="lifetime" ner="O" pos="NN"/>
+<t xml:id="s32_t15" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s32_t16" tiger2:word="cryptographic" lemma="cryptographic" ner="O" pos="JJ"/>
+<t xml:id="s32_t17" tiger2:word="keys" lemma="key" ner="O" pos="NNS"/>
+<t xml:id="s32_t18" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s32_t19" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s32_t20" tiger2:word="developed" lemma="develop" ner="O" pos="VBN"/>
+<t xml:id="s32_t21" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s32_t22" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s32_t23" tiger2:word="through" lemma="through" ner="O" pos="IN"/>
+<t xml:id="s32_t24" tiger2:word="their" lemma="they" ner="O" pos="PRP$"/>
+<t xml:id="s32_t25" tiger2:word="whole" lemma="whole" ner="O" pos="JJ"/>
+<t xml:id="s32_t26" tiger2:word="lifecycle" lemma="lifecycle" ner="O" pos="NN"/>
+<t xml:id="s32_t27" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g33">
+<terminals>
+<t xml:id="s33_t1" tiger2:word="Security" lemma="Security" ner="O" pos="NNP"/>
+<t xml:id="s33_t2" tiger2:word="perimeters" lemma="perimeter" ner="O" pos="NNS"/>
+<t xml:id="s33_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s33_t4" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s33_t5" tiger2:word="defined" lemma="define" ner="O" pos="VBN"/>
+<t xml:id="s33_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s33_t7" tiger2:word="used" lemma="use" ner="O" pos="VBN"/>
+<t xml:id="s33_t8" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s33_t9" tiger2:word="protect" lemma="protect" ner="O" pos="VB"/>
+<t xml:id="s33_t10" tiger2:word="areas" lemma="area" ner="O" pos="NNS"/>
+<t xml:id="s33_t11" tiger2:word="that" lemma="that" ner="O" pos="WDT"/>
+<t xml:id="s33_t12" tiger2:word="contain" lemma="contain" ner="O" pos="VBP"/>
+<t xml:id="s33_t13" tiger2:word="either" lemma="either" ner="O" pos="RB"/>
+<t xml:id="s33_t14" tiger2:word="sensitive" lemma="sensitive" ner="O" pos="JJ"/>
+<t xml:id="s33_t15" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s33_t16" tiger2:word="critical" lemma="critical" ner="O" pos="JJ"/>
+<t xml:id="s33_t17" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s33_t18" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s33_t19" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s33_t20" tiger2:word="Secure" lemma="secure" ner="O" pos="JJ"/>
+<t xml:id="s33_t21" tiger2:word="areas" lemma="area" ner="O" pos="NNS"/>
+<t xml:id="s33_t22" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s33_t23" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s33_t24" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s33_t25" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s33_t26" tiger2:word="appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s33_t27" tiger2:word="entry" lemma="entry" ner="O" pos="NN"/>
+<t xml:id="s33_t28" tiger2:word="controls" lemma="control" ner="O" pos="NNS"/>
+<t xml:id="s33_t29" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s33_t30" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s33_t31" tiger2:word="that" lemma="that" ner="O" pos="IN"/>
+<t xml:id="s33_t32" tiger2:word="only" lemma="only" ner="O" pos="RB"/>
+<t xml:id="s33_t33" tiger2:word="authorized" lemma="authorize" ner="O" pos="VBN"/>
+<t xml:id="s33_t34" tiger2:word="personnel" lemma="personnel" ner="O" pos="NNS"/>
+<t xml:id="s33_t35" tiger2:word="are" lemma="be" ner="O" pos="VBP"/>
+<t xml:id="s33_t36" tiger2:word="allowed" lemma="allow" ner="O" pos="VBN"/>
+<t xml:id="s33_t37" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s33_t38" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g34">
+<terminals>
+<t xml:id="s34_t1" tiger2:word="Physical" lemma="physical" ner="O" pos="JJ"/>
+<t xml:id="s34_t2" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s34_t3" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s34_t4" tiger2:word="offices" lemma="office" ner="O" pos="NNS"/>
+<t xml:id="s34_t5" tiger2:word="rooms" lemma="room" ner="O" pos="NNS"/>
+<t xml:id="s34_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s34_t7" tiger2:word="facilities" lemma="facility" ner="O" pos="NNS"/>
+<t xml:id="s34_t8" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s34_t9" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s34_t10" tiger2:word="designed" lemma="design" ner="O" pos="VBN"/>
+<t xml:id="s34_t11" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s34_t12" tiger2:word="applied" lemma="apply" ner="O" pos="VBN"/>
+<t xml:id="s34_t13" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g35">
+<terminals>
+<t xml:id="s35_t1" tiger2:word="Physical" lemma="physical" ner="O" pos="JJ"/>
+<t xml:id="s35_t2" tiger2:word="protection" lemma="protection" ner="O" pos="NN"/>
+<t xml:id="s35_t3" tiger2:word="against" lemma="against" ner="O" pos="IN"/>
+<t xml:id="s35_t4" tiger2:word="natural" lemma="natural" ner="CAUSE_OF_DEATH" pos="JJ"/>
+<t xml:id="s35_t5" tiger2:word="disasters" lemma="disaster" ner="CAUSE_OF_DEATH" pos="NNS"/>
+<t xml:id="s35_t6" tiger2:word="malicious" lemma="malicious" ner="O" pos="JJ"/>
+<t xml:id="s35_t7" tiger2:word="attack" lemma="attack" ner="CAUSE_OF_DEATH" pos="NN"/>
+<t xml:id="s35_t8" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s35_t9" tiger2:word="accidents" lemma="accident" ner="CAUSE_OF_DEATH" pos="NNS"/>
+<t xml:id="s35_t10" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s35_t11" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s35_t12" tiger2:word="designed" lemma="design" ner="O" pos="VBN"/>
+<t xml:id="s35_t13" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s35_t14" tiger2:word="applied" lemma="apply" ner="O" pos="VBN"/>
+<t xml:id="s35_t15" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g36">
+<terminals>
+<t xml:id="s36_t1" tiger2:word="Procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s36_t2" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s36_t3" tiger2:word="working" lemma="work" ner="O" pos="VBG"/>
+<t xml:id="s36_t4" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s36_t5" tiger2:word="secure" lemma="secure" ner="O" pos="JJ"/>
+<t xml:id="s36_t6" tiger2:word="areas" lemma="area" ner="O" pos="NNS"/>
+<t xml:id="s36_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s36_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s36_t9" tiger2:word="designed" lemma="design" ner="O" pos="VBN"/>
+<t xml:id="s36_t10" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s36_t11" tiger2:word="applied" lemma="apply" ner="O" pos="VBN"/>
+<t xml:id="s36_t12" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g37">
+<terminals>
+<t xml:id="s37_t1" tiger2:word="Access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s37_t2" tiger2:word="points" lemma="point" ner="O" pos="NNS"/>
+<t xml:id="s37_t3" tiger2:word="such" lemma="such" ner="O" pos="JJ"/>
+<t xml:id="s37_t4" tiger2:word="as" lemma="as" ner="O" pos="IN"/>
+<t xml:id="s37_t5" tiger2:word="delivery" lemma="delivery" ner="O" pos="NN"/>
+<t xml:id="s37_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s37_t7" tiger2:word="loading" lemma="load" ner="O" pos="VBG"/>
+<t xml:id="s37_t8" tiger2:word="areas" lemma="area" ner="O" pos="NNS"/>
+<t xml:id="s37_t9" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s37_t10" tiger2:word="other" lemma="other" ner="O" pos="JJ"/>
+<t xml:id="s37_t11" tiger2:word="points" lemma="point" ner="O" pos="NNS"/>
+<t xml:id="s37_t12" tiger2:word="where" lemma="where" ner="O" pos="WRB"/>
+<t xml:id="s37_t13" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s37_t14" tiger2:word="persons" lemma="person" ner="O" pos="NNS"/>
+<t xml:id="s37_t15" tiger2:word="could" lemma="could" ner="O" pos="MD"/>
+<t xml:id="s37_t16" tiger2:word="enter" lemma="enter" ner="O" pos="VB"/>
+<t xml:id="s37_t17" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s37_t18" tiger2:word="premises" lemma="premises" ner="O" pos="NN"/>
+<t xml:id="s37_t19" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s37_t20" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s37_t21" tiger2:word="controlled" lemma="control" ner="O" pos="VBN"/>
+<t xml:id="s37_t22" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s37_t23" tiger2:word="if" lemma="if" ner="O" pos="IN"/>
+<t xml:id="s37_t24" tiger2:word="possible" lemma="possible" ner="O" pos="JJ"/>
+<t xml:id="s37_t25" tiger2:word="isolated" lemma="isolate" ner="O" pos="VBN"/>
+<t xml:id="s37_t26" tiger2:word="from" lemma="from" ner="O" pos="IN"/>
+<t xml:id="s37_t27" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s37_t28" tiger2:word="processin" lemma="processin" ner="O" pos="NN"/>
+<t xml:id="s37_t29" tiger2:word="Equipment" lemma="equipment" ner="O" pos="NN"/>
+<t xml:id="s37_t30" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s37_t31" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s37_t32" tiger2:word="sited" lemma="site" ner="O" pos="VBN"/>
+<t xml:id="s37_t33" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s37_t34" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s37_t35" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s37_t36" tiger2:word="reduce" lemma="reduce" ner="O" pos="VB"/>
+<t xml:id="s37_t37" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s37_t38" tiger2:word="risks" lemma="risk" ner="O" pos="NNS"/>
+<t xml:id="s37_t39" tiger2:word="from" lemma="from" ner="O" pos="IN"/>
+<t xml:id="s37_t40" tiger2:word="environmental" lemma="environmental" ner="O" pos="JJ"/>
+<t xml:id="s37_t41" tiger2:word="threats" lemma="threat" ner="O" pos="NNS"/>
+<t xml:id="s37_t42" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s37_t43" tiger2:word="hazards" lemma="hazard" ner="O" pos="NNS"/>
+<t xml:id="s37_t44" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s37_t45" tiger2:word="opportunities" lemma="opportunity" ner="O" pos="NNS"/>
+<t xml:id="s37_t46" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s37_t47" tiger2:word="un" lemma="un" ner="O" pos="NN"/>
+<t xml:id="s37_t48" tiger2:word="Equipment" lemma="equipment" ner="O" pos="NN"/>
+<t xml:id="s37_t49" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s37_t50" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s37_t51" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s37_t52" tiger2:word="from" lemma="from" ner="O" pos="IN"/>
+<t xml:id="s37_t53" tiger2:word="power" lemma="power" ner="O" pos="NN"/>
+<t xml:id="s37_t54" tiger2:word="failures" lemma="failure" ner="O" pos="NNS"/>
+<t xml:id="s37_t55" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s37_t56" tiger2:word="other" lemma="other" ner="O" pos="JJ"/>
+<t xml:id="s37_t57" tiger2:word="disruptions" lemma="disruption" ner="O" pos="NNS"/>
+<t xml:id="s37_t58" tiger2:word="caused" lemma="cause" ner="O" pos="VBN"/>
+<t xml:id="s37_t59" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s37_t60" tiger2:word="failures" lemma="failure" ner="O" pos="NNS"/>
+<t xml:id="s37_t61" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s37_t62" tiger2:word="supporting" lemma="support" ner="O" pos="VBG"/>
+<t xml:id="s37_t63" tiger2:word="utilities" lemma="utility" ner="O" pos="NNS"/>
+<t xml:id="s37_t64" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g38">
+<terminals>
+<t xml:id="s38_t1" tiger2:word="Power" lemma="power" ner="O" pos="NN"/>
+<t xml:id="s38_t2" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s38_t3" tiger2:word="telecommunications" lemma="telecommunications" ner="O" pos="NN"/>
+<t xml:id="s38_t4" tiger2:word="cabling" lemma="cabling" ner="O" pos="NN"/>
+<t xml:id="s38_t5" tiger2:word="carrying" lemma="carry" ner="O" pos="VBG"/>
+<t xml:id="s38_t6" tiger2:word="data" lemma="datum" ner="O" pos="NNS"/>
+<t xml:id="s38_t7" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s38_t8" tiger2:word="supporting" lemma="support" ner="O" pos="VBG"/>
+<t xml:id="s38_t9" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s38_t10" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s38_t11" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s38_t12" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s38_t13" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s38_t14" tiger2:word="from" lemma="from" ner="O" pos="IN"/>
+<t xml:id="s38_t15" tiger2:word="interception" lemma="interception" ner="O" pos="NN"/>
+<t xml:id="s38_t16" tiger2:word="Equipment" lemma="equipment" ner="O" pos="NN"/>
+<t xml:id="s38_t17" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s38_t18" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s38_t19" tiger2:word="correctly" lemma="correctly" ner="O" pos="RB"/>
+<t xml:id="s38_t20" tiger2:word="maintained" lemma="maintain" ner="O" pos="VBN"/>
+<t xml:id="s38_t21" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s38_t22" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s38_t23" tiger2:word="its" lemma="its" ner="O" pos="PRP$"/>
+<t xml:id="s38_t24" tiger2:word="continued" lemma="continued" ner="O" pos="JJ"/>
+<t xml:id="s38_t25" tiger2:word="availability" lemma="availability" ner="O" pos="NN"/>
+<t xml:id="s38_t26" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s38_t27" tiger2:word="integrity" lemma="integrity" ner="O" pos="NN"/>
+<t xml:id="s38_t28" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g39">
+<terminals>
+<t xml:id="s39_t1" tiger2:word="Equipment" lemma="Equipment" ner="O" pos="NNP"/>
+<t xml:id="s39_t2" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s39_t3" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s39_t4" tiger2:word="software" lemma="software" ner="O" pos="NN"/>
+<t xml:id="s39_t5" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s39_t6" tiger2:word="not" lemma="not" ner="O" pos="RB"/>
+<t xml:id="s39_t7" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s39_t8" tiger2:word="taken" lemma="take" ner="O" pos="VBN"/>
+<t xml:id="s39_t9" tiger2:word="off-site" lemma="off-site" ner="O" pos="JJ"/>
+<t xml:id="s39_t10" tiger2:word="without" lemma="without" ner="O" pos="IN"/>
+<t xml:id="s39_t11" tiger2:word="prior" lemma="prior" ner="O" pos="JJ"/>
+<t xml:id="s39_t12" tiger2:word="authorization" lemma="authorization" ner="O" pos="NN"/>
+<t xml:id="s39_t13" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g40">
+<terminals>
+<t xml:id="s40_t1" tiger2:word="Security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s40_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s40_t3" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s40_t4" tiger2:word="applied" lemma="apply" ner="O" pos="VBN"/>
+<t xml:id="s40_t5" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s40_t6" tiger2:word="off-site" lemma="off-site" ner="O" pos="JJ"/>
+<t xml:id="s40_t7" tiger2:word="assets" lemma="asset" ner="O" pos="NNS"/>
+<t xml:id="s40_t8" tiger2:word="taking" lemma="take" ner="O" pos="VBG"/>
+<t xml:id="s40_t9" tiger2:word="into" lemma="into" ner="O" pos="IN"/>
+<t xml:id="s40_t10" tiger2:word="account" lemma="account" ner="O" pos="NN"/>
+<t xml:id="s40_t11" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s40_t12" tiger2:word="different" lemma="different" ner="O" pos="JJ"/>
+<t xml:id="s40_t13" tiger2:word="risks" lemma="risk" ner="O" pos="NNS"/>
+<t xml:id="s40_t14" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s40_t15" tiger2:word="working" lemma="work" ner="O" pos="VBG"/>
+<t xml:id="s40_t16" tiger2:word="outside" lemma="outside" ner="O" pos="IN"/>
+<t xml:id="s40_t17" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s40_t18" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s40_t19" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
+<t xml:id="s40_t20" tiger2:word="premises" lemma="premise" ner="O" pos="NNS"/>
+<t xml:id="s40_t21" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g41">
+<terminals>
+<t xml:id="s41_t1" tiger2:word="All" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s41_t2" tiger2:word="items" lemma="item" ner="O" pos="NNS"/>
+<t xml:id="s41_t3" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s41_t4" tiger2:word="equipment" lemma="equipment" ner="O" pos="NN"/>
+<t xml:id="s41_t5" tiger2:word="containing" lemma="contain" ner="O" pos="VBG"/>
+<t xml:id="s41_t6" tiger2:word="storage" lemma="storage" ner="O" pos="NN"/>
+<t xml:id="s41_t7" tiger2:word="media" lemma="media" ner="O" pos="NNS"/>
+<t xml:id="s41_t8" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s41_t9" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s41_t10" tiger2:word="verified" lemma="verify" ner="O" pos="VBN"/>
+<t xml:id="s41_t11" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s41_t12" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s41_t13" tiger2:word="that" lemma="that" ner="O" pos="IN"/>
+<t xml:id="s41_t14" tiger2:word="any" lemma="any" ner="O" pos="DT"/>
+<t xml:id="s41_t15" tiger2:word="sensitive" lemma="sensitive" ner="O" pos="JJ"/>
+<t xml:id="s41_t16" tiger2:word="data" lemma="datum" ner="O" pos="NNS"/>
+<t xml:id="s41_t17" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s41_t18" tiger2:word="licensed" lemma="licensed" ner="O" pos="JJ"/>
+<t xml:id="s41_t19" tiger2:word="software" lemma="software" ner="O" pos="NN"/>
+<t xml:id="s41_t20" tiger2:word="has" lemma="have" ner="O" pos="VBZ"/>
+<t xml:id="s41_t21" tiger2:word="been" lemma="be" ner="O" pos="VBN"/>
+<t xml:id="s41_t22" tiger2:word="removed" lemma="remove" ner="O" pos="VBN"/>
+<t xml:id="s41_t23" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s41_t24" tiger2:word="securely" lemma="securely" ner="O" pos="RB"/>
+<t xml:id="s41_t25" tiger2:word="overwritten" lemma="overwritten" ner="O" pos="JJ"/>
+<t xml:id="s41_t26" tiger2:word="prior" lemma="prior" ner="O" pos="JJ"/>
+<t xml:id="s41_t27" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s41_t28" tiger2:word="disposal" lemma="disposal" ner="O" pos="NN"/>
+<t xml:id="s41_t29" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s41_t30" tiger2:word="re-use" lemma="re-use" ner="O" pos="NN"/>
+<t xml:id="s41_t31" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g42">
+<terminals>
+<t xml:id="s42_t1" tiger2:word="Users" lemma="user" ner="O" pos="NNS"/>
+<t xml:id="s42_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s42_t3" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s42_t4" tiger2:word="that" lemma="that" ner="O" pos="IN"/>
+<t xml:id="s42_t5" tiger2:word="unattended" lemma="unattended" ner="O" pos="JJ"/>
+<t xml:id="s42_t6" tiger2:word="equipment" lemma="equipment" ner="O" pos="NN"/>
+<t xml:id="s42_t7" tiger2:word="has" lemma="have" ner="O" pos="VBZ"/>
+<t xml:id="s42_t8" tiger2:word="appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s42_t9" tiger2:word="protection" lemma="protection" ner="O" pos="NN"/>
+<t xml:id="s42_t10" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g43">
+<terminals>
+<t xml:id="s43_t1" tiger2:word="A" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s43_t2" tiger2:word="clear" lemma="clear" ner="O" pos="JJ"/>
+<t xml:id="s43_t3" tiger2:word="desk" lemma="desk" ner="O" pos="NN"/>
+<t xml:id="s43_t4" tiger2:word="policy" lemma="policy" ner="O" pos="NN"/>
+<t xml:id="s43_t5" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s43_t6" tiger2:word="papers" lemma="papers" ner="O" pos="NNS"/>
+<t xml:id="s43_t7" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s43_t8" tiger2:word="removable" lemma="removable" ner="O" pos="JJ"/>
+<t xml:id="s43_t9" tiger2:word="storage" lemma="storage" ner="O" pos="NN"/>
+<t xml:id="s43_t10" tiger2:word="media" lemma="media" ner="O" pos="NNS"/>
+<t xml:id="s43_t11" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s43_t12" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s43_t13" tiger2:word="clear" lemma="clear" ner="O" pos="JJ"/>
+<t xml:id="s43_t14" tiger2:word="screen" lemma="screen" ner="O" pos="NN"/>
+<t xml:id="s43_t15" tiger2:word="policy" lemma="policy" ner="O" pos="NN"/>
+<t xml:id="s43_t16" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s43_t17" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s43_t18" tiger2:word="processing" lemma="processing" ner="O" pos="NN"/>
+<t xml:id="s43_t19" tiger2:word="facilities" lemma="facility" ner="O" pos="NNS"/>
+<t xml:id="s43_t20" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s43_t21" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s43_t22" tiger2:word="adopted" lemma="adopt" ner="O" pos="VBN"/>
+<t xml:id="s43_t23" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g44">
+<terminals>
+<t xml:id="s44_t1" tiger2:word="Operating" lemma="operate" ner="O" pos="VBG"/>
+<t xml:id="s44_t2" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s44_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s44_t4" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s44_t5" tiger2:word="documented" lemma="document" ner="O" pos="VBN"/>
+<t xml:id="s44_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s44_t7" tiger2:word="made" lemma="make" ner="O" pos="VBN"/>
+<t xml:id="s44_t8" tiger2:word="available" lemma="available" ner="O" pos="JJ"/>
+<t xml:id="s44_t9" tiger2:word="Changes" lemma="change" ner="O" pos="NNS"/>
+<t xml:id="s44_t10" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s44_t11" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s44_t12" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s44_t13" tiger2:word="business" lemma="business" ner="O" pos="NN"/>
+<t xml:id="s44_t14" tiger2:word="processes" lemma="process" ner="O" pos="NNS"/>
+<t xml:id="s44_t15" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s44_t16" tiger2:word="processing" lemma="processing" ner="O" pos="NN"/>
+<t xml:id="s44_t17" tiger2:word="facilities" lemma="facility" ner="O" pos="NNS"/>
+<t xml:id="s44_t18" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s44_t19" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s44_t20" tiger2:word="that" lemma="that" ner="O" pos="WDT"/>
+<t xml:id="s44_t21" tiger2:word="affect" lemma="affect" ner="O" pos="VBP"/>
+<t xml:id="s44_t22" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s44_t23" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s44_t24" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s44_t25" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s44_t26" tiger2:word="controlled" lemma="control" ner="O" pos="VBN"/>
+<t xml:id="s44_t27" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g45">
+<terminals>
+<t xml:id="s45_t1" tiger2:word="made" lemma="make" ner="O" pos="VBN"/>
+<t xml:id="s45_t2" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s45_t3" tiger2:word="future" lemma="future" ner="DATE" pos="JJ"/>
+<t xml:id="s45_t4" tiger2:word="capacity" lemma="capacity" ner="O" pos="NN"/>
+<t xml:id="s45_t5" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s45_t6" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s45_t7" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s45_t8" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s45_t9" tiger2:word="required" lemma="required" ner="O" pos="JJ"/>
+<t xml:id="s45_t10" tiger2:word="system" lemma="system" ner="O" pos="NN"/>
+<t xml:id="s45_t11" tiger2:word="performance" lemma="performance" ner="O" pos="NN"/>
+<t xml:id="s45_t12" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g46">
+<terminals>
+<t xml:id="s46_t1" tiger2:word="Development" lemma="Development" ner="O" pos="NNP"/>
+<t xml:id="s46_t2" tiger2:word="testing" lemma="testing" ner="O" pos="NN"/>
+<t xml:id="s46_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s46_t4" tiger2:word="operational" lemma="operational" ner="O" pos="JJ"/>
+<t xml:id="s46_t5" tiger2:word="environments" lemma="environment" ner="O" pos="NNS"/>
+<t xml:id="s46_t6" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s46_t7" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s46_t8" tiger2:word="separated" lemma="separate" ner="O" pos="VBN"/>
+<t xml:id="s46_t9" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s46_t10" tiger2:word="reduce" lemma="reduce" ner="O" pos="VB"/>
+<t xml:id="s46_t11" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s46_t12" tiger2:word="risks" lemma="risk" ner="O" pos="NNS"/>
+<t xml:id="s46_t13" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s46_t14" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s46_t15" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s46_t16" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s46_t17" tiger2:word="changes" lemma="change" ner="O" pos="NNS"/>
+<t xml:id="s46_t18" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s46_t19" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s46_t20" tiger2:word="operational" lemma="operational" ner="O" pos="JJ"/>
+<t xml:id="s46_t21" tiger2:word="environment" lemma="environment" ner="O" pos="NN"/>
+<t xml:id="s46_t22" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g47">
+<terminals>
+<t xml:id="s47_t1" tiger2:word="Detection" lemma="detection" ner="O" pos="NN"/>
+<t xml:id="s47_t2" tiger2:word="prevention" lemma="prevention" ner="O" pos="NN"/>
+<t xml:id="s47_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s47_t4" tiger2:word="recovery" lemma="recovery" ner="O" pos="NN"/>
+<t xml:id="s47_t5" tiger2:word="controls" lemma="control" ner="O" pos="NNS"/>
+<t xml:id="s47_t6" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s47_t7" tiger2:word="protect" lemma="protect" ner="O" pos="VB"/>
+<t xml:id="s47_t8" tiger2:word="against" lemma="against" ner="O" pos="IN"/>
+<t xml:id="s47_t9" tiger2:word="malware" lemma="malware" ner="O" pos="NN"/>
+<t xml:id="s47_t10" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s47_t11" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s47_t12" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s47_t13" tiger2:word="combined" lemma="combine" ner="O" pos="VBN"/>
+<t xml:id="s47_t14" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s47_t15" tiger2:word="appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s47_t16" tiger2:word="user" lemma="user" ner="O" pos="NN"/>
+<t xml:id="s47_t17" tiger2:word="awareness" lemma="awareness" ner="O" pos="NN"/>
+<t xml:id="s47_t18" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g48">
+<terminals>
+<t xml:id="s48_t1" tiger2:word="Backup" lemma="backup" ner="O" pos="NN"/>
+<t xml:id="s48_t2" tiger2:word="copies" lemma="copy" ner="O" pos="NNS"/>
+<t xml:id="s48_t3" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s48_t4" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s48_t5" tiger2:word="software" lemma="software" ner="O" pos="NN"/>
+<t xml:id="s48_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s48_t7" tiger2:word="system" lemma="system" ner="O" pos="NN"/>
+<t xml:id="s48_t8" tiger2:word="images" lemma="image" ner="O" pos="NNS"/>
+<t xml:id="s48_t9" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s48_t10" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s48_t11" tiger2:word="taken" lemma="take" ner="O" pos="VBN"/>
+<t xml:id="s48_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s48_t13" tiger2:word="tested" lemma="test" ner="O" pos="VBN"/>
+<t xml:id="s48_t14" tiger2:word="regularly" lemma="regularly" ner="O" pos="RB"/>
+<t xml:id="s48_t15" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s48_t16" tiger2:word="accordance" lemma="accordance" ner="O" pos="NN"/>
+<t xml:id="s48_t17" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s48_t18" tiger2:word="an" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s48_t19" tiger2:word="agreed" lemma="agree" ner="O" pos="VBN"/>
+<t xml:id="s48_t20" tiger2:word="backup" lemma="backup" ner="O" pos="NN"/>
+<t xml:id="s48_t21" tiger2:word="policy" lemma="policy" ner="O" pos="NN"/>
+<t xml:id="s48_t22" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g49">
+<terminals>
+<t xml:id="s49_t1" tiger2:word="Event" lemma="event" ner="O" pos="NN"/>
+<t xml:id="s49_t2" tiger2:word="logs" lemma="log" ner="O" pos="NNS"/>
+<t xml:id="s49_t3" tiger2:word="recording" lemma="record" ner="O" pos="VBG"/>
+<t xml:id="s49_t4" tiger2:word="user" lemma="user" ner="O" pos="NN"/>
+<t xml:id="s49_t5" tiger2:word="activities" lemma="activity" ner="O" pos="NNS"/>
+<t xml:id="s49_t6" tiger2:word="exceptions" lemma="exception" ner="O" pos="NNS"/>
+<t xml:id="s49_t7" tiger2:word="faults" lemma="fault" ner="O" pos="NNS"/>
+<t xml:id="s49_t8" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s49_t9" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s49_t10" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s49_t11" tiger2:word="events" lemma="event" ner="O" pos="NNS"/>
+<t xml:id="s49_t12" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s49_t13" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s49_t14" tiger2:word="produced" lemma="produce" ner="O" pos="VBN"/>
+<t xml:id="s49_t15" tiger2:word="kept" lemma="keep" ner="O" pos="VBN"/>
+<t xml:id="s49_t16" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s49_t17" tiger2:word="regularly" lemma="regularly" ner="O" pos="RB"/>
+<t xml:id="s49_t18" tiger2:word="reviewed" lemma="review" ner="O" pos="VBN"/>
+<t xml:id="s49_t19" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g50">
+<terminals>
+<t xml:id="s50_t1" tiger2:word="Logging" lemma="log" ner="O" pos="VBG"/>
+<t xml:id="s50_t2" tiger2:word="facilities" lemma="facility" ner="O" pos="NNS"/>
+<t xml:id="s50_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s50_t4" tiger2:word="log" lemma="log" ner="O" pos="NN"/>
+<t xml:id="s50_t5" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s50_t6" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s50_t7" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s50_t8" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s50_t9" tiger2:word="against" lemma="against" ner="O" pos="IN"/>
+<t xml:id="s50_t10" tiger2:word="tampering" lemma="tamper" ner="O" pos="VBG"/>
+<t xml:id="s50_t11" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s50_t12" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s50_t13" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s50_t14" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g51">
+<terminals>
+<t xml:id="s51_t1" tiger2:word="System" lemma="System" ner="TITLE" pos="NNP"/>
+<t xml:id="s51_t2" tiger2:word="administrator" lemma="administrator" ner="TITLE" pos="NN"/>
+<t xml:id="s51_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s51_t4" tiger2:word="system" lemma="system" ner="O" pos="NN"/>
+<t xml:id="s51_t5" tiger2:word="operator" lemma="operator" ner="TITLE" pos="NN"/>
+<t xml:id="s51_t6" tiger2:word="activities" lemma="activity" ner="O" pos="NNS"/>
+<t xml:id="s51_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s51_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s51_t9" tiger2:word="logged" lemma="log" ner="O" pos="VBN"/>
+<t xml:id="s51_t10" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s51_t11" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s51_t12" tiger2:word="logs" lemma="log" ner="O" pos="NNS"/>
+<t xml:id="s51_t13" tiger2:word="protected" lemma="protect" ner="O" pos="VBD"/>
+<t xml:id="s51_t14" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s51_t15" tiger2:word="regularly" lemma="regularly" ner="O" pos="RB"/>
+<t xml:id="s51_t16" tiger2:word="reviewed" lemma="review" ner="O" pos="VBN"/>
+<t xml:id="s51_t17" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g52">
+<terminals>
+<t xml:id="s52_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s52_t2" tiger2:word="clocks" lemma="clock" ner="O" pos="NNS"/>
+<t xml:id="s52_t3" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s52_t4" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s52_t5" tiger2:word="relevant" lemma="relevant" ner="O" pos="JJ"/>
+<t xml:id="s52_t6" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s52_t7" tiger2:word="processing" lemma="processing" ner="O" pos="NN"/>
+<t xml:id="s52_t8" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s52_t9" tiger2:word="within" lemma="within" ner="O" pos="IN"/>
+<t xml:id="s52_t10" tiger2:word="an" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s52_t11" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s52_t12" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s52_t13" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s52_t14" tiger2:word="domain" lemma="domain" ner="O" pos="NN"/>
+<t xml:id="s52_t15" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s52_t16" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s52_t17" tiger2:word="synchronised" lemma="synchronise" ner="O" pos="VBN"/>
+<t xml:id="s52_t18" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s52_t19" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s52_t20" tiger2:word="single" lemma="single" ner="O" pos="JJ"/>
+<t xml:id="s52_t21" tiger2:word="reference" lemma="reference" ner="O" pos="NN"/>
+<t xml:id="s52_t22" tiger2:word="time" lemma="time" ner="O" pos="NN"/>
+<t xml:id="s52_t23" tiger2:word="source" lemma="source" ner="O" pos="NN"/>
+<t xml:id="s52_t24" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g53">
+<terminals>
+<t xml:id="s53_t1" tiger2:word="Procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s53_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s53_t3" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s53_t4" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s53_t5" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s53_t6" tiger2:word="control" lemma="control" ner="O" pos="VB"/>
+<t xml:id="s53_t7" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s53_t8" tiger2:word="installation" lemma="installation" ner="O" pos="NN"/>
+<t xml:id="s53_t9" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s53_t10" tiger2:word="software" lemma="software" ner="O" pos="NN"/>
+<t xml:id="s53_t11" tiger2:word="on" lemma="on" ner="O" pos="IN"/>
+<t xml:id="s53_t12" tiger2:word="operational" lemma="operational" ner="O" pos="JJ"/>
+<t xml:id="s53_t13" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s53_t14" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g54">
+<terminals>
+<t xml:id="s54_t1" tiger2:word="Information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s54_t2" tiger2:word="about" lemma="about" ner="O" pos="IN"/>
+<t xml:id="s54_t3" tiger2:word="technical" lemma="technical" ner="O" pos="JJ"/>
+<t xml:id="s54_t4" tiger2:word="vulnerabilities" lemma="vulnerability" ner="O" pos="NNS"/>
+<t xml:id="s54_t5" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s54_t6" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s54_t7" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s54_t8" tiger2:word="being" lemma="be" ner="O" pos="VBG"/>
+<t xml:id="s54_t9" tiger2:word="used" lemma="use" ner="O" pos="VBN"/>
+<t xml:id="s54_t10" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s54_t11" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s54_t12" tiger2:word="obtained" lemma="obtain" ner="O" pos="VBN"/>
+<t xml:id="s54_t13" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s54_t14" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s54_t15" tiger2:word="timely" lemma="timely" ner="O" pos="JJ"/>
+<t xml:id="s54_t16" tiger2:word="fashion" lemma="fashion" ner="O" pos="NN"/>
+<t xml:id="s54_t17" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s54_t18" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s54_t19" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
+<t xml:id="s54_t20" tiger2:word="exposure" lemma="exposure" ner="O" pos="NN"/>
+<t xml:id="s54_t21" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s54_t22" tiger2:word="such" lemma="such" ner="O" pos="JJ"/>
+<t xml:id="s54_t23" tiger2:word="vulnerabilities" lemma="vulnerability" ner="O" pos="NNS"/>
+<t xml:id="s54_t24" tiger2:word="evaluated" lemma="evaluate" ner="O" pos="VBN"/>
+<t xml:id="s54_t25" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s54_t26" tiger2:word="appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s54_t27" tiger2:word="measures" lemma="measure" ner="O" pos="NNS"/>
+<t xml:id="s54_t28" tiger2:word="taken" lemma="take" ner="O" pos="VBN"/>
+<t xml:id="s54_t29" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s54_t30" tiger2:word="address" lemma="address" ner="O" pos="VB"/>
+<t xml:id="s54_t31" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s54_t32" tiger2:word="associated" lemma="associate" ner="O" pos="VBN"/>
+<t xml:id="s54_t33" tiger2:word="risk" lemma="risk" ner="O" pos="NN"/>
+<t xml:id="s54_t34" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g55">
+<terminals>
+<t xml:id="s55_t1" tiger2:word="Rules" lemma="rule" ner="O" pos="NNS"/>
+<t xml:id="s55_t2" tiger2:word="governing" lemma="govern" ner="O" pos="VBG"/>
+<t xml:id="s55_t3" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s55_t4" tiger2:word="installation" lemma="installation" ner="O" pos="NN"/>
+<t xml:id="s55_t5" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s55_t6" tiger2:word="software" lemma="software" ner="O" pos="NN"/>
+<t xml:id="s55_t7" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s55_t8" tiger2:word="users" lemma="user" ner="O" pos="NNS"/>
+<t xml:id="s55_t9" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s55_t10" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s55_t11" tiger2:word="established" lemma="establish" ner="O" pos="VBN"/>
+<t xml:id="s55_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s55_t13" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s55_t14" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g56">
+<terminals>
+<t xml:id="s56_t1" tiger2:word="Audit" lemma="Audit" ner="O" pos="NNP"/>
+<t xml:id="s56_t2" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s56_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s56_t4" tiger2:word="activities" lemma="activity" ner="O" pos="NNS"/>
+<t xml:id="s56_t5" tiger2:word="involving" lemma="involve" ner="O" pos="VBG"/>
+<t xml:id="s56_t6" tiger2:word="verification" lemma="verification" ner="O" pos="NN"/>
+<t xml:id="s56_t7" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s56_t8" tiger2:word="operational" lemma="operational" ner="O" pos="JJ"/>
+<t xml:id="s56_t9" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s56_t10" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s56_t11" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s56_t12" tiger2:word="carefully" lemma="carefully" ner="O" pos="RB"/>
+<t xml:id="s56_t13" tiger2:word="planned" lemma="plan" ner="O" pos="VBN"/>
+<t xml:id="s56_t14" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s56_t15" tiger2:word="agreed" lemma="agree" ner="O" pos="VBN"/>
+<t xml:id="s56_t16" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s56_t17" tiger2:word="minimise" lemma="minimise" ner="O" pos="VB"/>
+<t xml:id="s56_t18" tiger2:word="disruptions" lemma="disruption" ner="O" pos="NNS"/>
+<t xml:id="s56_t19" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s56_t20" tiger2:word="business" lemma="business" ner="O" pos="NN"/>
+<t xml:id="s56_t21" tiger2:word="processes" lemma="process" ner="O" pos="NNS"/>
+<t xml:id="s56_t22" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g57">
+<terminals>
+<t xml:id="s57_t1" tiger2:word="Networks" lemma="Networks" ner="O" pos="NNP"/>
+<t xml:id="s57_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s57_t3" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s57_t4" tiger2:word="managed" lemma="manage" ner="O" pos="VBN"/>
+<t xml:id="s57_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s57_t6" tiger2:word="controlled" lemma="control" ner="O" pos="VBN"/>
+<t xml:id="s57_t7" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s57_t8" tiger2:word="protect" lemma="protect" ner="O" pos="VB"/>
+<t xml:id="s57_t9" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s57_t10" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s57_t11" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s57_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s57_t13" tiger2:word="applications" lemma="application" ner="O" pos="NNS"/>
+<t xml:id="s57_t14" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g58">
+<terminals>
+<t xml:id="s58_t1" tiger2:word="Security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s58_t2" tiger2:word="mechanisms" lemma="mechanism" ner="O" pos="NNS"/>
+<t xml:id="s58_t3" tiger2:word="service" lemma="service" ner="O" pos="NN"/>
+<t xml:id="s58_t4" tiger2:word="levels" lemma="level" ner="O" pos="NNS"/>
+<t xml:id="s58_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s58_t6" tiger2:word="management" lemma="management" ner="O" pos="NN"/>
+<t xml:id="s58_t7" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s58_t8" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s58_t9" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s58_t10" tiger2:word="network" lemma="network" ner="O" pos="NN"/>
+<t xml:id="s58_t11" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s58_t12" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s58_t13" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s58_t14" tiger2:word="identified" lemma="identify" ner="O" pos="VBN"/>
+<t xml:id="s58_t15" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s58_t16" tiger2:word="included" lemma="include" ner="O" pos="VBN"/>
+<t xml:id="s58_t17" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s58_t18" tiger2:word="network" lemma="network" ner="O" pos="NN"/>
+<t xml:id="s58_t19" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s58_t20" tiger2:word="agreements" lemma="agreement" ner="O" pos="NNS"/>
+<t xml:id="s58_t21" tiger2:word="whether" lemma="whether" ner="O" pos="IN"/>
+<t xml:id="s58_t22" tiger2:word="these" lemma="these" ner="O" pos="DT"/>
+<t xml:id="s58_t23" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s58_t24" tiger2:word="are" lemma="be" ner="O" pos="VBP"/>
+<t xml:id="s58_t25" tiger2:word="provided" lemma="provide" ner="O" pos="VBN"/>
+<t xml:id="s58_t26" tiger2:word="in-house" lemma="in-house" ner="O" pos="JJ"/>
+<t xml:id="s58_t27" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s58_t28" tiger2:word="outsourced" lemma="outsourced" ner="O" pos="JJ"/>
+<t xml:id="s58_t29" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g59">
+<terminals>
+<t xml:id="s59_t1" tiger2:word="Groups" lemma="group" ner="O" pos="NNS"/>
+<t xml:id="s59_t2" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s59_t3" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s59_t4" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s59_t5" tiger2:word="users" lemma="user" ner="O" pos="NNS"/>
+<t xml:id="s59_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s59_t7" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s59_t8" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s59_t9" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s59_t10" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s59_t11" tiger2:word="segregated" lemma="segregate" ner="O" pos="VBN"/>
+<t xml:id="s59_t12" tiger2:word="on" lemma="on" ner="O" pos="IN"/>
+<t xml:id="s59_t13" tiger2:word="networks" lemma="network" ner="O" pos="NNS"/>
+<t xml:id="s59_t14" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g60">
+<terminals>
+<t xml:id="s60_t1" tiger2:word="Formal" lemma="formal" ner="O" pos="JJ"/>
+<t xml:id="s60_t2" tiger2:word="transfer" lemma="transfer" ner="O" pos="NN"/>
+<t xml:id="s60_t3" tiger2:word="policies" lemma="policy" ner="O" pos="NNS"/>
+<t xml:id="s60_t4" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s60_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s60_t6" tiger2:word="controls" lemma="control" ner="O" pos="NNS"/>
+<t xml:id="s60_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s60_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s60_t9" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s60_t10" tiger2:word="place" lemma="place" ner="O" pos="NN"/>
+<t xml:id="s60_t11" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s60_t12" tiger2:word="protect" lemma="protect" ner="O" pos="VB"/>
+<t xml:id="s60_t13" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s60_t14" tiger2:word="transfer" lemma="transfer" ner="O" pos="NN"/>
+<t xml:id="s60_t15" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s60_t16" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s60_t17" tiger2:word="through" lemma="through" ner="O" pos="IN"/>
+<t xml:id="s60_t18" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s60_t19" tiger2:word="use" lemma="use" ner="O" pos="NN"/>
+<t xml:id="s60_t20" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s60_t21" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s60_t22" tiger2:word="types" lemma="type" ner="O" pos="NNS"/>
+<t xml:id="s60_t23" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s60_t24" tiger2:word="communication" lemma="communication" ner="O" pos="NN"/>
+<t xml:id="s60_t25" tiger2:word="facilities" lemma="facility" ner="O" pos="NNS"/>
+<t xml:id="s60_t26" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g61">
+<terminals>
+<t xml:id="s61_t1" tiger2:word="Agreements" lemma="agreement" ner="O" pos="NNS"/>
+<t xml:id="s61_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s61_t3" tiger2:word="address" lemma="address" ner="O" pos="VB"/>
+<t xml:id="s61_t4" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s61_t5" tiger2:word="secure" lemma="secure" ner="O" pos="JJ"/>
+<t xml:id="s61_t6" tiger2:word="transfer" lemma="transfer" ner="O" pos="NN"/>
+<t xml:id="s61_t7" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s61_t8" tiger2:word="business" lemma="business" ner="O" pos="NN"/>
+<t xml:id="s61_t9" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s61_t10" tiger2:word="between" lemma="between" ner="O" pos="IN"/>
+<t xml:id="s61_t11" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s61_t12" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s61_t13" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s61_t14" tiger2:word="external" lemma="external" ner="O" pos="JJ"/>
+<t xml:id="s61_t15" tiger2:word="parties" lemma="party" ner="O" pos="NNS"/>
+<t xml:id="s61_t16" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g62">
+<terminals>
+<t xml:id="s62_t1" tiger2:word="Information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s62_t2" tiger2:word="involved" lemma="involve" ner="O" pos="VBN"/>
+<t xml:id="s62_t3" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s62_t4" tiger2:word="electronic" lemma="electronic" ner="O" pos="JJ"/>
+<t xml:id="s62_t5" tiger2:word="messaging" lemma="messaging" ner="O" pos="NN"/>
+<t xml:id="s62_t6" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s62_t7" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s62_t8" tiger2:word="appropriately" lemma="appropriately" ner="O" pos="RB"/>
+<t xml:id="s62_t9" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s62_t10" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g63">
+<terminals>
+<t xml:id="s63_t1" tiger2:word="Requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s63_t2" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s63_t3" tiger2:word="confidentiality" lemma="confidentiality" ner="O" pos="NN"/>
+<t xml:id="s63_t4" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s63_t5" tiger2:word="non-disclosure" lemma="non-disclosure" ner="O" pos="JJ"/>
+<t xml:id="s63_t6" tiger2:word="agreements" lemma="agreement" ner="O" pos="NNS"/>
+<t xml:id="s63_t7" tiger2:word="reflecting" lemma="reflect" ner="O" pos="VBG"/>
+<t xml:id="s63_t8" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s63_t9" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s63_t10" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
+<t xml:id="s63_t11" tiger2:word="needs" lemma="need" ner="O" pos="NNS"/>
+<t xml:id="s63_t12" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s63_t13" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s63_t14" tiger2:word="protection" lemma="protection" ner="O" pos="NN"/>
+<t xml:id="s63_t15" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s63_t16" tiger2:word="inform" lemma="inform" ner="O" pos="VB"/>
+<t xml:id="s63_t17" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s63_t18" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s63_t19" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s63_t20" tiger2:word="related" lemma="related" ner="O" pos="JJ"/>
+<t xml:id="s63_t21" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s63_t22" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s63_t23" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s63_t24" tiger2:word="included" lemma="include" ner="O" pos="VBN"/>
+<t xml:id="s63_t25" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s63_t26" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s63_t27" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s63_t28" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s63_t29" tiger2:word="new" lemma="new" ner="O" pos="JJ"/>
+<t xml:id="s63_t30" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s63_t31" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s63_t32" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s63_t33" tiger2:word="enhancements" lemma="enhancement" ner="O" pos="NNS"/>
+<t xml:id="s63_t34" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s63_t35" tiger2:word="existing" lemma="exist" ner="O" pos="VBG"/>
+<t xml:id="s63_t36" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s63_t37" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s63_t38" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g64">
+<terminals>
+<t xml:id="s64_t1" tiger2:word="Information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s64_t2" tiger2:word="involved" lemma="involve" ner="O" pos="VBN"/>
+<t xml:id="s64_t3" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s64_t4" tiger2:word="application" lemma="application" ner="O" pos="NN"/>
+<t xml:id="s64_t5" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s64_t6" tiger2:word="passing" lemma="pass" ner="O" pos="VBG"/>
+<t xml:id="s64_t7" tiger2:word="over" lemma="over" ner="O" pos="IN"/>
+<t xml:id="s64_t8" tiger2:word="public" lemma="public" ner="O" pos="JJ"/>
+<t xml:id="s64_t9" tiger2:word="networks" lemma="network" ner="O" pos="NNS"/>
+<t xml:id="s64_t10" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s64_t11" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s64_t12" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s64_t13" tiger2:word="from" lemma="from" ner="O" pos="IN"/>
+<t xml:id="s64_t14" tiger2:word="fraudulent" lemma="fraudulent" ner="O" pos="JJ"/>
+<t xml:id="s64_t15" tiger2:word="activity" lemma="activity" ner="O" pos="NN"/>
+<t xml:id="s64_t16" tiger2:word="contract" lemma="contract" ner="O" pos="NN"/>
+<t xml:id="s64_t17" tiger2:word="dispute" lemma="dispute" ner="O" pos="NN"/>
+<t xml:id="s64_t18" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s64_t19" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s64_t20" tiger2:word="disclosure" lemma="disclosure" ner="O" pos="NN"/>
+<t xml:id="s64_t21" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s64_t22" tiger2:word="modification" lemma="modification" ner="O" pos="NN"/>
+<t xml:id="s64_t23" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g65">
+<terminals>
+<t xml:id="s65_t1" tiger2:word="Information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s65_t2" tiger2:word="involved" lemma="involve" ner="O" pos="VBN"/>
+<t xml:id="s65_t3" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s65_t4" tiger2:word="application" lemma="application" ner="O" pos="NN"/>
+<t xml:id="s65_t5" tiger2:word="service" lemma="service" ner="O" pos="NN"/>
+<t xml:id="s65_t6" tiger2:word="transactions" lemma="transaction" ner="O" pos="NNS"/>
+<t xml:id="s65_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s65_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s65_t9" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s65_t10" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s65_t11" tiger2:word="prevent" lemma="prevent" ner="O" pos="VB"/>
+<t xml:id="s65_t12" tiger2:word="incomplete" lemma="incomplete" ner="O" pos="JJ"/>
+<t xml:id="s65_t13" tiger2:word="transmission" lemma="transmission" ner="O" pos="NN"/>
+<t xml:id="s65_t14" tiger2:word="mis-routing" lemma="mis-routing" ner="O" pos="JJ"/>
+<t xml:id="s65_t15" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s65_t16" tiger2:word="message" lemma="message" ner="O" pos="NN"/>
+<t xml:id="s65_t17" tiger2:word="alteration" lemma="alteration" ner="O" pos="NN"/>
+<t xml:id="s65_t18" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s65_t19" tiger2:word="disclosure" lemma="disclosure" ner="O" pos="NN"/>
+<t xml:id="s65_t20" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s65_t21" tiger2:word="message" lemma="message" ner="O" pos="NN"/>
+<t xml:id="s65_t22" tiger2:word="duplication" lemma="duplication" ner="O" pos="NN"/>
+<t xml:id="s65_t23" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s65_t24" tiger2:word="replay" lemma="replay" ner="O" pos="NN"/>
+<t xml:id="s65_t25" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g66">
+<terminals>
+<t xml:id="s66_t1" tiger2:word="Rules" lemma="rule" ner="O" pos="NNS"/>
+<t xml:id="s66_t2" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s66_t3" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s66_t4" tiger2:word="development" lemma="development" ner="O" pos="NN"/>
+<t xml:id="s66_t5" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s66_t6" tiger2:word="software" lemma="software" ner="O" pos="NN"/>
+<t xml:id="s66_t7" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s66_t8" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s66_t9" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s66_t10" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s66_t11" tiger2:word="established" lemma="establish" ner="O" pos="VBN"/>
+<t xml:id="s66_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s66_t13" tiger2:word="applied" lemma="apply" ner="O" pos="VBN"/>
+<t xml:id="s66_t14" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s66_t15" tiger2:word="developments" lemma="development" ner="O" pos="NNS"/>
+<t xml:id="s66_t16" tiger2:word="within" lemma="within" ner="O" pos="IN"/>
+<t xml:id="s66_t17" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s66_t18" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s66_t19" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g67">
+<terminals>
+<t xml:id="s67_t1" tiger2:word="Changes" lemma="change" ner="O" pos="NNS"/>
+<t xml:id="s67_t2" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s67_t3" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s67_t4" tiger2:word="within" lemma="within" ner="O" pos="IN"/>
+<t xml:id="s67_t5" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s67_t6" tiger2:word="development" lemma="development" ner="O" pos="NN"/>
+<t xml:id="s67_t7" tiger2:word="lifecycle" lemma="lifecycle" ner="O" pos="NN"/>
+<t xml:id="s67_t8" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s67_t9" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s67_t10" tiger2:word="controlled" lemma="control" ner="O" pos="VBN"/>
+<t xml:id="s67_t11" tiger2:word="by" lemma="by" ner="O" pos="IN"/>
+<t xml:id="s67_t12" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s67_t13" tiger2:word="use" lemma="use" ner="O" pos="NN"/>
+<t xml:id="s67_t14" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s67_t15" tiger2:word="formal" lemma="formal" ner="O" pos="JJ"/>
+<t xml:id="s67_t16" tiger2:word="change" lemma="change" ner="O" pos="NN"/>
+<t xml:id="s67_t17" tiger2:word="control" lemma="control" ner="O" pos="NN"/>
+<t xml:id="s67_t18" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s67_t19" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g68">
+<terminals>
+<t xml:id="s68_t1" tiger2:word="When" lemma="when" ner="O" pos="WRB"/>
+<t xml:id="s68_t2" tiger2:word="operating" lemma="operate" ner="O" pos="VBG"/>
+<t xml:id="s68_t3" tiger2:word="platforms" lemma="platform" ner="O" pos="NNS"/>
+<t xml:id="s68_t4" tiger2:word="are" lemma="be" ner="O" pos="VBP"/>
+<t xml:id="s68_t5" tiger2:word="changed" lemma="change" ner="O" pos="VBN"/>
+<t xml:id="s68_t6" tiger2:word="business" lemma="business" ner="O" pos="NN"/>
+<t xml:id="s68_t7" tiger2:word="critical" lemma="critical" ner="O" pos="JJ"/>
+<t xml:id="s68_t8" tiger2:word="applications" lemma="application" ner="O" pos="NNS"/>
+<t xml:id="s68_t9" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s68_t10" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s68_t11" tiger2:word="reviewed" lemma="review" ner="O" pos="VBN"/>
+<t xml:id="s68_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s68_t13" tiger2:word="tested" lemma="test" ner="O" pos="VBN"/>
+<t xml:id="s68_t14" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s68_t15" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s68_t16" tiger2:word="there" lemma="there" ner="O" pos="EX"/>
+<t xml:id="s68_t17" tiger2:word="is" lemma="be" ner="O" pos="VBZ"/>
+<t xml:id="s68_t18" tiger2:word="no" lemma="no" ner="O" pos="DT"/>
+<t xml:id="s68_t19" tiger2:word="adverse" lemma="adverse" ner="O" pos="JJ"/>
+<t xml:id="s68_t20" tiger2:word="impact" lemma="impact" ner="O" pos="NN"/>
+<t xml:id="s68_t21" tiger2:word="on" lemma="on" ner="O" pos="IN"/>
+<t xml:id="s68_t22" tiger2:word="organizational" lemma="organizational" ner="O" pos="JJ"/>
+<t xml:id="s68_t23" tiger2:word="operations" lemma="operation" ner="O" pos="NNS"/>
+<t xml:id="s68_t24" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s68_t25" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s68_t26" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g69">
+<terminals>
+<t xml:id="s69_t1" tiger2:word="Modifications" lemma="modification" ner="O" pos="NNS"/>
+<t xml:id="s69_t2" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s69_t3" tiger2:word="software" lemma="software" ner="O" pos="NN"/>
+<t xml:id="s69_t4" tiger2:word="packages" lemma="package" ner="O" pos="NNS"/>
+<t xml:id="s69_t5" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s69_t6" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s69_t7" tiger2:word="discouraged" lemma="discourage" ner="O" pos="VBN"/>
+<t xml:id="s69_t8" tiger2:word="limited" lemma="limited" ner="O" pos="JJ"/>
+<t xml:id="s69_t9" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s69_t10" tiger2:word="necessary" lemma="necessary" ner="O" pos="JJ"/>
+<t xml:id="s69_t11" tiger2:word="changes" lemma="change" ner="O" pos="NNS"/>
+<t xml:id="s69_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s69_t13" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s69_t14" tiger2:word="changes" lemma="change" ner="O" pos="NNS"/>
+<t xml:id="s69_t15" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s69_t16" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s69_t17" tiger2:word="strictly" lemma="strictly" ner="O" pos="RB"/>
+<t xml:id="s69_t18" tiger2:word="controlled" lemma="control" ner="O" pos="VBN"/>
+<t xml:id="s69_t19" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g70">
+<terminals>
+<t xml:id="s70_t1" tiger2:word="Principles" lemma="principle" ner="O" pos="NNS"/>
+<t xml:id="s70_t2" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s70_t3" tiger2:word="engineering" lemma="engineering" ner="O" pos="NN"/>
+<t xml:id="s70_t4" tiger2:word="secure" lemma="secure" ner="O" pos="JJ"/>
+<t xml:id="s70_t5" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s70_t6" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s70_t7" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s70_t8" tiger2:word="established" lemma="establish" ner="O" pos="VBN"/>
+<t xml:id="s70_t9" tiger2:word="documented" lemma="document" ner="O" pos="VBN"/>
+<t xml:id="s70_t10" tiger2:word="maintained" lemma="maintained" ner="O" pos="JJ"/>
+<t xml:id="s70_t11" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s70_t12" tiger2:word="applied" lemma="apply" ner="O" pos="VBN"/>
+<t xml:id="s70_t13" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s70_t14" tiger2:word="any" lemma="any" ner="O" pos="DT"/>
+<t xml:id="s70_t15" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s70_t16" tiger2:word="system" lemma="system" ner="O" pos="NN"/>
+<t xml:id="s70_t17" tiger2:word="implementation" lemma="implementation" ner="O" pos="NN"/>
+<t xml:id="s70_t18" tiger2:word="efforts" lemma="effort" ner="O" pos="NNS"/>
+<t xml:id="s70_t19" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g71">
+<terminals>
+<t xml:id="s71_t1" tiger2:word="Organizations" lemma="Organizations" ner="O" pos="NNP"/>
+<t xml:id="s71_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s71_t3" tiger2:word="establish" lemma="establish" ner="O" pos="VB"/>
+<t xml:id="s71_t4" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s71_t5" tiger2:word="appropriately" lemma="appropriately" ner="O" pos="RB"/>
+<t xml:id="s71_t6" tiger2:word="protect" lemma="protect" ner="O" pos="VB"/>
+<t xml:id="s71_t7" tiger2:word="secure" lemma="secure" ner="O" pos="JJ"/>
+<t xml:id="s71_t8" tiger2:word="development" lemma="development" ner="O" pos="NN"/>
+<t xml:id="s71_t9" tiger2:word="environments" lemma="environment" ner="O" pos="NNS"/>
+<t xml:id="s71_t10" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s71_t11" tiger2:word="system" lemma="system" ner="O" pos="NN"/>
+<t xml:id="s71_t12" tiger2:word="development" lemma="development" ner="O" pos="NN"/>
+<t xml:id="s71_t13" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s71_t14" tiger2:word="integration" lemma="integration" ner="O" pos="NN"/>
+<t xml:id="s71_t15" tiger2:word="efforts" lemma="effort" ner="O" pos="NNS"/>
+<t xml:id="s71_t16" tiger2:word="that" lemma="that" ner="O" pos="WDT"/>
+<t xml:id="s71_t17" tiger2:word="cover" lemma="cover" ner="O" pos="VBP"/>
+<t xml:id="s71_t18" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s71_t19" tiger2:word="entire" lemma="entire" ner="O" pos="JJ"/>
+<t xml:id="s71_t20" tiger2:word="system" lemma="system" ner="O" pos="NN"/>
+<t xml:id="s71_t21" tiger2:word="development" lemma="development" ner="O" pos="NN"/>
+<t xml:id="s71_t22" tiger2:word="lifecycle" lemma="lifecycle" ner="O" pos="NN"/>
+<t xml:id="s71_t23" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g72">
+<terminals>
+<t xml:id="s72_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s72_t2" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s72_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s72_t4" tiger2:word="supervise" lemma="supervise" ner="O" pos="VB"/>
+<t xml:id="s72_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s72_t6" tiger2:word="monitor" lemma="monitor" ner="O" pos="VB"/>
+<t xml:id="s72_t7" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s72_t8" tiger2:word="activity" lemma="activity" ner="O" pos="NN"/>
+<t xml:id="s72_t9" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s72_t10" tiger2:word="outsourced" lemma="outsourced" ner="O" pos="JJ"/>
+<t xml:id="s72_t11" tiger2:word="system" lemma="system" ner="O" pos="NN"/>
+<t xml:id="s72_t12" tiger2:word="development" lemma="development" ner="O" pos="NN"/>
+<t xml:id="s72_t13" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g73">
+<terminals>
+<t xml:id="s73_t1" tiger2:word="Testing" lemma="test" ner="O" pos="VBG"/>
+<t xml:id="s73_t2" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s73_t3" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s73_t4" tiger2:word="functionality" lemma="functionality" ner="O" pos="NN"/>
+<t xml:id="s73_t5" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s73_t6" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s73_t7" tiger2:word="carried" lemma="carry" ner="O" pos="VBN"/>
+<t xml:id="s73_t8" tiger2:word="out" lemma="out" ner="O" pos="RP"/>
+<t xml:id="s73_t9" tiger2:word="during" lemma="during" ner="O" pos="IN"/>
+<t xml:id="s73_t10" tiger2:word="development" lemma="development" ner="O" pos="NN"/>
+<t xml:id="s73_t11" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g74">
+<terminals>
+<t xml:id="s74_t1" tiger2:word="Acceptance" lemma="Acceptance" ner="O" pos="NNP"/>
+<t xml:id="s74_t2" tiger2:word="testing" lemma="testing" ner="O" pos="NN"/>
+<t xml:id="s74_t3" tiger2:word="programs" lemma="program" ner="O" pos="NNS"/>
+<t xml:id="s74_t4" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s74_t5" tiger2:word="related" lemma="related" ner="O" pos="JJ"/>
+<t xml:id="s74_t6" tiger2:word="criteria" lemma="criterion" ner="O" pos="NNS"/>
+<t xml:id="s74_t7" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s74_t8" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s74_t9" tiger2:word="established" lemma="establish" ner="O" pos="VBN"/>
+<t xml:id="s74_t10" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s74_t11" tiger2:word="new" lemma="new" ner="O" pos="JJ"/>
+<t xml:id="s74_t12" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s74_t13" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s74_t14" tiger2:word="upgrades" lemma="upgrade" ner="O" pos="NNS"/>
+<t xml:id="s74_t15" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s74_t16" tiger2:word="new" lemma="new" ner="O" pos="JJ"/>
+<t xml:id="s74_t17" tiger2:word="versions" lemma="version" ner="O" pos="NNS"/>
+<t xml:id="s74_t18" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g75">
+<terminals>
+<t xml:id="s75_t1" tiger2:word="Test" lemma="test" ner="O" pos="NN"/>
+<t xml:id="s75_t2" tiger2:word="data" lemma="datum" ner="O" pos="NNS"/>
+<t xml:id="s75_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s75_t4" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s75_t5" tiger2:word="selected" lemma="select" ner="O" pos="VBN"/>
+<t xml:id="s75_t6" tiger2:word="carefully" lemma="carefully" ner="O" pos="RB"/>
+<t xml:id="s75_t7" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s75_t8" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s75_t9" tiger2:word="controlled" lemma="control" ner="O" pos="VBN"/>
+<t xml:id="s75_t10" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g76">
+<terminals>
+<t xml:id="s76_t1" tiger2:word="Information" lemma="Information" ner="O" pos="NNP"/>
+<t xml:id="s76_t2" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s76_t3" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s76_t4" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s76_t5" tiger2:word="mitigating" lemma="mitigate" ner="O" pos="VBG"/>
+<t xml:id="s76_t6" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s76_t7" tiger2:word="risks" lemma="risk" ner="O" pos="NNS"/>
+<t xml:id="s76_t8" tiger2:word="associated" lemma="associate" ner="O" pos="VBN"/>
+<t xml:id="s76_t9" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s76_t10" tiger2:word="supplier" lemma="supplier" ner="O" pos="NN"/>
+<t xml:id="s76_t11" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
+<t xml:id="s76_t12" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s76_t13" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s76_t14" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s76_t15" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s76_t16" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
+<t xml:id="s76_t17" tiger2:word="assets" lemma="asset" ner="O" pos="NNS"/>
+<t xml:id="s76_t18" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s76_t19" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s76_t20" tiger2:word="agreed" lemma="agree" ner="O" pos="VBN"/>
+<t xml:id="s76_t21" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s76_t22" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s76_t23" tiger2:word="supplier" lemma="supplier" ner="O" pos="NN"/>
+<t xml:id="s76_t24" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s76_t25" tiger2:word="documented" lemma="document" ner="O" pos="VBN"/>
+<t xml:id="s76_t26" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g77">
+<terminals>
+<t xml:id="s77_t1" tiger2:word="All" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s77_t2" tiger2:word="relevant" lemma="relevant" ner="O" pos="JJ"/>
+<t xml:id="s77_t3" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s77_t4" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s77_t5" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s77_t6" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s77_t7" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s77_t8" tiger2:word="established" lemma="establish" ner="O" pos="VBN"/>
+<t xml:id="s77_t9" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s77_t10" tiger2:word="agreed" lemma="agree" ner="O" pos="VBN"/>
+<t xml:id="s77_t11" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s77_t12" tiger2:word="each" lemma="each" ner="O" pos="DT"/>
+<t xml:id="s77_t13" tiger2:word="supplier" lemma="supplier" ner="O" pos="NN"/>
+<t xml:id="s77_t14" tiger2:word="that" lemma="that" ner="O" pos="WDT"/>
+<t xml:id="s77_t15" tiger2:word="may" lemma="may" ner="O" pos="MD"/>
+<t xml:id="s77_t16" tiger2:word="access" lemma="access" ner="O" pos="VB"/>
+<t xml:id="s77_t17" tiger2:word="process" lemma="process" ner="O" pos="NN"/>
+<t xml:id="s77_t18" tiger2:word="store" lemma="store" ner="O" pos="NN"/>
+<t xml:id="s77_t19" tiger2:word="communicate" lemma="communicate" ner="O" pos="VBP"/>
+<t xml:id="s77_t20" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s77_t21" tiger2:word="provide" lemma="provide" ner="O" pos="VBP"/>
+<t xml:id="s77_t22" tiger2:word="IT" lemma="it" ner="O" pos="PRP"/>
+<t xml:id="s77_t23" tiger2:word="infrastructure" lemma="infrastructure" ner="O" pos="NN"/>
+<t xml:id="s77_t24" tiger2:word="components" lemma="component" ner="O" pos="NNS"/>
+<t xml:id="s77_t25" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s77_t26" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s77_t27" tiger2:word="Agreements" lemma="agreement" ner="O" pos="NNS"/>
+<t xml:id="s77_t28" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s77_t29" tiger2:word="suppliers" lemma="supplier" ner="O" pos="NNS"/>
+<t xml:id="s77_t30" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s77_t31" tiger2:word="include" lemma="include" ner="O" pos="VB"/>
+<t xml:id="s77_t32" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s77_t33" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s77_t34" tiger2:word="address" lemma="address" ner="O" pos="VB"/>
+<t xml:id="s77_t35" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s77_t36" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s77_t37" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s77_t38" tiger2:word="risks" lemma="risk" ner="O" pos="NNS"/>
+<t xml:id="s77_t39" tiger2:word="associated" lemma="associate" ner="O" pos="VBN"/>
+<t xml:id="s77_t40" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s77_t41" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s77_t42" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s77_t43" tiger2:word="communications" lemma="communication" ner="O" pos="NNS"/>
+<t xml:id="s77_t44" tiger2:word="technology" lemma="technology" ner="O" pos="NN"/>
+<t xml:id="s77_t45" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s77_t46" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s77_t47" tiger2:word="product" lemma="product" ner="O" pos="NN"/>
+<t xml:id="s77_t48" tiger2:word="supply" lemma="supply" ner="O" pos="NN"/>
+<t xml:id="s77_t49" tiger2:word="chain" lemma="chain" ner="O" pos="NN"/>
+<t xml:id="s77_t50" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g78">
+<terminals>
+<t xml:id="s78_t1" tiger2:word="Organizations" lemma="Organizations" ner="O" pos="NNP"/>
+<t xml:id="s78_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s78_t3" tiger2:word="regularly" lemma="regularly" ner="O" pos="RB"/>
+<t xml:id="s78_t4" tiger2:word="monitor" lemma="monitor" ner="O" pos="VB"/>
+<t xml:id="s78_t5" tiger2:word="review" lemma="review" ner="O" pos="NN"/>
+<t xml:id="s78_t6" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s78_t7" tiger2:word="audit" lemma="audit" ner="O" pos="NN"/>
+<t xml:id="s78_t8" tiger2:word="supplier" lemma="supplier" ner="O" pos="NN"/>
+<t xml:id="s78_t9" tiger2:word="service" lemma="service" ner="O" pos="NN"/>
+<t xml:id="s78_t10" tiger2:word="delivery" lemma="delivery" ner="O" pos="NN"/>
+<t xml:id="s78_t11" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g79">
+<terminals>
+<t xml:id="s79_t1" tiger2:word="Management" lemma="Management" ner="O" pos="NNP"/>
+<t xml:id="s79_t2" tiger2:word="responsibilities" lemma="responsibility" ner="O" pos="NNS"/>
+<t xml:id="s79_t3" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s79_t4" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s79_t5" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s79_t6" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s79_t7" tiger2:word="established" lemma="establish" ner="O" pos="VBN"/>
+<t xml:id="s79_t8" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s79_t9" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s79_t10" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s79_t11" tiger2:word="quick" lemma="quick" ner="O" pos="JJ"/>
+<t xml:id="s79_t12" tiger2:word="effective" lemma="effective" ner="O" pos="JJ"/>
+<t xml:id="s79_t13" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s79_t14" tiger2:word="orderly" lemma="orderly" ner="TITLE" pos="JJ"/>
+<t xml:id="s79_t15" tiger2:word="response" lemma="response" ner="O" pos="NN"/>
+<t xml:id="s79_t16" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s79_t17" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s79_t18" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s79_t19" tiger2:word="incidents" lemma="incident" ner="O" pos="NNS"/>
+<t xml:id="s79_t20" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g80">
+<terminals>
+<t xml:id="s80_t1" tiger2:word="Information" lemma="Information" ner="O" pos="NNP"/>
+<t xml:id="s80_t2" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s80_t3" tiger2:word="events" lemma="event" ner="O" pos="NNS"/>
+<t xml:id="s80_t4" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s80_t5" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s80_t6" tiger2:word="reported" lemma="report" ner="O" pos="VBN"/>
+<t xml:id="s80_t7" tiger2:word="through" lemma="through" ner="O" pos="IN"/>
+<t xml:id="s80_t8" tiger2:word="appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s80_t9" tiger2:word="management" lemma="management" ner="O" pos="NN"/>
+<t xml:id="s80_t10" tiger2:word="channels" lemma="channel" ner="O" pos="NNS"/>
+<t xml:id="s80_t11" tiger2:word="as" lemma="as" ner="O" pos="RB"/>
+<t xml:id="s80_t12" tiger2:word="quickly" lemma="quickly" ner="O" pos="RB"/>
+<t xml:id="s80_t13" tiger2:word="as" lemma="as" ner="O" pos="IN"/>
+<t xml:id="s80_t14" tiger2:word="possible" lemma="possible" ner="O" pos="JJ"/>
+<t xml:id="s80_t15" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g81">
+<terminals>
+<t xml:id="s81_t1" tiger2:word="Employees" lemma="employee" ner="O" pos="NNS"/>
+<t xml:id="s81_t2" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s81_t3" tiger2:word="contractors" lemma="contractor" ner="O" pos="NNS"/>
+<t xml:id="s81_t4" tiger2:word="using" lemma="use" ner="O" pos="VBG"/>
+<t xml:id="s81_t5" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s81_t6" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s81_t7" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
+<t xml:id="s81_t8" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s81_t9" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s81_t10" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s81_t11" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s81_t12" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s81_t13" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s81_t14" tiger2:word="required" lemma="require" ner="O" pos="VBN"/>
+<t xml:id="s81_t15" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s81_t16" tiger2:word="note" lemma="note" ner="O" pos="VB"/>
+<t xml:id="s81_t17" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s81_t18" tiger2:word="report" lemma="report" ner="O" pos="VB"/>
+<t xml:id="s81_t19" tiger2:word="any" lemma="any" ner="O" pos="DT"/>
+<t xml:id="s81_t20" tiger2:word="observed" lemma="observe" ner="O" pos="VBN"/>
+<t xml:id="s81_t21" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s81_t22" tiger2:word="suspected" lemma="suspect" ner="O" pos="VBN"/>
+<t xml:id="s81_t23" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s81_t24" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s81_t25" tiger2:word="weaknesses" lemma="weakness" ner="O" pos="NNS"/>
+<t xml:id="s81_t26" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s81_t27" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s81_t28" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s81_t29" tiger2:word="services" lemma="service" ner="O" pos="NNS"/>
+<t xml:id="s81_t30" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g82">
+<terminals>
+<t xml:id="s82_t1" tiger2:word="Information" lemma="Information" ner="O" pos="NNP"/>
+<t xml:id="s82_t2" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s82_t3" tiger2:word="events" lemma="event" ner="O" pos="NNS"/>
+<t xml:id="s82_t4" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s82_t5" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s82_t6" tiger2:word="assessed" lemma="assess" ner="O" pos="VBN"/>
+<t xml:id="s82_t7" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s82_t8" tiger2:word="it" lemma="it" ner="O" pos="PRP"/>
+<t xml:id="s82_t9" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s82_t10" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s82_t11" tiger2:word="decided" lemma="decide" ner="O" pos="VBN"/>
+<t xml:id="s82_t12" tiger2:word="if" lemma="if" ner="O" pos="IN"/>
+<t xml:id="s82_t13" tiger2:word="they" lemma="they" ner="O" pos="PRP"/>
+<t xml:id="s82_t14" tiger2:word="are" lemma="be" ner="O" pos="VBP"/>
+<t xml:id="s82_t15" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s82_t16" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s82_t17" tiger2:word="classified" lemma="classify" ner="O" pos="VBN"/>
+<t xml:id="s82_t18" tiger2:word="as" lemma="as" ner="O" pos="IN"/>
+<t xml:id="s82_t19" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s82_t20" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s82_t21" tiger2:word="incidents" lemma="incident" ner="O" pos="NNS"/>
+<t xml:id="s82_t22" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g83">
+<terminals>
+<t xml:id="s83_t1" tiger2:word="Information" lemma="Information" ner="O" pos="NNP"/>
+<t xml:id="s83_t2" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s83_t3" tiger2:word="incidents" lemma="incident" ner="O" pos="NNS"/>
+<t xml:id="s83_t4" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s83_t5" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s83_t6" tiger2:word="responded" lemma="respond" ner="O" pos="VBN"/>
+<t xml:id="s83_t7" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s83_t8" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s83_t9" tiger2:word="accordance" lemma="accordance" ner="O" pos="NN"/>
+<t xml:id="s83_t10" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s83_t11" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s83_t12" tiger2:word="documented" lemma="document" ner="O" pos="VBN"/>
+<t xml:id="s83_t13" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s83_t14" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g84">
+<terminals>
+<t xml:id="s84_t1" tiger2:word="Knowledge" lemma="knowledge" ner="O" pos="NN"/>
+<t xml:id="s84_t2" tiger2:word="gained" lemma="gain" ner="O" pos="VBD"/>
+<t xml:id="s84_t3" tiger2:word="from" lemma="from" ner="O" pos="IN"/>
+<t xml:id="s84_t4" tiger2:word="analysing" lemma="analyse" ner="O" pos="VBG"/>
+<t xml:id="s84_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s84_t6" tiger2:word="resolving" lemma="resolve" ner="O" pos="VBG"/>
+<t xml:id="s84_t7" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s84_t8" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s84_t9" tiger2:word="incidents" lemma="incident" ner="O" pos="NNS"/>
+<t xml:id="s84_t10" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s84_t11" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s84_t12" tiger2:word="used" lemma="use" ner="O" pos="VBN"/>
+<t xml:id="s84_t13" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s84_t14" tiger2:word="reduce" lemma="reduce" ner="O" pos="VB"/>
+<t xml:id="s84_t15" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s84_t16" tiger2:word="likelihood" lemma="likelihood" ner="O" pos="NN"/>
+<t xml:id="s84_t17" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s84_t18" tiger2:word="impact" lemma="impact" ner="O" pos="NN"/>
+<t xml:id="s84_t19" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s84_t20" tiger2:word="future" lemma="future" ner="DATE" pos="JJ"/>
+<t xml:id="s84_t21" tiger2:word="incidents" lemma="incident" ner="O" pos="NNS"/>
+<t xml:id="s84_t22" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g85">
+<terminals>
+<t xml:id="s85_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s85_t2" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s85_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s85_t4" tiger2:word="define" lemma="define" ner="O" pos="VB"/>
+<t xml:id="s85_t5" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s85_t6" tiger2:word="apply" lemma="apply" ner="O" pos="VB"/>
+<t xml:id="s85_t7" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s85_t8" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s85_t9" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s85_t10" tiger2:word="identification" lemma="identification" ner="O" pos="NN"/>
+<t xml:id="s85_t11" tiger2:word="collection" lemma="collection" ner="O" pos="NN"/>
+<t xml:id="s85_t12" tiger2:word="acquisition" lemma="acquisition" ner="O" pos="NN"/>
+<t xml:id="s85_t13" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s85_t14" tiger2:word="preservation" lemma="preservation" ner="O" pos="NN"/>
+<t xml:id="s85_t15" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s85_t16" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s85_t17" tiger2:word="which" lemma="which" ner="O" pos="WDT"/>
+<t xml:id="s85_t18" tiger2:word="can" lemma="can" ner="O" pos="MD"/>
+<t xml:id="s85_t19" tiger2:word="serve" lemma="serve" ner="O" pos="VB"/>
+<t xml:id="s85_t20" tiger2:word="as" lemma="as" ner="O" pos="IN"/>
+<t xml:id="s85_t21" tiger2:word="evidence" lemma="evidence" ner="O" pos="NN"/>
+<t xml:id="s85_t22" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g86">
+<terminals>
+<t xml:id="s86_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s86_t2" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s86_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s86_t4" tiger2:word="determine" lemma="determine" ner="O" pos="VB"/>
+<t xml:id="s86_t5" tiger2:word="its" lemma="its" ner="O" pos="PRP$"/>
+<t xml:id="s86_t6" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s86_t7" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s86_t8" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s86_t9" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s86_t10" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s86_t11" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s86_t12" tiger2:word="continuity" lemma="continuity" ner="O" pos="NN"/>
+<t xml:id="s86_t13" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s86_t14" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s86_t15" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s86_t16" tiger2:word="management" lemma="management" ner="O" pos="NN"/>
+<t xml:id="s86_t17" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s86_t18" tiger2:word="adverse" lemma="adverse" ner="O" pos="JJ"/>
+<t xml:id="s86_t19" tiger2:word="situations" lemma="situation" ner="O" pos="NNS"/>
+<t xml:id="s86_t20" tiger2:word="e.g." lemma="e.g." ner="O" pos="FW"/>
+<t xml:id="s86_t21" tiger2:word="during" lemma="during" ner="O" pos="IN"/>
+<t xml:id="s86_t22" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s86_t23" tiger2:word="crisis" lemma="crisis" ner="O" pos="NN"/>
+<t xml:id="s86_t24" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s86_t25" tiger2:word="disaster" lemma="disaster" ner="CAUSE_OF_DEATH" pos="NN"/>
+<t xml:id="s86_t26" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g87">
+<terminals>
+<t xml:id="s87_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s87_t2" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s87_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s87_t4" tiger2:word="establish" lemma="establish" ner="O" pos="VB"/>
+<t xml:id="s87_t5" tiger2:word="document" lemma="document" ner="O" pos="NN"/>
+<t xml:id="s87_t6" tiger2:word="implement" lemma="implement" ner="O" pos="VB"/>
+<t xml:id="s87_t7" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s87_t8" tiger2:word="maintain" lemma="maintain" ner="O" pos="VB"/>
+<t xml:id="s87_t9" tiger2:word="processes" lemma="process" ner="O" pos="NNS"/>
+<t xml:id="s87_t10" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s87_t11" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s87_t12" tiger2:word="controls" lemma="control" ner="O" pos="NNS"/>
+<t xml:id="s87_t13" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s87_t14" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s87_t15" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s87_t16" tiger2:word="required" lemma="require" ner="O" pos="VBN"/>
+<t xml:id="s87_t17" tiger2:word="level" lemma="level" ner="O" pos="NN"/>
+<t xml:id="s87_t18" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s87_t19" tiger2:word="continuity" lemma="continuity" ner="O" pos="NN"/>
+<t xml:id="s87_t20" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s87_t21" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s87_t22" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s87_t23" tiger2:word="during" lemma="during" ner="O" pos="IN"/>
+<t xml:id="s87_t24" tiger2:word="an" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s87_t25" tiger2:word="adverse" lemma="adverse" ner="O" pos="JJ"/>
+<t xml:id="s87_t26" tiger2:word="situation" lemma="situation" ner="O" pos="NN"/>
+<t xml:id="s87_t27" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g88">
+<terminals>
+<t xml:id="s88_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s88_t2" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s88_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s88_t4" tiger2:word="verify" lemma="verify" ner="O" pos="VB"/>
+<t xml:id="s88_t5" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s88_t6" tiger2:word="established" lemma="established" ner="O" pos="JJ"/>
+<t xml:id="s88_t7" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s88_t8" tiger2:word="implemented" lemma="implement" ner="O" pos="VBD"/>
+<t xml:id="s88_t9" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s88_t10" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s88_t11" tiger2:word="continuity" lemma="continuity" ner="O" pos="NN"/>
+<t xml:id="s88_t12" tiger2:word="controls" lemma="control" ner="O" pos="VBZ"/>
+<t xml:id="s88_t13" tiger2:word="at" lemma="at" ner="O" pos="IN"/>
+<t xml:id="s88_t14" tiger2:word="regular" lemma="regular" ner="O" pos="JJ"/>
+<t xml:id="s88_t15" tiger2:word="intervals" lemma="interval" ner="O" pos="NNS"/>
+<t xml:id="s88_t16" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s88_t17" tiger2:word="order" lemma="order" ner="O" pos="NN"/>
+<t xml:id="s88_t18" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s88_t19" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s88_t20" tiger2:word="that" lemma="that" ner="O" pos="IN"/>
+<t xml:id="s88_t21" tiger2:word="they" lemma="they" ner="O" pos="PRP"/>
+<t xml:id="s88_t22" tiger2:word="are" lemma="be" ner="O" pos="VBP"/>
+<t xml:id="s88_t23" tiger2:word="valid" lemma="valid" ner="O" pos="JJ"/>
+<t xml:id="s88_t24" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s88_t25" tiger2:word="effective" lemma="effective" ner="O" pos="JJ"/>
+<t xml:id="s88_t26" tiger2:word="during" lemma="during" ner="O" pos="IN"/>
+<t xml:id="s88_t27" tiger2:word="adverse" lemma="adverse" ner="O" pos="JJ"/>
+<t xml:id="s88_t28" tiger2:word="situations" lemma="situation" ner="O" pos="NNS"/>
+<t xml:id="s88_t29" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g89">
+<terminals>
+<t xml:id="s89_t1" tiger2:word="Information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s89_t2" tiger2:word="processing" lemma="processing" ner="O" pos="NN"/>
+<t xml:id="s89_t3" tiger2:word="facilities" lemma="facility" ner="O" pos="NNS"/>
+<t xml:id="s89_t4" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s89_t5" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s89_t6" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s89_t7" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s89_t8" tiger2:word="redundancy" lemma="redundancy" ner="O" pos="NN"/>
+<t xml:id="s89_t9" tiger2:word="sufficient" lemma="sufficient" ner="O" pos="JJ"/>
+<t xml:id="s89_t10" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s89_t11" tiger2:word="meet" lemma="meet" ner="O" pos="VB"/>
+<t xml:id="s89_t12" tiger2:word="availability" lemma="availability" ner="O" pos="NN"/>
+<t xml:id="s89_t13" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s89_t14" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g90">
+<terminals>
+<t xml:id="s90_t1" tiger2:word="Appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s90_t2" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s90_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s90_t4" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s90_t5" tiger2:word="implemented" lemma="implement" ner="O" pos="VBN"/>
+<t xml:id="s90_t6" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s90_t7" tiger2:word="ensure" lemma="ensure" ner="O" pos="VB"/>
+<t xml:id="s90_t8" tiger2:word="compliance" lemma="compliance" ner="O" pos="NN"/>
+<t xml:id="s90_t9" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s90_t10" tiger2:word="legislative" lemma="legislative" ner="O" pos="JJ"/>
+<t xml:id="s90_t11" tiger2:word="regulatory" lemma="regulatory" ner="O" pos="JJ"/>
+<t xml:id="s90_t12" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s90_t13" tiger2:word="contractual" lemma="contractual" ner="O" pos="JJ"/>
+<t xml:id="s90_t14" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s90_t15" tiger2:word="related" lemma="relate" ner="O" pos="VBN"/>
+<t xml:id="s90_t16" tiger2:word="to" lemma="to" ner="O" pos="TO"/>
+<t xml:id="s90_t17" tiger2:word="intellec" lemma="intellec" ner="O" pos="VB"/>
+<t xml:id="s90_t18" tiger2:word="Records" lemma="Records" ner="O" pos="NNP"/>
+<t xml:id="s90_t19" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s90_t20" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s90_t21" tiger2:word="protected" lemma="protect" ner="O" pos="VBN"/>
+<t xml:id="s90_t22" tiger2:word="from" lemma="from" ner="O" pos="IN"/>
+<t xml:id="s90_t23" tiger2:word="loss" lemma="loss" ner="O" pos="NN"/>
+<t xml:id="s90_t24" tiger2:word="destruction" lemma="destruction" ner="O" pos="NN"/>
+<t xml:id="s90_t25" tiger2:word="falsification" lemma="falsification" ner="O" pos="NN"/>
+<t xml:id="s90_t26" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s90_t27" tiger2:word="access" lemma="access" ner="O" pos="NN"/>
+<t xml:id="s90_t28" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s90_t29" tiger2:word="unauthorized" lemma="unauthorized" ner="O" pos="JJ"/>
+<t xml:id="s90_t30" tiger2:word="release" lemma="release" ner="O" pos="NN"/>
+<t xml:id="s90_t31" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s90_t32" tiger2:word="accordance" lemma="accordance" ner="O" pos="NN"/>
+<t xml:id="s90_t33" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s90_t34" tiger2:word="legislatory" lemma="legislatory" ner="O" pos="JJ"/>
+<t xml:id="s90_t35" tiger2:word="regulatory" lemma="regulatory" ner="O" pos="JJ"/>
+<t xml:id="s90_t36" tiger2:word="contractua" lemma="contractua" ner="O" pos="NN"/>
+<t xml:id="s90_t37" tiger2:word="Privacy" lemma="privacy" ner="O" pos="NN"/>
+<t xml:id="s90_t38" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s90_t39" tiger2:word="protection" lemma="protection" ner="O" pos="NN"/>
+<t xml:id="s90_t40" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s90_t41" tiger2:word="personally" lemma="personally" ner="O" pos="RB"/>
+<t xml:id="s90_t42" tiger2:word="identifiable" lemma="identifiable" ner="O" pos="JJ"/>
+<t xml:id="s90_t43" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s90_t44" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s90_t45" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s90_t46" tiger2:word="ensured" lemma="ensure" ner="O" pos="VBN"/>
+<t xml:id="s90_t47" tiger2:word="as" lemma="as" ner="O" pos="IN"/>
+<t xml:id="s90_t48" tiger2:word="requir" lemma="requir" ner="O" pos="NN"/>
+<t xml:id="s90_t49" tiger2:word="Cryptographic" lemma="cryptographic" ner="O" pos="JJ"/>
+<t xml:id="s90_t50" tiger2:word="controls" lemma="control" ner="O" pos="NNS"/>
+<t xml:id="s90_t51" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s90_t52" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s90_t53" tiger2:word="used" lemma="use" ner="O" pos="VBN"/>
+<t xml:id="s90_t54" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
+<t xml:id="s90_t55" tiger2:word="compliance" lemma="compliance" ner="O" pos="NN"/>
+<t xml:id="s90_t56" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s90_t57" tiger2:word="all" lemma="all" ner="O" pos="DT"/>
+<t xml:id="s90_t58" tiger2:word="relevant" lemma="relevant" ner="O" pos="JJ"/>
+<t xml:id="s90_t59" tiger2:word="agreements" lemma="agreement" ner="O" pos="NNS"/>
+<t xml:id="s90_t60" tiger2:word="legislation" lemma="legislation" ner="O" pos="NN"/>
+<t xml:id="s90_t61" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s90_t62" tiger2:word="regulations" lemma="regulation" ner="O" pos="NNS"/>
+<t xml:id="s90_t63" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g91">
+<terminals>
+<t xml:id="s91_t1" tiger2:word="Processes" lemma="process" ner="O" pos="NNS"/>
+<t xml:id="s91_t2" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s91_t3" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s91_t4" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s91_t5" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s91_t6" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s91_t7" tiger2:word="-RRB-" lemma="-rrb-" ner="O" pos="-RRB-"/>
+<t xml:id="s91_t8" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s91_t9" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s91_t10" tiger2:word="reviewed" lemma="review" ner="O" pos="VBN"/>
+<t xml:id="s91_t11" tiger2:word="independently" lemma="independently" ner="O" pos="RB"/>
+<t xml:id="s91_t12" tiger2:word="at" lemma="at" ner="O" pos="IN"/>
+<t xml:id="s91_t13" tiger2:word="planned" lemma="plan" ner="O" pos="VBN"/>
+<t xml:id="s91_t14" tiger2:word="intervals" lemma="interval" ner="O" pos="NNS"/>
+<t xml:id="s91_t15" tiger2:word="or" lemma="or" ner="O" pos="CC"/>
+<t xml:id="s91_t16" tiger2:word="when" lemma="when" ner="O" pos="WRB"/>
+<t xml:id="s91_t17" tiger2:word="significant" lemma="significant" ner="O" pos="JJ"/>
+<t xml:id="s91_t18" tiger2:word="changes" lemma="change" ner="O" pos="NNS"/>
+<t xml:id="s91_t19" tiger2:word="occur" lemma="occur" ner="O" pos="VBP"/>
+<t xml:id="s91_t20" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g92">
+<terminals>
+<t xml:id="s92_t1" tiger2:word="Managers" lemma="manager" ner="O" pos="NNS"/>
+<t xml:id="s92_t2" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s92_t3" tiger2:word="regularly" lemma="regularly" ner="O" pos="RB"/>
+<t xml:id="s92_t4" tiger2:word="review" lemma="review" ner="O" pos="VB"/>
+<t xml:id="s92_t5" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s92_t6" tiger2:word="compliance" lemma="compliance" ner="O" pos="NN"/>
+<t xml:id="s92_t7" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s92_t8" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s92_t9" tiger2:word="processing" lemma="processing" ner="O" pos="NN"/>
+<t xml:id="s92_t10" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s92_t11" tiger2:word="procedures" lemma="procedure" ner="O" pos="NNS"/>
+<t xml:id="s92_t12" tiger2:word="within" lemma="within" ner="O" pos="IN"/>
+<t xml:id="s92_t13" tiger2:word="their" lemma="they" ner="O" pos="PRP$"/>
+<t xml:id="s92_t14" tiger2:word="area" lemma="area" ner="O" pos="NN"/>
+<t xml:id="s92_t15" tiger2:word="of" lemma="of" ner="O" pos="IN"/>
+<t xml:id="s92_t16" tiger2:word="responsibility" lemma="responsibility" ner="O" pos="NN"/>
+<t xml:id="s92_t17" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s92_t18" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s92_t19" tiger2:word="appropriate" lemma="appropriate" ner="O" pos="JJ"/>
+<t xml:id="s92_t20" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s92_t21" tiger2:word="policies" lemma="policy" ner="O" pos="NNS"/>
+<t xml:id="s92_t22" tiger2:word="standards" lemma="standard" ner="O" pos="NNS"/>
+<t xml:id="s92_t23" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s92_t24" tiger2:word="any" lemma="any" ner="O" pos="DT"/>
+<t xml:id="s92_t25" tiger2:word="other" lemma="other" ner="O" pos="JJ"/>
+<t xml:id="s92_t26" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s92_t27" tiger2:word="requirements" lemma="requirement" ner="O" pos="NNS"/>
+<t xml:id="s92_t28" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g93">
+<terminals>
+<t xml:id="s93_t1" tiger2:word="Information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s93_t2" tiger2:word="systems" lemma="system" ner="O" pos="NNS"/>
+<t xml:id="s93_t3" tiger2:word="shall" lemma="shall" ner="O" pos="MD"/>
+<t xml:id="s93_t4" tiger2:word="be" lemma="be" ner="O" pos="VB"/>
+<t xml:id="s93_t5" tiger2:word="regularly" lemma="regularly" ner="O" pos="RB"/>
+<t xml:id="s93_t6" tiger2:word="reviewed" lemma="review" ner="O" pos="VBN"/>
+<t xml:id="s93_t7" tiger2:word="for" lemma="for" ner="O" pos="IN"/>
+<t xml:id="s93_t8" tiger2:word="compliance" lemma="compliance" ner="O" pos="NN"/>
+<t xml:id="s93_t9" tiger2:word="with" lemma="with" ner="O" pos="IN"/>
+<t xml:id="s93_t10" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s93_t11" tiger2:word="organization" lemma="organization" ner="O" pos="NN"/>
+<t xml:id="s93_t12" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
+<t xml:id="s93_t13" tiger2:word="information" lemma="information" ner="O" pos="NN"/>
+<t xml:id="s93_t14" tiger2:word="security" lemma="security" ner="O" pos="NN"/>
+<t xml:id="s93_t15" tiger2:word="policies" lemma="policy" ner="O" pos="NNS"/>
+<t xml:id="s93_t16" tiger2:word="and" lemma="and" ner="O" pos="CC"/>
+<t xml:id="s93_t17" tiger2:word="standards" lemma="standard" ner="O" pos="NNS"/>
+<t xml:id="s93_t18" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+</s>
+</body>
+</corpus>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<corpus 
+ xmlns="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:tiger2="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://korpling.german.hu-berlin.de/tiger2/V2.0.5/ http://korpling.german.hu-berlin.de/tiger2/V2.0.5/Tiger2.xsd">
+<head>
+<annotation>
+<feature name="pos" domain="t">
+<value name="NN">Noun, singular or mass</value>
+<value name="DT">Determiner</value>
+<value name="NNP">Proper noun, singular</value>
+<value name="VBD">Verb, past tense</value>
+<value name="VBG">Verb, gerund or present participle</value>
+<value name="."/>
+<value name="VBZ">Verb, 3rd person singular present</value>
+</feature>
+<feature name="ner" domain="t">
+<value name="O">O</value>
+<value name="PERSON">PERSON</value>
+</feature>
+<feature name="lemma" domain="t">
+</feature>
+</annotation>
+</head>
+<body>
+<s xml:id="s1">
+<graph xml:id="s1_g0">
+<terminals>
+<t xml:id="s0_t1" tiger2:word="Rowling" lemma="rowl" ner="PERSON" pos="VBG"/>
+<t xml:id="s0_t2" tiger2:word="wrote" lemma="write" ner="O" pos="VBD"/>
+<t xml:id="s0_t3" tiger2:word="Harry" lemma="Harry" ner="PERSON" pos="NNP"/>
+<t xml:id="s0_t4" tiger2:word="Potter" lemma="Potter" ner="PERSON" pos="NNP"/>
+<t xml:id="s0_t5" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g1">
+<terminals>
+<t xml:id="s1_t1" tiger2:word="Nicholas" lemma="Nicholas" ner="PERSON" pos="NNP"/>
+<t xml:id="s1_t2" tiger2:word="wrote" lemma="write" ner="O" pos="VBD"/>
+<t xml:id="s1_t3" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
+<t xml:id="s1_t4" tiger2:word="Notebook" lemma="notebook" ner="O" pos="NN"/>
+<t xml:id="s1_t5" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g2">
+<terminals>
+<t xml:id="s2_t1" tiger2:word="John" lemma="John" ner="PERSON" pos="NNP"/>
+<t xml:id="s2_t2" tiger2:word="shot" lemma="shoot" ner="O" pos="VBD"/>
+<t xml:id="s2_t3" tiger2:word="Matthew" lemma="Matthew" ner="PERSON" pos="NNP"/>
+<t xml:id="s2_t4" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g3">
+<terminals>
+<t xml:id="s3_t1" tiger2:word="Rowling" lemma="rowl" ner="PERSON" pos="VBG"/>
+<t xml:id="s3_t2" tiger2:word="wrote" lemma="write" ner="O" pos="VBD"/>
+<t xml:id="s3_t3" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
+<t xml:id="s3_t4" tiger2:word="masterpiece" lemma="masterpiece" ner="O" pos="NN"/>
+<t xml:id="s3_t5" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g4">
+<terminals>
+<t xml:id="s4_t1" tiger2:word="Harry" lemma="Harry" ner="PERSON" pos="NNP"/>
+<t xml:id="s4_t2" tiger2:word="shows" lemma="show" ner="O" pos="VBZ"/>
+<t xml:id="s4_t3" tiger2:word="something" lemma="something" ner="O" pos="NN"/>
+<t xml:id="s4_t4" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+<graph xml:id="s1_g5">
+<terminals>
+<t xml:id="s5_t1" tiger2:word="Harry" lemma="Harry" ner="O" pos="NNP"/>
+<t xml:id="s5_t2" tiger2:word="road" lemma="road" ner="O" pos="NN"/>
+<t xml:id="s5_t3" tiger2:word="show" lemma="show" ner="O" pos="NN"/>
+<t xml:id="s5_t4" tiger2:word="something" lemma="something" ner="O" pos="NN"/>
+<t xml:id="s5_t5" tiger2:word="." lemma="." ner="O" pos="."/>
+</terminals>
+</graph>
+</s>
+</body>
+</corpus>
