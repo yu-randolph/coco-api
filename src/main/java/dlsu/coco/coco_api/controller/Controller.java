@@ -2,19 +2,14 @@ package dlsu.coco.coco_api.controller;
 
 import de.hu_berlin.german.korpling.tiger2.main.Tiger2Converter;
 import de.hu_berlin.german.korpling.tiger2.samples.CorpusEditer;
-import dlsu.coco.coco_api.model.AnnotationsManager;
-import dlsu.coco.coco_api.model.ConceptFinder;
-import dlsu.coco.coco_api.model.Concordancer;
-import dlsu.coco.coco_api.model.FileManager;
+import dlsu.coco.coco_api.model.*;
 import org.apache.commons.io.FilenameUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 @RestController
@@ -24,6 +19,7 @@ public class Controller {
     private FileManager fileManager;
     private Tiger2Converter tiger2Converter;
     private CorpusEditer corpusEditer;
+    private SuggestionFinder suggestionFinder;
     private AnnotationsManager annotationsManager;
     private ConceptFinder cf;
     private Concordancer concordancer;
@@ -486,6 +482,23 @@ public class Controller {
             }
         }
         return sID;
+    }
+
+    @RequestMapping(value = "/getSuggestions", method = RequestMethod.POST)
+    public @ResponseBody
+    String getSuggestions(@RequestParam("jsonContent") String sJsonContent) throws JSONException {
+        if (!sJsonContent.isEmpty()) {
+            try
+            {
+                byte[] bytes = sJsonContent.getBytes();
+                String result = new String(bytes);
+                return suggestionFinder.getSuggestions(result).toString();
+            } catch (Exception e) {
+                System.out.println("You failed to upload " + sJsonContent + " => " + e.getMessage());
+                return "You failed to upload " + sJsonContent + " => " + e.getMessage();
+            }
+        }
+        return sJsonContent;
     }
 
 //    @GetMapping("/getXML")

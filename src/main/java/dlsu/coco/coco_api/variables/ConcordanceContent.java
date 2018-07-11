@@ -110,6 +110,7 @@ public class ConcordanceContent {
         return jsonObject;
     }
 
+    @SuppressWarnings("Duplicates")
     public void readJSON(JSONObject concordance) throws JSONException {
         this.keyword = concordance.getString("keyword");
         this.keyword_Index = concordance.getInt("keyword_index");
@@ -137,6 +138,57 @@ public class ConcordanceContent {
             }
 
             words.add(new WordContent(jsonWordContent.getString("word"), tagList, jsonWordContent.getString("wordId"), lemma));
+        }
+    }
+
+    @SuppressWarnings("Duplicates")
+    public void readPatternJSON(JSONObject jsonItem) throws  JSONException
+    {
+        JSONObject jsonPattern = jsonItem.getJSONObject("pattern");
+        JSONArray jsonWords = jsonPattern.getJSONArray("WordContent");
+
+        this.keyword_Index = jsonPattern.getInt("keyword_index");
+        this.keyword = jsonWords.getJSONObject(keyword_Index).getString("word");
+
+        this.sentenceId = jsonItem.getString("id");
+        this.patternFrequency = jsonItem.getInt("frequency");
+
+        this.words = new ArrayList<>();
+
+        for(int wordCtr = 0; wordCtr < jsonWords.length(); wordCtr++)
+        {
+            JSONObject jsonWordContent = jsonWords.getJSONObject(wordCtr);
+            JSONArray  jsonTagContents = jsonWordContent.getJSONArray("tags");
+            ArrayList<TagContent> tagList = new ArrayList();
+
+            String sLemma = null;
+            for(int tagCtr = 0; tagCtr < jsonTagContents.length(); tagCtr++)
+            {
+                JSONObject jsonTagContent = jsonTagContents.getJSONObject(tagCtr);
+
+                if(jsonTagContent.getString("name").equals("lemma"))
+                {
+                    sLemma = jsonTagContent.getString("value");
+                }
+                tagList.add(new TagContent(jsonTagContent.getString("name"), jsonTagContent.getString("value")));
+            }
+
+            words.add(new WordContent(jsonWordContent.getString("word"), tagList, jsonWordContent.getString("wordId"), sLemma));
+        }
+
+        this.completeSentence = this.getCompleteSentence();
+
+        this.patternOrigin = new ArrayList<>();
+        JSONArray jsonOriginSentences = jsonItem.getJSONArray("originSentences");
+        for(int originCtr = 0; originCtr < jsonOriginSentences.length(); originCtr++)
+        {
+            JSONObject jsonOriginSentence = jsonOriginSentences.getJSONObject(originCtr);
+            JSONArray jsonWordContent = jsonOriginSentence.getJSONArray("WordContent");
+            JSONObject jsonWordID = jsonWordContent.getJSONObject(0).getJSONObject("wordId");
+            String sId = jsonWordID.toString();
+
+            sId = sId.split("_")[0];
+            patternOrigin.add(sId);
         }
     }
 
