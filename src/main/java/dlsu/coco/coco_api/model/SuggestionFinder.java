@@ -25,75 +25,93 @@ public class SuggestionFinder {
     private ArrayList<ConcordanceContent> patternList = new ArrayList<>();
 
     @SuppressWarnings("Duplicates")
-    public void JSONparser(String sJsonContent) throws JSONException
+    public void JSONparser(String sJsonContent)
     {
-        //CORPUS
-        JSONObject jsonObject = new JSONObject(concepts);
-        JSONObject jsonConceptlist = new JSONObject(jsonObject.get("conceptlist").toString());
-        JSONObject jsonWordnet = new JSONObject(jsonConceptlist.get("WORDNET").toString());
-        JSONObject jsonTags = new JSONObject(jsonObject.get("tags").toString());
-        JSONObject jsonAnnotations = new JSONObject(jsonObject.get("annotations").toString());
-
-        Iterator<?> wordnetKeys = jsonWordnet.keys();
-        ArrayList<String> conceptList = new ArrayList<>();
-
-        CorpusCreater cc = new CorpusCreater(jsonTags, jsonAnnotations);
-        cc.annotationsToArrayList();
-        cc.sentencesToArrayList();
-        this.corpus = cc.getCorpus();
-
-        if(jsonWordnet.toString().contains("NOUN"))
+        try
         {
-            pos = "NN";
-        }
-        else
-        {
-            pos = "VB";
-        }
+            JSONObject jsonObject = new JSONObject(sJsonContent);
+            JSONObject arr = new JSONObject(jsonObject.get("conceptlist").toString());
+            JSONObject wn = new JSONObject(arr.get("WORDNET").toString());
+            JSONObject tags = new JSONObject(jsonObject.get("tags").toString());
+            JSONObject anno = new JSONObject(jsonObject.get("annotations").toString());
 
+            Iterator<?> keys = wn.keys();
+            ArrayList<String> conceptList = new ArrayList<>();
 
-        while (wordnetKeys.hasNext())
-        {
-            String sKey = (String) wordnetKeys.next();
-            JSONArray jsonContents = new JSONArray(jsonWordnet.get(sKey).toString());
+            CorpusCreater cc = new CorpusCreater(tags,anno);
+            cc.annotationsToArrayList();
+            cc.sentencesToArrayList();
+            this.corpus = cc.getCorpus();
 
-            for (int ctr = 0; ctr < jsonContents.length(); ctr++)
-            {
-                conceptList.add(jsonContents.get(ctr).toString());
+//        System.out.println("HELLO1 " + jsonObject.get("WORDNET").toString());
+//        System.out.println("HELLO2 " + jsonObject.get("FORM_OF").toString());
+//        System.out.println("HELLO3 " + concepts);
+
+//        JSONObject jsonObject2 = new JSONObject(concepts);
+//        concepts = concepts.substring(jsonObject2.get("Feature_Array").toString().length() + 2 + "Feature_Array".length() + 4);
+//        JSONArray arr2 =  new JSONArray(jsonObject2.get("Feature_Array").toString());
+//        System.out.println("HELLO4 " + concepts);
+//        System.out.println("ARR2" + arr2);
+//
+//        JSONObject jsonObject3 = new JSONObject(concepts);
+//        JSONArray arr3 =  new JSONArray(jsonObject3.get("Graph_Array").toString());
+//
+//        System.out.println("ARR3" + arr3);
+
+            if(wn.toString().contains("NOUN")){
+                pos = "NN";
             }
-        }
-
-        //CONCEPT LIST
-        JSONArray conceptNet = new JSONArray(jsonConceptlist.get("FORM_OF").toString());
-
-        for (int conceptCtr = 0; conceptCtr < conceptNet.length(); conceptCtr++)
-        {
-            conceptList.add(conceptNet.get(conceptCtr).toString());
-        }
-        this.concepts = conceptList;
+            else
+                pos = "VB";
 
 
-        //PATTERN LIST
-        JSONArray jsonPatterns = new JSONArray(jsonObject.get("patterns").toString());
-        for (int patternCtr = 0; patternCtr < jsonPatterns.length(); patternCtr++)
-        {
-            ConcordanceContent pattern = new ConcordanceContent();
-            JSONObject jsonPattern = jsonPatterns.getJSONObject(patternCtr);
-            pattern.readPatternJSON(jsonPattern);
+            while (keys.hasNext()) {
+                String key = (String) keys.next();
+                JSONArray contents = new JSONArray(wn.get(key).toString());
+                for (int j = 0; j < contents.length(); j++) {
+                    conceptList.add(contents.get(j).toString());
+                }
+            }
 
-            patternList.add(pattern);
+            JSONArray conceptNet = new JSONArray(arr.get("FORM_OF").toString());
+
+            for (int x = 0; x < conceptNet.length(); x++) {
+                conceptList.add(conceptNet.get(x).toString());
+            }
+            this.concepts = conceptList;
+
+            //PATTERN LIST
+            JSONObject jsonObjectPatterns = new JSONObject(jsonObject.get("patterns").toString());
+            JSONArray jsonArrayPatterns = jsonObjectPatterns.getJSONArray("patterns");
+            for (int patternCtr = 0; patternCtr < jsonArrayPatterns.length(); patternCtr++)
+            {
+                ConcordanceContent pattern = new ConcordanceContent();
+                JSONObject jsonPattern = jsonArrayPatterns.getJSONObject(patternCtr);
+                pattern.readPatternJSON(jsonPattern);
+
+                patternList.add(pattern);
+                System.out.println("PATTERN CONTENT");
+                pattern.printWordContents();
+                System.out.println();
+            }
+
+            System.out.println("PATTERN LIST SIZE : " + patternList.size());
+        } catch(JSONException e) {
+            e.printStackTrace();
         }
     }
 
     public JSONObject getSuggestions(String sJsonContent) throws JSONException
     {
-        System.out.println("GET SUGGESTION!");
         this.JSONparser(sJsonContent);
 
         ArrayList<String> finalSuggestions = new ArrayList<>();
         for(ConcordanceContent pattern : patternList)
         {
-            finalSuggestions.addAll(this.boyerMoore(pattern));
+            System.out.println();
+            System.out.println("PATTERN COMPARISON ! ");
+            finalSuggestions.addAll(this.naive(pattern));
+            System.out.println();
         }
 
         System.out.println("SUGGESTION FINAL");
@@ -122,7 +140,7 @@ public class SuggestionFinder {
         return jsonObject;
     }
 
-    public ArrayList<String> boyerMoore(ConcordanceContent pattern)
+    public ArrayList<String> naive(ConcordanceContent pattern)
     {
         //COMPARE PATTERN WITH EACH SENTENCE IN THE CORPUS
         ArrayList<String> suggestions = new ArrayList<>();
@@ -131,6 +149,8 @@ public class SuggestionFinder {
         Segment corpusContent = corpus.getSegments().get(0);
         for(Graph sentence : corpusContent.getGraphs())
         {
+            System.out.println();
+            System.out.println("SENTENCE !");
             //BOYER MOORE ALGORITHM APPLICATION
             //BAD CHARACTER RULE
             EList<Terminal> sentenceWords = sentence.getTerminals();
@@ -140,52 +160,41 @@ public class SuggestionFinder {
             ArrayList<WordContent> patternWords = pattern.getWords();
             ArrayList<Integer> results = new ArrayList<>();
 
-            Integer textCtr = patternWords.size() - 1;
-            Integer patternCtr = patternWords.size() - 1;
-
-            do
+            if(patternWords.size() < sentenceWords.size())
             {
-                if(this.compareWords(patternWords.get(patternCtr), sentenceWords.get(textCtr)))
+                int M = patternWords.size();
+                int N = sentenceWords.size();
+
+                for (int i = 0; i <= N - M; i++)
                 {
-                    if(patternCtr == 0)
-                        results.add(textCtr);
-                    else
+                    int j;
+
+                    for (j = 0; j < M; j++)
                     {
-                        textCtr -= 1;
-                        patternCtr -= 1;
+                        if (!compareWords(patternWords.get(j), sentenceWords.get(i + j)))
+                            break;
+                    }
+
+                    if (j == M)
+                    {
+                        results.add(i);
                     }
                 }
-                else
-                {
-                    textCtr = textCtr + patternWords.size() - Math.min(patternCtr, 1 + boyerMooreLast(sentenceWords.get(textCtr), patternWords));
-                    patternCtr = patternWords.size() - 1;
-                }
-            }
-            while(textCtr > sentence.getTerminals().size());
 
-            //GET THE SUGGESTED WORD
-            for(int resultCtr = 0; resultCtr < results.size(); resultCtr++)
-            {
-                suggestions.add(sentenceWords.get(results.get(resultCtr) + pattern.getKeyword_Index()).getWord().toLowerCase());
+                //GET THE SUGGESTED WORD
+                for(int resultCtr = 0; resultCtr < results.size(); resultCtr++)
+                {
+                    suggestions.add(sentenceWords.get(results.get(resultCtr) + pattern.getKeyword_Index()).getWord().toLowerCase());
+                }
             }
         }
 
         return suggestions;
     }
 
-    private Integer boyerMooreLast(Terminal sentenceWord, ArrayList<WordContent> patternWords)
-    {
-        for(int ctr = patternWords.size() - 1; ctr >= 0; ctr--)
-        {
-            if(compareWords(patternWords.get(ctr), sentenceWord))
-                return ctr;
-        }
-
-        return -1;
-    }
-
     private Boolean compareWords(WordContent patternWord, Terminal corpusWord)
     {
+        System.out.println("COMPARED : " + patternWord.getWord() + " && " + corpusWord.getWord());
         EList<Annotation> corpusTags = corpusWord.getAnnotations();
         ArrayList<TagContent> patternTags = patternWord.getTags();
 
@@ -193,11 +202,18 @@ public class SuggestionFinder {
         {
             for(TagContent patternTag : patternTags)
             {
-                if(corpusTag.getName().equals(patternTag.getTagName()) && corpusTag.getValue().equals(patternTag.getTagValue()) && !corpusTag.getValue().equals("O") && !patternTag.getTagValue().equals("O"))
-                        return true;
+                if(corpusTag.getName().equals(patternTag.getTagName()) && !corpusTag.getName().equals("lemma") && !patternTag.getTagName().equals("lemma") && !corpusTag.getName().equals("tiger2:word") && !corpusTag.getName().equals("xml:id"))
+                {
+                    if(!corpusTag.getValue().equals(patternTag.getTagValue()))
+                    {
+                        System.out.println("FALSE!");
+                        return false;
+                    }
+                }
             }
         }
 
-        return false;
+        System.out.println("TRUE!");
+        return true;
     }
 }

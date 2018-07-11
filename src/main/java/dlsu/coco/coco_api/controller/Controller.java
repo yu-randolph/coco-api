@@ -19,7 +19,6 @@ public class Controller {
     private FileManager fileManager;
     private Tiger2Converter tiger2Converter;
     private CorpusEditer corpusEditer;
-    private SuggestionFinder suggestionFinder;
     private AnnotationsManager annotationsManager;
     private ConceptFinder cf;
     private Concordancer concordancer;
@@ -486,12 +485,13 @@ public class Controller {
 
     @RequestMapping(value = "/getSuggestions", method = RequestMethod.POST)
     public @ResponseBody
-    String getSuggestions(@RequestParam("jsonContent") String sJsonContent) throws JSONException {
+    String getSuggestions(@RequestParam("jsonContent") String sJsonContent) {
         if (!sJsonContent.isEmpty()) {
             try
             {
                 byte[] bytes = sJsonContent.getBytes();
                 String result = new String(bytes);
+                SuggestionFinder suggestionFinder = new SuggestionFinder();
                 return suggestionFinder.getSuggestions(result).toString();
             } catch (Exception e) {
                 System.out.println("You failed to upload " + sJsonContent + " => " + e.getMessage());

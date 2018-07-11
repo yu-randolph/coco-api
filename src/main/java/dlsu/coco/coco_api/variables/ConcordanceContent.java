@@ -142,53 +142,58 @@ public class ConcordanceContent {
     }
 
     @SuppressWarnings("Duplicates")
-    public void readPatternJSON(JSONObject jsonItem) throws  JSONException
+    public void readPatternJSON(JSONObject jsonItem)
     {
-        JSONObject jsonPattern = jsonItem.getJSONObject("pattern");
-        JSONArray jsonWords = jsonPattern.getJSONArray("WordContent");
-
-        this.keyword_Index = jsonPattern.getInt("keyword_index");
-        this.keyword = jsonWords.getJSONObject(keyword_Index).getString("word");
-
-        this.sentenceId = jsonItem.getString("id");
-        this.patternFrequency = jsonItem.getInt("frequency");
-
-        this.words = new ArrayList<>();
-
-        for(int wordCtr = 0; wordCtr < jsonWords.length(); wordCtr++)
+        try
         {
-            JSONObject jsonWordContent = jsonWords.getJSONObject(wordCtr);
-            JSONArray  jsonTagContents = jsonWordContent.getJSONArray("tags");
-            ArrayList<TagContent> tagList = new ArrayList();
+            JSONObject jsonPattern = jsonItem.getJSONObject("pattern");
+            JSONArray jsonWords = jsonPattern.getJSONArray("WordContent");
 
-            String sLemma = null;
-            for(int tagCtr = 0; tagCtr < jsonTagContents.length(); tagCtr++)
+            this.keyword_Index = jsonPattern.getInt("keyword_index");
+            this.keyword = jsonWords.getJSONObject(keyword_Index).getString("word");
+
+            this.sentenceId = jsonItem.getString("id");
+            this.patternFrequency = jsonItem.getInt("frequency");
+
+            this.words = new ArrayList<>();
+
+            for(int wordCtr = 0; wordCtr < jsonWords.length(); wordCtr++)
             {
-                JSONObject jsonTagContent = jsonTagContents.getJSONObject(tagCtr);
+                JSONObject jsonWordContent = jsonWords.getJSONObject(wordCtr);
+                JSONArray  jsonTagContents = jsonWordContent.getJSONArray("tags");
+                ArrayList<TagContent> tagList = new ArrayList();
 
-                if(jsonTagContent.getString("name").equals("lemma"))
+                String sLemma = null;
+                for(int tagCtr = 0; tagCtr < jsonTagContents.length(); tagCtr++)
                 {
-                    sLemma = jsonTagContent.getString("value");
+                    JSONObject jsonTagContent = jsonTagContents.getJSONObject(tagCtr);
+
+                    if(jsonTagContent.getString("name").equals("lemma"))
+                    {
+                        sLemma = jsonTagContent.getString("value");
+                    }
+                    tagList.add(new TagContent(jsonTagContent.getString("name"), jsonTagContent.getString("value")));
                 }
-                tagList.add(new TagContent(jsonTagContent.getString("name"), jsonTagContent.getString("value")));
+
+                words.add(new WordContent(jsonWordContent.getString("word"), tagList, jsonWordContent.getString("wordId"), sLemma));
             }
 
-            words.add(new WordContent(jsonWordContent.getString("word"), tagList, jsonWordContent.getString("wordId"), sLemma));
+            this.completeSentence = "";
+
+            this.patternOrigin = new ArrayList<>();
+            JSONArray jsonOriginSentences = jsonItem.getJSONArray("originSentences");
+            for(int originCtr = 0; originCtr < jsonOriginSentences.length(); originCtr++)
+            {
+                JSONObject jsonOriginSentence = jsonOriginSentences.getJSONObject(originCtr);
+                JSONArray jsonWordContent = jsonOriginSentence.getJSONArray("WordContent");
+                String sWordID = jsonWordContent.getJSONObject(0).getString("wordId");
+
+                sWordID = sWordID.split("_")[0];
+                patternOrigin.add(sWordID);
+            }
         }
-
-        this.completeSentence = this.getCompleteSentence();
-
-        this.patternOrigin = new ArrayList<>();
-        JSONArray jsonOriginSentences = jsonItem.getJSONArray("originSentences");
-        for(int originCtr = 0; originCtr < jsonOriginSentences.length(); originCtr++)
-        {
-            JSONObject jsonOriginSentence = jsonOriginSentences.getJSONObject(originCtr);
-            JSONArray jsonWordContent = jsonOriginSentence.getJSONArray("WordContent");
-            JSONObject jsonWordID = jsonWordContent.getJSONObject(0).getJSONObject("wordId");
-            String sId = jsonWordID.toString();
-
-            sId = sId.split("_")[0];
-            patternOrigin.add(sId);
+        catch(JSONException e) {
+            e.printStackTrace();
         }
     }
 
