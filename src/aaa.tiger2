@@ -5,16 +5,15 @@
 <annotation>
 <feature name="pos" domain="t">
 <value name="NN">Noun, singular or mass</value>
+<value name="."/>
 <value name="DT">Determiner</value>
 <value name="NNP">Proper noun, singular</value>
 <value name="VBD">Verb, past tense</value>
 <value name="VBG">Verb, gerund or present participle</value>
-<value name="."/>
-<value name="VBZ">Verb, 3rd person singular present</value>
 </feature>
 <feature name="ner" domain="t">
-<value name="O">O</value>
 <value name="PERSON">PERSON</value>
+<value name="O">O</value>
 </feature>
 <feature name="lemma" domain="t">
 </feature>
@@ -42,36 +41,23 @@
 </graph>
 <graph xml:id="s1_g2">
 <terminals>
-<t xml:id="s2_t1" tiger2:word="John" lemma="John" ner="PERSON" pos="NNP"/>
-<t xml:id="s2_t2" tiger2:word="shot" lemma="shoot" ner="O" pos="VBD"/>
-<t xml:id="s2_t3" tiger2:word="Matthew" lemma="Matthew" ner="PERSON" pos="NNP"/>
-<t xml:id="s2_t4" tiger2:word="." lemma="." ner="O" pos="."/>
+<t xml:id="s2_t1" tiger2:word="Harry" lemma="Harry" ner="PERSON" pos="NNP"/>
+<t xml:id="s2_t2" tiger2:word="walked" lemma="walk" ner="O" pos="VBD"/>
+<t xml:id="s2_t3" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
 <graph xml:id="s1_g3">
 <terminals>
-<t xml:id="s3_t1" tiger2:word="Rowling" lemma="rowl" ner="PERSON" pos="VBG"/>
-<t xml:id="s3_t2" tiger2:word="wrote" lemma="write" ner="O" pos="VBD"/>
-<t xml:id="s3_t3" tiger2:word="a" lemma="a" ner="O" pos="DT"/>
-<t xml:id="s3_t4" tiger2:word="masterpiece" lemma="masterpiece" ner="O" pos="NN"/>
-<t xml:id="s3_t5" tiger2:word="." lemma="." ner="O" pos="."/>
+<t xml:id="s3_t1" tiger2:word="John" lemma="John" ner="PERSON" pos="NNP"/>
+<t xml:id="s3_t2" tiger2:word="cried" lemma="cry" ner="O" pos="VBD"/>
+<t xml:id="s3_t3" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
 <graph xml:id="s1_g4">
 <terminals>
-<t xml:id="s4_t1" tiger2:word="Harry" lemma="Harry" ner="PERSON" pos="NNP"/>
-<t xml:id="s4_t2" tiger2:word="shows" lemma="show" ner="O" pos="VBZ"/>
-<t xml:id="s4_t3" tiger2:word="something" lemma="something" ner="O" pos="NN"/>
-<t xml:id="s4_t4" tiger2:word="." lemma="." ner="O" pos="."/>
-</terminals>
-</graph>
-<graph xml:id="s1_g5">
-<terminals>
-<t xml:id="s5_t1" tiger2:word="Harry" lemma="Harry" ner="O" pos="NNP"/>
-<t xml:id="s5_t2" tiger2:word="road" lemma="road" ner="O" pos="NN"/>
-<t xml:id="s5_t3" tiger2:word="show" lemma="show" ner="O" pos="NN"/>
-<t xml:id="s5_t4" tiger2:word="something" lemma="something" ner="O" pos="NN"/>
-<t xml:id="s5_t5" tiger2:word="." lemma="." ner="O" pos="."/>
+<t xml:id="s4_t1" tiger2:word="Peter" lemma="Peter" ner="PERSON" pos="NNP"/>
+<t xml:id="s4_t2" tiger2:word="said" lemma="say" ner="O" pos="VBD"/>
+<t xml:id="s4_t3" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>
 </graph>
 </s>
