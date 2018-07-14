@@ -2,10 +2,7 @@ package dlsu.coco.coco_api.model;
 
 import de.hu_berlin.german.korpling.tiger2.*;
 import de.hu_berlin.german.korpling.tiger2.samples.CorpusWriter;
-import dlsu.coco.coco_api.variables.ConcordanceContent;
-import dlsu.coco.coco_api.variables.CorpusCreater;
-import dlsu.coco.coco_api.variables.TagContent;
-import dlsu.coco.coco_api.variables.WordContent;
+import dlsu.coco.coco_api.variables.*;
 import org.eclipse.emf.common.util.EList;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +20,7 @@ public class Concordancer {
     private ArrayList<String> concepts = new ArrayList<String>();
     private ArrayList<String> tags;
     private String pos;
-
+    private ArrayList<RemovedConcept> removedWordsList;
     public Concordancer(Corpus corpus)
     {
 
@@ -60,6 +57,7 @@ public class Concordancer {
 //        return jsonObject;
 //    }
 
+
     public void JSONtoArrayConceptLIst(String concepts) throws JSONException {
 
 
@@ -68,29 +66,33 @@ public class Concordancer {
         JSONObject wn = new JSONObject(arr.get("WORDNET").toString());
         JSONObject tags = new JSONObject(jsonObject.get("tags").toString());
         JSONObject anno = new JSONObject(jsonObject.get("annotations").toString());
+        JSONArray addedwords,removedWords;
+        ArrayList<String> addedWordsList = null;
+        removedWordsList = new ArrayList<>();
+        Iterator<?> keys;
 
-        Iterator<?> keys = wn.keys();
-        ArrayList<String> conceptList = new ArrayList<>();
+        if(jsonObject.has("addedwords")) {
+            addedwords = new JSONArray(jsonObject.get("addedwords").toString());
+            addedWordsList = addToList(addedwords);
+        }
 
+        if(jsonObject.has("removedwords")) {
+            removedWords = new JSONArray(jsonObject.get("removedwords").toString());
+            removedWordsList = addToRemovedWords(removedWords);
+        }
+        else
+            removedWordsList = new ArrayList<>();
+     
+        keys = wn.keys();
+
+        ArrayList<String> conceptList = addToConceptList(keys,wn,addedWordsList);
+
+        //create corpus Object
         CorpusCreater cc = new CorpusCreater(tags,anno);
         cc.annotationsToArrayList();
         cc.sentencesToArrayList();
         this.corpus = cc.getCorpus();
 
-//        System.out.println("HELLO1 " + jsonObject.get("WORDNET").toString());
-//        System.out.println("HELLO2 " + jsonObject.get("FORM_OF").toString());
-//        System.out.println("HELLO3 " + concepts);
-
-//        JSONObject jsonObject2 = new JSONObject(concepts);
-//        concepts = concepts.substring(jsonObject2.get("Feature_Array").toString().length() + 2 + "Feature_Array".length() + 4);
-//        JSONArray arr2 =  new JSONArray(jsonObject2.get("Feature_Array").toString());
-//        System.out.println("HELLO4 " + concepts);
-//        System.out.println("ARR2" + arr2);
-//
-//        JSONObject jsonObject3 = new JSONObject(concepts);
-//        JSONArray arr3 =  new JSONArray(jsonObject3.get("Graph_Array").toString());
-//
-//        System.out.println("ARR3" + arr3);
 
         if(wn.toString().contains("NOUN")){
             pos = "NN";
@@ -98,22 +100,82 @@ public class Concordancer {
         else
             pos = "VB";
 
-
-        while (keys.hasNext()) {
-            String key = (String) keys.next();
-            JSONArray contents = new JSONArray(wn.get(key).toString());
-            for (int j = 0; j < contents.length(); j++) {
-                conceptList.add(contents.get(j).toString());
-            }
-        }
-
         JSONArray conceptNet = new JSONArray(arr.get("FORM_OF").toString());
 
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());
         }
+
         this.concepts = conceptList;
     }
+
+    public ArrayList<String> addToConceptList( Iterator<?> keys , JSONObject words, ArrayList<String> addedWords){
+
+       ArrayList<String> list = new ArrayList<>();
+        while (keys.hasNext()) {
+            String key = (String) keys.next();
+            JSONArray contents = new JSONArray(words.get(key).toString());
+            for (int j = 0; j < contents.length(); j++) {
+                    list.add(contents.get(j).toString());
+            }
+        }
+        if(addedWords != null)
+        list.addAll(addedWords);
+
+        return list;
+    }
+
+    public ArrayList<String> addToList(JSONArray words){
+
+        ArrayList<String> list = new ArrayList<>();
+
+            for (int j = 0; j < words.length(); j++) {
+                    list.add(words.get(j).toString());
+            }
+
+        return list;
+    }
+
+    public ArrayList<RemovedConcept> addToRemovedWords(JSONArray words){
+
+        ArrayList<RemovedConcept> list = new ArrayList<>();
+
+        for (int j = 0; j < words.length(); j++) {
+           JSONObject curObJ = words.getJSONObject(j);
+            list.add(new RemovedConcept(curObJ.getString("concept").toString(),curObJ.getString("sentence_id").toString()));
+        }
+
+        return list;
+    }
+
+    public JSONObject removeConcordance(String concordance) throws JSONException{
+        JSONArray jsonConcordance, jsonArray = new JSONArray();
+        JSONObject jsonObj = new JSONObject();
+        JSONObject jsonSuper =  new JSONObject(concordance);
+        String sentenceID = jsonSuper.getString("sentenceID");
+        jsonConcordance = jsonSuper.getJSONArray("CONCORDANCE");
+
+        ArrayList<ConcordanceContent> listSentence = new ArrayList<>();
+
+        for(int conCtr = 0; conCtr < jsonConcordance.length(); conCtr++)
+        {
+            JSONObject jsonObject = jsonConcordance.getJSONObject(conCtr);
+            listSentence.add(new ConcordanceContent());
+            listSentence.get(listSentence.size()-1).readJSON(jsonObject);
+        }
+
+
+        for(ConcordanceContent concordanceContent : listSentence)
+        {
+            if(!concordanceContent.getSentenceId().equalsIgnoreCase(sentenceID))
+                 jsonArray.put(concordanceContent.getJSON());
+        }
+        jsonObj.put("CONCORDANCE", jsonArray);
+
+        return jsonObj;
+    }
+
+
 
     public void JSONToArrayAdvancedConceptList(String concepts) throws JSONException {
         JSONObject jsonObject = new JSONObject(concepts);
@@ -219,10 +281,10 @@ public class Concordancer {
         i++;
             System.out.println("CONC KEY " + keyword + " " + i);
             //SEGMENT || CONTENT
-            for(Segment content : corpus.getSegments())
+          for(Segment content : corpus.getSegments())
             {
                 //GRAPH || SENTENCE
-                for(Graph sentence : content.getGraphs())
+                loop1:   for(Graph sentence : content.getGraphs())
                 {
                     ConcordanceContent item = new ConcordanceContent();
                     item.setKeyword(keyword);
@@ -247,6 +309,11 @@ public class Concordancer {
                         keyword = keyword.replaceAll("\\s","");
                         if(sentence.getTerminals().get(ctr).getWord().equalsIgnoreCase(keyword))
                         {
+                            for(RemovedConcept rc: removedWordsList){
+                                if(rc.getKey().equalsIgnoreCase(keyword) && rc.getSentenceid().equalsIgnoreCase(sentence.getId()))
+                                    continue loop1;
+                            }
+
                             for(TagContent tag : tagContents){
                                 if(tag.getTagName().contains("pos") && tag.getTagValue().contains(pos))
                                     posVal = true;

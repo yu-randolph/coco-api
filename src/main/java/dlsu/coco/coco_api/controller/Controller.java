@@ -394,6 +394,33 @@ public class Controller {
         return newTag;
     }
 
+    @RequestMapping(value = "/removeConcordance", method = RequestMethod.POST)
+    public @ResponseBody
+    String removeConcordance(@RequestParam("corpus") String corpus) {
+        String newTag = "";
+        if (!corpus.isEmpty()) {
+            try {
+
+                byte[] bytes = corpus.getBytes();
+                String result = new String(bytes);
+                newTag = result;
+                System.out.println("pos" + result);
+
+                concordancer = new Concordancer(tiger2Converter.getCorpus());
+                concordancer.JSONtoArrayConceptLIst(result);
+                result = concordancer.removeConcordance(result).toString();
+                System.out.println("Result: " + result);
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
+                return "You failed to upload " + newTag + " => " + e.getMessage();
+            }
+        }
+        return newTag;
+    }
+
+
     @RequestMapping(value = "/getAdvancedConcordances", method = RequestMethod.POST)
     public @ResponseBody
     String getAdvancedConcordances(@RequestParam("feature") String feature) {

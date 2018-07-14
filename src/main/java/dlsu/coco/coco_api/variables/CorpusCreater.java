@@ -42,7 +42,7 @@ public class CorpusCreater {
         for (int i = 0; i < annotationContents.length(); i++) {
             JSONObject jObj = annotationContents.getJSONObject(i);
 
-             featName =  jObj.getString("Annotation:");
+            featName =  jObj.getString("Annotation:");
             JSONArray jArr = new JSONArray(jObj.get("FeatureValues").toString());
 
             for(int j = 0; j < jArr.length(); j++){
@@ -77,8 +77,6 @@ public class CorpusCreater {
                 tags = new ArrayList<>();
                 JSONObject obj = jArr.getJSONObject(j);
 
-                System.out.println("obJ" + obj.toString());
-
                 Iterator<?> keys = obj.keys();
                 String word = (String) keys.next();
                 word = obj.getString(word);
@@ -88,7 +86,6 @@ public class CorpusCreater {
 
                 do{
                     String key = (String) keys.next();
-                    System.out.println("KEYS " + key);
                     tc = new TagContent(key, obj.getString(key));
                     tags.add(tc);
                 }while (keys.hasNext());
@@ -107,7 +104,6 @@ public class CorpusCreater {
             for(WordContent word: words){
 
                 for(TagContent tag: word.getTags()) {
-                    System.out.println("HELLO: " + tag.getTagName());
                     ce.createTerminalAnnotation(word.getWordId(), tag.getTagName(), tag.getTagValue());
                 }
             }
@@ -118,9 +114,4 @@ public class CorpusCreater {
         this.corpus = ce.getCorpus();
     }
 
-
-    public void createCorpus(){
-
-
-    }
 }
