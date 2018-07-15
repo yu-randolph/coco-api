@@ -337,7 +337,7 @@ public class Controller {
         }
         return newTag;
     }
-
+    @CrossOrigin(origins = "http://localhost:8888")
     @RequestMapping(value = "/getConcepts", method = RequestMethod.POST)
     public @ResponseBody
     String getConcepts(@RequestParam("feature") String feature) {
@@ -367,6 +367,7 @@ public class Controller {
         return newTag;
     }
 
+    @CrossOrigin(origins = "http://localhost:8888")
     @RequestMapping(value = "/getConcordances", method = RequestMethod.POST)
     public @ResponseBody
     String getConcordances(@RequestParam("feature") String feature) {
@@ -475,6 +476,7 @@ public class Controller {
         return annotationsManager.AnnotationstoJSONconverter().toString();
     }
 
+    @CrossOrigin(origins = "http://localhost:8888")
     @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
     public @ResponseBody
     String getPattern(@RequestParam("concordance") String concordance) throws JSONException {
@@ -493,6 +495,7 @@ public class Controller {
         return concordance;
     }
 
+    @CrossOrigin(origins = "http://localhost:8888")
     @RequestMapping(value = "/getPatternFilteredByID", method = RequestMethod.POST)
     public @ResponseBody
     String getFilteredPatternByID(@RequestParam("sID") String sID) throws JSONException {
@@ -509,7 +512,7 @@ public class Controller {
         }
         return sID;
     }
-
+    @CrossOrigin(origins = "http://localhost:8888")
     @RequestMapping(value = "/getSuggestions", method = RequestMethod.POST)
     public @ResponseBody
     String getSuggestions(@RequestParam("jsonContent") String sJsonContent) {

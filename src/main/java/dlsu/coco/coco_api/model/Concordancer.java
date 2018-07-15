@@ -114,9 +114,18 @@ public class Concordancer {
        ArrayList<String> list = new ArrayList<>();
         while (keys.hasNext()) {
             String key = (String) keys.next();
-            JSONArray contents = new JSONArray(words.get(key).toString());
+            JSONArray contents = null;
+            try {
+                contents = new JSONArray(words.get(key).toString());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             for (int j = 0; j < contents.length(); j++) {
+                try {
                     list.add(contents.get(j).toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }
         if(addedWords != null)
@@ -130,7 +139,11 @@ public class Concordancer {
         ArrayList<String> list = new ArrayList<>();
 
             for (int j = 0; j < words.length(); j++) {
+                try {
                     list.add(words.get(j).toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
 
         return list;
@@ -141,8 +154,17 @@ public class Concordancer {
         ArrayList<RemovedConcept> list = new ArrayList<>();
 
         for (int j = 0; j < words.length(); j++) {
-           JSONObject curObJ = words.getJSONObject(j);
-            list.add(new RemovedConcept(curObJ.getString("concept").toString(),curObJ.getString("sentence_id").toString()));
+            JSONObject curObJ = null;
+            try {
+                curObJ = words.getJSONObject(j);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            try {
+                list.add(new RemovedConcept(curObJ.getString("concept").toString(),curObJ.getString("sentence_id").toString()));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
 
         return list;
