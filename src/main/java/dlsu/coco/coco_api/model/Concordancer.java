@@ -109,7 +109,7 @@ public class Concordancer {
         this.concepts = conceptList;
     }
 
-    public ArrayList<String> addToConceptList( Iterator<?> keys , JSONObject words, ArrayList<String> addedWords){
+    public ArrayList<String> addToConceptList( Iterator<?> keys , JSONObject words, ArrayList<String> addedWords) throws JSONException{
 
        ArrayList<String> list = new ArrayList<>();
         while (keys.hasNext()) {
@@ -125,7 +125,7 @@ public class Concordancer {
         return list;
     }
 
-    public ArrayList<String> addToList(JSONArray words){
+    public ArrayList<String> addToList(JSONArray words) throws JSONException{
 
         ArrayList<String> list = new ArrayList<>();
 
@@ -136,7 +136,7 @@ public class Concordancer {
         return list;
     }
 
-    public ArrayList<RemovedConcept> addToRemovedWords(JSONArray words){
+    public ArrayList<RemovedConcept> addToRemovedWords(JSONArray words) throws JSONException {
 
         ArrayList<RemovedConcept> list = new ArrayList<>();
 

@@ -219,6 +219,14 @@ public class PatternFinder {
         {
             listPattern.get(idCtr).setSentenceId(idCtr+1 +"");
         }
+
+        for(int dotCtr = 0; dotCtr < listPattern.size(); dotCtr++)
+        {
+            if(listPattern.get(dotCtr).getWords().get(listPattern.get(dotCtr).getWords().size()).getWord().equals("."))
+            {
+                listPattern.remove(dotCtr);
+            }
+        }
     }
 
     private boolean isPatternUnique(ConcordanceContent pattern)

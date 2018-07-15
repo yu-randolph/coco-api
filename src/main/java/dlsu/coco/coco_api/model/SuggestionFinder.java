@@ -127,12 +127,15 @@ public class SuggestionFinder {
         Set<String> uniqueSet = new HashSet<String>(finalSuggestions);
         for (String sKey : uniqueSet)
         {
-            System.out.println("Suggest : " + sKey + " : " + Collections.frequency(finalSuggestions, sKey));
+            if(!concepts.contains(sKey))
+            {
+                System.out.println("Suggest : " + sKey + " : " + Collections.frequency(finalSuggestions, sKey));
 
-            JSONObject jsonSuggestion = new JSONObject();
-            jsonSuggestion.put("word", sKey);
-            jsonSuggestion.put("frequency", Collections.frequency(finalSuggestions, sKey));
-            jsonSuggestions.put(jsonSuggestion);
+                JSONObject jsonSuggestion = new JSONObject();
+                jsonSuggestion.put("word", sKey);
+                jsonSuggestion.put("frequency", Collections.frequency(finalSuggestions, sKey));
+                jsonSuggestions.put(jsonSuggestion);
+            }
         }
 
         jsonObject.put("suggestions", jsonSuggestions);
