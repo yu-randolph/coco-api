@@ -15,13 +15,14 @@ import java.nio.charset.StandardCharsets;
 @RestController
 public class Controller {
 
-
     private FileManager fileManager;
     private Tiger2Converter tiger2Converter;
     private CorpusEditer corpusEditer;
     private AnnotationsManager annotationsManager;
     private ConceptFinder cf;
     private Concordancer concordancer;
+    private PatternFilter patternFilter;
+
     public Controller() {
         fileManager = new FileManager();
         this.tiger2Converter = new Tiger2Converter();
@@ -498,19 +499,20 @@ public class Controller {
     @CrossOrigin(origins = "http://localhost:8888")
     @RequestMapping(value = "/getPatternFilteredByID", method = RequestMethod.POST)
     public @ResponseBody
-    String getFilteredPatternByID(@RequestParam("sID") String sID) throws JSONException {
-        if (!sID.isEmpty()) {
+    String getFilteredPatternByID(@RequestParam("jsonContent") String sJsonContent) throws JSONException {
+        if (!sJsonContent.isEmpty()) {
             try
             {
-                byte[] bytes = sID.getBytes();
+                byte[] bytes = sJsonContent.getBytes();
                 String result = new String(bytes);
-                return fileManager.getPattern(result);
+                patternFilter.JSONparser(sJsonContent);
+                return patternFilter.getFilteredByID().toString();
             } catch (Exception e) {
-                System.out.println("You failed to upload " + sID + " => " + e.getMessage());
-                return "You failed to upload " + sID + " => " + e.getMessage();
+                System.out.println("You failed to upload " + sJsonContent + " => " + e.getMessage());
+                return "You failed to upload " + sJsonContent + " => " + e.getMessage();
             }
         }
-        return sID;
+        return sJsonContent;
     }
     @CrossOrigin(origins = "http://localhost:8888")
     @RequestMapping(value = "/getSuggestions", method = RequestMethod.POST)
