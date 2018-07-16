@@ -61,6 +61,7 @@ public class Controller {
 //        }
 //    }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public @ResponseBody
     String handleFileUpload(
@@ -116,6 +117,7 @@ public class Controller {
         }
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/multiple-upload", method = RequestMethod.POST)
     public @ResponseBody
     String multipleUpload(@RequestParam("files") MultipartFile[] files) {
@@ -181,6 +183,7 @@ public class Controller {
         return "No upload";
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/editTag", method = RequestMethod.POST)
     public @ResponseBody
     String editTag(@RequestParam("tags") String tags) {
@@ -208,6 +211,7 @@ public class Controller {
         return newTag;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/addTag", method = RequestMethod.POST)
     public @ResponseBody
     String addTag(@RequestParam("tags") String tags) {
@@ -233,6 +237,7 @@ public class Controller {
         return newTag;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/deleteTag", method = RequestMethod.POST)
     public @ResponseBody
     String deleteTag(@RequestParam("tags") String tags) {
@@ -258,6 +263,7 @@ public class Controller {
         return newTag;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/addFeatValue", method = RequestMethod.POST)
     public @ResponseBody
     String addFeatValue(@RequestParam("tags") String tags) {
@@ -284,6 +290,7 @@ public class Controller {
         return newTag;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/applyToAll", method = RequestMethod.POST)
     public @ResponseBody
     String applyToAll(@RequestParam("tags") String tags) {
@@ -312,7 +319,7 @@ public class Controller {
     }
 
 
-
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/addFeature", method = RequestMethod.POST)
     public @ResponseBody
     String addFeature(@RequestParam("feature") String feature) {
@@ -338,7 +345,7 @@ public class Controller {
         }
         return newTag;
     }
-    @CrossOrigin(origins = "http://localhost:8888")
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getConcepts", method = RequestMethod.POST)
     public @ResponseBody
     String getConcepts(@RequestParam("feature") String feature) {
@@ -368,7 +375,7 @@ public class Controller {
         return newTag;
     }
 
-    @CrossOrigin(origins = "http://localhost:8888")
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getConcordances", method = RequestMethod.POST)
     public @ResponseBody
     String getConcordances(@RequestParam("feature") String feature) {
@@ -395,6 +402,7 @@ public class Controller {
         return newTag;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getAdvancedConcordances", method = RequestMethod.POST)
     public @ResponseBody
     String getAdvancedConcordances(@RequestParam("feature") String feature) {
@@ -436,6 +444,7 @@ public class Controller {
 //        }
 //    }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/getContent")
     public String getContent() throws JSONException {
 
@@ -443,6 +452,7 @@ public class Controller {
             return fileManager.XMLtoJSONconverter().toString();
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/getTags")
     public String getTags() throws JSONException {
         // fileManager.tigerXMLChecker(new File("C:\\Users\\Micoh F Alvarez\\Desktop\\test.xml.tiger2"));
@@ -450,7 +460,7 @@ public class Controller {
         return annotationsManager.AnnotationstoJSONconverter().toString();
     }
 
-    @CrossOrigin(origins = "http://localhost:8888")
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
     public @ResponseBody
     String getPattern(@RequestParam("concordance") String concordance) throws JSONException {
@@ -469,7 +479,7 @@ public class Controller {
         return concordance;
     }
 
-    @CrossOrigin(origins = "http://localhost:8888")
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getPatternFilteredByID", method = RequestMethod.POST)
     public @ResponseBody
     String getFilteredPatternByID(@RequestParam("jsonContent") String sJsonContent) throws JSONException {
@@ -487,7 +497,7 @@ public class Controller {
         }
         return sJsonContent;
     }
-    @CrossOrigin(origins = "http://localhost:8888")
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getSuggestions", method = RequestMethod.POST)
     public @ResponseBody
     String getSuggestions(@RequestParam("jsonContent") String sJsonContent) {
