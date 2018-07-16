@@ -24,7 +24,7 @@ public class Concordancer {
     public Concordancer(Corpus corpus)
     {
 
-//        this.corpus           = corpus;
+        this.corpus = corpus;
 
     }
 
@@ -80,18 +80,17 @@ public class Concordancer {
             removedWords = new JSONArray(jsonObject.get("removedwords").toString());
             removedWordsList = addToRemovedWords(removedWords);
         }
-        else
-            removedWordsList = new ArrayList<>();
+
      
         keys = wn.keys();
 
         ArrayList<String> conceptList = addToConceptList(keys,wn,addedWordsList);
 
         //create corpus Object
-        CorpusCreater cc = new CorpusCreater(tags,anno);
-        cc.annotationsToArrayList();
-        cc.sentencesToArrayList();
-        this.corpus = cc.getCorpus();
+//        CorpusCreater cc = new CorpusCreater(tags,anno);
+//        cc.annotationsToArrayList();
+//        cc.sentencesToArrayList();
+//        this.corpus = cc.getCorpus();
 
 
         if(wn.toString().contains("NOUN")){
@@ -147,34 +146,6 @@ public class Concordancer {
 
         return list;
     }
-
-    public JSONObject removeConcordance(String concordance) throws JSONException{
-        JSONArray jsonConcordance, jsonArray = new JSONArray();
-        JSONObject jsonObj = new JSONObject();
-        JSONObject jsonSuper =  new JSONObject(concordance);
-        String sentenceID = jsonSuper.getString("sentenceID");
-        jsonConcordance = jsonSuper.getJSONArray("CONCORDANCE");
-
-        ArrayList<ConcordanceContent> listSentence = new ArrayList<>();
-
-        for(int conCtr = 0; conCtr < jsonConcordance.length(); conCtr++)
-        {
-            JSONObject jsonObject = jsonConcordance.getJSONObject(conCtr);
-            listSentence.add(new ConcordanceContent());
-            listSentence.get(listSentence.size()-1).readJSON(jsonObject);
-        }
-
-
-        for(ConcordanceContent concordanceContent : listSentence)
-        {
-            if(!concordanceContent.getSentenceId().equalsIgnoreCase(sentenceID))
-                 jsonArray.put(concordanceContent.getJSON());
-        }
-        jsonObj.put("CONCORDANCE", jsonArray);
-
-        return jsonObj;
-    }
-
 
 
     public void JSONToArrayAdvancedConceptList(String concepts) throws JSONException {
@@ -271,7 +242,7 @@ public class Concordancer {
         concordanceContents = new ArrayList<>();
         ArrayList<WordContent> wordContent = new ArrayList<>();
         ArrayList<String> duplicates = new ArrayList<>();
-
+//        String lemma ="";
         System.out.println(" this.concepts Size " + this.concepts.size());
         int i = 0;
 
@@ -291,52 +262,56 @@ public class Concordancer {
                     item.setSentenceId(sentence.getId());
                     boolean keywordExist = false, posVal = false;
                     String completeSentence = "";
-
+//                    lemma = "";
                     //TERMINAL || WORD
-                    for(int ctr = 0; ctr < sentence.getTerminals().size(); ctr++)
-                    {
-
+                    for(int ctr = 0; ctr < sentence.getTerminals().size(); ctr++) {
+                        posVal = false;
                         completeSentence += sentence.getTerminals().get(ctr).getWord() + " ";
                         ArrayList<TagContent> tagContents = new ArrayList<>();
 
                         //TAGS
-                        for(Annotation tag : sentence.getTerminals().get(ctr).getAnnotations()) {
-
+                        for (Annotation tag : sentence.getTerminals().get(ctr).getAnnotations()) {
                             tagContents.add(new TagContent(tag.getName(), tag.getValue()));
                         }
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents, sentence.getTerminals().get(ctr).getId()));
 
-                        keyword = keyword.replaceAll("\\s","");
-                        if(sentence.getTerminals().get(ctr).getWord().equalsIgnoreCase(keyword))
-                        {
-                            for(RemovedConcept rc: removedWordsList){
-                                if(rc.getKey().equalsIgnoreCase(keyword) && rc.getSentenceid().equalsIgnoreCase(sentence.getId()))
+                        keyword = keyword.replaceAll("\\s", "");
+
+                        for (TagContent tag : tagContents) {
+//                            if (tag.getTagName().contains("lemma")) {
+//                                lemma = tag.getTagValue();
+//                            }
+                            if (tag.getTagName().contains("pos") && tag.getTagValue().contains(pos))
+                                posVal = true;
+                        }
+
+                        if (sentence.getTerminals().get(ctr).getWord().equalsIgnoreCase(keyword)) {
+
+                            for (RemovedConcept rc : removedWordsList) {
+                                if (rc.getKey().equalsIgnoreCase(keyword) && rc.getSentenceid().equalsIgnoreCase(sentence.getId()))
                                     continue loop1;
                             }
 
-                            for(TagContent tag : tagContents){
-                                if(tag.getTagName().contains("pos") && tag.getTagValue().contains(pos))
-                                    posVal = true;
-                            }
-                            if(posVal && !duplicates.contains(keyword)) {
-
+                            if (posVal && !duplicates.contains(keyword)) {
                                 keywordExist = true;
                                 item.setKeyword_Index(ctr);
                             }
-                            }
+
+                        }
+
                     }
-
-
-                    if(keywordExist)
-                    {
+                    if (keywordExist) {
                         item.setWords(wordContent);
                         item.setCompleteSentence(completeSentence);
-                        if(!concordanceContents.contains(item))
+                        if (!concordanceContents.contains(item))
                             concordanceContents.add(item);
-                    }
+                        keywordExist = false;
+                        posVal = false;
 
+                    }
                     wordContent = new ArrayList<>();
                 }
+
             }
             duplicates.add(keyword);
         }
@@ -346,6 +321,7 @@ public class Concordancer {
         for(ConcordanceContent concordanceContent : concordanceContents)
         {
             jsonArray.put(concordanceContent.getJSON());
+            System.out.println("HI" + concordanceContent.getCompleteSentence());
         }
         jsonObject.put("CONCORDANCE", jsonArray);
 

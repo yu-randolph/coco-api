@@ -106,7 +106,7 @@ public class ConcordanceContent {
                     listGraph.put(wordContent);
             }
         jsonObject.put("WordContent", listGraph);
-        System.out.println(jsonObject);
+//        System.out.println(jsonObject);
         return jsonObject;
     }
 

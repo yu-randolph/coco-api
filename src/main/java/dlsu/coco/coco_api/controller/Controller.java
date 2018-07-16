@@ -375,16 +375,16 @@ public class Controller {
             try {
 
                 byte[] bytes = feature.getBytes();
-                String result = new String(bytes);
-                newTag = result;
-                System.out.println("pos" + result);
+                String corpus = new String(bytes);
+                newTag = corpus;
+                System.out.println("pos" + corpus);
 
                 concordancer = new Concordancer(tiger2Converter.getCorpus());
-                concordancer.JSONtoArrayConceptLIst(result);
-                result = concordancer.getConcordanceResult().toString();
-                System.out.println("Result: " + result);
+                concordancer.JSONtoArrayConceptLIst(corpus);
+                corpus = concordancer.getConcordanceResult().toString();
+                System.out.println("Result: " + corpus);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
-                return result;
+                return corpus;
             } catch (Exception e) {
                 System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
                 return "You failed to upload " + newTag + " => " + e.getMessage();
@@ -392,33 +392,6 @@ public class Controller {
         }
         return newTag;
     }
-
-    @RequestMapping(value = "/removeConcordance", method = RequestMethod.POST)
-    public @ResponseBody
-    String removeConcordance(@RequestParam("corpus") String corpus) {
-        String newTag = "";
-        if (!corpus.isEmpty()) {
-            try {
-
-                byte[] bytes = corpus.getBytes();
-                String result = new String(bytes);
-                newTag = result;
-                System.out.println("pos" + result);
-
-                concordancer = new Concordancer(tiger2Converter.getCorpus());
-                concordancer.JSONtoArrayConceptLIst(result);
-                result = concordancer.removeConcordance(result).toString();
-                System.out.println("Result: " + result);
-//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
-                return result;
-            } catch (Exception e) {
-                System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
-                return "You failed to upload " + newTag + " => " + e.getMessage();
-            }
-        }
-        return newTag;
-    }
-
 
     @RequestMapping(value = "/getAdvancedConcordances", method = RequestMethod.POST)
     public @ResponseBody

@@ -25,7 +25,6 @@ public class CorpusCreater {
     public CorpusCreater(JSONObject tags, JSONObject annotations) throws JSONException {
 
        annotationContents =  new JSONArray(tags.get("Feature_Array").toString());
-
         sentenceContents=  new JSONArray(annotations.get("Graph_Array").toString());
 
         featValues = new ArrayList<>();

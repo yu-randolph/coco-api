@@ -35,7 +35,7 @@ public class ConceptNet {
     private ArrayList<ConceptNetContent> jsonIsA;
     private ArrayList<ConceptNetContent> jsonPartOf;
     private ArrayList<ConceptNetContent> jsonCreatedBy;
-
+        int ctr = 0;
     public ConceptNet(String word)
     {
         //http://api.conceptnet.io/query?node=/c/en/book&rel=/r/RelatedTo
@@ -61,12 +61,13 @@ public class ConceptNet {
         String queryRelation = "rel=/r/" + relation;
         String queryLanguage = "other=/c/" + language;
 
-        System.out.println(conceptnetAPIQuery + queryWord + "&" + queryRelation + "&" + queryLanguage);
+        System.out.println("test"+ conceptnetAPIQuery + queryWord + "&" + queryRelation + "&" + queryLanguage);
         return conceptnetAPIQuery + queryWord + "&" + queryRelation + "&" + queryLanguage;
     }
 
     public ArrayList<ConceptNetContent> httpRequest(String address)
     {
+
         try {
             ArrayList<ConceptNetContent> content = new ArrayList<>();
             httpURLConnection = (HttpURLConnection) new URL(address).openConnection();
@@ -92,7 +93,7 @@ public class ConceptNet {
                 System.out.println(item.toString());
                 content.add(item);
             }
-            System.out.println();
+
 
             inputStream.close();
             return content;
