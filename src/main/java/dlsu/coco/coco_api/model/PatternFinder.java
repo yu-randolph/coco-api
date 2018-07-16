@@ -219,6 +219,14 @@ public class PatternFinder {
         {
             listPattern.get(idCtr).setSentenceId(idCtr+1 +"");
         }
+
+        for(int dotCtr = 0; dotCtr < listPattern.size(); dotCtr++)
+        {
+            if(listPattern.get(dotCtr).getWords().get(listPattern.get(dotCtr).getWords().size()).getWord().equals("."))
+            {
+                listPattern.remove(dotCtr);
+            }
+        }
     }
 
     private boolean isPatternUnique(ConcordanceContent pattern)
@@ -299,50 +307,6 @@ public class PatternFinder {
             pattern.put("originSentences", patternOrigin);
             pattern.put("frequency", listPattern.get(ctr).getFreq());
             patterns.put(pattern);
-        }
-
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("patterns", patterns);
-        return jsonObject;
-    }
-
-    public JSONObject getFilteredByID(JSONObject sID) throws JSONException {
-        ArrayList<String> listID = new ArrayList<>();
-        JSONArray jsonArray = sID.getJSONArray("IDs");
-        if (jsonArray != null)
-        {
-            for (int i=0; i<jsonArray.length(); i++)
-            {
-                listID.add(jsonArray.getString(i));
-            }
-        }
-
-        JSONArray patterns = new JSONArray();
-
-        for(int ctr = 0; ctr < listPattern.size(); ctr++)
-        {
-            if(listID.contains(listPattern.get(ctr).getSentenceId()))
-            {
-                JSONObject pattern = new JSONObject();
-                pattern.put("pattern", listPattern.get(ctr).getSummaryJSON());
-                pattern.put("id", listPattern.get(ctr).getSentenceId());
-
-                JSONArray patternOrigin = new JSONArray();
-                for(String originID : listPattern.get(ctr).getPatternOrigin())
-                {
-                    for(int originfinder = 0; originfinder < listSentence.size(); originfinder++)
-                    {
-                        if(originID.equals(listSentence.get(originfinder).getSentenceId()))
-                        {
-                            patternOrigin.put(listSentence.get(originfinder).getSummaryJSON());
-                        }
-                    }
-                }
-
-                pattern.put("originSentences", patternOrigin);
-                pattern.put("frequency", listPattern.get(ctr).getFreq());
-                patterns.put(pattern);
-            }
         }
 
         JSONObject jsonObject = new JSONObject();

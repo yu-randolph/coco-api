@@ -179,6 +179,10 @@ public class ConcordanceContent {
             }
 
             this.completeSentence = "";
+            for(WordContent word : words)
+            {
+                completeSentence += word.getWord() + " ";
+            }
 
             this.patternOrigin = new ArrayList<>();
             JSONArray jsonOriginSentences = jsonItem.getJSONArray("originSentences");

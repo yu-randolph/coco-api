@@ -304,17 +304,6 @@ public class FileManager {
         System.out.println("PATTERN : " + patternFinder.getJSONpattern().toString());
         return patternFinder.getJSONpattern().toString();
     }
-
-    public String getFilteredPattternByID(String sID) throws JSONException {
-        if(patternFinder != null)
-        {
-            return patternFinder.getFilteredByID(new JSONObject(sID)).toString();
-        }
-        else
-        {
-            return null;
-        }
-    }
 }
 
 // {"AnnotationsList":[{"annotation":"Adverb"},{"annotation":"Subject"}],"RelationList":[{"relation":"synonym"}"concept":"book","pos":"Noun"}
