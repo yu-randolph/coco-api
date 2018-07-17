@@ -24,7 +24,7 @@ public class Concordancer {
     public Concordancer(Corpus corpus)
     {
 
-        this.corpus = corpus;
+//        this.corpus = corpus;
 
     }
 
@@ -87,10 +87,10 @@ public class Concordancer {
         ArrayList<String> conceptList = addToConceptList(keys,wn,addedWordsList);
 
         //create corpus Object
-//        CorpusCreater cc = new CorpusCreater(tags,anno);
-//        cc.annotationsToArrayList();
-//        cc.sentencesToArrayList();
-//        this.corpus = cc.getCorpus();
+        CorpusCreater cc = new CorpusCreater(tags,anno);
+        cc.annotationsToArrayList();
+        cc.sentencesToArrayList();
+        this.corpus = cc.getCorpus();
 
 
         if(wn.toString().contains("NOUN")){
