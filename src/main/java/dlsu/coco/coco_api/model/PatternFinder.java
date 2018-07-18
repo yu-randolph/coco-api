@@ -215,17 +215,17 @@ public class PatternFinder {
             }
         }
 
-        for(int idCtr = 0; idCtr < listPattern.size(); idCtr++)
-        {
-            listPattern.get(idCtr).setSentenceId(idCtr+1 +"");
-        }
-
         for(int dotCtr = 0; dotCtr < listPattern.size(); dotCtr++)
         {
-            if(listPattern.get(dotCtr).getWords().get(listPattern.get(dotCtr).getWords().size()).getWord().equals("."))
+            if(listPattern.get(dotCtr).getWords().get(listPattern.get(dotCtr).getWords().size()-1).getWord().equals("."))
             {
                 listPattern.remove(dotCtr);
             }
+        }
+
+        for(int idCtr = 0; idCtr < listPattern.size(); idCtr++)
+        {
+            listPattern.get(idCtr).setSentenceId(idCtr+1 +"");
         }
     }
 
