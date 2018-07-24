@@ -19,6 +19,7 @@ public class Controller {
     private Tiger2Converter tiger2Converter;
     private CorpusEditer corpusEditer;
     private AnnotationsManager annotationsManager;
+    private AnnotatingTool annotatingTool;
     private ConceptFinder cf;
     private Concordancer concordancer;
     private PatternFilter patternFilter;
@@ -109,6 +110,7 @@ public class Controller {
                 fileManager.tigerProcess(receivedFile);
                 tiger2Converter = fileManager.getTiger2Converter();
                 this.annotationsManager = new AnnotationsManager(tiger2Converter);
+                this.annotatingTool = new AnnotatingTool(tiger2Converter);
                 return fileManager.getRawCorpus();
             }
         } else {
@@ -196,16 +198,19 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                this.tiger2Converter = this.annotationsManager.editAnnotation(result);
+                this.tiger2Converter = this.annotatingTool.editAnnotation(result);
+                this.annotationsManager.setTiger(this.tiger2Converter);
 
 
-                System.out.println("You successfully uploaded " + newTag + " into " + result);
+
+
+                System.out.println("You successfully passed the " + newTag + " into " + result + "using the editTag method");
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
-                return "You failed to upload " + newTag + " => " + e.getMessage();
+                System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the editTag method");
+                return "You failed to update " + newTag + " => " + e.getMessage() + "using the editTag method";
             }
         }
         return newTag;
@@ -223,15 +228,16 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                this.tiger2Converter = this.annotationsManager.addAnnotation(result);
+                this.tiger2Converter = this.annotatingTool.addAnnotation(result);
+                this.annotationsManager.setTiger(this.tiger2Converter);
 
                 System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
-                return "You failed to upload " + newTag + " => " + e.getMessage();
+                System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method");
+                return "You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method";
             }
         }
         return newTag;
@@ -249,15 +255,16 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                this.tiger2Converter = this.annotationsManager.deleteTag(result);
+                this.tiger2Converter = this.annotatingTool.deleteAnnotation(result);
+                this.annotationsManager.setTiger(this.tiger2Converter);
 
-                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("You successfully updated the " + newTag + " into " + result);
                 System.out.println("Result: " + result);
-//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
-                return "You failed to upload " + newTag + " => " + e.getMessage();
+                System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method");
+                return "You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method";
             }
         }
         return newTag;
@@ -278,13 +285,13 @@ public class Controller {
 
                 this.tiger2Converter = this.annotationsManager.addFeatureValue(result);
 
-                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("You successfully updated the " + newTag + " into " + result);
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
-                return "You failed to upload " + newTag + " => " + e.getMessage();
+                System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the addFeatValue method");
+                return "You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method";
             }
         }
         return newTag;
@@ -303,16 +310,16 @@ public class Controller {
                 newTag = result;
                 System.out.println(result);
 
-                this.tiger2Converter = this.annotationsManager.applyToAll(result);
+                this.tiger2Converter = this.annotatingTool.applyToAll(result);
+                this.annotationsManager.setTiger(this.tiger2Converter);
 
-
-                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("You successfully updated the " + newTag + " into " + result);
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
-                return "You failed to upload " + newTag + " => " + e.getMessage();
+                System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the applyAddToAll method");
+                return "You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method";
             }
         }
         return newTag;
@@ -334,13 +341,13 @@ public class Controller {
 
                 this.tiger2Converter = this.annotationsManager.addFeature(result);
 
-                System.out.println("You successfully uploaded " + newTag + " into " + result);
+                System.out.println("You successfully updated the " + newTag + " into " + result);
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upl   oad " + newTag + " => " + e.getMessage());
-                return "You failed to upload " + newTag + " => " + e.getMessage();
+                System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the addFeature method");
+                return "You failed to update " + newTag + " => " + e.getMessage() + "using the addFeature method";
             }
         }
         return newTag;
@@ -348,14 +355,14 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getConcepts", method = RequestMethod.POST)
     public @ResponseBody
-    String getConcepts(@RequestParam("feature") String feature) {
-        String newTag = "";
+    String getConcepts(@RequestParam("searchData") String feature) {
+        String concepts = "";
         if (!feature.isEmpty()) {
             try {
 
                 byte[] bytes = feature.getBytes();
                 String result = new String(bytes);
-                newTag = result;
+                concepts = result;
                 System.out.println(result);
 
                 JSONObject jsonObject = new JSONObject(result);
@@ -363,29 +370,28 @@ public class Controller {
                 this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
                 result = cf.getAllResults().toString();
 
-//                System.out.println("You successfully uploaded " + newTag + " into " + result);
                 System.out.println("Result: " + result);
-//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+
                 return result;
             } catch (Exception e) {
-                System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
-                return "You failed to upload " + newTag + " => " + e.getMessage();
+                System.out.println("You failed to retrieve " + concepts + " => " + e.getMessage() + "using the getConcepts method");
+                return "You failed to retrieve " + concepts + " => " + e.getMessage() + "using the getConcepts method";
             }
         }
-        return newTag;
+        return concepts;
     }
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getConcordances", method = RequestMethod.POST)
     public @ResponseBody
     String getConcordances(@RequestParam("feature") String feature) {
-        String newTag = "";
+        String data = "";
         if (!feature.isEmpty()) {
             try {
 
                 byte[] bytes = feature.getBytes();
                 String corpus = new String(bytes);
-                newTag = corpus;
+                data = corpus;
                 System.out.println("pos" + corpus);
 
                 concordancer = new Concordancer(tiger2Converter.getCorpus());
@@ -395,11 +401,11 @@ public class Controller {
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return corpus;
             } catch (Exception e) {
-                System.out.println("You failed to upload " + newTag + " => " + e.getMessage());
-                return "You failed to upload " + newTag + " => " + e.getMessage();
+                System.out.println("You failed to retrieve " + data + " => " + e.getMessage() + "using the getConcordances method");
+                return "You failed to upload " + data + " => " + e.getMessage();
             }
         }
-        return newTag;
+        return data;
     }
 
     @CrossOrigin(origins = "*")

@@ -61,7 +61,7 @@ public class ConceptNet {
         String queryRelation = "rel=/r/" + relation;
         String queryLanguage = "other=/c/" + language;
 
-        System.out.println("test"+ conceptnetAPIQuery + queryWord + "&" + queryRelation + "&" + queryLanguage);
+        System.out.println(conceptnetAPIQuery + queryWord + "&" + queryRelation + "&" + queryLanguage);
         return conceptnetAPIQuery + queryWord + "&" + queryRelation + "&" + queryLanguage;
     }
 
@@ -69,8 +69,10 @@ public class ConceptNet {
     {
 
         try {
+
             ArrayList<ConceptNetContent> content = new ArrayList<>();
             httpURLConnection = (HttpURLConnection) new URL(address).openConnection();
+            httpURLConnection.setConnectTimeout(5000 *24);
             httpURLConnection.setRequestMethod("GET");
             httpURLConnection.setRequestProperty("Accept", "application/json");
 
