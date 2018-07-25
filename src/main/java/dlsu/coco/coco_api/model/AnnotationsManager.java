@@ -17,49 +17,6 @@ public class AnnotationsManager {
          this.tiger2Converter = tiger2Converter;
     }
 
-    public Tiger2Converter editAnnotation(String edition) throws JSONException {
-        JSONObject jsonObject = new JSONObject(edition);
-        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
-
-        corpusEditer.editTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString(), jsonObject.get("feature_value").toString(), "");
-        tiger2Converter.setCorpus(corpusEditer.getCorpus());
-        tiger2Converter.saveChanges();
-        return tiger2Converter;
-
-    }
-
-    public Tiger2Converter applyToAll(String feature) throws JSONException {
-
-        JSONObject jsonObject = new JSONObject(feature);
-        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
-        corpusEditer.applyToAll(jsonObject.get("word").toString(),jsonObject.get("feature").toString(),jsonObject.get("feature_value").toString());
-        tiger2Converter.setCorpus(corpusEditer.getCorpus());
-        tiger2Converter.saveChanges();
-        return tiger2Converter;
-
-    }
-    public Tiger2Converter deleteTag(String edition) throws JSONException {
-        JSONObject jsonObject = new JSONObject(edition);
-        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
-
-        corpusEditer.deleteTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString());
-        tiger2Converter.setCorpus(corpusEditer.getCorpus());
-        tiger2Converter.saveChanges();
-        return tiger2Converter;
-
-    }
-    public Tiger2Converter addAnnotation(String edition) throws JSONException {
-        JSONObject jsonObject = new JSONObject(edition);
-        corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
-
-        corpusEditer.addTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString(), jsonObject.get("feature_value").toString());
-
-        tiger2Converter.setCorpus(corpusEditer.getCorpus());
-        tiger2Converter.saveChanges();
-        return tiger2Converter;
-
-    }
-
     public Tiger2Converter addFeature(String feature) throws JSONException {
 
         JSONObject jsonObject = new JSONObject(feature);
@@ -93,6 +50,12 @@ public class AnnotationsManager {
         return tiger2Converter;
     }
 
-    public JSONObject AnnotationstoJSONconverter() throws JSONException { return tiger2Converter.AnnotationstoJSON(); }
+    public void setTiger(Tiger2Converter t2){
+        this.tiger2Converter = t2;
+    }
+
+    public JSONObject AnnotationstoJSONconverter() throws JSONException {
+
+        return tiger2Converter.AnnotationstoJSON(); }
 }
 

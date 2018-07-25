@@ -350,7 +350,7 @@ public class Concordancer {
         return jsonObject;
     }
 
-    public JSONObject getAdvancedResults(ArrayList<String> tags) throws JSONException {
+        public JSONObject getAdvancedResults(ArrayList<String> tags) throws JSONException {
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         concordanceContents = new ArrayList<>();
