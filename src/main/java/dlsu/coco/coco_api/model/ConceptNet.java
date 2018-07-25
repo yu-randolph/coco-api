@@ -162,7 +162,7 @@ public class ConceptNet {
         ArrayList<String> content = new ArrayList<String>();
         for(ConceptNetContent item : jsonRelatedTo)
         {
-            content.add(item.getStartWord());
+            content.add(item.getStartWord().toLowerCase());
         }
         return content;
     }
