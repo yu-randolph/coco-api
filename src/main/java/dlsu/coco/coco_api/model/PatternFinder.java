@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 public class PatternFinder {
 
+    private int nThreshold;
+    private int nLength;
     private JSONArray jsonConcordance;
     private JSONObject jsonSuper;
 
@@ -17,6 +19,8 @@ public class PatternFinder {
     private ArrayList<ConcordanceContent> listPattern;
 
     public PatternFinder(JSONObject jsonSuper) throws JSONException {
+        this.nThreshold = 1;
+        this.nLength = 0;
         this.listSentence = new ArrayList<>();
         this.listPattern = new ArrayList<>();
         this.jsonSuper = jsonSuper;
@@ -34,6 +38,9 @@ public class PatternFinder {
             listSentence.add(new ConcordanceContent());
             listSentence.get(listSentence.size()-1).readJSON(jsonObject);
         }
+
+        nThreshold = jsonSuper.getInt("THRESHOLD");
+        nLength = jsonSuper.getInt("LENGTH");
     }
 
     private void findPattern()
@@ -99,7 +106,7 @@ public class PatternFinder {
                     }
 
                     System.out.println("FREQ : " + pattern.getFreq());
-                    if(pattern.getFreq()  > 1)
+                    if(pattern.getFreq()  > nThreshold)
                     {
                         matchingLeft = true;
                         System.out.print("SENTENCE : ");
@@ -162,7 +169,7 @@ public class PatternFinder {
                     }
 
                     System.out.println("FREQ : " + pattern.getFreq());
-                    if(pattern.getFreq()  > 1)
+                    if(pattern.getFreq()  > nThreshold)
                     {
                         matchingRight = true;
                         if(isPatternUnique(pattern))
@@ -220,6 +227,14 @@ public class PatternFinder {
             if(listPattern.get(dotCtr).getWords().get(listPattern.get(dotCtr).getWords().size()-1).getWord().equals("."))
             {
                 listPattern.remove(dotCtr);
+            }
+        }
+
+        for(int lengthCtr = 0; lengthCtr < listPattern.size(); lengthCtr++)
+        {
+            if(listPattern.get(lengthCtr).getWords().size() < nLength)
+            {
+                listPattern.remove(lengthCtr);
             }
         }
 

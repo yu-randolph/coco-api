@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class ConceptNet {
 
     //RELATION
-//    private static String RELATED_TO = "RelatedTo";
+    private static String RELATED_TO = "RelatedTo";
     private static String FORM_OF = "FormOf";
 //    private static String IS_A = "IsA";
 //    private static String PART_OF = "PartOf";
@@ -39,13 +39,13 @@ public class ConceptNet {
     public ConceptNet(String word)
     {
         //http://api.conceptnet.io/query?node=/c/en/book&rel=/r/RelatedTo
-//        jsonRelatedTo = new ArrayList<>();
+        jsonRelatedTo = new ArrayList<>();
         jsonFormOf = new ArrayList<>();
 //        jsonIsA = new ArrayList<>();
 //        jsonPartOf = new ArrayList<>();
 //        jsonCreatedBy = new ArrayList<>();
 
-//        jsonRelatedTo = this.httpRequest(this.relationQueryBuilder(word, RELATED_TO, ENGLISH));
+        jsonRelatedTo = this.httpRequest(this.relationQueryBuilder(word, RELATED_TO, ENGLISH));
         jsonFormOf = this.httpRequest(this.relationQueryBuilder(word, FORM_OF, ENGLISH));
 //        jsonIsA = this.httpRequest(this.relationQueryBuilder(word, IS_A, ENGLISH) );
 //        jsonPartOf = this.httpRequest(this.relationQueryBuilder(word, PART_OF, ENGLISH));
@@ -155,6 +155,17 @@ public class ConceptNet {
         }
         return content;
     }
+
+    public ArrayList<String> getRelatedContents(){
+        ArrayList<String> content = new ArrayList<String>();
+        for(ConceptNetContent item : jsonRelatedTo)
+        {
+            content.add(item.getStartWord());
+        }
+        return content;
+    }
+
+
 //    public JSONArray getIsAJSONObject()
 //    {
 //        JSONArray jsonArray = new JSONArray();
