@@ -279,6 +279,40 @@ public class ConcordanceContent {
         }
     }
 
+    public boolean compareConcordanceWithPattern(ConcordanceContent pattern)
+    {
+        if(this.words.size() == pattern.words.size())
+        {
+            for(int wordCtr = 0; wordCtr < pattern.getWords().size(); wordCtr++)
+            {
+
+                if(!pattern.getWords().get(wordCtr).getWord().equals("!empty"))
+                {
+                    if(!words.get(wordCtr).getWord().equals(pattern.getWords().get(wordCtr).getWord()))
+                        return false;
+                }
+
+                for(TagContent concItem : words.get(wordCtr).getTags())
+                {
+                    for(TagContent patItem : pattern.getWords().get(wordCtr).getTags())
+                    {
+                        if(concItem.getTagName().equals(patItem.getTagName()) && !patItem.getTagValue().equals("!empty"))
+                        {
+                            if(!concItem.getTagValue().equals(patItem.getTagValue()))
+                                return false;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     private ArrayList<TagContent> removeLemmaAndOthers(ArrayList<TagContent> originalTags)
     {
         ArrayList<TagContent> tags = new ArrayList<>();

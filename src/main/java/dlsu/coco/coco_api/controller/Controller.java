@@ -384,12 +384,12 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getConcordances", method = RequestMethod.POST)
     public @ResponseBody
-    String getConcordances(@RequestParam("feature") String feature) {
+    String getConcordances(@RequestParam("jsonConcept_Corpus") String jsonConcept_Corpus) {
         String data = "";
-        if (!feature.isEmpty()) {
+        if (!jsonConcept_Corpus.isEmpty()) {
             try {
 
-                byte[] bytes = feature.getBytes();
+                byte[] bytes = jsonConcept_Corpus.getBytes();
                 String corpus = new String(bytes);
                 data = corpus;
                 System.out.println("pos" + corpus);
@@ -411,12 +411,12 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getAdvancedConcordances", method = RequestMethod.POST)
     public @ResponseBody
-    String getAdvancedConcordances(@RequestParam("feature") String feature) {
+    String getAdvancedConcordances(@RequestParam("jsonConcept_Corpus") String jsonConcept_Corpus) {
         String newTag = "";
-        if (!feature.isEmpty()) {
+        if (!jsonConcept_Corpus.isEmpty()) {
             try {
 
-                byte[] bytes = feature.getBytes();
+                byte[] bytes = jsonConcept_Corpus.getBytes();
                 String result = new String(bytes);
                 newTag = result;
                 System.out.println(result);
@@ -469,57 +469,57 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
     public @ResponseBody
-    String getPattern(@RequestParam("concordance") String concordance) throws JSONException {
-        if (!concordance.isEmpty()) {
+    String getPattern(@RequestParam("jsonConcordance") String jsonConcordance) throws JSONException {
+        if (!jsonConcordance.isEmpty()) {
             try
             {
-                byte[] bytes = concordance.getBytes();
+                byte[] bytes = jsonConcordance.getBytes();
                 String result = new String(bytes);
                 System.out.println(result);
                 return fileManager.getPattern(result);
             } catch (Exception e) {
-                System.out.println("You failed to upload " + concordance + " => " + e.getMessage());
-                return "You failed to upload " + concordance + " => " + e.getMessage();
+                System.out.println("You failed to upload " + jsonConcordance + " => " + e.getMessage());
+                return "You failed to upload " + jsonConcordance + " => " + e.getMessage();
             }
         }
-        return concordance;
+        return jsonConcordance;
     }
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getPatternFilteredByID", method = RequestMethod.POST)
     public @ResponseBody
-    String getFilteredPatternByID(@RequestParam("jsonContent") String sJsonContent) throws JSONException {
-        if (!sJsonContent.isEmpty()) {
+    String getFilteredPatternByID(@RequestParam("jsonPattern_IDs") String jsonPattern_IDs) throws JSONException {
+        if (!jsonPattern_IDs.isEmpty()) {
             try
             {
-                byte[] bytes = sJsonContent.getBytes();
+                byte[] bytes = jsonPattern_IDs.getBytes();
                 String result = new String(bytes);
-                patternFilter.JSONparser(sJsonContent);
+                patternFilter.JSONparser(jsonPattern_IDs);
                 return patternFilter.getFilteredByID().toString();
             } catch (Exception e) {
-                System.out.println("You failed to upload " + sJsonContent + " => " + e.getMessage());
-                return "You failed to upload " + sJsonContent + " => " + e.getMessage();
+                System.out.println("You failed to upload " + jsonPattern_IDs + " => " + e.getMessage());
+                return "You failed to upload " + jsonPattern_IDs + " => " + e.getMessage();
             }
         }
-        return sJsonContent;
+        return jsonPattern_IDs;
     }
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getSuggestions", method = RequestMethod.POST)
     public @ResponseBody
-    String getSuggestions(@RequestParam("jsonContent") String sJsonContent) {
-        if (!sJsonContent.isEmpty()) {
+    String getSuggestions(@RequestParam("jsonConcept_Corpus_Patterns_Keyword") String jsonConcept_Corpus_Patterns_Keyword) {
+        if (!jsonConcept_Corpus_Patterns_Keyword.isEmpty()) {
             try
             {
-                byte[] bytes = sJsonContent.getBytes();
+                byte[] bytes = jsonConcept_Corpus_Patterns_Keyword.getBytes();
                 String result = new String(bytes);
                 SuggestionFinder suggestionFinder = new SuggestionFinder();
                 return suggestionFinder.getSuggestions(result).toString();
             } catch (Exception e) {
-                System.out.println("You failed to upload " + sJsonContent + " => " + e.getMessage());
-                return "You failed to upload " + sJsonContent + " => " + e.getMessage();
+                System.out.println("You failed to upload " + jsonConcept_Corpus_Patterns_Keyword + " => " + e.getMessage());
+                return "You failed to upload " + jsonConcept_Corpus_Patterns_Keyword + " => " + e.getMessage();
             }
         }
-        return sJsonContent;
+        return jsonConcept_Corpus_Patterns_Keyword;
     }
 
 //    @GetMapping("/getXML")

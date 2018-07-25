@@ -18,9 +18,11 @@ public class SuggestionFinder {
     private ArrayList<ConcordanceContent> concordanceContents;
 
     private ArrayList<String> concept;
+    private ConceptNet conceptNet;
     private ArrayList<String> concepts = new ArrayList<String>();
     private ArrayList<String> tags;
     private String pos;
+    private String keyword;
 
     private ArrayList<ConcordanceContent> patternList = new ArrayList<>();
 
@@ -96,6 +98,8 @@ public class SuggestionFinder {
             }
 
             System.out.println("PATTERN LIST SIZE : " + patternList.size());
+
+            keyword = jsonObject.getString("KEYWORD");
         } catch(JSONException e) {
             e.printStackTrace();
         }
@@ -120,6 +124,19 @@ public class SuggestionFinder {
             System.out.println(finalSuggestions.get(i));
         }
         System.out.println();
+
+        conceptNet = new ConceptNet(keyword);
+        ArrayList<String> relatedTo = conceptNet.getRelatedContents();
+
+        Segment corpusContent = corpus.getSegments().get(0);
+        for(Graph sentence : corpusContent.getGraphs())
+        {
+            for(Terminal word : sentence.getTerminals())
+            {
+                if(relatedTo.contains(word.getWord().toLowerCase()))
+                    finalSuggestions.add(word.getWord().toLowerCase());
+            }
+        }
 
         JSONObject jsonObject = new JSONObject();
         JSONArray jsonSuggestions = new JSONArray();
