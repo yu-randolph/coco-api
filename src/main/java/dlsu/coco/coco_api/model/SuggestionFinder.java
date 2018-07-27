@@ -99,7 +99,7 @@ public class SuggestionFinder {
 
             System.out.println("PATTERN LIST SIZE : " + patternList.size());
 
-            keyword = jsonObject.getString("KEYWORD");
+            keyword = jsonObject.getString("keyword");
         } catch(JSONException e) {
             e.printStackTrace();
         }
