@@ -175,6 +175,9 @@ public class Controller {
             if (output != null) {
                 System.out.println("Result: " + corpus);
                 fileManager.tigerProcess(output);
+                tiger2Converter = fileManager.getTiger2Converter();
+                this.annotationsManager = new AnnotationsManager(tiger2Converter);
+                this.annotatingTool = new AnnotatingTool(tiger2Converter);
                 return fileManager.getRawCorpus();
             }
 
@@ -409,6 +412,36 @@ public class Controller {
     }
 
     @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/getAdvancedConcepts", method = RequestMethod.POST)
+    public @ResponseBody
+    String getAdvancedConcepts(@RequestParam("jsonConcept_Corpus") String jsonConcept_Corpus) {
+        String concepts = "";
+        if (!jsonConcept_Corpus.isEmpty()) {
+            try {
+
+                byte[] bytes = jsonConcept_Corpus.getBytes();
+                String result = new String(bytes);
+                concepts = result;
+                System.out.println(result);
+
+                JSONObject jsonObject = new JSONObject(result);
+                System.out.println(result);
+                this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
+                result = cf.getAllResults().toString();
+
+                System.out.println("Result: " + result);
+
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to retrieve " + concepts + " => " + e.getMessage() + "using the getConcepts method");
+                return "You failed to retrieve " + concepts + " => " + e.getMessage() + "using the getConcepts method";
+            }
+        }
+        return concepts;
+    }
+
+
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getAdvancedConcordances", method = RequestMethod.POST)
     public @ResponseBody
     String getAdvancedConcordances(@RequestParam("jsonConcept_Corpus") String jsonConcept_Corpus) {
@@ -424,7 +457,7 @@ public class Controller {
                 System.out.println(result);
                 concordancer = new Concordancer(tiger2Converter.getCorpus());
                 concordancer.JSONToArrayAdvancedConceptList(result);
-
+                result = concordancer.getAdvancedResults().toString();
                 System.out.println("Result: " + result);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return result;

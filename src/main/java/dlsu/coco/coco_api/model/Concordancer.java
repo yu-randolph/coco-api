@@ -24,7 +24,7 @@ public class Concordancer {
     public Concordancer(Corpus corpus)
     {
 
-//        this.corpus = corpus;
+        this.corpus = corpus;
 
     }
 
@@ -87,10 +87,10 @@ public class Concordancer {
         ArrayList<String> conceptList = addToConceptList(keys,wn,addedWordsList);
 
         //create corpus Object
-        CorpusCreater cc = new CorpusCreater(tags,anno);
-        cc.annotationsToArrayList();
-        cc.sentencesToArrayList();
-        this.corpus = cc.getCorpus();
+//        CorpusCreater cc = new CorpusCreater(tags,anno);
+//        cc.annotationsToArrayList();
+//        cc.sentencesToArrayList();
+//        this.corpus = cc.getCorpus();
 
 
         if(wn.toString().contains("NOUN")){
@@ -104,7 +104,7 @@ public class Concordancer {
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());
         }
-
+        this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
         this.concepts = conceptList;
     }
 
@@ -186,12 +186,15 @@ public class Concordancer {
         }
         for (int i = 0; i < rel.length(); i++) {
             rels.add(rel.getJSONObject(i).getString("relation"));
+            System.out.println("RELS" + rels.get(i));
         }
 
 
 
-        JSONObject arr = new JSONObject(jsonObject.get("conceptlist").toString());
-        JSONObject wn = new JSONObject(arr.get("WORDNET").toString());
+//        JSONObject arr = new JSONObject(jsonObject.get("conceptlist").toString());
+//        JSONObject wn = new JSONObject(arr.get("WORDNET").toString());
+
+        JSONObject wn = new JSONObject(jsonObject.get("WORDNET").toString());
         JSONObject tags = new JSONObject(jsonObject.get("tags").toString());
         JSONObject anno = new JSONObject(jsonObject.get("annotations").toString());
         JSONArray addedwords,removedWords;
@@ -199,49 +202,45 @@ public class Concordancer {
         removedWordsList = new ArrayList<>();
         Iterator<?> keys = wn.keys();
 
-
-        while (keys.hasNext()) {
+       while (keys.hasNext()) {
             String key = (String) keys.next();
+            System.out.println("KEYS" + key);
             switch (key) {
                 case "NOUN_SYNONYM":
                     if (rels.contains("Synonym")) {
-                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        JSONArray contents = new JSONArray(wn.get(key).toString());
                         for (int j = 0; j < contents.length(); j++) {
                             conceptList.add(contents.get(j).toString());
                         }
-
                     }
                     break;
                 case "NOUN_HYPERNYM":
                     if (rels.contains("Hypernym")) {
-                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        JSONArray contents = new JSONArray(wn.get(key).toString());
                         for (int j = 0; j < contents.length(); j++) {
                             conceptList.add(contents.get(j).toString());
                         }
-
                     }
                     break;
                 case "NOUN_HYPONYM":
                     if (rels.contains("Hyponym")) {
-                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        JSONArray contents = new JSONArray(wn.get(key).toString());
                         for (int j = 0; j < contents.length(); j++) {
                             conceptList.add(contents.get(j).toString());
                         }
-
                     }
                     break;
                 case "VERB_SYNONYM":
                     if (rels.contains("Synonym")) {
-                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        JSONArray contents = new JSONArray(wn.get(key).toString());
                         for (int j = 0; j < contents.length(); j++) {
                             conceptList.add(contents.get(j).toString());
                         }
-
                     }
                     break;
                 case "VERB_TROPONYM":
                     if (rels.contains("Troponym")) {
-                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        JSONArray contents = new JSONArray(wn.get(key).toString());
                         for (int j = 0; j < contents.length(); j++) {
                             conceptList.add(contents.get(j).toString());
                         }
@@ -250,7 +249,7 @@ public class Concordancer {
                     break;
                 case "VERB_HYPONYM":
                     if (rels.contains("Hyponym")) {
-                        JSONArray contents = new JSONArray(arr.get(key).toString());
+                        JSONArray contents = new JSONArray(wn.get(key).toString());
                         for (int j = 0; j < contents.length(); j++) {
                             conceptList.add(contents.get(j).toString());
                         }
@@ -275,12 +274,12 @@ public class Concordancer {
 
         keys = wn.keys();
 
-        conceptList.addAll( addToConceptList(keys,wn,addedWordsList));
+        conceptList.addAll(addToConceptList(keys,wn,addedWordsList));
         //create corpus Object
-        CorpusCreater cc = new CorpusCreater(tags,anno);
-        cc.annotationsToArrayList();
-        cc.sentencesToArrayList();
-        this.corpus = cc.getCorpus();
+//        CorpusCreater cc = new CorpusCreater(tags,anno);
+//        cc.annotationsToArrayList();
+//        cc.sentencesToArrayList();
+//        this.corpus = cc.getCorpus();
 
 
         if(wn.toString().contains("NOUN")){
@@ -289,12 +288,12 @@ public class Concordancer {
         else
             pos = "VB";
 
-        JSONArray conceptNet = new JSONArray(arr.get("FORM_OF").toString());
+        JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
 
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());
         }
-
+        this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
         this.concepts = conceptList;
     }
 
@@ -387,21 +386,30 @@ public class Concordancer {
         for(ConcordanceContent concordanceContent : concordanceContents)
         {
             jsonArray.put(concordanceContent.getJSON());
-            System.out.println("HI" + concordanceContent.getCompleteSentence());
         }
         jsonObject.put("CONCORDANCE", jsonArray);
 
         return jsonObject;
     }
 
-        public JSONObject getAdvancedResults(ArrayList<String> tags) throws JSONException {
-        JSONArray jsonArray = new JSONArray();
-        JSONObject jsonObject = new JSONObject();
-        concordanceContents = new ArrayList<>();
-        ArrayList<WordContent> wordContent = new ArrayList<>();
-        //CHECK ALL KEYWORDS
+        public JSONObject getAdvancedResults() throws JSONException {
+            this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
+
+            JSONArray jsonArray = new JSONArray();
+            JSONObject jsonObject = new JSONObject();
+            ArrayList<String> duplicates = new ArrayList<>();
+
+            concordanceContents = new ArrayList<>();
+            ArrayList<WordContent> wordContent = new ArrayList<>();
+            System.out.println(" this.concepts Size " + this.concepts.size());
+
+            int i = 0;
+
+            //CHECK ALL KEYWORDS
         for(String keyword : this.concepts)
         {
+            i++;
+            System.out.println("CONC KEY " + keyword + " " + i);
 
             //SEGMENT || CONTENT
             for(Segment content : corpus.getSegments())
@@ -410,6 +418,8 @@ public class Concordancer {
                 for(Graph sentence : content.getGraphs())
                 {
                     ConcordanceContent item = new ConcordanceContent();
+
+                    item.setSentenceId(sentence.getId());
                     item.setKeyword(keyword);
 
                     boolean keywordExist = false;
@@ -428,7 +438,6 @@ public class Concordancer {
                         }
 
 
-
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents,sentence.getTerminals().get(ctr).getId()));
 
                         if(sentence.getTerminals().get(ctr).getWord().equals(keyword))
@@ -436,14 +445,14 @@ public class Concordancer {
                             int cnfrm = 0;
 
                             loop1:   for(Annotation a : sentence.getTerminals().get(ctr).getAnnotations()) {
-                                for (String annotation : tags)
+                                for (String annotation : tagsList)
                                     if (a.getValue().equals(annotation)) {
                                         cnfrm++;
-                                        tags.remove(annotation);
+                                        tagsList.remove(annotation);
                                         continue loop1;
                                 }
                             }
-                                if(cnfrm == tags.size()) {
+                                if(cnfrm == tagsList.size()) {
 
                                     keywordExist = true;
                                     item.setKeyword_Index(ctr);
@@ -474,4 +483,5 @@ public class Concordancer {
         System.out.println(jsonObject.toString());
         return jsonObject;
     }
+
 }
