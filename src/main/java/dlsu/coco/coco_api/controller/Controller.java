@@ -528,7 +528,10 @@ public class Controller {
             {
                 byte[] bytes = jsonPattern_IDs.getBytes();
                 String result = new String(bytes);
+                System.out.println("PATTENR FILTER ; JSONPARSER");
+                patternFilter = new PatternFilter();
                 patternFilter.JSONparser(jsonPattern_IDs);
+                System.out.println("PATTENR FILTER ; GETFILTEREDPATTERNS");
                 return patternFilter.getFilteredByID().toString();
             } catch (Exception e) {
                 System.out.println("You failed to upload " + jsonPattern_IDs + " => " + e.getMessage());

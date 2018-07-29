@@ -310,8 +310,11 @@ public class PatternFinder {
             JSONArray patternOrigin = new JSONArray();
             for(String originID : listPattern.get(ctr).getPatternOrigin())
             {
+                System.out.println("ORIGIN!");
                 for(int originfinder = 0; originfinder < listSentence.size(); originfinder++)
                 {
+                    System.out.println("ORIGIN ID : " + originID);
+                    System.out.println("SENTENCE ID : " + listSentence.get(originfinder).getSentenceId());
                     if(originID.equals(listSentence.get(originfinder).getSentenceId()))
                     {
                         patternOrigin.put(listSentence.get(originfinder).getSummaryJSON());
