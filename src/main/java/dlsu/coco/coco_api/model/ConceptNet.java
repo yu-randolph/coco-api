@@ -72,7 +72,7 @@ public class ConceptNet {
 
             ArrayList<ConceptNetContent> content = new ArrayList<>();
             httpURLConnection = (HttpURLConnection) new URL(address).openConnection();
-            httpURLConnection.setConnectTimeout(5000 *24);
+            httpURLConnection.setConnectTimeout(5000 *48);
             httpURLConnection.setRequestMethod("GET");
             httpURLConnection.setRequestProperty("Accept", "application/json");
 
