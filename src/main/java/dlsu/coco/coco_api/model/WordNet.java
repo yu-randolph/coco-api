@@ -107,6 +107,7 @@ public class WordNet {
         ArrayList<String> relatedAdjectives = new ArrayList<String>();
         for(int i = 0; i < adjectiveSynonym.size(); i++)
         {
+            if(!relatedAdjectives.contains(adjectiveSynonym.get(i).getWordForm()[0]))
             relatedAdjectives.add(adjectiveSynonym.get(i).getString());
         }
 
@@ -236,14 +237,18 @@ public class WordNet {
         verbSynonym = new ArrayList<>();
         verbHyponym = new ArrayList<>();
         verbTroponym = new ArrayList<>();
-
+        ArrayList<String> duplicates = new ArrayList<String>();
         ArrayList<VerbSynset> synsetHyponym = new ArrayList<>();
         ArrayList<VerbSynset> synsetTroponym = new ArrayList<>();
 
         for(Synset synset : database.getSynsets(word, SynsetType.VERB))
         {
+
             WordNetContent item = new WordNetContent(synset.getType(), synset.getWordForms(), synset.getDefinition());
-            verbSynonym.add(item);
+            if(!duplicates.contains(item.getWordForm()[0])) {
+                verbSynonym.add(item);
+                duplicates.add(item.getWordForm()[0]);
+            }
         }
 
         for(Synset synset : database.getSynsets(word, SynsetType.VERB))
@@ -259,22 +264,28 @@ public class WordNet {
     public void getAdjective()
     {
         adjectiveSynonym = new ArrayList<>();
+        ArrayList<String> duplicates = new ArrayList<String>();
 
         for(Synset synset : database.getSynsets(word, SynsetType.ADJECTIVE))
         {
             WordNetContent item = new WordNetContent(synset.getType(), synset.getWordForms(), synset.getDefinition());
-            adjectiveSynonym.add(item);
+            if(!duplicates.contains(item.getWordForm()[0])) {
+                adjectiveSynonym.add(item);
+                duplicates.add(item.getWordForm()[0]);
+            }
         }
     }
 
     public void getAdverb()
     {
         adverbSynonym = new ArrayList<>();
-
+        ArrayList<String> duplicates = new ArrayList<String>();
         for(Synset synset : database.getSynsets(word, SynsetType.ADVERB))
         {
             WordNetContent item = new WordNetContent(synset.getType(), synset.getWordForms(), synset.getDefinition());
+            if(!duplicates.contains(item.getWordForm()[0])) {
             adverbSynonym.add(item);
+            }
         }
     }
 
