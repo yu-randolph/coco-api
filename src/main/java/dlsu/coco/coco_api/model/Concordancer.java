@@ -174,21 +174,31 @@ public class Concordancer {
 
         JSONObject jsonObject = new JSONObject(concepts);
         JSONArray ann = new JSONArray(jsonObject.get("AnnotationsList").toString());
-        JSONArray rel = new JSONArray(jsonObject.get("RelationList").toString());
-
-        ArrayList<String> conceptList = new ArrayList<String>();
-
+        Iterator<String> annKeys;
         this.tagsList = new ArrayList<>();
-        ArrayList<String> rels = new ArrayList<>();
+
 
         for (int i = 0; i < ann.length(); i++) {
-            tagsList.add(ann.getJSONObject(i).getString("annotation"));
-        }
-        for (int i = 0; i < rel.length(); i++) {
-            rels.add(rel.getJSONObject(i).getString("relation"));
-            System.out.println("RELS" + rels.get(i));
+            JSONObject object = ann.getJSONObject(i);
+            annKeys = object.keys();
+        while (annKeys.hasNext()) {
+            String keyValue = (String) annKeys.next();
+            String valueString = object.getString(keyValue);
+            tagsList.add(valueString);
+            if(i == 0)
+                if(valueString.toString().contains("Noun")){
+                    pos = "NN";
+                }
+                else if (valueString.toString().contains("Verb"))
+                    pos = "VB";
+                else if(valueString.toString().contains("Adjective"))
+                    pos = "JJ";
+                else if(valueString.toString().contains("Adverb"))
+                    pos = "RB";
         }
 
+    }
+        ArrayList<String> conceptList = new ArrayList<String>();
 
 
 //        JSONObject arr = new JSONObject(jsonObject.get("conceptlist").toString());
@@ -201,65 +211,65 @@ public class Concordancer {
         ArrayList<String> addedWordsList = null;
         removedWordsList = new ArrayList<>();
         Iterator<?> keys = wn.keys();
-
-       while (keys.hasNext()) {
-            String key = (String) keys.next();
-            System.out.println("KEYS" + key);
-            switch (key) {
-                case "NOUN_SYNONYM":
-                    if (rels.contains("Synonym")) {
-                        JSONArray contents = new JSONArray(wn.get(key).toString());
-                        for (int j = 0; j < contents.length(); j++) {
-                            conceptList.add(contents.get(j).toString());
-                        }
-                    }
-                    break;
-                case "NOUN_HYPERNYM":
-                    if (rels.contains("Hypernym")) {
-                        JSONArray contents = new JSONArray(wn.get(key).toString());
-                        for (int j = 0; j < contents.length(); j++) {
-                            conceptList.add(contents.get(j).toString());
-                        }
-                    }
-                    break;
-                case "NOUN_HYPONYM":
-                    if (rels.contains("Hyponym")) {
-                        JSONArray contents = new JSONArray(wn.get(key).toString());
-                        for (int j = 0; j < contents.length(); j++) {
-                            conceptList.add(contents.get(j).toString());
-                        }
-                    }
-                    break;
-                case "VERB_SYNONYM":
-                    if (rels.contains("Synonym")) {
-                        JSONArray contents = new JSONArray(wn.get(key).toString());
-                        for (int j = 0; j < contents.length(); j++) {
-                            conceptList.add(contents.get(j).toString());
-                        }
-                    }
-                    break;
-                case "VERB_TROPONYM":
-                    if (rels.contains("Troponym")) {
-                        JSONArray contents = new JSONArray(wn.get(key).toString());
-                        for (int j = 0; j < contents.length(); j++) {
-                            conceptList.add(contents.get(j).toString());
-                        }
-
-                    }
-                    break;
-                case "VERB_HYPONYM":
-                    if (rels.contains("Hyponym")) {
-                        JSONArray contents = new JSONArray(wn.get(key).toString());
-                        for (int j = 0; j < contents.length(); j++) {
-                            conceptList.add(contents.get(j).toString());
-                        }
-
-                    }
-                    break;
-
-            }
-
-        }
+//
+//       while (keys.hasNext()) {
+//            String key = (String) keys.next();
+//            System.out.println("KEYS" + key);
+//            switch (key) {
+//                case "NOUN_SYNONYM":
+//                    if (rels.contains("Synonym")) {
+//                        JSONArray contents = new JSONArray(wn.get(key).toString());
+//                        for (int j = 0; j < contents.length(); j++) {
+//                            conceptList.add(contents.get(j).toString());
+//                        }
+//                    }
+//                    break;
+//                case "NOUN_HYPERNYM":
+//                    if (rels.contains("Hypernym")) {
+//                        JSONArray contents = new JSONArray(wn.get(key).toString());
+//                        for (int j = 0; j < contents.length(); j++) {
+//                            conceptList.add(contents.get(j).toString());
+//                        }
+//                    }
+//                    break;
+//                case "NOUN_HYPONYM":
+//                    if (rels.contains("Hyponym")) {
+//                        JSONArray contents = new JSONArray(wn.get(key).toString());
+//                        for (int j = 0; j < contents.length(); j++) {
+//                            conceptList.add(contents.get(j).toString());
+//                        }
+//                    }
+//                    break;
+//                case "VERB_SYNONYM":
+//                    if (rels.contains("Synonym")) {
+//                        JSONArray contents = new JSONArray(wn.get(key).toString());
+//                        for (int j = 0; j < contents.length(); j++) {
+//                            conceptList.add(contents.get(j).toString());
+//                        }
+//                    }
+//                    break;
+//                case "VERB_TROPONYM":
+//                    if (rels.contains("Troponym")) {
+//                        JSONArray contents = new JSONArray(wn.get(key).toString());
+//                        for (int j = 0; j < contents.length(); j++) {
+//                            conceptList.add(contents.get(j).toString());
+//                        }
+//
+//                    }
+//                    break;
+//                case "VERB_HYPONYM":
+//                    if (rels.contains("Hyponym")) {
+//                        JSONArray contents = new JSONArray(wn.get(key).toString());
+//                        for (int j = 0; j < contents.length(); j++) {
+//                            conceptList.add(contents.get(j).toString());
+//                        }
+//
+//                    }
+//                    break;
+//
+//            }
+//
+//        }
 
         if(jsonObject.has("addedwords")) {
             addedwords = new JSONArray(jsonObject.get("addedwords").toString());
@@ -409,7 +419,7 @@ public class Concordancer {
         for(String keyword : this.concepts)
         {
             i++;
-            System.out.println("CONC KEY " + keyword + " " + i);
+            System.out.println("CONC KEY ADVANCED " + keyword + " " + i);
 
             //SEGMENT || CONTENT
             for(Segment content : corpus.getSegments())
@@ -420,7 +430,7 @@ public class Concordancer {
                     ConcordanceContent item = new ConcordanceContent();
 
                     item.setSentenceId(sentence.getId());
-                    item.setKeyword(keyword);
+
 
                     boolean keywordExist = false;
                     String completeSentence = "";
@@ -439,21 +449,21 @@ public class Concordancer {
 
 
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents,sentence.getTerminals().get(ctr).getId()));
+                        keyword = keyword.replaceAll("\\s", "");
 
-                        if(sentence.getTerminals().get(ctr).getWord().equals(keyword))
+                        item.setKeyword(keyword);
+                        if(sentence.getTerminals().get(ctr).getWord().equalsIgnoreCase(keyword))
                         {
                             int cnfrm = 0;
-
                             loop1:   for(Annotation a : sentence.getTerminals().get(ctr).getAnnotations()) {
-                                for (String annotation : tagsList)
-                                    if (a.getValue().equals(annotation)) {
+                                for (String annotation : tagsList) {
+                                    if (a.getValue().equals(annotation) || (a.getName().equals("pos") && a.getValue().contains(this.pos))) {
                                         cnfrm++;
-                                        tagsList.remove(annotation);
                                         continue loop1;
+                                    }
                                 }
                             }
                                 if(cnfrm == tagsList.size()) {
-
                                     keywordExist = true;
                                     item.setKeyword_Index(ctr);
                                 }
@@ -465,7 +475,10 @@ public class Concordancer {
                     {
                         item.setWords(wordContent);
                         item.setCompleteSentence(completeSentence);
-                        concordanceContents.add(item);
+                        if (!concordanceContents.contains(item) && !duplicates.contains(item.getSentenceId())) {
+                            concordanceContents.add(item);
+                            duplicates.add(item.getSentenceId());
+                        }
                     }
                     wordContent = new ArrayList<>();
 
@@ -473,7 +486,7 @@ public class Concordancer {
             }
 
         }
-
+            System.out.println(concordanceContents.size());
         for(ConcordanceContent concordanceContent : concordanceContents)
         {
             jsonArray.put(concordanceContent.getJSON());

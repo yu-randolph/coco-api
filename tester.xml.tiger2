@@ -68,6 +68,9 @@
 </feature>
 <feature name="lemma" domain="t">
 </feature>
+<feature name="Alphabet" domain="t">
+<value name="A">Alphabet</value>
+</feature>
 </annotation>
 </head>
 <body>
