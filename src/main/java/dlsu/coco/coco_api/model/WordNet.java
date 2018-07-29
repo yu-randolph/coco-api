@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 
 public class WordNet {
 
@@ -50,18 +51,21 @@ public class WordNet {
         ArrayList<String> relatedNouns = new ArrayList<String>();
         for(int i = 0; i < nounSynonym.size(); i++)
         {
+            if(!relatedNouns.contains(nounSynonym.get(i).getWordForm()[0]))
             relatedNouns.add(nounSynonym.get(i).getWordForm()[0]);
         }
         for(int i = 0; i < nounHyponym.size(); i++)
         {
+            if(!relatedNouns.contains(nounHyponym.get(i).getWordForm()[0]))
             relatedNouns.add(nounHyponym.get(i).getWordForm()[0]);
         }
         for(int i = 0; i < nounHypernym.size(); i++)
         {
+            if(!relatedNouns.contains(nounHypernym.get(i).getWordForm()[0]))
             relatedNouns.add(nounHypernym.get(i).getWordForm()[0]);
         }
 
-
+        relatedNouns = new ArrayList<String>(new LinkedHashSet<String>(relatedNouns));
         return relatedNouns;
     }
 
@@ -70,17 +74,43 @@ public class WordNet {
         ArrayList<String> relatedVerbs = new ArrayList<String>();
         for(int i = 0; i < verbSynonym.size(); i++)
         {
+            if(!relatedVerbs.contains(verbSynonym.get(i).getWordForm()[0]))
             relatedVerbs.add(verbSynonym.get(i).getString());
         }
         for(int i = 0; i < verbHyponym.size(); i++)
         {
+            if(!relatedVerbs.contains(verbHyponym.get(i).getWordForm()[0]))
             relatedVerbs.add(verbHyponym.get(i).getString());
         }
         for(int i = 0; i < verbTroponym.size(); i++)
         {
+            if(!relatedVerbs.contains(verbTroponym.get(i).getWordForm()[0]))
             relatedVerbs.add(verbTroponym.get(i).getString());
         }
         return relatedVerbs;
+    }
+
+    public ArrayList<String> relatedAdverbs(){
+
+        ArrayList<String> relatedAdverbs = new ArrayList<String>();
+        for(int i = 0; i < adverbSynonym.size(); i++)
+        {
+            if(!relatedAdverbs.contains(adverbSynonym.get(i).getWordForm()[0]))
+            relatedAdverbs.add(adverbSynonym.get(i).getString());
+        }
+
+        return relatedAdverbs;
+    }
+
+    public ArrayList<String> relatedAdjectives(){
+
+        ArrayList<String> relatedAdjectives = new ArrayList<String>();
+        for(int i = 0; i < adjectiveSynonym.size(); i++)
+        {
+            relatedAdjectives.add(adjectiveSynonym.get(i).getString());
+        }
+
+        return relatedAdjectives;
     }
 
 
@@ -127,20 +157,20 @@ public class WordNet {
             System.out.println(verbTroponym.get(i).getString());
         }
 
-//        System.out.println();
-//        System.out.println("adjective synonym");
-//        for(int i = 0; i < adjectiveSynonym.size(); i++)
-//        {
-//            System.out.println(adjectiveSynonym.get(i).getString());
-//        }
-//
-//        System.out.println();
-//        System.out.println("adverb synonym");
-//        for(int i = 0; i < adverbSynonym.size(); i++)
-//        {
-//            System.out.println(adverbSynonym.get(i).getString());
-//        }
-//        System.out.println();
+        System.out.println();
+        System.out.println("adjective synonym");
+        for(int i = 0; i < adjectiveSynonym.size(); i++)
+        {
+            System.out.println(adjectiveSynonym.get(i).getString());
+        }
+
+        System.out.println();
+        System.out.println("adverb synonym");
+        for(int i = 0; i < adverbSynonym.size(); i++)
+        {
+            System.out.println(adverbSynonym.get(i).getString());
+        }
+        System.out.println();
     }
 
     public ArrayList<WordNetContent> extractValues_NounSynset(ArrayList<NounSynset> synset)
@@ -178,14 +208,17 @@ public class WordNet {
         nounSynonym = new ArrayList<>();
         nounHyponym = new ArrayList<>();
         nounHypernym = new ArrayList<>();
-
+        ArrayList<String> duplicates = new ArrayList<String>();
         ArrayList<NounSynset> synsetHyponym = new ArrayList<>();
         ArrayList<NounSynset> synsetHypernym = new ArrayList<>();
 
         for(Synset synset : database.getSynsets(word, SynsetType.NOUN))
         {
             WordNetContent item = new WordNetContent(synset.getType(), synset.getWordForms(), synset.getDefinition());
-            nounSynonym.add(item);
+            if(!duplicates.contains(item.getWordForm()[0])) {
+                nounSynonym.add(item);
+                duplicates.add(item.getWordForm()[0]);
+            }
         }
 
         for(Synset synset : database.getSynsets(word, SynsetType.NOUN))

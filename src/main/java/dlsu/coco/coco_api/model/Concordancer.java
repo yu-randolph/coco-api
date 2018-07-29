@@ -104,7 +104,7 @@ public class Concordancer {
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());
         }
-
+        this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
         this.concepts = conceptList;
     }
 
@@ -293,7 +293,7 @@ public class Concordancer {
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());
         }
-
+        this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
         this.concepts = conceptList;
     }
 

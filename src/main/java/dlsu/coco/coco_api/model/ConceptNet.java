@@ -17,6 +17,7 @@ public class ConceptNet {
     //RELATION
     private static String RELATED_TO = "RelatedTo";
     private static String FORM_OF = "FormOf";
+    private ArrayList<String> duplicates = new ArrayList<>();
 //    private static String IS_A = "IsA";
 //    private static String PART_OF = "PartOf";
 //    private static String CREATED_BY = "CreatedBy";
@@ -93,7 +94,10 @@ public class ConceptNet {
 
                 ConceptNetContent item = new ConceptNetContent(rel.getString("label"), start.getString("label"), end.getString("label"), surfaceText, weight);
                 System.out.println(item.toString());
-                content.add(item);
+                if(!duplicates.contains(item.getStartWord())) {
+                    duplicates.add(item.getStartWord());
+                    content.add(item);
+                }
             }
 
 

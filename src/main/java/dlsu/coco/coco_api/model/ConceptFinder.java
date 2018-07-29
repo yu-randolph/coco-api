@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 
 public class ConceptFinder {
 
@@ -29,21 +30,26 @@ public class ConceptFinder {
 
     public JSONObject getWordNetResult() throws JSONException {
         JSONObject jsonObject = new JSONObject();
-        if(pos.contains("Noun")) {
+        if(pos.contains("Noun") || pos.contains("NN")) {
             jsonObject.put("NOUN_SYNONYM", wordNet.getNounSynonymJSONObject());
             jsonObject.put("NOUN_HYPONYM", wordNet.getNounHyponymJSONObject());
             jsonObject.put("NOUN_HYPERNYM", wordNet.getNounHypernymJSONObject());
             this.conceptResults.addAll(wordNet.relatedNouns());
         }
-        else if(pos.contains("Verb")) {
+        else if(pos.contains("Verb") || pos.contains("VB") ) {
             jsonObject.put("VERB_SYNONYM", wordNet.getVerbSynonymJSONObject());
             jsonObject.put("VERB_HYPONYM", wordNet.getVerbHyponymJSONObject());
             jsonObject.put("VERB_TROPONYM", wordNet.getVerbTroponymJSONObject());
             this.conceptResults.addAll(wordNet.relatedVerbs());
         }
-
-//        jsonObject.put("ADJECTIVE_SYNONYM", wordNet.getAdjectiveSynonymJSONObject());
-//        jsonObject.put("ADVERB_SYNONYM", wordNet.getAdverbSynonymJSONObject());
+        else if(pos.contains("JJ")) {
+            jsonObject.put("ADJECTIVE_SYNONYM", wordNet.getAdjectiveSynonymJSONObject());
+            this.conceptResults.addAll(wordNet.relatedAdjectives());
+        }
+        else if(pos.contains("ADV")) {
+            jsonObject.put("ADVERB_SYNONYM", wordNet.getAdverbSynonymJSONObject());
+            this.conceptResults.addAll(wordNet.relatedAdverbs());
+        }
 
         wordnet = jsonObject;
         return jsonObject;
