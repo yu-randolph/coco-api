@@ -193,7 +193,8 @@ public class ConcordanceContent {
                 String sWordID = jsonWordContent.getJSONObject(0).getString("wordId");
 
                 sWordID = sWordID.split("_")[0];
-                patternOrigin.add(sWordID);
+                String sSentenceID = "s1_g" + sWordID.substring(1);
+                patternOrigin.add(sSentenceID);
             }
         }
         catch(JSONException e) {
