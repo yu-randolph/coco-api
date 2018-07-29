@@ -30,7 +30,7 @@ public class PatternFinder {
     }
 
     private void concordanceParser() throws JSONException {
-        jsonConcordance = jsonSuper.getJSONArray("CONCORDANCE");
+         jsonConcordance =jsonSuper.getJSONArray("concordance");
 
         for(int conCtr = 0; conCtr < jsonConcordance.length(); conCtr++)
         {
@@ -39,8 +39,8 @@ public class PatternFinder {
             listSentence.get(listSentence.size()-1).readJSON(jsonObject);
         }
 
-        nThreshold = jsonSuper.getInt("THRESHOLD");
-        nLength = jsonSuper.getInt("LENGTH");
+        nThreshold = jsonSuper.getInt("threshold");
+        nLength = jsonSuper.getInt("length");
     }
 
     private void findPattern()

@@ -34,7 +34,7 @@ public class PatternSearcher {
 
     @SuppressWarnings("Duplicates")
     private void concordanceParser() throws JSONException {
-        jsonConcordance = jsonSuper.getJSONArray("CONCORDANCE");
+        jsonConcordance = jsonSuper.getJSONArray("concordance");
 
         for(int conCtr = 0; conCtr < jsonConcordance.length(); conCtr++)
         {
@@ -57,8 +57,8 @@ public class PatternSearcher {
             System.out.println();
         }
 
-        nThreshold = jsonSuper.getInt("THRESHOLD");
-        nLength = jsonSuper.getInt("LENGTH");
+        nThreshold = jsonSuper.getInt("threshold");
+        nLength = jsonSuper.getInt("length");
     }
 
     private JSONObject findPattern() throws JSONException {

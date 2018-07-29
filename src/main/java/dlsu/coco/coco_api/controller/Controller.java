@@ -511,6 +511,7 @@ public class Controller {
                 System.out.println(result);
                 return fileManager.getPattern(result);
             } catch (Exception e) {
+                System.out.println("FAILED TO FIND PATTERNS");
                 System.out.println("You failed to upload " + jsonConcordance + " => " + e.getMessage());
                 return "You failed to upload " + jsonConcordance + " => " + e.getMessage();
             }
