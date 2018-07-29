@@ -36,7 +36,6 @@ public class FileManager {
     private Properties props;
     private StanfordCoreNLP pipeline;
     private Tiger2Converter tiger2Converter;
-    private PatternFinder patternFinder;
     private CorpusEditer corpusEditer;
 
     private DocumentBuilderFactory docFactory;
@@ -295,14 +294,6 @@ public class FileManager {
             case "WRB" : return "Wh­adverb";
             default: return "";
         }
-    }
-
-    public String getPattern(String concordance) throws JSONException {
-        System.out.println("CONCORDANCE IN GET PATTERN : " + concordance);
-        patternFinder = new PatternFinder(new JSONObject(concordance));
-        patternFinder.printPattern();
-        System.out.println("PATTERN : " + patternFinder.getJSONpattern().toString());
-        return patternFinder.getJSONpattern().toString();
     }
 }
 

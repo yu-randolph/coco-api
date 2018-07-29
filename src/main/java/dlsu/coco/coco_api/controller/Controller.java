@@ -23,6 +23,7 @@ public class Controller {
     private ConceptFinder cf;
     private Concordancer concordancer;
     private PatternFilter patternFilter;
+    private PatternFinder patternFinder;
 
     public Controller() {
         fileManager = new FileManager();
@@ -502,19 +503,26 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
     public @ResponseBody
-    String getPattern(@RequestParam("jsonConcordance") String jsonConcordance) throws JSONException {
+    String getPattern(@RequestParam("jsonConcordance") String jsonConcordance) {
+        System.out.println(jsonConcordance);
         if (!jsonConcordance.isEmpty()) {
             try
             {
                 byte[] bytes = jsonConcordance.getBytes();
                 String result = new String(bytes);
                 System.out.println(result);
-                return fileManager.getPattern(result);
+
+                patternFinder = new PatternFinder(new JSONObject(jsonConcordance));
+                return patternFinder.getJSONpattern().toString();
             } catch (Exception e) {
                 System.out.println("FAILED TO FIND PATTERNS");
                 System.out.println("You failed to upload " + jsonConcordance + " => " + e.getMessage());
                 return "You failed to upload " + jsonConcordance + " => " + e.getMessage();
             }
+        }
+        else
+        {
+            System.out.println("EMPTY!");
         }
         return jsonConcordance;
     }

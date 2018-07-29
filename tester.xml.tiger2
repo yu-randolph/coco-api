@@ -68,9 +68,12 @@
 </feature>
 <feature name="lemma" domain="t">
 </feature>
+<<<<<<< HEAD
 <feature name="aa" domain="t">
 <value name="aa">aa</value>
 </feature>
+=======
+>>>>>>> cf608b86faab4706992b7e1691ad7e0caa2f244f
 </annotation>
 </head>
 <body>
