@@ -184,16 +184,17 @@ public class Concordancer {
         while (annKeys.hasNext()) {
             String keyValue = (String) annKeys.next();
             String valueString = object.getString(keyValue);
+            System.out.print("VALUE STRING" + valueString);
             tagsList.add(valueString);
             if(i == 0)
-                if(valueString.toString().contains("Noun")){
+                if(valueString.contains("Noun")){
                     pos = "NN";
                 }
-                else if (valueString.toString().contains("Verb"))
+                else if (valueString.contains("Verb"))
                     pos = "VB";
-                else if(valueString.toString().contains("Adjective"))
+                else if(valueString.contains("Adjective"))
                     pos = "JJ";
-                else if(valueString.toString().contains("Adverb"))
+                else if(valueString.contains("Adverb"))
                     pos = "RB";
         }
 
@@ -292,12 +293,6 @@ public class Concordancer {
 //        this.corpus = cc.getCorpus();
 
 
-        if(wn.toString().contains("NOUN")){
-            pos = "NN";
-        }
-        else
-            pos = "VB";
-
         JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
 
         for (int x = 0; x < conceptNet.length(); x++) {
@@ -317,6 +312,7 @@ public class Concordancer {
         concordanceContents = new ArrayList<>();
         ArrayList<WordContent> wordContent = new ArrayList<>();
         ArrayList<String> duplicates = new ArrayList<>();
+
 //        String lemma ="";
         System.out.println(" this.concepts Size " + this.concepts.size());
         int i = 0;
@@ -395,6 +391,7 @@ public class Concordancer {
 
         for(ConcordanceContent concordanceContent : concordanceContents)
         {
+            System.out.println("SENTENCE ID " + concordanceContent.getSentenceId() + " " + concordanceContent.getCompleteSentence());
             jsonArray.put(concordanceContent.getJSON());
         }
         jsonObject.put("CONCORDANCE", jsonArray);
@@ -425,7 +422,7 @@ public class Concordancer {
             for(Segment content : corpus.getSegments())
             {
                 //GRAPH || SENTENCE
-                for(Graph sentence : content.getGraphs())
+              for(Graph sentence : content.getGraphs())
                 {
                     ConcordanceContent item = new ConcordanceContent();
 
@@ -450,13 +447,15 @@ public class Concordancer {
 
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents,sentence.getTerminals().get(ctr).getId()));
                         keyword = keyword.replaceAll("\\s", "");
-
                         item.setKeyword(keyword);
                         if(sentence.getTerminals().get(ctr).getWord().equalsIgnoreCase(keyword))
                         {
                             int cnfrm = 0;
                             loop1:   for(Annotation a : sentence.getTerminals().get(ctr).getAnnotations()) {
                                 for (String annotation : tagsList) {
+                                    System.out.println(" AVLUE " +  a.getValue() );
+                                    System.out.println(" Annotation " + annotation );
+                                    System.out.println(" THIS>POS " + this.pos);
                                     if (a.getValue().equals(annotation) || (a.getName().equals("pos") && a.getValue().contains(this.pos))) {
                                         cnfrm++;
                                         continue loop1;
@@ -475,10 +474,9 @@ public class Concordancer {
                     {
                         item.setWords(wordContent);
                         item.setCompleteSentence(completeSentence);
-                        if (!concordanceContents.contains(item) && !duplicates.contains(item.getSentenceId())) {
+                        if(!concordanceContents.contains(item))
                             concordanceContents.add(item);
-                            duplicates.add(item.getSentenceId());
-                        }
+
                     }
                     wordContent = new ArrayList<>();
 
@@ -489,6 +487,7 @@ public class Concordancer {
             System.out.println(concordanceContents.size());
         for(ConcordanceContent concordanceContent : concordanceContents)
         {
+            System.out.println("SENTENCE ID " + concordanceContent.getSentenceId() + " " + concordanceContent.getCompleteSentence());
             jsonArray.put(concordanceContent.getJSON());
         }
         jsonObject.put("CONCORDANCE", jsonArray);
