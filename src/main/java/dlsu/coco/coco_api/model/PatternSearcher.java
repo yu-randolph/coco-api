@@ -1,6 +1,7 @@
 package dlsu.coco.coco_api.model;
 
 import dlsu.coco.coco_api.variables.ConcordanceContent;
+import dlsu.coco.coco_api.variables.TagContent;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,27 +10,21 @@ import java.util.ArrayList;
 
 public class PatternSearcher {
 
-    private int nThreshold;
-    private int nLength;
-
     private JSONArray jsonConcordance;
     private JSONObject jsonSuper;
 
     private ArrayList<ConcordanceContent> listSentence;
-    private ArrayList<ConcordanceContent> listPattern;
     private ArrayList<ConcordanceContent> listMatch;
+    private String pattern;
 
     public PatternSearcher(JSONObject jsonSuper) throws JSONException {
-        this.nThreshold = 1;
-        this.nLength = 0;
 
         this.listSentence = new ArrayList<>();
-        this.listPattern = new ArrayList<>();
         this.listMatch = new ArrayList<>();
         this.jsonSuper = jsonSuper;
+        this.pattern = "";
 
         this.concordanceParser();
-        this.findPattern();
     }
 
     @SuppressWarnings("Duplicates")
@@ -43,28 +38,34 @@ public class PatternSearcher {
             listSentence.get(listSentence.size()-1).readJSON(jsonObject);
         }
 
-        JSONObject jsonObjectPatterns = new JSONObject(jsonSuper.get("patterns").toString());
-        JSONArray jsonArrayPatterns = jsonObjectPatterns.getJSONArray("patterns");
-        for (int patternCtr = 0; patternCtr < jsonArrayPatterns.length(); patternCtr++)
-        {
-            ConcordanceContent pattern = new ConcordanceContent();
-            JSONObject jsonPattern = jsonArrayPatterns.getJSONObject(patternCtr);
-            pattern.readPatternJSON(jsonPattern);
-
-            listPattern.add(pattern);
-            System.out.println("PATTERN CONTENT");
-            pattern.printWordContents();
-            System.out.println();
-        }
-
-        nThreshold = jsonSuper.getInt("threshold");
-        nLength = jsonSuper.getInt("length");
+        pattern = jsonSuper.getString("patternString");
     }
 
-    private JSONObject findPattern() throws JSONException {
+    @SuppressWarnings("Duplicates")
+    public JSONObject findPattern() throws JSONException {
+
        for(ConcordanceContent concItem : listSentence)
        {
-           if(concItem.compareConcordanceWithPattern(listPattern.get(0)))
+           String conc = "";
+           for(int concCtr = 0; concCtr < concItem.getWords().size(); concCtr++)
+           {
+                for(int tagCtr = 0; tagCtr < concItem.getWords().get(concCtr).getTags().size(); tagCtr++)
+                {
+                    if(concItem.getWords().get(concCtr).getTags().get(tagCtr).getTagName().equals("pos"))
+                    {
+                        if(concCtr == concItem.getWords().size())
+                        {
+                            conc += concItem.getWords().get(concCtr).getTags().get(tagCtr).getTagValue();
+                        }
+                        else
+                        {
+                            conc += concItem.getWords().get(concCtr).getTags().get(tagCtr).getTagValue() + "-";
+                        }
+                    }
+                }
+           }
+
+           if(conc.contains(pattern))
            {
                listMatch.add(concItem);
            }

@@ -7,7 +7,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class PatternFilter {
 
@@ -69,53 +71,42 @@ public class PatternFilter {
         System.out.println("");
     }
 
-    public JSONObject getFilteredByID()  {
-        try
-        {
+    public JSONObject getFilteredByID()  throws JSONException{
             JSONArray patterns = new JSONArray();
+            ArrayList<String> originIDs = new ArrayList<>();
 
-            for(int ctr = 0; ctr < patternList.size(); ctr++)
+            for(ConcordanceContent pattern : patternList)
             {
-                if(listID.contains(patternList.get(ctr).getSentenceId()))
-                {
-                    System.out.println("");
-                    System.out.println("CONTAINS!");
-                    System.out.println("");
-
-                    JSONObject pattern = new JSONObject();
-                    pattern.put("pattern", patternList.get(ctr).getSummaryJSON());
-                    pattern.put("id", patternList.get(ctr).getSentenceId());
-
-                    JSONArray patternOrigin = new JSONArray();
-                    for(String originID : patternList.get(ctr).getPatternOrigin())
-                    {
-                        System.out.println("ORIGIN!");
-                        for(int originfinder = 0; originfinder < sentenceList.size(); originfinder++)
-                        {
-                            System.out.println("ORIGIN ID : " + originID);
-                            System.out.println("SENTENCE ID : " + sentenceList.get(originfinder).getSentenceId());
-                            if(originID.equals(sentenceList.get(originfinder).getSentenceId()))
-                            {
-                                patternOrigin.put(sentenceList.get(originfinder).getSummaryJSON());
-                            }
-                        }
-                    }
-
-                    pattern.put("originSentences", patternOrigin);
-                    pattern.put("frequency", patternList.get(ctr).getFreq());
-                    patterns.put(pattern);
-                }
+                if(listID.contains(pattern.getSentenceId()))
+                    originIDs.addAll(pattern.getPatternOrigin());
             }
 
+            System.out.println("ORIGIN ID SIZE : " + originIDs.size());
+
+        Set uniqueEntries = new HashSet();
+        for (Iterator iter = originIDs.iterator(); iter.hasNext(); ) {
+            Object element = iter.next();
+            if (!uniqueEntries.add(element)) // if current element is a duplicate,
+                iter.remove();                 // remove it
+        }
+
+        System.out.println("UNIQUE ID SIZE : " + uniqueEntries.size());
+
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("patterns", patterns);
+            JSONArray jsonArray = new JSONArray();
+            for(ConcordanceContent concordance : sentenceList)
+            {
+                System.out.println("CONCORDANCE ID : " + concordance.getSentenceId());
+                if(uniqueEntries.contains(concordance.getSentenceId()))
+                {
+                    jsonArray.put(concordance.getJSON());
+                    uniqueEntries.remove(concordance.getSentenceId());
+                    System.out.println("uniqueEntries : " + uniqueEntries.size());
+                }
+            }
+            jsonObject.put("CONCORDANCE", jsonArray);
+
             System.out.println(jsonObject.toString());
             return jsonObject;
-        }
-        catch (JSONException e)
-        {
-            e.printStackTrace();
-        }
-        return null;
     }
 }

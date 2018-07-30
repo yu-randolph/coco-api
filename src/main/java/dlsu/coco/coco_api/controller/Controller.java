@@ -540,7 +540,8 @@ public class Controller {
                 patternFilter = new PatternFilter();
                 patternFilter.JSONparser(jsonPattern_IDs);
                 System.out.println("PATTENR FILTER ; GETFILTEREDPATTERNS");
-                return patternFilter.getFilteredByID().toString();
+                String filtered = patternFilter.getFilteredByID().toString();
+                return filtered;
             } catch (Exception e) {
                 System.out.println("You failed to upload " + jsonPattern_IDs + " => " + e.getMessage());
                 return "You failed to upload " + jsonPattern_IDs + " => " + e.getMessage();
@@ -565,6 +566,25 @@ public class Controller {
             }
         }
         return jsonConcept_Corpus_Patterns_Keyword;
+    }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/getPatternSearch", method = RequestMethod.POST)
+    public @ResponseBody
+    String getPatternSearch(@RequestParam("jsonConcordance_PatternString") String jsonConcordance_PatternString) {
+        if (!jsonConcordance_PatternString.isEmpty()) {
+            try
+            {
+                byte[] bytes = jsonConcordance_PatternString.getBytes();
+                String result = new String(bytes);
+                PatternSearcher patternSearcher = new PatternSearcher(new JSONObject(jsonConcordance_PatternString));
+                return patternSearcher.findPattern().toString();
+            } catch (Exception e) {
+                System.out.println("You failed to upload " + jsonConcordance_PatternString + " => " + e.getMessage());
+                return "You failed to upload " + jsonConcordance_PatternString + " => " + e.getMessage();
+            }
+        }
+        return jsonConcordance_PatternString;
     }
 
 //    @GetMapping("/getXML")
