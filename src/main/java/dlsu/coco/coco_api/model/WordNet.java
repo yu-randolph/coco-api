@@ -17,7 +17,7 @@ public class WordNet {
     private final static String[] SYNSET_TYPES = {"", "noun","verb","adjective","adverb"};
 
     private String word;
-
+    private ArrayList<String> adverbs = new ArrayList<>();
     private ArrayList<WordNetContent> nounSynonym;
     private ArrayList<WordNetContent> nounHyponym;
     private ArrayList<WordNetContent> nounHypernym;
@@ -204,6 +204,36 @@ public class WordNet {
         return content;
     }
 
+    public ArrayList<WordNetContent> extractValues_AdjSynset(ArrayList<AdjectiveSynset> synset)
+    {
+        ArrayList<WordNetContent> content = new ArrayList<>();
+
+        for(int ctr = 0; ctr < synset.size(); ctr++)
+        {
+            String[] split = synset.get(ctr).toString().split("@|\\[|-");
+
+            WordNetContent item = new WordNetContent(SynsetType.ADJECTIVE, split[2].replaceFirst("]", "").split(","), split[3].replaceFirst(" ", ""));
+            content.add(item);
+        }
+
+        return content;
+    }
+
+    public ArrayList<WordNetContent> extractValues_AdvSynset(ArrayList<AdverbSynset> synset)
+    {
+        ArrayList<WordNetContent> content = new ArrayList<>();
+
+        for(int ctr = 0; ctr < synset.size(); ctr++)
+        {
+            String[] split = synset.get(ctr).toString().split("@|\\[|-");
+
+            WordNetContent item = new WordNetContent(SynsetType.ADVERB, split[2].replaceFirst("]", "").split(","), split[3].replaceFirst(" ", ""));
+            content.add(item);
+        }
+
+        return content;
+    }
+
     public void getNoun()
     {
         nounSynonym = new ArrayList<>();
@@ -265,7 +295,7 @@ public class WordNet {
     {
         adjectiveSynonym = new ArrayList<>();
         ArrayList<String> duplicates = new ArrayList<String>();
-
+        ArrayList<AdjectiveSynset> similar = new ArrayList<>();
         for(Synset synset : database.getSynsets(word, SynsetType.ADJECTIVE))
         {
             WordNetContent item = new WordNetContent(synset.getType(), synset.getWordForms(), synset.getDefinition());
@@ -274,12 +304,21 @@ public class WordNet {
                 duplicates.add(item.getWordForm()[0]);
             }
         }
+
+        for(Synset synset : database.getSynsets(word, SynsetType.ADJECTIVE))
+        {
+            Collections.addAll(similar, ((AdjectiveSynset) synset).getSimilar());
+
+        }
+        adjectiveSynonym = this.extractValues_AdjSynset(similar);
     }
 
     public void getAdverb()
     {
         adverbSynonym = new ArrayList<>();
         ArrayList<String> duplicates = new ArrayList<String>();
+        ArrayList<String> similar = new ArrayList<>();
+
         for(Synset synset : database.getSynsets(word, SynsetType.ADVERB))
         {
             WordNetContent item = new WordNetContent(synset.getType(), synset.getWordForms(), synset.getDefinition());
@@ -287,6 +326,14 @@ public class WordNet {
             adverbSynonym.add(item);
             }
         }
+        for(Synset synset : database.getSynsets(word, SynsetType.ADVERB))
+        {
+            Collections.addAll(similar, ((AdverbSynset) synset).getWordForms());
+
+        }
+
+        adverbs = similar;
+//        adverbSynonym = this.extractValues_AdjSynset(similar);
     }
 
     public ArrayList<WordNetContent> getNounSynonym() {
@@ -322,7 +369,7 @@ public class WordNet {
     public JSONArray getNounSynonymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
-
+            jsonArray.put(this.word);
         for(WordNetContent item : nounSynonym)
         {
             jsonArray.put(item.getWordForm()[0]);
@@ -358,7 +405,7 @@ public class WordNet {
     public JSONArray getVerbSynonymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
-
+        jsonArray.put(this.word);
         for(WordNetContent item : verbSynonym)
         {
             jsonArray.put(item.getWordForm()[0]);
@@ -393,10 +440,12 @@ public class WordNet {
 
     public JSONArray getAdjectiveSynonymJSONObject() throws JSONException {
         JSONArray jsonArray = new JSONArray();
+        jsonArray.put(this.word);
 
         for(WordNetContent item : adjectiveSynonym)
         {
-            jsonArray.put(item.toJSON());
+
+            jsonArray.put(item.getWordForm()[0]);
         }
 
         return jsonArray;}
@@ -404,10 +453,10 @@ public class WordNet {
     public JSONArray getAdverbSynonymJSONObject() throws JSONException {
 
         JSONArray jsonArray = new JSONArray();
-
-        for(WordNetContent item : adverbSynonym)
+        jsonArray.put(this.word);
+        for(String item : adverbs)
         {
-            jsonArray.put(item.toJSON());
+            jsonArray.put(item);
         }
 
         return jsonArray;

@@ -20,8 +20,8 @@ public class ConceptFinder {
         this.concept = concept;
         this.conceptResults = new ArrayList<String>();
         conceptNet = new ConceptNet(concept);
-        //wordNet = new WordNet(System.getProperty("user.dir") + "/WordNet-3.0/WordNet-3.0/dict", concept);
-        wordNet = new WordNet("C:\\Program Files (x86)\\WordNet\\2.1\\dict", concept);
+        wordNet = new WordNet(System.getProperty("user.dir") + "/WordNet-3.0/WordNet-3.0/dict", concept);
+//        wordNet = new WordNet("C:\\Program Files (x86)\\WordNet\\2.1\\dict", concept);
 
         this.getWordNetResult();
 
@@ -42,11 +42,11 @@ public class ConceptFinder {
             jsonObject.put("VERB_TROPONYM", wordNet.getVerbTroponymJSONObject());
             this.conceptResults.addAll(wordNet.relatedVerbs());
         }
-        else if(pos.contains("JJ")) {
+        else if(pos.contains("Adjective")) {
             jsonObject.put("ADJECTIVE_SYNONYM", wordNet.getAdjectiveSynonymJSONObject());
             this.conceptResults.addAll(wordNet.relatedAdjectives());
         }
-        else if(pos.contains("ADV")) {
+        else if(pos.contains("Adverb")) {
             jsonObject.put("ADVERB_SYNONYM", wordNet.getAdverbSynonymJSONObject());
             this.conceptResults.addAll(wordNet.relatedAdverbs());
         }
