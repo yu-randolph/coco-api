@@ -3,7 +3,9 @@ package dlsu.coco.coco_api.model;
 import de.hu_berlin.german.korpling.tiger2.Corpus;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.simple.parser.ParseException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 
@@ -13,14 +15,17 @@ public class ConceptFinder {
     private ArrayList<String> relatedWords,conceptResults;
     private ConceptNet conceptNet;
     private WordNet wordNet;
+    private CoCoNet cn;
     private JSONObject wordnet;
-    public ConceptFinder(String concept, String pos, String dictLocation) throws JSONException {
+    public ConceptFinder(String concept, String pos, String dictLocation) throws JSONException, IOException, ParseException {
 
         this.pos = pos;
         this.concept = concept;
         this.conceptResults = new ArrayList<String>();
+        cn = new CoCoNet();
         conceptNet = new ConceptNet(concept);
         wordNet = new WordNet(System.getProperty("user.dir") + "/WordNet-3.0/WordNet-3.0/dict", concept);
+        cn.getConceptList(concept);
 //        wordNet = new WordNet("C:\\Program Files (x86)\\WordNet\\2.1\\dict", concept);
 
         this.getWordNetResult();
@@ -58,6 +63,8 @@ public class ConceptFinder {
     public JSONObject getAllResults() throws JSONException {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("FORM_OF", conceptNet.getFormOfJSONObject());
+
+        jsonObject.put("CoCoNet" , cn.getJSONConceptList());
 
 //        jsonObject.put("RELATED_TO", conceptNet.getRelatedToJSONObject());
 
