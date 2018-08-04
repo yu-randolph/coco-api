@@ -100,9 +100,13 @@ public class Concordancer {
             pos = "VB";
 
         JSONArray conceptNet = new JSONArray(arr.get("FORM_OF").toString());
+        JSONArray cocoNet = new JSONArray(arr.get("CoCoNet").toString());
 
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());
+        }
+        for (int x = 0; x < cocoNet.length(); x++) {
+            conceptList.add(cocoNet.get(x).toString());
         }
         this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
         this.concepts = conceptList;
@@ -176,6 +180,7 @@ public class Concordancer {
         JSONArray ann = new JSONArray(jsonObject.get("AnnotationsList").toString());
         Iterator<String> annKeys;
         this.tagsList = new ArrayList<>();
+
 
 
         for (int i = 0; i < ann.length(); i++) {
@@ -294,10 +299,16 @@ public class Concordancer {
 
 
         JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
+        JSONArray cocoNet = new JSONArray(jsonObject.get("CoCoNet").toString());
 
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());
         }
+
+        for (int x = 0; x < cocoNet.length(); x++) {
+            conceptList.add(cocoNet.get(x).toString());
+        }
+
         this.concepts = new ArrayList<String>(new LinkedHashSet<String>(this.concepts));
         this.concepts = conceptList;
     }

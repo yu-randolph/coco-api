@@ -6,6 +6,7 @@ import dlsu.coco.coco_api.model.*;
 import org.apache.commons.io.FilenameUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.simple.parser.ParseException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,10 +25,11 @@ public class Controller {
     private Concordancer concordancer;
     private PatternFilter patternFilter;
     private PatternFinder patternFinder;
-
-    public Controller() {
+    private CoCoNet ccn;
+    public Controller() throws ParseException, JSONException, IOException {
         fileManager = new FileManager();
         this.tiger2Converter = new Tiger2Converter();
+
     }
 
     @GetMapping("/")
@@ -412,25 +414,50 @@ public class Controller {
         return data;
     }
 
+//    @CrossOrigin(origins = "*")
+//    @RequestMapping(value = "/getAdvancedConcepts", method = RequestMethod.POST)
+//    public @ResponseBody
+//    String getAdvancedConcepts(@RequestParam("jsonConcept_Corpus") String jsonConcept_Corpus) {
+//        String concepts = "";
+//        if (!jsonConcept_Corpus.isEmpty()) {
+//            try {
+//
+//                byte[] bytes = jsonConcept_Corpus.getBytes();
+//                String result = new String(bytes);
+//                concepts = result;
+//                System.out.println(result);
+//
+//                JSONObject jsonObject = new JSONObject(result);
+//                System.out.println(result);
+//                this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
+//                result = cf.getAllResults().toString();
+//
+//                System.out.println("Result: " + result);
+//
+//                return result;
+//            } catch (Exception e) {
+//                System.out.println("You failed to retrieve " + concepts + " => " + e.getMessage() + "using the getConcepts method");
+//                return "You failed to retrieve " + concepts + " => " + e.getMessage() + "using the getConcepts method";
+//            }
+//        }
+//        return concepts;
+//    }
+
     @CrossOrigin(origins = "*")
-    @RequestMapping(value = "/getAdvancedConcepts", method = RequestMethod.POST)
+    @RequestMapping(value = "/saveConcepts", method = RequestMethod.POST)
     public @ResponseBody
-    String getAdvancedConcepts(@RequestParam("jsonConcept_Corpus") String jsonConcept_Corpus) {
+    String saveConcepts(@RequestParam("newConcepts") String newConcepts) {
         String concepts = "";
-        if (!jsonConcept_Corpus.isEmpty()) {
+        if (!newConcepts.isEmpty()) {
             try {
 
-                byte[] bytes = jsonConcept_Corpus.getBytes();
+                byte[] bytes = newConcepts.getBytes();
                 String result = new String(bytes);
                 concepts = result;
                 System.out.println(result);
 
-                JSONObject jsonObject = new JSONObject(result);
-                System.out.println(result);
-                this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
-                result = cf.getAllResults().toString();
-
-                System.out.println("Result: " + result);
+                this.ccn = new CoCoNet();
+                this.ccn.overwriteConcepts(result);
 
                 return result;
             } catch (Exception e) {
@@ -440,7 +467,6 @@ public class Controller {
         }
         return concepts;
     }
-
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getAdvancedConcordances", method = RequestMethod.POST)

@@ -4,27 +4,24 @@ package dlsu.coco.coco_api.model;
 import dlsu.coco.coco_api.variables.CoCoNetContent;
 
 
-import dlsu.coco.coco_api.variables.ConceptNetContent;
-import dlsu.coco.coco_api.variables.WordNetContent;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONWriter;
+
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 
-import javax.json.Json;
-import javax.json.JsonWriter;
 import java.io.*;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.LinkedHashSet;
 
 public class CoCoNet {
 
-    private File cocoNet;
+
     private ArrayList<CoCoNetContent> cocoNetList;
     private ArrayList<String> conceptList;
     private JSONArray arrayConceptList;
@@ -111,13 +108,16 @@ public class CoCoNet {
         for (int i = 0; i < ann.length(); i++) {
             JSONObject object = ann.getJSONObject(i);
             String jsonConcept = object.get("concept").toString();
-
+            System.out.println("JSONCONCEpt " + jsonConcept);
+            System.out.println(" CONCEPT " + concept);
             if (jsonConcept.equalsIgnoreCase(concept)) {
                 org.json.JSONArray jsonConceptList = object.getJSONArray("conceptList");
                 for (int j = 0; j < jsonConceptList.length(); j++)
                     conceptList.add(jsonConceptList.get(j).toString());
             }
         }
+        System.out.println("CONCEPT LIST SIZE " + conceptList.size());
+
         return conceptList;
     }
 
@@ -127,6 +127,7 @@ public class CoCoNet {
 
         for(String item : conceptList)
         {
+            System.out.println("HELLO");
             jsonArray.put(item);
         }
 
