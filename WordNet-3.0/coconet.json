@@ -1,7 +1,7 @@
 [
   {
-    "concept":"security",
-    "conceptList":[
+    "keyword":"security",
+    "relatedWords":[
       "firewall",
       "antivirus"
     ]

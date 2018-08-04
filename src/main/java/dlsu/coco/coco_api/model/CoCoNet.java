@@ -41,9 +41,9 @@ public class CoCoNet {
         for (int i = 0; i < ann.length(); i++) {
             CoCoNetContent cnItem = new CoCoNetContent();
             JSONObject object = ann.getJSONObject(i);
-            cnItem.setConcept(object.get("concept").toString());
+            cnItem.setConcept(object.get("keyword").toString());
             ArrayList<String> cnList = new ArrayList<>();
-            org.json.JSONArray jsonConceptList = object.getJSONArray("conceptList");
+            org.json.JSONArray jsonConceptList = object.getJSONArray("relatedWords");
 
                 for (int j = 0; j < jsonConceptList.length(); j++)
                     cnList.add(jsonConceptList.get(j).toString());
@@ -85,11 +85,11 @@ public class CoCoNet {
 
         for(CoCoNetContent item : this.cocoNetList)
         {
-           jsonObject.put("concept",item.getConcept());
+           jsonObject.put("keyword",item.getConcept());
            for(String concept: item.getConceptList()){
                jsonArray.put(concept);
            }
-           jsonObject.put("conceptList",jsonArray);
+           jsonObject.put("relatedWords",jsonArray);
            finalJSON.put(jsonObject);
         }
 
@@ -107,17 +107,14 @@ public class CoCoNet {
 
         for (int i = 0; i < ann.length(); i++) {
             JSONObject object = ann.getJSONObject(i);
-            String jsonConcept = object.get("concept").toString();
-            System.out.println("JSONCONCEpt " + jsonConcept);
-            System.out.println(" CONCEPT " + concept);
+            String jsonConcept = object.get("keyword").toString();
+
             if (jsonConcept.equalsIgnoreCase(concept)) {
-                org.json.JSONArray jsonConceptList = object.getJSONArray("conceptList");
+                org.json.JSONArray jsonConceptList = object.getJSONArray("relatedWords");
                 for (int j = 0; j < jsonConceptList.length(); j++)
                     conceptList.add(jsonConceptList.get(j).toString());
             }
         }
-        System.out.println("CONCEPT LIST SIZE " + conceptList.size());
-
         return conceptList;
     }
 
@@ -127,7 +124,6 @@ public class CoCoNet {
 
         for(String item : conceptList)
         {
-            System.out.println("HELLO");
             jsonArray.put(item);
         }
 
