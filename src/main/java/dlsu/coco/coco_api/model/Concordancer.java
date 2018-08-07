@@ -402,7 +402,7 @@ public class Concordancer {
 
         for(ConcordanceContent concordanceContent : concordanceContents)
         {
-            System.out.println("SENTENCE ID " + concordanceContent.getSentenceId() + " " + concordanceContent.getCompleteSentence());
+            System.out.println("HI" + concordanceContent.getCompleteSentence());
             jsonArray.put(concordanceContent.getJSON());
         }
         jsonObject.put("CONCORDANCE", jsonArray);
@@ -498,7 +498,7 @@ public class Concordancer {
             System.out.println(concordanceContents.size());
         for(ConcordanceContent concordanceContent : concordanceContents)
         {
-            System.out.println("SENTENCE ID " + concordanceContent.getSentenceId() + " " + concordanceContent.getCompleteSentence());
+            System.out.println("HI" + concordanceContent.getSentenceId() + " " + concordanceContent.getCompleteSentence());
             jsonArray.put(concordanceContent.getJSON());
         }
         jsonObject.put("CONCORDANCE", jsonArray);

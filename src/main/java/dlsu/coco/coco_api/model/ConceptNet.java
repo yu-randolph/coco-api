@@ -93,11 +93,9 @@ public class ConceptNet {
                 String surfaceText = edges.getJSONObject(i).get("surfaceText").toString();
 
                 ConceptNetContent item = new ConceptNetContent(rel.getString("label"), start.getString("label"), end.getString("label"), surfaceText, weight);
-                System.out.println(item.toString());
-                if(!duplicates.contains(item.getStartWord())) {
-                    duplicates.add(item.getStartWord());
+
                     content.add(item);
-                }
+
             }
 
 
