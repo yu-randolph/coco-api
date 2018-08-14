@@ -39,7 +39,7 @@ public class AnnotatingTool {
     public Tiger2Converter deleteAnnotation(String annotation) throws JSONException {
         JSONObject jsonObject = new JSONObject(annotation);
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
-
+        System.out.println("DELEING HERE");
         corpusEditer.deleteTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString());
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
         tiger2Converter.saveChanges();
