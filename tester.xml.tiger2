@@ -68,14 +68,17 @@
 </feature>
 <feature name="lemma" domain="t">
 </feature>
+<feature name="iSO" domain="t">
+<value name="ASS">ASSET</value>
+</feature>
 </annotation>
 </head>
 <body>
 <s xml:id="s1">
 <graph xml:id="s1_g0">
 <terminals>
-<t xml:id="s0_t1" tiger2:word="The" lemma="the" ner="O" pos="DT"/>
-<t xml:id="s0_t2" tiger2:word="novel" lemma="novel" ner="O" pos="NN"/>
+<t xml:id="s0_t1" tiger2:word="The" lemma="the" ner="O" pos="DT" iSO="ASS"/>
+<t xml:id="s0_t2" tiger2:word="novel" lemma="novel" ner="O" pos="NN" iSO="ASS"/>
 <t xml:id="s0_t3" tiger2:word="'s" lemma="'s" ner="O" pos="POS"/>
 <t xml:id="s0_t4" tiger2:word="events" lemma="event" ner="O" pos="NNS"/>
 <t xml:id="s0_t5" tiger2:word="occupy" lemma="occupy" ner="O" pos="VBP"/>
@@ -11254,7 +11257,7 @@
 <t xml:id="s380_t49" tiger2:word="earlier" lemma="earlier" ner="O" pos="RBR"/>
 <t xml:id="s380_t50" tiger2:word="in" lemma="in" ner="O" pos="IN"/>
 <t xml:id="s380_t51" tiger2:word="the" lemma="the" ner="O" pos="DT"/>
-<t xml:id="s380_t52" tiger2:word="novel" lemma="novel" ner="O" pos="NN"/>
+<t xml:id="s380_t52" tiger2:word="novel" lemma="novel" ner="O" pos="NN" iSO="ASS"/>
 <t xml:id="s380_t53" tiger2:word="-RRB-" lemma="-rrb-" ner="O" pos="-RRB-"/>
 <t xml:id="s380_t54" tiger2:word="." lemma="." ner="O" pos="."/>
 </terminals>

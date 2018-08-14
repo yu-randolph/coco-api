@@ -31,6 +31,7 @@ public class CoCoNet {
         conceptList = new ArrayList<>();
         JSONParser parser = new JSONParser();
         this.arrayConceptList = (JSONArray) parser.parse(new FileReader(System.getProperty("user.dir") + "/WordNet-3.0/coconet.json"));
+        System.out.println("ARRAYCONCEPLIST" + this.arrayConceptList.toString());
         this.cocoNetList = loadCoCoNetContentList(this.arrayConceptList.toString());
     }
 
@@ -52,50 +53,64 @@ public class CoCoNet {
 
             listContent.add(cnItem);
         }
+        System.out.println("LIST CONTENT SEIZE" + listContent.size());
         return listContent;
 
     }
 
-    public void overwriteConcepts(String newConcepts) throws JSONException {
+    public void overwriteConcepts(String newConcepts) throws JSONException, IOException {
 
         ArrayList<CoCoNetContent> newContent = this.loadCoCoNetContentList(newConcepts);
 
-          loop1:for(CoCoNetContent curNewContent: newContent){
-
-                 for(int i = 0; i < this.cocoNetList.size(); i++){
-                     if(curNewContent.getConcept().equalsIgnoreCase(this.cocoNetList.get(i).getConcept())){
-                         this.cocoNetList.get(i).getConceptList().addAll(curNewContent.getConceptList());
-                         this.cocoNetList.get(i).setConceptList(new ArrayList<>(new LinkedHashSet<>(this.cocoNetList.get(i).getConceptList())));
-                         continue loop1;
-                     }
-
-                 }
-              this.cocoNetList.add(curNewContent);
+        loop1:
+        for (CoCoNetContent curNewContent : newContent) {
+            System.out.println("new Content" + curNewContent.getConcept());
+            for (int i = 0; i < this.cocoNetList.size(); i++) {
+                System.out.println("coconet List Content" + this.cocoNetList.get(i).getConcept());
+                if (curNewContent.getConcept().equalsIgnoreCase(this.cocoNetList.get(i).getConcept())) {
+                    this.cocoNetList.get(i).getConceptList().addAll(curNewContent.getConceptList());
+                    this.cocoNetList.get(i).setConceptList(new ArrayList<>(new LinkedHashSet<>(this.cocoNetList.get(i).getConceptList())));
+                    continue loop1;
+                }
 
             }
+            this.cocoNetList.add(curNewContent);
+
+        }
+            this.saveConceptsAsJSONFile();
 
     }
-
     public void saveConceptsAsJSONFile() throws JSONException, IOException {
         org.json.JSONArray finalJSON = new org.json.JSONArray();
 
-        org.json.JSONArray jsonArray = new org.json.JSONArray();
-        JSONObject jsonObject = new JSONObject();
+
 
 
         for(CoCoNetContent item : this.cocoNetList)
         {
+            org.json.JSONArray jsonArray = new org.json.JSONArray();
+            JSONObject jsonObject = new JSONObject();
+
+            System.out.println(" ITEM " + item.getConcept());
            jsonObject.put("keyword",item.getConcept());
+
            for(String concept: item.getConceptList()){
+               System.out.println(" concept  " + concept);
                jsonArray.put(concept);
            }
            jsonObject.put("relatedWords",jsonArray);
            finalJSON.put(jsonObject);
         }
 
-         FileWriter file = new FileWriter(System.getProperty("user.dir") + "/WordNet-3.0/coconet.json");
+        System.out.println("FINAL JSON" + finalJSON.toString());
 
-            file.write(finalJSON.toString());
+         File file = new File(System.getProperty("user.dir") + "/WordNet-3.0/coconet.json");
+
+        FileOutputStream fooStream = new FileOutputStream(file, false); // true to append
+        // false to overwrite.
+        byte[] myBytes = finalJSON.toString().getBytes();
+        fooStream.write(myBytes);
+        fooStream.close();
             System.out.println("Successfully Copied JSON Object to File...");
 
     }

@@ -454,7 +454,7 @@ public class Controller {
                 byte[] bytes = newConcepts.getBytes();
                 String result = new String(bytes);
                 concepts = result;
-                System.out.println(result);
+                System.out.println("HELLO" + result);
 
                 this.ccn = new CoCoNet();
                 this.ccn.overwriteConcepts(result);
@@ -584,7 +584,7 @@ public class Controller {
             {
                 byte[] bytes = jsonConcept_Corpus_Patterns_Keyword.getBytes();
                 String result = new String(bytes);
-                SuggestionFinder suggestionFinder = new SuggestionFinder();
+                SuggestionFinder suggestionFinder = new SuggestionFinder(tiger2Converter.getCorpus());
                 return suggestionFinder.getSuggestions(result).toString();
             } catch (Exception e) {
                 System.out.println("You failed to upload " + jsonConcept_Corpus_Patterns_Keyword + " => " + e.getMessage());
