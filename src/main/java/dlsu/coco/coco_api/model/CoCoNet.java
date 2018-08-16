@@ -58,33 +58,44 @@ public class CoCoNet {
 
     }
 
+//    public void overwriteConcepts(String newConcepts) throws JSONException, IOException {
+//
+//        ArrayList<CoCoNetContent> newContent = this.loadCoCoNetContentList(newConcepts);
+//
+//        loop1:
+//        for (CoCoNetContent curNewContent : newContent) {
+//            System.out.println("new Content" + curNewContent.getConcept());
+//            for (int i = 0; i < this.cocoNetList.size(); i++) {
+//                System.out.println("coconet List Content" + this.cocoNetList.get(i).getConcept());
+//                if (curNewContent.getConcept().equalsIgnoreCase(this.cocoNetList.get(i).getConcept())) {
+//                    this.cocoNetList.get(i).getConceptList().addAll(curNewContent.getConceptList());
+//                    this.cocoNetList.get(i).setConceptList(new ArrayList<>(new LinkedHashSet<>(this.cocoNetList.get(i).getConceptList())));
+//                    continue loop1;
+//                }
+//
+//            }
+//            this.cocoNetList.add(curNewContent);
+//
+//        }
+//            this.saveConceptsAsJSONFile();
+//
+//    }
+
     public void overwriteConcepts(String newConcepts) throws JSONException, IOException {
 
         ArrayList<CoCoNetContent> newContent = this.loadCoCoNetContentList(newConcepts);
 
         loop1:
         for (CoCoNetContent curNewContent : newContent) {
-            System.out.println("new Content" + curNewContent.getConcept());
-            for (int i = 0; i < this.cocoNetList.size(); i++) {
-                System.out.println("coconet List Content" + this.cocoNetList.get(i).getConcept());
-                if (curNewContent.getConcept().equalsIgnoreCase(this.cocoNetList.get(i).getConcept())) {
-                    this.cocoNetList.get(i).getConceptList().addAll(curNewContent.getConceptList());
-                    this.cocoNetList.get(i).setConceptList(new ArrayList<>(new LinkedHashSet<>(this.cocoNetList.get(i).getConceptList())));
-                    continue loop1;
-                }
 
-            }
             this.cocoNetList.add(curNewContent);
 
         }
-            this.saveConceptsAsJSONFile();
+        this.saveConceptsAsJSONFile();
 
     }
     public void saveConceptsAsJSONFile() throws JSONException, IOException {
         org.json.JSONArray finalJSON = new org.json.JSONArray();
-
-
-
 
         for(CoCoNetContent item : this.cocoNetList)
         {
