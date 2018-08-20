@@ -511,8 +511,8 @@ public class Controller {
 //    }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/getContent")
-    public String getContent() throws JSONException {
+    @GetMapping("/getAnnotations")
+    public String getAnnotations() throws JSONException {
 
 //       ConceptFinder fn = new ConceptFinder("Hello", "book");
             return fileManager.XMLtoJSONconverter().toString();
