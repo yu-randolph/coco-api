@@ -194,12 +194,12 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/editTag", method = RequestMethod.POST)
     public @ResponseBody
-    String editTag(@RequestParam("tags") String tags) {
+    String editTag(@RequestParam("tagInfo") String tagInfo) {
         String newTag = "";
-        if (!tags.isEmpty()) {
+        if (!tagInfo.isEmpty()) {
             try {
 
-                byte[] bytes = tags.getBytes();
+                byte[] bytes = tagInfo.getBytes();
                 String result = new String(bytes);
                 newTag = result;
                 System.out.println(result);
@@ -225,11 +225,11 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/addTag", method = RequestMethod.POST)
     public @ResponseBody
-    String addTag(@RequestParam("tags") String tags) {
+    String addTag(@RequestParam("tagInfo") String tagInfo) {
         String newTag = "";
-        if (!tags.isEmpty()) {
+        if (!tagInfo.isEmpty()) {
             try {
-                byte[] bytes = tags.getBytes();
+                byte[] bytes = tagInfo.getBytes();
                 String result = new String(bytes);
                 newTag = result;
                 System.out.println(result);
@@ -252,11 +252,11 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/deleteTag", method = RequestMethod.POST)
     public @ResponseBody
-    String deleteTag(@RequestParam("tags") String tags) {
+    String deleteTag(@RequestParam("tagInfo") String tagInfo) {
         String newTag = "";
-        if (!tags.isEmpty()) {
+        if (!tagInfo.isEmpty()) {
             try {
-                byte[] bytes = tags.getBytes();
+                byte[] bytes = tagInfo.getBytes();
                 String result = new String(bytes);
                 newTag = result;
                 System.out.println(result);
@@ -306,12 +306,12 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/applyToAll", method = RequestMethod.POST)
     public @ResponseBody
-    String applyToAll(@RequestParam("tags") String tags) {
+    String applyToAll(@RequestParam("tagInfo") String tagInfo) {
         String newTag = "";
-        if (!tags.isEmpty()) {
+        if (!tagInfo.isEmpty()) {
             try {
 
-                byte[] bytes = tags.getBytes();
+                byte[] bytes = tagInfo.getBytes();
                 String result = new String(bytes);
                 newTag = result;
                 System.out.println(result);
@@ -361,12 +361,12 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getConcepts", method = RequestMethod.POST)
     public @ResponseBody
-    String getConcepts(@RequestParam("searchData") String feature) {
+    String getConcepts(@RequestParam("searchInfo") String searchInfo) {
         String concepts = "";
-        if (!feature.isEmpty()) {
+        if (!searchInfo.isEmpty()) {
             try {
 
-                byte[] bytes = feature.getBytes();
+                byte[] bytes = searchInfo.getBytes();
                 String result = new String(bytes);
                 concepts = result;
                 System.out.println(result);
@@ -390,12 +390,12 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getConcordances", method = RequestMethod.POST)
     public @ResponseBody
-    String getConcordances(@RequestParam("jsonConcept_Corpus") String jsonConcept_Corpus) {
+    String getConcordances(@RequestParam("searchInfo") String searchInfo) {
         String data = "";
-        if (!jsonConcept_Corpus.isEmpty()) {
+        if (!searchInfo.isEmpty()) {
             try {
 
-                byte[] bytes = jsonConcept_Corpus.getBytes();
+                byte[] bytes = searchInfo.getBytes();
                 String corpus = new String(bytes);
                 data = corpus;
                 System.out.println("pos" + corpus);
@@ -446,12 +446,12 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/saveConcepts", method = RequestMethod.POST)
     public @ResponseBody
-    String saveConcepts(@RequestParam("newConcepts") String newConcepts) {
+    String saveConcepts(@RequestParam("savedConcepts") String savedConcepts) {
         String concepts = "";
-        if (!newConcepts.isEmpty()) {
+        if (!savedConcepts.isEmpty()) {
             try {
 
-                byte[] bytes = newConcepts.getBytes();
+                byte[] bytes = savedConcepts.getBytes();
                 String result = new String(bytes);
                 concepts = result;
                 System.out.println(result);
@@ -471,12 +471,12 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getAdvancedConcordances", method = RequestMethod.POST)
     public @ResponseBody
-    String getAdvancedConcordances(@RequestParam("jsonConcept_Corpus") String jsonConcept_Corpus) {
+    String getAdvancedConcordances(@RequestParam("jsonConcept_Corpus") String searchInfo) {
         String newTag = "";
-        if (!jsonConcept_Corpus.isEmpty()) {
+        if (!searchInfo.isEmpty()) {
             try {
 
-                byte[] bytes = jsonConcept_Corpus.getBytes();
+                byte[] bytes = searchInfo.getBytes();
                 String result = new String(bytes);
                 newTag = result;
                 System.out.println(result);
@@ -529,69 +529,69 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
     public @ResponseBody
-    String getPattern(@RequestParam("jsonConcordance") String jsonConcordance) {
-        System.out.println(jsonConcordance);
-        if (!jsonConcordance.isEmpty()) {
+    String getPattern(@RequestParam("jsonConcordance") String patternInfo) {
+        System.out.println(patternInfo);
+        if (!patternInfo.isEmpty()) {
             try
             {
-                byte[] bytes = jsonConcordance.getBytes();
+                byte[] bytes = patternInfo.getBytes();
                 String result = new String(bytes);
                 System.out.println(result);
 
-                patternFinder = new PatternFinder(new JSONObject(jsonConcordance));
+                patternFinder = new PatternFinder(new JSONObject(patternInfo));
                 return patternFinder.getJSONpattern().toString();
             } catch (Exception e) {
                 System.out.println("FAILED TO FIND PATTERNS");
-                System.out.println("You failed to upload " + jsonConcordance + " => " + e.getMessage());
-                return "You failed to upload " + jsonConcordance + " => " + e.getMessage();
+                System.out.println("You failed to upload " + patternInfo + " => " + e.getMessage());
+                return "You failed to upload " + patternInfo + " => " + e.getMessage();
             }
         }
         else
         {
             System.out.println("EMPTY!");
         }
-        return jsonConcordance;
+        return patternInfo;
     }
 
     @CrossOrigin(origins = "*")
-    @RequestMapping(value = "/getPatternFilteredByID", method = RequestMethod.POST)
+    @RequestMapping(value = "/filterPatterns", method = RequestMethod.POST)
     public @ResponseBody
-    String getFilteredPatternByID(@RequestParam("jsonPattern_IDs") String jsonPattern_IDs) throws JSONException {
-        if (!jsonPattern_IDs.isEmpty()) {
+    String getFilteredPatternByID(@RequestParam("filters") String filters) throws JSONException {
+        if (!filters.isEmpty()) {
             try
             {
-                byte[] bytes = jsonPattern_IDs.getBytes();
+                byte[] bytes = filters.getBytes();
                 String result = new String(bytes);
                 System.out.println("PATTENR FILTER ; JSONPARSER");
                 patternFilter = new PatternFilter();
-                patternFilter.JSONparser(jsonPattern_IDs);
+                patternFilter.JSONparser(filters);
                 System.out.println("PATTENR FILTER ; GETFILTEREDPATTERNS");
                 String filtered = patternFilter.getFilteredByID().toString();
                 return filtered;
             } catch (Exception e) {
-                System.out.println("You failed to upload " + jsonPattern_IDs + " => " + e.getMessage());
-                return "You failed to upload " + jsonPattern_IDs + " => " + e.getMessage();
+                System.out.println("You failed to upload " + filters + " => " + e.getMessage());
+                return "You failed to upload " + filters + " => " + e.getMessage();
             }
         }
-        return jsonPattern_IDs;
+        return filters;
     }
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getSuggestions", method = RequestMethod.POST)
     public @ResponseBody
-    String getSuggestions(@RequestParam("jsonConcept_Corpus_Patterns_Keyword") String jsonConcept_Corpus_Patterns_Keyword) {
-        if (!jsonConcept_Corpus_Patterns_Keyword.isEmpty()) {
+    String getSuggestions(@RequestParam("suggestionInfo") String suggestionInfo) {
+        if (!suggestionInfo.isEmpty()) {
             try
             {
-                byte[] bytes = jsonConcept_Corpus_Patterns_Keyword.getBytes();
+                byte[] bytes = suggestionInfo.getBytes();
                 String result = new String(bytes);
                 SuggestionFinder suggestionFinder = new SuggestionFinder();
                 return suggestionFinder.getSuggestions(result).toString();
             } catch (Exception e) {
-                System.out.println("You failed to upload " + jsonConcept_Corpus_Patterns_Keyword + " => " + e.getMessage());
-                return "You failed to upload " + jsonConcept_Corpus_Patterns_Keyword + " => " + e.getMessage();
+                System.out.println("You failed to upload " + suggestionInfo + " => " + e.getMessage());
+                return "You failed to upload " + suggestionInfo + " => " + e.getMessage();
             }
         }
-        return jsonConcept_Corpus_Patterns_Keyword;
+        return suggestionInfo;
     }
 
     @CrossOrigin(origins = "*")
