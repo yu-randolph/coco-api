@@ -26,6 +26,9 @@ public class SuggestionFinder {
 
     private ArrayList<ConcordanceContent> patternList = new ArrayList<>();
 
+    public SuggestionFinder(Corpus corpus){
+        this.corpus = corpus;
+    }
     @SuppressWarnings("Duplicates")
     public void JSONparser(String sJsonContent)
     {
@@ -40,10 +43,10 @@ public class SuggestionFinder {
             Iterator<?> keys = wn.keys();
             ArrayList<String> conceptList = new ArrayList<>();
 
-            CorpusCreater cc = new CorpusCreater(tags,anno);
-            cc.annotationsToArrayList();
-            cc.sentencesToArrayList();
-            this.corpus = cc.getCorpus();
+//            CorpusCreater cc = new CorpusCreater(tags,anno);
+//            cc.annotationsToArrayList();
+//            cc.sentencesToArrayList();
+//            this.corpus = cc.getCorpus();
 
 //        System.out.println("HELLO1 " + jsonObject.get("WORDNET").toString());
 //        System.out.println("HELLO2 " + jsonObject.get("FORM_OF").toString());

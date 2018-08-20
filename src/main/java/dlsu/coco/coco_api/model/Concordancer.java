@@ -358,13 +358,14 @@ public class Concordancer {
                         wordContent.add(new WordContent(sentence.getTerminals().get(ctr).getWord(), tagContents, sentence.getTerminals().get(ctr).getId()));
 
                         keyword = keyword.replaceAll("\\s", "");
-
+                        String lemma = "";
                         for (TagContent tag : tagContents) {
-//                            if (tag.getTagName().contains("lemma")) {
-//                                lemma = tag.getTagValue();
-//                            }
+                            if (tag.getTagName().contains("lemma")) {
+                                lemma = tag.getTagValue();
+                            }
                             if (tag.getTagName().contains("pos") && tag.getTagValue().contains(pos))
                                 posVal = true;
+
                         }
 
                         if (sentence.getTerminals().get(ctr).getWord().equalsIgnoreCase(keyword)) {
