@@ -373,7 +373,7 @@ public class Controller {
 
                 JSONObject jsonObject = new JSONObject(result);
                 System.out.println(result);
-                this.cf = new ConceptFinder(jsonObject.get("concept").toString(),jsonObject.get("pos").toString(),"");
+                this.cf = new ConceptFinder(jsonObject.get("word").toString(),jsonObject.get("pos").toString(),"");
                 result = cf.getAllResults().toString();
 
                 System.out.println("Result: " + result);
@@ -401,7 +401,7 @@ public class Controller {
                 System.out.println("pos" + corpus);
 
                 concordancer = new Concordancer(tiger2Converter.getCorpus());
-                concordancer.JSONtoArrayConceptLIst(corpus);
+                concordancer.JSONtoArrayConceptList(corpus);
                 corpus = concordancer.getConcordanceResult().toString();
                 System.out.println("Result: " + corpus);
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
@@ -471,7 +471,7 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getAdvancedConcordances", method = RequestMethod.POST)
     public @ResponseBody
-    String getAdvancedConcordances(@RequestParam("jsonConcept_Corpus") String searchInfo) {
+    String getAdvancedConcordances(@RequestParam("searchInfo") String searchInfo) {
         String newTag = "";
         if (!searchInfo.isEmpty()) {
             try {
@@ -529,7 +529,7 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
     public @ResponseBody
-    String getPattern(@RequestParam("jsonConcordance") String patternInfo) {
+    String getPattern(@RequestParam("patternInfo") String patternInfo) {
         System.out.println(patternInfo);
         if (!patternInfo.isEmpty()) {
             try
@@ -611,6 +611,12 @@ public class Controller {
             }
         }
         return jsonConcordance_PatternString;
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/exportCorpus")
+    public String exportCorpus() throws JSONException {
+        return corpusEditer.getCorpus().toString();
     }
 
 //    @GetMapping("/getXML")

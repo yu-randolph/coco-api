@@ -35,7 +35,7 @@ public class PatternFilter {
             }
 
             //PATTERN IDs
-            JSONArray jsonArray = jsonObject.getJSONArray("patternFilters");
+            JSONArray jsonArray = jsonObject.getJSONArray("patternIds");
             if (jsonArray != null)
             {
                 for (int i=0; i<jsonArray.length(); i++)
@@ -104,7 +104,7 @@ public class PatternFilter {
                     System.out.println("uniqueEntries : " + uniqueEntries.size());
                 }
             }
-            jsonObject.put("CONCORDANCE", jsonArray);
+            jsonObject.put("concordances", jsonArray);
 
             System.out.println(jsonObject.toString());
             return jsonObject;

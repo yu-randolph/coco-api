@@ -62,9 +62,9 @@ public class ConceptFinder {
 
     public JSONObject getAllResults() throws JSONException {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("FORM_OF", conceptNet.getFormOfJSONObject());
+        jsonObject.put("conceptnet", conceptNet.getFormOfJSONObject());
 
-        jsonObject.put("CoCoNet" , cn.getJSONConceptList());
+        jsonObject.put("coconet" , cn.getJSONConceptList());
 
 //        jsonObject.put("RELATED_TO", conceptNet.getRelatedToJSONObject());
 
@@ -72,7 +72,7 @@ public class ConceptFinder {
 //        jsonObject.put("PART_OF", conceptNet.getPartOfJSONObject());
 //        jsonObject.put("CREATED_BY", conceptNet.getCreatedByJSONObject());
         this.conceptResults.addAll(conceptNet.getContents());
-        jsonObject.put("WORDNET", wordnet);
+        jsonObject.put("wordnet", wordnet);
         System.out.println(jsonObject);
         return jsonObject;
     }

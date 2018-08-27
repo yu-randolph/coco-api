@@ -35,8 +35,8 @@ public class SuggestionFinder {
         try
         {
             JSONObject jsonObject = new JSONObject(sJsonContent);
-            JSONObject arr = new JSONObject(jsonObject.get("conceptlist").toString());
-            JSONObject wn = new JSONObject(arr.get("WORDNET").toString());
+            JSONObject arr = new JSONObject(jsonObject.get("concepts").toString());
+            JSONObject wn = new JSONObject(arr.get("wordnet").toString());
             JSONObject tags = new JSONObject(jsonObject.get("tags").toString());
             JSONObject anno = new JSONObject(jsonObject.get("annotations").toString());
 
@@ -78,7 +78,7 @@ public class SuggestionFinder {
                 }
             }
 
-            JSONArray conceptNet = new JSONArray(arr.get("FORM_OF").toString());
+            JSONArray conceptNet = new JSONArray(arr.get("conceptnet").toString());
 
             for (int x = 0; x < conceptNet.length(); x++) {
                 conceptList.add(conceptNet.get(x).toString());
@@ -86,8 +86,8 @@ public class SuggestionFinder {
             this.concepts = conceptList;
 
             //PATTERN LIST
-            JSONObject jsonObjectPatterns = new JSONObject(jsonObject.get("patterns").toString());
-            JSONArray jsonArrayPatterns = jsonObjectPatterns.getJSONArray("patterns");
+            //JSONObject jsonObjectPatterns = new JSONObject(jsonObject.get("patterns").toString());
+            JSONArray jsonArrayPatterns = jsonObject.getJSONArray("patterns");
             for (int patternCtr = 0; patternCtr < jsonArrayPatterns.length(); patternCtr++)
             {
                 ConcordanceContent pattern = new ConcordanceContent();
@@ -102,7 +102,7 @@ public class SuggestionFinder {
 
             System.out.println("PATTERN LIST SIZE : " + patternList.size());
 
-            keyword = jsonObject.getString("keyword");
+            keyword = jsonObject.getString("word");
         } catch(JSONException e) {
             e.printStackTrace();
         }

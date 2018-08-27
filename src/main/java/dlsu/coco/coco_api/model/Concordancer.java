@@ -58,12 +58,12 @@ public class Concordancer {
 //    }
 
 
-    public void JSONtoArrayConceptLIst(String concepts) throws JSONException {
+    public void JSONtoArrayConceptList(String concepts) throws JSONException {
 
 
         JSONObject jsonObject = new JSONObject(concepts);
-        JSONObject arr = new JSONObject(jsonObject.get("conceptlist").toString());
-        JSONObject wn = new JSONObject(arr.get("WORDNET").toString());
+        JSONObject arr = new JSONObject(jsonObject.get("concepts").toString());
+        JSONObject wn = new JSONObject(arr.get("wordnet").toString());
         JSONObject tags = new JSONObject(jsonObject.get("tags").toString());
         JSONObject anno = new JSONObject(jsonObject.get("annotations").toString());
         JSONArray addedwords,removedWords;
@@ -99,8 +99,8 @@ public class Concordancer {
         else
             pos = "VB";
 
-        JSONArray conceptNet = new JSONArray(arr.get("FORM_OF").toString());
-        JSONArray cocoNet = new JSONArray(arr.get("CoCoNet").toString());
+        JSONArray conceptNet = new JSONArray(arr.get("conceptnet").toString());
+        JSONArray cocoNet = new JSONArray(arr.get("coconet").toString());
 
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());
@@ -210,7 +210,7 @@ public class Concordancer {
 //        JSONObject arr = new JSONObject(jsonObject.get("conceptlist").toString());
 //        JSONObject wn = new JSONObject(arr.get("WORDNET").toString());
 
-        JSONObject wn = new JSONObject(jsonObject.get("WORDNET").toString());
+        JSONObject wn = new JSONObject(jsonObject.get("wordnet").toString());
         JSONObject tags = new JSONObject(jsonObject.get("tags").toString());
         JSONObject anno = new JSONObject(jsonObject.get("annotations").toString());
         JSONArray addedwords,removedWords;
@@ -298,8 +298,8 @@ public class Concordancer {
 //        this.corpus = cc.getCorpus();
 
 
-        JSONArray conceptNet = new JSONArray(jsonObject.get("FORM_OF").toString());
-        JSONArray cocoNet = new JSONArray(jsonObject.get("CoCoNet").toString());
+        JSONArray conceptNet = new JSONArray(jsonObject.get("conceptnet").toString());
+        JSONArray cocoNet = new JSONArray(jsonObject.get("coconet").toString());
 
         for (int x = 0; x < conceptNet.length(); x++) {
             conceptList.add(conceptNet.get(x).toString());
@@ -406,7 +406,7 @@ public class Concordancer {
             System.out.println("HI" + concordanceContent.getCompleteSentence());
             jsonArray.put(concordanceContent.getJSON());
         }
-        jsonObject.put("CONCORDANCE", jsonArray);
+        jsonObject.put("concordances", jsonArray);
 
         return jsonObject;
     }
@@ -502,7 +502,7 @@ public class Concordancer {
             System.out.println("HI" + concordanceContent.getSentenceId() + " " + concordanceContent.getCompleteSentence());
             jsonArray.put(concordanceContent.getJSON());
         }
-        jsonObject.put("CONCORDANCE", jsonArray);
+        jsonObject.put("concordances", jsonArray);
 
         System.out.println(jsonObject.toString());
         return jsonObject;
