@@ -243,7 +243,7 @@ public class Controller {
                 return result;
             } catch (Exception e) {
                 System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method");
-                return "You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method";
+                return "You failed to update " + newTag + " => " + e.getMessage() + " using the addTag method";
             }
         }
         return newTag;
@@ -267,13 +267,13 @@ public class Controller {
                 System.out.println("You successfully updated the " + newTag + " into " + result);
                 System.out.println("Result: " + result);
 
-                return result;
+                return "success";
             } catch (Exception e) {
                 System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method");
                 return "You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method";
             }
         }
-        return newTag;
+        return "success";
     }
 
     @CrossOrigin(origins = "*")
@@ -298,6 +298,33 @@ public class Controller {
             } catch (Exception e) {
                 System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the addFeatValue method");
                 return "You failed to update " + newTag + " => " + e.getMessage() + "using the addTag method";
+            }
+        }
+        return newTag;
+    }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/addFeature", method = RequestMethod.POST)
+    public @ResponseBody
+    String addFeature(@RequestParam("feature") String feature) {
+        String newTag = "";
+        if (!feature.isEmpty()) {
+            try {
+
+                byte[] bytes = feature.getBytes();
+                String result = new String(bytes);
+                newTag = result;
+                System.out.println(result);
+
+                this.tiger2Converter = this.annotationsManager.addFeature(result);
+
+                System.out.println("You successfully updated the " + newTag + " into " + result);
+                System.out.println("Result: " + result);
+//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
+                return result;
+            } catch (Exception e) {
+                System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the addFeature method");
+                return "You failed to update " + newTag + " => " + e.getMessage() + "using the addFeature method";
             }
         }
         return newTag;
@@ -332,32 +359,6 @@ public class Controller {
     }
 
 
-    @CrossOrigin(origins = "*")
-    @RequestMapping(value = "/addFeature", method = RequestMethod.POST)
-    public @ResponseBody
-    String addFeature(@RequestParam("feature") String feature) {
-        String newTag = "";
-        if (!feature.isEmpty()) {
-            try {
-
-                byte[] bytes = feature.getBytes();
-                String result = new String(bytes);
-                newTag = result;
-                System.out.println(result);
-
-                this.tiger2Converter = this.annotationsManager.addFeature(result);
-
-                System.out.println("You successfully updated the " + newTag + " into " + result);
-                System.out.println("Result: " + result);
-//                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
-                return result;
-            } catch (Exception e) {
-                System.out.println("You failed to update " + newTag + " => " + e.getMessage() + "using the addFeature method");
-                return "You failed to update " + newTag + " => " + e.getMessage() + "using the addFeature method";
-            }
-        }
-        return newTag;
-    }
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getConcepts", method = RequestMethod.POST)
     public @ResponseBody

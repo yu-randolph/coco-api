@@ -43,7 +43,7 @@ public class AnnotationsManager {
         JSONObject jsonObject = new JSONObject(fv);
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
 
-        corpusEditer.addnewFeaturevalue(jsonObject.get("feature").toString(), jsonObject.get("featureValue").toString(), jsonObject.get("feature_decscripion").toString());
+        corpusEditer.addnewFeaturevalue(jsonObject.get("name").toString(), jsonObject.get("value").toString(), jsonObject.get("description").toString());
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
         tiger2Converter.saveChanges();
 

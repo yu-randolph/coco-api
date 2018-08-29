@@ -19,7 +19,7 @@ public class AnnotatingTool {
         JSONObject jsonObject = new JSONObject(annotation);
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
 
-        corpusEditer.editTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString(), jsonObject.get("feature_value").toString(), "");
+        corpusEditer.editTerminalAnnotation(jsonObject.get("wordId").toString(), jsonObject.get("tag").toString(), jsonObject.get("tagValue").toString(), "");
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
         tiger2Converter.saveChanges();
         return tiger2Converter;
@@ -30,7 +30,7 @@ public class AnnotatingTool {
 
         JSONObject jsonObject = new JSONObject(annotation);
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
-        corpusEditer.applyToAll(jsonObject.get("word").toString(),jsonObject.get("feature").toString(),jsonObject.get("feature_value").toString());
+        corpusEditer.applyToAll(jsonObject.get("word").toString(),jsonObject.get("tag").toString(),jsonObject.get("tagValue").toString());
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
         tiger2Converter.saveChanges();
         return tiger2Converter;
@@ -40,7 +40,7 @@ public class AnnotatingTool {
         JSONObject jsonObject = new JSONObject(annotation);
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
         System.out.println("DELEING HERE");
-        corpusEditer.deleteTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString());
+        corpusEditer.deleteTerminalAnnotation(jsonObject.get("wordId").toString(), jsonObject.get("tag").toString());
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
         tiger2Converter.saveChanges();
         return tiger2Converter;
@@ -50,7 +50,7 @@ public class AnnotatingTool {
         JSONObject jsonObject = new JSONObject(annotation);
         corpusEditer = new CorpusEditer(tiger2Converter.getCorpus());
 
-        corpusEditer.addTerminalAnnotation(jsonObject.get("word_id").toString(), jsonObject.get("feature").toString(), jsonObject.get("feature_value").toString());
+        corpusEditer.addTerminalAnnotation(jsonObject.get("wordId").toString(), jsonObject.get("tag").toString(), jsonObject.get("tagValue").toString());
 
         tiger2Converter.setCorpus(corpusEditer.getCorpus());
         tiger2Converter.saveChanges();
