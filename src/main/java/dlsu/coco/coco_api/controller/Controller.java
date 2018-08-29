@@ -616,8 +616,8 @@ public class Controller {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/exportCorpus")
-    public String exportCorpus() throws JSONException {
-        return corpusEditer.getCorpus().toString();
+    public String exportCorpus() throws JSONException, IOException {
+        return fileManager.getCorpusContent();
     }
 
 //    @GetMapping("/getXML")
