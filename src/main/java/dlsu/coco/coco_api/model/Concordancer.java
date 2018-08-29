@@ -71,13 +71,13 @@ public class Concordancer {
         removedWordsList = new ArrayList<>();
         Iterator<?> keys;
 
-        if(jsonObject.has("addedwords")) {
-            addedwords = new JSONArray(jsonObject.get("addedwords").toString());
+        if(jsonObject.has("addedWords")) {
+            addedwords = new JSONArray(jsonObject.get("addedWords").toString());
             addedWordsList = addToList(addedwords);
         }
 
-        if(jsonObject.has("removedwords")) {
-            removedWords = new JSONArray(jsonObject.get("removedwords").toString());
+        if(jsonObject.has("removedWords")) {
+            removedWords = new JSONArray(jsonObject.get("removedWords").toString());
             removedWordsList = addToRemovedWords(removedWords);
         }
 
@@ -164,7 +164,7 @@ public class Concordancer {
                 e.printStackTrace();
             }
             try {
-                list.add(new RemovedConcept(curObJ.getString("concept").toString(),curObJ.getString("sentence_id").toString()));
+                list.add(new RemovedConcept(curObJ.getString("concept").toString(),curObJ.getString("sentenceId").toString()));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -277,13 +277,13 @@ public class Concordancer {
 //
 //        }
 
-        if(jsonObject.has("addedwords")) {
-            addedwords = new JSONArray(jsonObject.get("addedwords").toString());
+        if(jsonObject.has("addedWords")) {
+            addedwords = new JSONArray(jsonObject.get("addedWords").toString());
             addedWordsList = addToList(addedwords);
         }
 
-        if(jsonObject.has("removedwords")) {
-            removedWords = new JSONArray(jsonObject.get("removedwords").toString());
+        if(jsonObject.has("removedWords")) {
+            removedWords = new JSONArray(jsonObject.get("removedWords").toString());
             removedWordsList = addToRemovedWords(removedWords);
         }
 
