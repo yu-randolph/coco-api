@@ -408,8 +408,8 @@ public class Controller {
 //                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
                 return corpus;
             } catch (Exception e) {
-                System.out.println("You failed to retrieve " + data + " => " + e.getMessage() + "using the getConcordances method");
-                return "You failed to upload " + data + " => " + e.getMessage();
+                System.out.println("You failed to retrieve Concordances => " + e.getMessage() + " using the getConcordances method");
+                return "You failed to retrieve concordances => " + e.getMessage();
             }
         }
         return data;
@@ -528,7 +528,7 @@ public class Controller {
     }
 
     @CrossOrigin(origins = "*")
-    @RequestMapping(value = "/getPattern", method = RequestMethod.POST)
+    @RequestMapping(value = "/getPatterns", method = RequestMethod.POST)
     public @ResponseBody
     String getPattern(@RequestParam("patternInfo") String patternInfo) {
         System.out.println(patternInfo);

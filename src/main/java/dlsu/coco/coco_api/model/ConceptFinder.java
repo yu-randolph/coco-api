@@ -24,9 +24,9 @@ public class ConceptFinder {
         this.conceptResults = new ArrayList<String>();
         cn = new CoCoNet();
         conceptNet = new ConceptNet(concept);
-        //wordNet = new WordNet(System.getProperty("user.dir") + "/WordNet-3.0/WordNet-3.0/dict", concept);
+        wordNet = new WordNet(System.getProperty("user.dir") + "/WordNet-3.0/WordNet-3.0/dict", concept);
         cn.getConceptList(concept);
-        wordNet = new WordNet("C:\\Program Files (x86)\\WordNet\\2.1\\dict", concept);
+//        wordNet = new WordNet("C:\\Program Files (x86)\\WordNet\\2.1\\dict", concept);
 
         this.getWordNetResult();
 

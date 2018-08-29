@@ -84,7 +84,7 @@ public class CoCoNet {
     public void overwriteConcepts(String newConcepts) throws JSONException, IOException {
 
         ArrayList<CoCoNetContent> newContent = this.loadCoCoNetContentList(newConcepts);
-
+        this.cocoNetList.clear();
         loop1:
         for (CoCoNetContent curNewContent : newContent) {
 
