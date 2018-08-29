@@ -45,8 +45,8 @@ public class PatternFilter {
             }
 
             //PATTERN LIST
-            JSONObject jsonObjectPatterns = jsonObject.getJSONObject("patterns");
-            JSONArray jsonArrayPatterns = jsonObjectPatterns.getJSONArray("patterns");
+
+            JSONArray jsonArrayPatterns = jsonObject.getJSONArray("patterns");
             for (int patternCtr = 0; patternCtr < jsonArrayPatterns.length(); patternCtr++)
             {
                 ConcordanceContent pattern = new ConcordanceContent();

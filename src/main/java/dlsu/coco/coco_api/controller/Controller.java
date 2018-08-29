@@ -304,9 +304,9 @@ public class Controller {
     }
 
     @CrossOrigin(origins = "*")
-    @RequestMapping(value = "/addFeature", method = RequestMethod.POST)
+    @RequestMapping(value = "/addAnnotation", method = RequestMethod.POST)
     public @ResponseBody
-    String addFeature(@RequestParam("feature") String feature) {
+    String addFeature(@RequestParam("annotation") String feature) {
         String newTag = "";
         if (!feature.isEmpty()) {
             try {
