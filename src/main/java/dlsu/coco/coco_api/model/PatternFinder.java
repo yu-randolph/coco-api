@@ -41,6 +41,7 @@ public class PatternFinder {
 
         nThreshold = jsonSuper.getInt("threshold");
         nLength = jsonSuper.getInt("length");
+        System.out.println("nlength: " + nLength);
     }
 
     private void findPattern()

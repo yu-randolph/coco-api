@@ -62,10 +62,11 @@ public class Concordancer {
 
 
         JSONObject jsonObject = new JSONObject(concepts);
+        System.out.println("jsonObject parsed");
         JSONObject arr = new JSONObject(jsonObject.get("concepts").toString());
+        System.out.println("concepts parsed");
         JSONObject wn = new JSONObject(arr.get("wordnet").toString());
-        JSONObject tags = new JSONObject(jsonObject.get("tags").toString());
-        JSONObject anno = new JSONObject(jsonObject.get("annotations").toString());
+        System.out.println("wn parsed");
         JSONArray addedwords,removedWords;
         ArrayList<String> addedWordsList = null;
         removedWordsList = new ArrayList<>();

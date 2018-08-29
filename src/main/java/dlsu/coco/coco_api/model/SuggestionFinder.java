@@ -37,8 +37,6 @@ public class SuggestionFinder {
             JSONObject jsonObject = new JSONObject(sJsonContent);
             JSONObject arr = new JSONObject(jsonObject.get("concepts").toString());
             JSONObject wn = new JSONObject(arr.get("wordnet").toString());
-            JSONObject tags = new JSONObject(jsonObject.get("tags").toString());
-            JSONObject anno = new JSONObject(jsonObject.get("annotations").toString());
 
             Iterator<?> keys = wn.keys();
             ArrayList<String> conceptList = new ArrayList<>();

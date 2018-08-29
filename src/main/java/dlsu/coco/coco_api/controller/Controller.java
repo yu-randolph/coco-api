@@ -543,8 +543,8 @@ public class Controller {
                 return patternFinder.getJSONpattern().toString();
             } catch (Exception e) {
                 System.out.println("FAILED TO FIND PATTERNS");
-                System.out.println("You failed to upload " + patternInfo + " => " + e.getMessage());
-                return "You failed to upload " + patternInfo + " => " + e.getMessage();
+                System.out.println("You failed to retrieve patterns => " + e.getMessage());
+                return "You failed to retrieve patterns => " + e.getMessage();
             }
         }
         else
@@ -571,7 +571,7 @@ public class Controller {
                 return filtered;
             } catch (Exception e) {
                 System.out.println("You failed to upload " + filters + " => " + e.getMessage());
-                return "You failed to upload " + filters + " => " + e.getMessage();
+                return "You failed to filter patterns => " + e.getMessage();
             }
         }
         return filters;
@@ -579,7 +579,7 @@ public class Controller {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/getSuggestions", method = RequestMethod.POST)
     public @ResponseBody
-    String getSuggestions(@RequestParam("suggestionInfo") String suggestionInfo) {
+    String getSuggestions(@RequestParam("suggestionsInfo") String suggestionInfo) {
         if (!suggestionInfo.isEmpty()) {
             try
             {
@@ -589,7 +589,7 @@ public class Controller {
                 return suggestionFinder.getSuggestions(result).toString();
             } catch (Exception e) {
                 System.out.println("You failed to upload " + suggestionInfo + " => " + e.getMessage());
-                return "You failed to upload " + suggestionInfo + " => " + e.getMessage();
+                return "You failed to retrieve suggestions => " + e.getMessage();
             }
         }
         return suggestionInfo;
