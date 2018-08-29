@@ -27,6 +27,10 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class FileManager {
@@ -240,6 +244,12 @@ public class FileManager {
         return tiger2Converter;
     }
 
+
+    public String getCorpusContent() throws IOException {
+        System.out.println("HELLO " + new String(Files.readAllBytes(FileSystems.getDefault().getPath(System.getProperty("user.dir") + "/src/tester.xml.tiger2"))));
+
+        return new String(Files.readAllBytes(FileSystems.getDefault().getPath(System.getProperty("user.dir") + "/src/tester.xml.tiger2")));
+    }
     public JSONObject XMLtoJSONconverter() throws JSONException {
         System.out.println(tiger2Converter.XMLtoJSONconverter().toString());
         return tiger2Converter.XMLtoJSONconverter();
